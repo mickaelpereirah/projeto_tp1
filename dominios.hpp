@@ -44,5 +44,16 @@ inline string Caracteres::getValor(){
     return caracteres;
 }
 
+class Email{
+    private:
+        string email;
+        bool validar(string);
+    public:
+        bool setValor(string);
+        string getValor();
+};
 
+inline string Email::getValor(){
+    return email;
+}
 #endif // DOMINIOS_HPP_INCLUDED
