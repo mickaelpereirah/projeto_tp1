@@ -8,7 +8,7 @@ int main()
 {
     Capacidade c;
     int v;
-    // Teste do segundo commit
+
     cout << "Digite a capacidade: ";
     cin >> v;
 
