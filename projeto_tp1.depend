@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1763057146 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\main.cpp
+1763058408 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\main.cpp
 	<iostream>
 	<string>
 	<iomanip>
@@ -25,10 +25,13 @@
 	<cctype>
 	<string>
 
-1759435196 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\dominios\data.cpp
+1763058799 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\dominios\data.cpp
 	"data.hpp"
 	<string>
 	<regex>
+	<algorithm>
+	<cctype>
+	<cstdlib>
 
 1759434778 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\dominios\data.hpp
 	<string>
