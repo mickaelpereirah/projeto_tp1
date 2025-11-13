@@ -5,5 +5,6 @@
 #include "capacidade.hpp"
 #include "codigo.hpp"
 #include "data.hpp"
+#include "dinheiro.hpp"
 
 #endif

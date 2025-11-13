@@ -1,10 +1,9 @@
 # depslib dependency file v1.0
-1759435905 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\main.cpp
+1763057146 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\main.cpp
 	<iostream>
 	<string>
-	"capacidade.hpp"
-	"codigo.hpp"
-	"cartao.hpp"
+	<iomanip>
+	"DOMINIOS.hpp"
 
 1759434790 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\dominios\capacidade.hpp
 
@@ -33,4 +32,17 @@
 
 1759434778 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\dominios\data.hpp
 	<string>
+
+1763054862 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\dominios\dominios.hpp
+	"cartao.hpp"
+	"capacidade.hpp"
+	"codigo.hpp"
+	"data.hpp"
+	"dinheiro.hpp"
+
+1763056721 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\dominios\dinheiro.hpp
+	<string>
+
+1763056730 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\dominios\dinheiro.cpp
+	"dinheiro.hpp"
 

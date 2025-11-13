@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
-#include "capacidade.hpp"
-#include "codigo.hpp"
-#include "cartao.hpp"
+#include <iomanip>
+// #include "capacidade.hpp"
+// #include "codigo.hpp"
+// #include "cartao.hpp"
+#include "DOMINIOS.hpp"
 
 using namespace std;
 
@@ -11,15 +13,13 @@ int main()
     Capacidade c;
     int v;
 
-    cout << "Digite a capacidadeeeeeeeeeeeeeeeeeeee: ";
+    cout << "Digite a capacidade: ";
     cin >> v;
-
 
     if (c.setValor(v))
         cout << "Valor = " << c.getValor() << endl;
     else
         cout << "Valor invalido: " << v << endl;
-
 
     Cartao d;
     string digitos;
@@ -31,14 +31,27 @@ int main()
     else
         cout << "Digitos invalidos: " << digitos << endl;
 
+    Codigo co;
+    string codigo;
+    cout << "Digite o codigo: ";
+    cin >> codigo;
 
-    Codigo cr;
-    string caracteres;
-    cin >> caracteres;
+    if (co.setValor(codigo))
+        cout << "Codigo: " << co.getValor() << endl;
+    else
+        cout << "Codigo invalido: " << codigo << endl;
 
-    cout << cr.setValor(caracteres)<< endl;
-    cout <<cr.getValor()<<endl;
+    Dinheiro di;
+    double dinheiro;
+    cout << "Digite o dinheiro: ";
+    cin >> dinheiro;
 
+    if (di.setValor(dinheiro)) {
+        cout << fixed << setprecision(2);
+        cout << "Dinheiro: " << di.getValor() << endl;
+    }
+    else
+        cout << "Dinheiro invalido: " << dinheiro << endl;
 
     return 0;
 }
