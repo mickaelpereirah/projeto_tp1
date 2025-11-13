@@ -41,12 +41,23 @@ int main()
     else
         cout << "Codigo invalido: " << codigo << endl;
 
+    Data da;
+    string data;
+    cout << "Digite a data: ";
+    cin >> data;
+
+    if (da.setValor(data))
+        cout << "Data: " << da.getValor() << endl;
+    else
+        cout << "Data invalido: " << data << endl;
+
     Dinheiro di;
     double dinheiro;
     cout << "Digite o dinheiro: ";
     cin >> dinheiro;
 
-    if (di.setValor(dinheiro)) {
+    if (di.setValor(dinheiro))
+    {
         cout << fixed << setprecision(2);
         cout << "Dinheiro: " << di.getValor() << endl;
     }
