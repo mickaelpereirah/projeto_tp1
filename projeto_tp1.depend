@@ -1,53 +1,66 @@
 # depslib dependency file v1.0
-1763058408 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\main.cpp
+1763493723 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\main.cpp
 	<iostream>
 	<string>
 	<iomanip>
 	"DOMINIOS.hpp"
+	<stdexcept>
 
-1759434790 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\capacidade.hpp
+1763492694 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\capacidade.hpp
 
-1759434768 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\codigo.hpp
+1763492694 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\codigo.hpp
 	<string>
 
-1759434718 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\cartao.hpp
+1763492694 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\cartao.hpp
 	<string>
 
-1759435180 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\capacidade.cpp
+1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\capacidade.cpp
 	"capacidade.hpp"
+	<stdexcept>
 
-1759435185 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\cartao.cpp
+1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\cartao.cpp
 	"cartao.hpp"
 	<string>
+	<stdexcept>
 
-1759435190 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\codigo.cpp
+1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\codigo.cpp
 	"codigo.hpp"
 	<cctype>
 	<string>
+	<stdexcept>
 
-1763058799 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\data.cpp
+1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\data.cpp
 	"data.hpp"
 	<string>
 	<regex>
 	<algorithm>
 	<cctype>
 	<cstdlib>
+	<stdexcept>
 
-1759434778 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\data.hpp
+1763492694 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\data.hpp
 	<string>
 
-1763054862 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\dominios.hpp
+1763493487 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\dominios.hpp
 	"cartao.hpp"
 	"capacidade.hpp"
 	"codigo.hpp"
 	"data.hpp"
 	"dinheiro.hpp"
+	"endereco.hpp"
+	"nome.hpp"
+	"numero.hpp"
+	"ramal.hpp"
+	"senha.hpp"
+	"telefone.hpp"
+	"email.hpp"
 
-1763056721 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\dinheiro.hpp
+1763492694 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\dinheiro.hpp
 	<string>
 
-1763056730 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\dinheiro.cpp
+1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\dinheiro.cpp
 	"dinheiro.hpp"
+	<stdexcept>
 
 1763481600 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\capacidade.cpp
 	"capacidade.hpp"
@@ -160,5 +173,57 @@
 	"senha.hpp"
 	<cctype>
 	<string>
+	<stdexcept>
+
+1763492694 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\endereco.hpp
+	<string>
+
+1763492694 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\nome.hpp
+	<string>
+
+1763492694 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\numero.hpp
+
+1763492694 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\ramal.hpp
+
+1763492694 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\senha.hpp
+	<string>
+
+1763492694 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\telefone.hpp
+	<string>
+
+1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\endereco.cpp
+	"endereco.hpp"
+	<stdexcept>
+	<cctype>
+
+1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\nome.cpp
+	"nome.hpp"
+	<cctype>
+	<stdexcept>
+
+1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\numero.cpp
+	"numero.hpp"
+	<stdexcept>
+
+1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\ramal.cpp
+	"ramal.hpp"
+	<stdexcept>
+
+1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\senha.cpp
+	"senha.hpp"
+	<cctype>
+	<string>
+	<stdexcept>
+
+1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\telefone.cpp
+	"telefone.hpp"
+	<cctype>
+	<stdexcept>
+
+1763493633 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\email.hpp
+	<string>
+
+1763493617 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\email.cpp
+	"email.hpp"
 	<stdexcept>
 

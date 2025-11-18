@@ -12,5 +12,6 @@
 #include "ramal.hpp"
 #include "senha.hpp"
 #include "telefone.hpp"
+#include "email.hpp"
 
 #endif

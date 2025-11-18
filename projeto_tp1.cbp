@@ -39,6 +39,7 @@
 		<Unit filename="include/dominios/codigo.hpp" />
 		<Unit filename="include/dominios/data.hpp" />
 		<Unit filename="include/dominios/dinheiro.hpp" />
+		<Unit filename="include/dominios/email.hpp" />
 		<Unit filename="include/dominios/endereco.hpp" />
 		<Unit filename="include/dominios/nome.hpp" />
 		<Unit filename="include/dominios/numero.hpp" />
@@ -51,6 +52,7 @@
 		<Unit filename="src/dominios/codigo.cpp" />
 		<Unit filename="src/dominios/data.cpp" />
 		<Unit filename="src/dominios/dinheiro.cpp" />
+		<Unit filename="src/dominios/email.cpp" />
 		<Unit filename="src/dominios/endereco.cpp" />
 		<Unit filename="src/dominios/nome.cpp" />
 		<Unit filename="src/dominios/numero.cpp" />

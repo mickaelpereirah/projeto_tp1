@@ -18,11 +18,13 @@ int main()
     cin >> v;
     cin.ignore();
 
-    try {
+    try
+    {
         c.setValor(v);
         cout << "Valor = " << c.getValor() << endl;
     }
-    catch (const invalid_argument& e) {
+    catch (const invalid_argument &e)
+    {
         cout << "Valor invalido: " << e.what() << endl;
     }
 
@@ -32,11 +34,13 @@ int main()
     cin >> digitos;
     cin.ignore();
 
-    try {
+    try
+    {
         d.setValor(digitos);
         cout << "Digitos sao: = " << d.getValor() << endl;
     }
-    catch (const invalid_argument& e) {
+    catch (const invalid_argument &e)
+    {
         cout << "Digitos invalidos: " << e.what() << endl;
     }
 
@@ -46,13 +50,15 @@ int main()
     cin >> codigo;
     cin.ignore();
 
-    try {
+    try
+    {
         co.setValor(codigo);
         cout << "Codigo: " << co.getValor() << endl;
-     }
-     catch (const invalid_argument& e) {
+    }
+    catch (const invalid_argument &e)
+    {
         cout << "Codigo invalido: " << e.what() << endl;
-     }
+    }
 
     Data da;
     string data;
@@ -60,11 +66,13 @@ int main()
     cin >> data;
     cin.ignore();
 
-    try {
+    try
+    {
         da.setValor(data);
         cout << "Data: " << da.getValor() << endl;
     }
-    catch (const invalid_argument& e) {
+    catch (const invalid_argument &e)
+    {
         cout << "Data invalida: " << e.what() << endl;
     }
 
@@ -74,13 +82,31 @@ int main()
     cin >> dinheiro;
     cin.ignore();
 
-    try {
+    try
+    {
         di.setValor(dinheiro);
         cout << fixed << setprecision(2);
         cout << "Dinheiro: " << di.getValor() << endl;
     }
-    catch (const invalid_argument& e) {
+    catch (const invalid_argument &e)
+    {
         cout << "Dinheiro invalido: " << e.what() << endl;
+    }
+
+    Email em;
+    string email;
+    cout << "Digite o email: ";
+    cin >> email;
+    cin.ignore();
+
+    try
+    {
+        em.setValor(email);
+        cout << "Email: " << em.getValor() << endl;
+    }
+    catch (const invalid_argument &e)
+    {
+        cout << "Email invalido: " << e.what() << endl;
     }
 
     Endereco end;
@@ -89,11 +115,13 @@ int main()
     cout << "Digite o endereco: ";
     getline(cin, endereco);
 
-    try {
+    try
+    {
         end.setValor(endereco);
         cout << "Endereco valido: " << end.getValor() << endl;
     }
-    catch (const invalid_argument& e) {
+    catch (const invalid_argument &e)
+    {
         cout << "Endereco invalido: " << e.what() << endl;
     }
 
@@ -103,11 +131,13 @@ int main()
     cout << "Digite o nome: ";
     getline(cin, textoN);
 
-    try {
+    try
+    {
         n.setValor(textoN);
         cout << "Nome valido: " << n.getValor() << endl;
     }
-    catch (const invalid_argument& e) {
+    catch (const invalid_argument &e)
+    {
         cout << "Nome invalido: " << e.what() << endl;
     }
 
@@ -118,11 +148,13 @@ int main()
     cin >> numero;
     cin.ignore();
 
-    try {
+    try
+    {
         nu.setValor(numero);
         cout << "Numero valido: " << nu.getValor() << endl;
     }
-    catch (const invalid_argument& e) {
+    catch (const invalid_argument &e)
+    {
         cout << "Numero invalido: " << e.what() << endl;
     }
 
@@ -133,11 +165,13 @@ int main()
     cin >> valor;
     cin.ignore();
 
-    try {
+    try
+    {
         r.setValor(valor);
         cout << "Ramal valido: " << r.getValor() << endl;
     }
-    catch (const invalid_argument& e) {
+    catch (const invalid_argument &e)
+    {
         cout << "Ramal invalido: " << e.what() << endl;
     }
 
@@ -147,11 +181,13 @@ int main()
     cout << "Digite a senha (5 caracteres): ";
     getline(cin, textoS);
 
-    try {
+    try
+    {
         s.setValor(textoS);
         cout << "Senha valida: " << s.getValor() << endl;
     }
-    catch (const invalid_argument& e) {
+    catch (const invalid_argument &e)
+    {
         cout << "Senha invalida: " << e.what() << endl;
     }
 
@@ -161,12 +197,13 @@ int main()
     cout << "Digite o telefone (+ seguindo de 13 digitos): ";
     getline(cin, textoT);
 
-    try {
+    try
+    {
         t.setValor(textoT);
         cout << "Telefone valido: " << t.getValor() << endl;
     }
-    catch (const invalid_argument& e) {
+    catch (const invalid_argument &e)
+    {
         cout << "Telefone invalido: " << e.what() << endl;
     }
-
 }
