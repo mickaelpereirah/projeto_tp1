@@ -49,3 +49,116 @@
 1763056730 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\dinheiro.cpp
 	"dinheiro.hpp"
 
+1763481600 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\capacidade.cpp
+	"capacidade.hpp"
+	<stdexcept>
+
+1763481604 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\capacidade.hpp
+
+1763481548 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\cartao.cpp
+	"cartao.hpp"
+	<string>
+	<stdexcept>
+
+1763481552 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\cartao.hpp
+	<string>
+
+1763481451 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\codigo.cpp
+	"codigo.hpp"
+	<cctype>
+	<string>
+	<stdexcept>
+
+1763481461 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\codigo.hpp
+	<string>
+
+1763481454 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\data.cpp
+	"data.hpp"
+	<string>
+	<regex>
+	<algorithm>
+	<cctype>
+	<cstdlib>
+	<stdexcept>
+
+1763481457 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\data.hpp
+	<string>
+
+1763481469 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\dinheiro.cpp
+	"dinheiro.hpp"
+	<stdexcept>
+
+1763481473 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\dinheiro.hpp
+	<string>
+
+1763481561 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\senha..cpp
+	"senha.hpp"
+	<cctype>
+	<string>
+	<stdexcept>
+
+1763481533 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\senha.hpp
+	<string>
+
+1763485087 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\endereco.cpp
+	"endereco.hpp"
+	<stdexcept>
+	<cctype>
+
+1763481483 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\endereco.hpp
+	<string>
+
+1763484496 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\nome.cpp
+	"nome.hpp"
+	<cctype>
+	<stdexcept>
+
+1763481479 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\nome.hpp
+	<string>
+
+1763484833 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\numero.cpp
+	"numero.hpp"
+	<stdexcept>
+
+1763481489 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\numero.hpp
+
+1763482708 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\ramal.cpp
+	"ramal.hpp"
+	<stdexcept>
+
+1763481493 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\ramal.hpp
+
+1763486085 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\telefone.cpp
+	"telefone.hpp"
+	<cctype>
+	<stdexcept>
+
+1763482708 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\telefone.hpp
+	<string>
+
+1763484833 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\main.cpp
+	<iostream>
+	<string>
+	<iomanip>
+	"DOMINIOS.hpp"
+	<stdexcept>
+
+1763483451 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\dominios.hpp
+	"cartao.hpp"
+	"capacidade.hpp"
+	"codigo.hpp"
+	"data.hpp"
+	"dinheiro.hpp"
+	"endereco.hpp"
+	"nome.hpp"
+	"numero.hpp"
+	"ramal.hpp"
+	"senha.hpp"
+	"telefone.hpp"
+
+1763481561 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\senha.cpp
+	"senha.hpp"
+	<cctype>
+	<string>
+	<stdexcept>
+

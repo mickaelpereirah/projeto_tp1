@@ -1,19 +1,20 @@
-#ifndef CAPACIDADE_HPP_INCLUDED
-#define CAPACIDADE_HPP_INCLUDED
+#ifndef RAMAL_HPP_INCLUDED
+#define RAMAL_HPP_INCLUDED
 
+using namespace std;
 
-class Capacidade{
+class Ramal {
     private:
         int valor;
         bool validar(int);
+
     public:
         void setValor(int);
         int getValor();
 };
 
-inline int Capacidade::getValor(){
+inline int Ramal::getValor() {
     return valor;
 }
-
 
 #endif

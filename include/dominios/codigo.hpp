@@ -1,7 +1,7 @@
 #ifndef CODIGO_HPP_INCLUDED
 #define CODIGO_HPP_INCLUDED
-
 #include <string>
+
 using namespace std;
 
 class Codigo{
@@ -9,7 +9,7 @@ class Codigo{
         string caracteres;
         bool validar(string);
     public:
-        bool setValor(string);
+        void setValor(string);
         string getValor();
 };
 

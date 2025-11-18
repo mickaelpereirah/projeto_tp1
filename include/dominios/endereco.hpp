@@ -1,12 +1,12 @@
-#ifndef DATA_HPP_INCLUDED
-#define DATA_HPP_INCLUDED
+#ifndef ENDERECO_HPP_INCLUDED
+#define ENDERECO_HPP_INCLUDED
 #include <string>
 
 using namespace std;
 
-class Data{
+class Endereco{
     private:
-        string data;
+        string texto;
         bool validar(string);
 
     public:
@@ -15,8 +15,8 @@ class Data{
         
 };
 
-inline string Data::getValor(){
-    return data; 
+inline string Endereco::getValor(){
+    return texto; 
 }
 
 #endif 

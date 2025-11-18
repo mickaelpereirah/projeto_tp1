@@ -1,19 +1,18 @@
 #include "dinheiro.hpp"
+#include <stdexcept>
 
 bool Dinheiro::validar(double valor)
 {
-    if (valor >= 1 && valor <= 100000000)
+    if (valor >= 1.00 && valor <= 1000000.00)
         return true;
     return false;
 }
 
-bool Dinheiro::setValor(double valor)
+void Dinheiro::setValor(double valor)
 {
-    valor *= 100;
-    if (validar(valor))
+    if (!validar(valor))
     {
-        this->valor = static_cast<int>(valor);
-        return true;
+        throw invalid_argument("Valor invalido");
     }
-    return false;
+    this->valor = static_cast<int>(valor * 100);
 }

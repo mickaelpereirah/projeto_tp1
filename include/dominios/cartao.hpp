@@ -1,7 +1,7 @@
 #ifndef CARTAO_HPP_INCLUDED
 #define CARTAO_HPP_INCLUDED
-
 #include <string>
+
 using namespace std;
 
 class Cartao{
@@ -9,7 +9,7 @@ class Cartao{
         string digitos;
         bool validar(string);
     public:
-        bool setValor(string);
+        void setValor(string);
         string getValor();
 };
 

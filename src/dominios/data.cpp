@@ -4,6 +4,7 @@
 #include <algorithm> // transform
 #include <cctype>    // toupper
 #include <cstdlib>   // stoi
+#include <stdexcept>
 
 using namespace std;
 
@@ -78,10 +79,9 @@ bool Data::validar(string data)
     return true;
 }
 
-bool Data::setValor(string data) {
-    if (validar(data)) {
-         this->data = data;
-         return true;
+void Data::setValor(string data) {
+    if (!validar(data)) {
+        throw invalid_argument("Data invalida");
     }
-    return false;
+    this->data = data;
 }

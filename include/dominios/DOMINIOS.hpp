@@ -6,5 +6,11 @@
 #include "codigo.hpp"
 #include "data.hpp"
 #include "dinheiro.hpp"
+#include "endereco.hpp"
+#include "nome.hpp"
+#include "numero.hpp"
+#include "ramal.hpp"
+#include "senha.hpp"
+#include "telefone.hpp"
 
 #endif

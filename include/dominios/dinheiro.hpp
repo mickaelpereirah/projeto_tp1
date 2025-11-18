@@ -11,7 +11,7 @@ private:
     bool validar(double);
 
 public:
-    bool setValor(double);
+    void setValor(double);
     double getValor();
 };
 

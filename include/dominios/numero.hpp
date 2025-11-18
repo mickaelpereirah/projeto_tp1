@@ -1,19 +1,20 @@
-#ifndef CAPACIDADE_HPP_INCLUDED
-#define CAPACIDADE_HPP_INCLUDED
+#ifndef NUMERO_HPP_INCLUDED
+#define NUMERO_HPP_INCLUDED
 
+using namespace std;
 
-class Capacidade{
+class Numero {
     private:
         int valor;
         bool validar(int);
+
     public:
         void setValor(int);
         int getValor();
 };
 
-inline int Capacidade::getValor(){
+inline int Numero::getValor() {
     return valor;
 }
-
 
 #endif

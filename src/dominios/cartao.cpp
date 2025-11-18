@@ -1,6 +1,7 @@
 //#include "../include/dominios/DOMINIOS.hpp"
 #include "cartao.hpp"
 #include <string>
+#include <stdexcept>
 
 using namespace std;
 
@@ -26,11 +27,9 @@ bool Cartao::validar(string digitos){
     return verificarLuhn(digitos);
 }
 
-bool Cartao::setValor(string digitos){
-    if(validar(digitos)){
-        this->digitos = digitos;
-        return true;
+void Cartao::setValor(string digitos){
+    if(!validar(digitos)) {
+        throw invalid_argument("Digitos invalidos");
     }
-    return false;
-
+    this->digitos = digitos;
 }

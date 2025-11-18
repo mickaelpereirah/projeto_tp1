@@ -1,22 +1,21 @@
-#ifndef DATA_HPP_INCLUDED
-#define DATA_HPP_INCLUDED
+#ifndef NOME_HPP_INCLUDED
+#define NOME_HPP_INCLUDED
 #include <string>
 
 using namespace std;
 
-class Data{
+class Nome {
     private:
-        string data;
+        string texto;
         bool validar(string);
 
     public:
         void setValor(string);
         string getValor();
-        
 };
 
-inline string Data::getValor(){
-    return data; 
+inline string Nome::getValor(){
+    return texto; 
 }
 
-#endif 
+#endif

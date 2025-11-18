@@ -2,6 +2,7 @@
 #include "codigo.hpp"
 #include <cctype>
 #include <string>
+#include <stdexcept>
 
 using namespace std;
 
@@ -21,10 +22,9 @@ bool Codigo::validar(string caracteres){
     return checar_caracteres(caracteres);
 }
 
-bool Codigo::setValor(string caracteres){
-    if(validar(caracteres)){
-        this->caracteres = caracteres;
-        return true;
+void Codigo::setValor(string caracteres){
+    if(!validar(caracteres)){
+        throw invalid_argument("Codigo invalido");
     }
-    return false;
+    this->caracteres = caracteres;
 }
