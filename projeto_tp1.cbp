@@ -39,12 +39,24 @@
 		<Unit filename="include/dominios/codigo.hpp" />
 		<Unit filename="include/dominios/data.hpp" />
 		<Unit filename="include/dominios/dinheiro.hpp" />
+		<Unit filename="include/dominios/endereco.hpp" />
+		<Unit filename="include/dominios/nome.hpp" />
+		<Unit filename="include/dominios/numero.hpp" />
+		<Unit filename="include/dominios/ramal.hpp" />
+		<Unit filename="include/dominios/senha.hpp" />
+		<Unit filename="include/dominios/telefone.hpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/dominios/capacidade.cpp" />
 		<Unit filename="src/dominios/cartao.cpp" />
 		<Unit filename="src/dominios/codigo.cpp" />
 		<Unit filename="src/dominios/data.cpp" />
 		<Unit filename="src/dominios/dinheiro.cpp" />
+		<Unit filename="src/dominios/endereco.cpp" />
+		<Unit filename="src/dominios/nome.cpp" />
+		<Unit filename="src/dominios/numero.cpp" />
+		<Unit filename="src/dominios/ramal.cpp" />
+		<Unit filename="src/dominios/senha.cpp" />
+		<Unit filename="src/dominios/telefone.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
