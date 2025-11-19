@@ -46,6 +46,12 @@
 		<Unit filename="include/dominios/ramal.hpp" />
 		<Unit filename="include/dominios/senha.hpp" />
 		<Unit filename="include/dominios/telefone.hpp" />
+		<Unit filename="include/entidades/gerente.hpp" />
+		<Unit filename="include/entidades/hospede.hpp" />
+		<Unit filename="include/entidades/hotel.hpp" />
+		<Unit filename="include/entidades/pessoa.hpp" />
+		<Unit filename="include/entidades/quarto.hpp" />
+		<Unit filename="include/entidades/reserva.hpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/dominios/capacidade.cpp" />
 		<Unit filename="src/dominios/cartao.cpp" />
