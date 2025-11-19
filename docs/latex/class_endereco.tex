@@ -1,0 +1,135 @@
+\doxysection{Endereco Class Reference}
+\hypertarget{class_endereco}{}\label{class_endereco}\index{Endereco@{Endereco}}
+
+
+Representa um endereço textual válido de 5 a 30 caracteres.  
+
+
+
+
+{\ttfamily \#include $<$endereco.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_endereco_a189ec1b65353c9e32c3a127c8ed7b996}{set\+Valor}} (string)
+\begin{DoxyCompactList}\small\item\em Define o endereço textual. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_endereco_a372a9924dab060072b51d36f2a00c6a0}{get\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o endereço armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_endereco_ae398e2c7dcee6e0db45ec4b49028ccb7}{validar}} (string)
+\begin{DoxyCompactList}\small\item\em Valida o endereço textual conforme regras do domínio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_endereco_ac7aeac828fc38963d1b8b639c97244db}{texto}}
+\begin{DoxyCompactList}\small\item\em Texto do endereço armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um endereço textual válido de 5 a 30 caracteres. 
+
+A classe \doxylink{class_endereco}{Endereco} é responsável por armazenar e validar endereços textuais conforme regras específicas de formatação. A validação inclui\+:
+\begin{DoxyItemize}
+\item Comprimento entre 5 e 30 caracteres
+\item Caracteres permitidos\+: letras (a-\/z, A-\/Z), dígitos (0-\/9), vírgula, ponto e espaço
+\item Restrições de sequência de caracteres
+\item Restrições para primeiro e último caractere
+\end{DoxyItemize}
+
+Exemplos de endereços válidos\+:
+\begin{DoxyItemize}
+\item Rua das Flores, 123
+\item Av. Principal, 1000
+\item Praça da Sé, 25 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_endereco_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_endereco_a372a9924dab060072b51d36f2a00c6a0}\index{Endereco@{Endereco}!getValor@{getValor}}
+\index{getValor@{getValor}!Endereco@{Endereco}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_endereco_a372a9924dab060072b51d36f2a00c6a0} 
+string Endereco\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém o endereço armazenado. 
+
+Implementação inline do método get\+Valor.
+
+\begin{DoxyReturn}{Returns}
+string Endereço no formato válido
+
+string Endereço armazenado 
+\end{DoxyReturn}
+\Hypertarget{class_endereco_a189ec1b65353c9e32c3a127c8ed7b996}\index{Endereco@{Endereco}!setValor@{setValor}}
+\index{setValor@{setValor}!Endereco@{Endereco}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_endereco_a189ec1b65353c9e32c3a127c8ed7b996} 
+void Endereco\+::set\+Valor (\begin{DoxyParamCaption}\item[{string}]{texto}{}\end{DoxyParamCaption})}
+
+
+
+Define o endereço textual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texto} & Endereço em formato string \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & Se o endereço for inválido\\
+\hline
+\end{DoxyExceptions}
+Realiza a validação completa antes de armazenar o valor. Endereços que não atendem às regras de validação resultam em exceção com mensagem descritiva do erro. \Hypertarget{class_endereco_ae398e2c7dcee6e0db45ec4b49028ccb7}\index{Endereco@{Endereco}!validar@{validar}}
+\index{validar@{validar}!Endereco@{Endereco}}
+\doxysubsubsection{\texorpdfstring{validar()}{validar()}}
+{\footnotesize\ttfamily \label{class_endereco_ae398e2c7dcee6e0db45ec4b49028ccb7} 
+bool Endereco\+::validar (\begin{DoxyParamCaption}\item[{string}]{texto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valida o endereço textual conforme regras do domínio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texto} & Endereço a ser validado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se o endereço for válido, false caso contrário
+\end{DoxyReturn}
+Implementa a validação completa do endereço, incluindo\+:
+\begin{DoxyItemize}
+\item Verificação de comprimento (5-\/30 caracteres)
+\item Validação de caracteres permitidos
+\item Restrições de sequência\+: vírgula não pode ser seguida por vírgula ou ponto
+\item Restrições de sequência\+: ponto não pode ser seguido por vírgula ou ponto
+\item Espaço em branco deve ser seguido por letra ou dígito
+\item Primeiro e último caractere não podem ser vírgula, ponto ou espaço 
+\end{DoxyItemize}
+
+\label{doc-variable-members}
+\Hypertarget{class_endereco_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_endereco_ac7aeac828fc38963d1b8b639c97244db}\index{Endereco@{Endereco}!texto@{texto}}
+\index{texto@{texto}!Endereco@{Endereco}}
+\doxysubsubsection{\texorpdfstring{texto}{texto}}
+{\footnotesize\ttfamily \label{class_endereco_ac7aeac828fc38963d1b8b639c97244db} 
+string Endereco\+::texto\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Texto do endereço armazenado. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/dominios/\mbox{\hyperlink{endereco_8hpp}{endereco.\+hpp}}\item 
+src/dominios/\mbox{\hyperlink{endereco_8cpp}{endereco.\+cpp}}\end{DoxyCompactItemize}

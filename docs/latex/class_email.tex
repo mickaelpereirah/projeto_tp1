@@ -1,0 +1,134 @@
+\doxysection{Email Class Reference}
+\hypertarget{class_email}{}\label{class_email}\index{Email@{Email}}
+
+
+Representa um endereço de email válido conforme padrões RFC.  
+
+
+
+
+{\ttfamily \#include $<$email.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_email_a1ae8e06dc7ed37d74c9223c4e5ade734}{set\+Valor}} (string \mbox{\hyperlink{class_email_ac0a91a44652858a0c5178ef836ec9c93}{email}})
+\begin{DoxyCompactList}\small\item\em Define o endereço de email. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_email_a0a3ffabafaaa30f0e96b7a24de82a9cf}{get\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o endereço de email armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_email_a74beeb111377941c871ad565f0fb576d}{validar}} (string \mbox{\hyperlink{class_email_ac0a91a44652858a0c5178ef836ec9c93}{email}})
+\begin{DoxyCompactList}\small\item\em Valida o endereço de email conforme padrões RFC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_email_ac0a91a44652858a0c5178ef836ec9c93}{email}}
+\begin{DoxyCompactList}\small\item\em Endereço de email armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um endereço de email válido conforme padrões RFC. 
+
+A classe \doxylink{class_email}{Email} é responsável por armazenar e validar endereços de email de acordo com as especificações RFC 5322. A validação inclui\+:
+\begin{DoxyItemize}
+\item Verificação da estrutura básica (parte local @ domínio)
+\item Validação de caracteres permitidos em cada parte
+\item Verificação do comprimento máximo (até 254 caracteres)
+\item Validação do domínio (extensão, pontos, etc.)
+\end{DoxyItemize}
+
+Exemplos de emails válidos\+:
+\begin{DoxyItemize}
+\item \href{mailto:usuario@exemplo.com}{\texttt{usuario@exemplo.\+com}}
+\item \href{mailto:nome.sobrenome@empresa.com.br}{\texttt{nome.\+sobrenome@empresa.\+com.\+br}}
+\item \href{mailto:user+tag@domain.org}{\texttt{user+tag@domain.\+org}} 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_email_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_email_a0a3ffabafaaa30f0e96b7a24de82a9cf}\index{Email@{Email}!getValor@{getValor}}
+\index{getValor@{getValor}!Email@{Email}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_email_a0a3ffabafaaa30f0e96b7a24de82a9cf} 
+string Email\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém o endereço de email armazenado. 
+
+Implementação inline do método get\+Valor.
+
+\begin{DoxyReturn}{Returns}
+string Endereço de email no formato válido
+
+string Endereço de email armazenado 
+\end{DoxyReturn}
+\Hypertarget{class_email_a1ae8e06dc7ed37d74c9223c4e5ade734}\index{Email@{Email}!setValor@{setValor}}
+\index{setValor@{setValor}!Email@{Email}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_email_a1ae8e06dc7ed37d74c9223c4e5ade734} 
+void Email\+::set\+Valor (\begin{DoxyParamCaption}\item[{string}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Define o endereço de email. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Endereço de email em formato string \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & Se o email for inválido\\
+\hline
+\end{DoxyExceptions}
+Realiza a validação completa antes de armazenar o valor. Emails que não atendem aos padrões RFC resultam em exceção com mensagem descritiva do erro de validação. \Hypertarget{class_email_a74beeb111377941c871ad565f0fb576d}\index{Email@{Email}!validar@{validar}}
+\index{validar@{validar}!Email@{Email}}
+\doxysubsubsection{\texorpdfstring{validar()}{validar()}}
+{\footnotesize\ttfamily \label{class_email_a74beeb111377941c871ad565f0fb576d} 
+bool Email\+::validar (\begin{DoxyParamCaption}\item[{string}]{email}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valida o endereço de email conforme padrões RFC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Endereço de email a ser validado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se o email for válido, false caso contrário
+\end{DoxyReturn}
+Implementa a validação completa do email, incluindo\+:
+\begin{DoxyItemize}
+\item Presença do caractere \textquotesingle{}@\textquotesingle{} separando partes local e domínio
+\item Comprimento máximo de 254 caracteres
+\item Caracteres permitidos na parte local (antes do @)
+\item Validação da parte do domínio (após o @)
+\item Extensões de domínio válidas 
+\end{DoxyItemize}
+
+\label{doc-variable-members}
+\Hypertarget{class_email_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_email_ac0a91a44652858a0c5178ef836ec9c93}\index{Email@{Email}!email@{email}}
+\index{email@{email}!Email@{Email}}
+\doxysubsubsection{\texorpdfstring{email}{email}}
+{\footnotesize\ttfamily \label{class_email_ac0a91a44652858a0c5178ef836ec9c93} 
+string Email\+::email\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Endereço de email armazenado. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/dominios/\mbox{\hyperlink{email_8hpp}{email.\+hpp}}\item 
+src/dominios/\mbox{\hyperlink{email_8cpp}{email.\+cpp}}\end{DoxyCompactItemize}

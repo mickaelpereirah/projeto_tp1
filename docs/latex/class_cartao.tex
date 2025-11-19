@@ -1,0 +1,130 @@
+\doxysection{Cartao Class Reference}
+\hypertarget{class_cartao}{}\label{class_cartao}\index{Cartao@{Cartao}}
+
+
+Representa um número de cartão de crédito válido.  
+
+
+
+
+{\ttfamily \#include $<$cartao.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_cartao_acb2256da2b23424f6d96bb526229bbbc}{set\+Valor}} (string)
+\begin{DoxyCompactList}\small\item\em Define o número do cartão. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_cartao_ae5611d53bdaf0558df7492e6e2fcc596}{get\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o númmero do cartão armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_cartao_a7e1238c29960d1d37ded505fddffbafa}{validar}} (string)
+\begin{DoxyCompactList}\small\item\em Valida o número do cartão. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_cartao_a82589009105f70ef819cd7cf9776667c}{digitos}}
+\begin{DoxyCompactList}\small\item\em Número do cartão armazenado como string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um número de cartão de crédito válido. 
+
+A classe \doxylink{class_cartao}{Cartao} implementa a validação de números de cartão de crédito utilizando o algoritmo de Luhn. A validaçãoo inclui\+:
+\begin{DoxyItemize}
+\item Verificação do tamanho (16 dígitos)
+\item Verificação de que todos os caracteres são dígitos
+\item Aplicação do algoritmo de Luhn para validar o número
+\end{DoxyItemize}
+
+Exemplos de números válidos para teste\+:
+\begin{DoxyItemize}
+\item 4556737586899855
+\item 4111111111111111 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_cartao_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_cartao_ae5611d53bdaf0558df7492e6e2fcc596}\index{Cartao@{Cartao}!getValor@{getValor}}
+\index{getValor@{getValor}!Cartao@{Cartao}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_cartao_ae5611d53bdaf0558df7492e6e2fcc596} 
+string Cartao\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém o númmero do cartão armazenado. 
+
+Implementação inline do método \doxylink{class_cartao_ae5611d53bdaf0558df7492e6e2fcc596}{get\+Valor()}.
+
+\begin{DoxyReturn}{Returns}
+string Número do cartão
+
+string Número do cartão armazenado 
+\end{DoxyReturn}
+\Hypertarget{class_cartao_acb2256da2b23424f6d96bb526229bbbc}\index{Cartao@{Cartao}!setValor@{setValor}}
+\index{setValor@{setValor}!Cartao@{Cartao}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_cartao_acb2256da2b23424f6d96bb526229bbbc} 
+void Cartao\+::set\+Valor (\begin{DoxyParamCaption}\item[{string}]{digitos}{}\end{DoxyParamCaption})}
+
+
+
+Define o número do cartão. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em digitos} & Número do cartão em formato string \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & se o número for inválido\\
+\hline
+\end{DoxyExceptions}
+Realiza a validação completa antes de armazenar o valor. Números inválidos lançam uma exceção. \Hypertarget{class_cartao_a7e1238c29960d1d37ded505fddffbafa}\index{Cartao@{Cartao}!validar@{validar}}
+\index{validar@{validar}!Cartao@{Cartao}}
+\doxysubsubsection{\texorpdfstring{validar()}{validar()}}
+{\footnotesize\ttfamily \label{class_cartao_a7e1238c29960d1d37ded505fddffbafa} 
+bool Cartao\+::validar (\begin{DoxyParamCaption}\item[{string}]{digitos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valida o número do cartão. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em digitos} & Número do cartão a ser validado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se o número for válido, false caso contrário
+\end{DoxyReturn}
+A validação inclui\+:
+\begin{DoxyItemize}
+\item Verificação de tamnanho (16 dígitos)
+\item Verifcação de que todos são dígitos
+\item Aplicação do algoritmo de Luhn 
+\end{DoxyItemize}
+
+\label{doc-variable-members}
+\Hypertarget{class_cartao_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_cartao_a82589009105f70ef819cd7cf9776667c}\index{Cartao@{Cartao}!digitos@{digitos}}
+\index{digitos@{digitos}!Cartao@{Cartao}}
+\doxysubsubsection{\texorpdfstring{digitos}{digitos}}
+{\footnotesize\ttfamily \label{class_cartao_a82589009105f70ef819cd7cf9776667c} 
+string Cartao\+::digitos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Número do cartão armazenado como string. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/dominios/\mbox{\hyperlink{cartao_8hpp}{cartao.\+hpp}}\item 
+src/dominios/\mbox{\hyperlink{cartao_8cpp}{cartao.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,137 @@
+\doxysection{Numero Class Reference}
+\hypertarget{class_numero}{}\label{class_numero}\index{Numero@{Numero}}
+
+
+Representa um número inteiro válido de 1 a 999.  
+
+
+
+
+{\ttfamily \#include $<$numero.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_numero_a9135951ce367e7651a63d36516c86db4}{set\+Valor}} (int)
+\begin{DoxyCompactList}\small\item\em Define o número. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_numero_aed4ce4360e4b96e346d9fd0c4120f3b9}{get\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o número armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_numero_ac7510691bee8b061556e0ff2fb970d66}{validar}} (int)
+\begin{DoxyCompactList}\small\item\em Valida o número conforme regras do domínio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_numero_af9e3d35c4628940f3cb8019f639c4063}{valor}}
+\begin{DoxyCompactList}\small\item\em Valor numérico armazenado como inteiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um número inteiro válido de 1 a 999. 
+
+A classe \doxylink{class_numero}{Numero} é responsável por armazenar e validar números inteiros dentro de um intervalo específico. A validação inclui\+:
+\begin{DoxyItemize}
+\item Intervalo de valores\+: 1 a 999 (inclusive)
+\item Apenas valores inteiros são aceitos
+\item Formatação de saída com 3 dígitos (ex\+: 001, 083, 999)
+\end{DoxyItemize}
+
+A classe é útil para representar números que requerem formatação consistente, como códigos, identificadores ou valores numéricos com tamanho fixo.
+
+Exemplos de valores válidos\+:
+\begin{DoxyItemize}
+\item 1 (formatado como 001)
+\item 83 (formatado como 083)
+\item 999 (formatado como 999) 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_numero_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_numero_aed4ce4360e4b96e346d9fd0c4120f3b9}\index{Numero@{Numero}!getValor@{getValor}}
+\index{getValor@{getValor}!Numero@{Numero}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_numero_aed4ce4360e4b96e346d9fd0c4120f3b9} 
+int Numero\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém o número armazenado. 
+
+Implementação inline do método get\+Valor.
+
+\begin{DoxyReturn}{Returns}
+int Número armazenado como inteiro
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Para obter o valor formatado com 3 dígitos, utilize funções de formatação na saída (ex\+: setw, setfill).
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+int Número armazenado
+\end{DoxyReturn}
+Retorna o valor numérico armazenado internamente. Para formatação com zeros à esquerda, utilize\+: cout \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} setw(3) \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} setfill(\textquotesingle{}0\textquotesingle{}) \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} numero.\+get\+Valor() \Hypertarget{class_numero_a9135951ce367e7651a63d36516c86db4}\index{Numero@{Numero}!setValor@{setValor}}
+\index{setValor@{setValor}!Numero@{Numero}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_numero_a9135951ce367e7651a63d36516c86db4} 
+void Numero\+::set\+Valor (\begin{DoxyParamCaption}\item[{int}]{valor}{}\end{DoxyParamCaption})}
+
+
+
+Define o número. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & Número inteiro a ser armazenado \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & Se o número for inválido (fora do intervalo 1-\/999)\\
+\hline
+\end{DoxyExceptions}
+Realiza a validação antes de armazenar o valor. Números fora do intervalo permitido resultam em exceção com mensagem descritiva do erro.
+
+\begin{DoxyNote}{Note}
+O valor é armazenado como inteiro, mas pode ser formatado na saída com 3 dígitos quando necessário. 
+\end{DoxyNote}
+\Hypertarget{class_numero_ac7510691bee8b061556e0ff2fb970d66}\index{Numero@{Numero}!validar@{validar}}
+\index{validar@{validar}!Numero@{Numero}}
+\doxysubsubsection{\texorpdfstring{validar()}{validar()}}
+{\footnotesize\ttfamily \label{class_numero_ac7510691bee8b061556e0ff2fb970d66} 
+bool Numero\+::validar (\begin{DoxyParamCaption}\item[{int}]{valor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valida o número conforme regras do domínio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & Número a ser validado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se o número for válido, false caso contrário
+\end{DoxyReturn}
+Implementa a validação do número, verificando se está dentro do intervalo permitido (1 a 999 inclusive). Valores fora deste intervalo são considerados inválidos. 
+
+\label{doc-variable-members}
+\Hypertarget{class_numero_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_numero_af9e3d35c4628940f3cb8019f639c4063}\index{Numero@{Numero}!valor@{valor}}
+\index{valor@{valor}!Numero@{Numero}}
+\doxysubsubsection{\texorpdfstring{valor}{valor}}
+{\footnotesize\ttfamily \label{class_numero_af9e3d35c4628940f3cb8019f639c4063} 
+int Numero\+::valor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valor numérico armazenado como inteiro. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/dominios/\mbox{\hyperlink{numero_8hpp}{numero.\+hpp}}\item 
+src/dominios/\mbox{\hyperlink{numero_8cpp}{numero.\+cpp}}\end{DoxyCompactItemize}

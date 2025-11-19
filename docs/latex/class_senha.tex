@@ -1,0 +1,148 @@
+\doxysection{Senha Class Reference}
+\hypertarget{class_senha}{}\label{class_senha}\index{Senha@{Senha}}
+
+
+Representa uma senha segura de exatamente 5 caracteres.  
+
+
+
+
+{\ttfamily \#include $<$senha.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_senha_a379d90c214392ccb42aaf49e3d39e112}{set\+Valor}} (string)
+\begin{DoxyCompactList}\small\item\em Define a senha. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_senha_a701d441609c24943de42442ceb0f5e43}{get\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Obtém a senha armazenada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_senha_aaa7915a0345b20b757ffda90b55e5709}{validar}} (string)
+\begin{DoxyCompactList}\small\item\em Valida a senha conforme regras rigorosas de segurança. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_senha_a4aee8070887bd7f6403ced7511d1d3e2}{texto}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_senha}{Senha} armazenada como string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa uma senha segura de exatamente 5 caracteres. 
+
+A classe \doxylink{class_senha}{Senha} é responsável por armazenar e validar senhas seguras conforme regras rigorosas de segurança. A validação inclui\+:
+\begin{DoxyItemize}
+\item Comprimento fixo de exatamente 5 caracteres
+\item Caracteres permitidos\+: letras (a-\/z, A-\/Z), dígitos (0-\/9) e caracteres especiais (!"{}\#\$\%\&?) -\/ Pelo menos uma letra minúscula (a-\/z) -\/ Pelo menos uma letra maiúscula (\+A-\/\+Z) -\/ Pelo menos um dígito (0-\/9) -\/ Pelo menos um caractere especial (!"{}\#\$\%\&?)
+\item Letra não pode ser seguida por letra
+\item Dígito não pode ser seguido por dígito
+\end{DoxyItemize}
+
+Exemplos de senhas válidas\+:
+\begin{DoxyItemize}
+\item A1b\#2
+\item p@\+Q3r
+\item X9!y8 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_senha_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_senha_a701d441609c24943de42442ceb0f5e43}\index{Senha@{Senha}!getValor@{getValor}}
+\index{getValor@{getValor}!Senha@{Senha}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_senha_a701d441609c24943de42442ceb0f5e43} 
+string Senha\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém a senha armazenada. 
+
+Implementação inline do método get\+Valor.
+
+\begin{DoxyReturn}{Returns}
+string \doxylink{class_senha}{Senha} armazenada
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Em sistemas de produção, evite expor senhas através deste método. Considere implementar métodos de verificação sem expor o valor completo.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+string \doxylink{class_senha}{Senha} armazenada
+\end{DoxyReturn}
+Retorna a senha armazenada internamente.
+
+\begin{DoxyWarning}{Warning}
+Em ambientes de produção, o retorno de senhas em texto claro deve ser evitado por questões de segurança. 
+\end{DoxyWarning}
+\Hypertarget{class_senha_a379d90c214392ccb42aaf49e3d39e112}\index{Senha@{Senha}!setValor@{setValor}}
+\index{setValor@{setValor}!Senha@{Senha}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_senha_a379d90c214392ccb42aaf49e3d39e112} 
+void Senha\+::set\+Valor (\begin{DoxyParamCaption}\item[{string}]{texto}{}\end{DoxyParamCaption})}
+
+
+
+Define a senha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texto} & \doxylink{class_senha}{Senha} em formato string \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & Se a senha for inválida\\
+\hline
+\end{DoxyExceptions}
+Realiza a validação completa antes de armazenar o valor. Senhas que não atendem às regras rigorosas de segurança resultam em exceção com mensagem descritiva do erro.
+
+\begin{DoxyNote}{Note}
+A senha é armazenada em texto claro. Em sistemas de produção, considere implementar criptografia adicional. 
+\end{DoxyNote}
+\Hypertarget{class_senha_aaa7915a0345b20b757ffda90b55e5709}\index{Senha@{Senha}!validar@{validar}}
+\index{validar@{validar}!Senha@{Senha}}
+\doxysubsubsection{\texorpdfstring{validar()}{validar()}}
+{\footnotesize\ttfamily \label{class_senha_aaa7915a0345b20b757ffda90b55e5709} 
+bool Senha\+::validar (\begin{DoxyParamCaption}\item[{string}]{texto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valida a senha conforme regras rigorosas de segurança. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texto} & \doxylink{class_senha}{Senha} a ser validada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a senha for válida, false caso contrário
+\end{DoxyReturn}
+Implementa a validação completa da senha, incluindo\+:
+\begin{DoxyItemize}
+\item Verificação de comprimento exato (5 caracteres)
+\item Validação de caracteres permitidos
+\item Verificação de presença de pelo menos\+: uma minúscula, uma maiúscula, um dígito, um especial
+\item Restrições de sequência\+: letra não seguida por letra, dígito não seguido por dígito
+\item Garantia de complexidade e segurança da senha 
+\end{DoxyItemize}
+
+\label{doc-variable-members}
+\Hypertarget{class_senha_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_senha_a4aee8070887bd7f6403ced7511d1d3e2}\index{Senha@{Senha}!texto@{texto}}
+\index{texto@{texto}!Senha@{Senha}}
+\doxysubsubsection{\texorpdfstring{texto}{texto}}
+{\footnotesize\ttfamily \label{class_senha_a4aee8070887bd7f6403ced7511d1d3e2} 
+string Senha\+::texto\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_senha}{Senha} armazenada como string. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/dominios/\mbox{\hyperlink{senha_8hpp}{senha.\+hpp}}\item 
+src/dominios/\mbox{\hyperlink{senha_8cpp}{senha.\+cpp}}\end{DoxyCompactItemize}

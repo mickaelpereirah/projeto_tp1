@@ -1,0 +1,128 @@
+\doxysection{Data Class Reference}
+\hypertarget{class_data}{}\label{class_data}\index{Data@{Data}}
+
+
+Representa uma data válida no sistema.  
+
+
+
+
+{\ttfamily \#include $<$data.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_data_aee3a6598533a28a3f446c5f8ecb63c0f}{set\+Valor}} (string)
+\begin{DoxyCompactList}\small\item\em Define a data. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_data_a8dd738e6c3e7ef96784b4e6b6c0cec61}{get\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Obtém a data armazenada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_data_a490773498b1ce1437a969feeb868e276}{validar}} (string)
+\begin{DoxyCompactList}\small\item\em Valida a data conforme as regras do domínio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_data_ae3e630247f60efbc69086933fefa933a}{data}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_data}{Data} armazenada em formato string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa uma data válida no sistema. 
+
+A classe \doxylink{class_data}{Data} é responsável por armazenar e validar datas conformes as regras do domínio. A validação inclui\+:
+\begin{DoxyItemize}
+\item Formato específico (ex\+: DD/\+MM/\+AAAA, DD-\/\+MM-\/\+AAAA)
+\item Verificação de dias válidos para cada mês
+\item Consideração de anos bissextos
+\item Validação de datas futuras/passadas conforme regras de negócio
+\end{DoxyItemize}
+
+A implementação garante que apenas datas válidas podem sejam armazenadas. 
+
+\label{doc-func-members}
+\Hypertarget{class_data_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_data_a8dd738e6c3e7ef96784b4e6b6c0cec61}\index{Data@{Data}!getValor@{getValor}}
+\index{getValor@{getValor}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_data_a8dd738e6c3e7ef96784b4e6b6c0cec61} 
+string Data\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém a data armazenada. 
+
+Implementação inline do método \doxylink{class_data_a8dd738e6c3e7ef96784b4e6b6c0cec61}{get\+Valor()}.
+
+\begin{DoxyReturn}{Returns}
+string \doxylink{class_data}{Data} armazenada em formato string
+
+string \doxylink{class_data}{Data} armazenada 
+\end{DoxyReturn}
+\Hypertarget{class_data_aee3a6598533a28a3f446c5f8ecb63c0f}\index{Data@{Data}!setValor@{setValor}}
+\index{setValor@{setValor}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_data_aee3a6598533a28a3f446c5f8ecb63c0f} 
+void Data\+::set\+Valor (\begin{DoxyParamCaption}\item[{string}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Define a data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \doxylink{class_data}{Data} em formato string \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & Se a data for inválida\\
+\hline
+\end{DoxyExceptions}
+Realiza a validação completa antes de armazenar o valor. Datas que não atendem às regras de validação resultam em exceção com mensagem descritiva. \Hypertarget{class_data_a490773498b1ce1437a969feeb868e276}\index{Data@{Data}!validar@{validar}}
+\index{validar@{validar}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{validar()}{validar()}}
+{\footnotesize\ttfamily \label{class_data_a490773498b1ce1437a969feeb868e276} 
+bool Data\+::validar (\begin{DoxyParamCaption}\item[{string}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valida a data conforme as regras do domínio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \doxylink{class_data}{Data} a ser validada em formato string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a data for válida, false caso contrário
+\end{DoxyReturn}
+Implementa a validação completa da data, incluindo\+:
+\begin{DoxyItemize}
+\item Verificação de formato
+\item Validação de dia, mês e ano
+\item Consideração de anos bissextos
+\item Limites temporais conforme regras de negócio 
+\end{DoxyItemize}
+
+\label{doc-variable-members}
+\Hypertarget{class_data_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_data_ae3e630247f60efbc69086933fefa933a}\index{Data@{Data}!data@{data}}
+\index{data@{data}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \label{class_data_ae3e630247f60efbc69086933fefa933a} 
+string Data\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_data}{Data} armazenada em formato string. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/dominios/\mbox{\hyperlink{data_8hpp}{data.\+hpp}}\item 
+src/dominios/\mbox{\hyperlink{data_8cpp}{data.\+cpp}}\end{DoxyCompactItemize}

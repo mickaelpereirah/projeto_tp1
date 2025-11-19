@@ -1,0 +1,129 @@
+\doxysection{Dinheiro Class Reference}
+\hypertarget{class_dinheiro}{}\label{class_dinheiro}\index{Dinheiro@{Dinheiro}}
+
+
+Representa um valor monetário válido entre R\$ 1,00 e R\$ 1.\+000.\+000,00.  
+
+
+
+
+{\ttfamily \#include $<$dinheiro.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_dinheiro_a45655ca3dfe7bdee726d74f8350626c5}{set\+Valor}} (double)
+\begin{DoxyCompactList}\small\item\em Define o valor monetário. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_dinheiro_ad9fceec690a0d1f4930ce2822788c8d0}{get\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o valor monetário formatado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_dinheiro_a3ee40e305a5352b3714e531da94576c2}{validar}} (double)
+\begin{DoxyCompactList}\small\item\em Valida o valor monetário. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_dinheiro_a2f5f189571248ef2f4182182e3bc26da}{valor}}
+\begin{DoxyCompactList}\small\item\em Valor armazenado em centavos para precisão. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um valor monetário válido entre R\$ 1,00 e R\$ 1.\+000.\+000,00. 
+
+A classe \doxylink{class_dinheiro}{Dinheiro} armazena valores monetários com precisão de centavos, utilizando internamente representação em centavos (inteiro) para evitar problemas de precisão com ponto flutuante.
+
+Características principais\+:
+\begin{DoxyItemize}
+\item Intervalo\+: R\$ 1,00 a R\$ 1.\+000.\+000,00
+\item Precisão\+: 2 casas decimais (centavos)
+\item Armazenamento interno\+: valor em centavos (inteiro)
+\item Formato de entrada/saída\+: ponto como separador decimal (ex\+: 150.\+75) 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_dinheiro_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_dinheiro_ad9fceec690a0d1f4930ce2822788c8d0}\index{Dinheiro@{Dinheiro}!getValor@{getValor}}
+\index{getValor@{getValor}!Dinheiro@{Dinheiro}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_dinheiro_ad9fceec690a0d1f4930ce2822788c8d0} 
+double Dinheiro\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém o valor monetário formatado. 
+
+Implementação inline do método get\+Valor.
+
+\begin{DoxyReturn}{Returns}
+double Valor convertido de centavos para reais com 2 casas decimais
+\end{DoxyReturn}
+Converte o valor interno de centavos para reais (divide por 100.\+00) e retorna como double com precisão de 2 casas decimais.
+
+\begin{DoxyReturn}{Returns}
+double Valor convertido de centavos para reais
+\end{DoxyReturn}
+Realiza a conversão do valor interno (centavos) para o formato monetário padrão (reais com 2 casas decimais). \Hypertarget{class_dinheiro_a45655ca3dfe7bdee726d74f8350626c5}\index{Dinheiro@{Dinheiro}!setValor@{setValor}}
+\index{setValor@{setValor}!Dinheiro@{Dinheiro}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_dinheiro_a45655ca3dfe7bdee726d74f8350626c5} 
+void Dinheiro\+::set\+Valor (\begin{DoxyParamCaption}\item[{double}]{valor}{}\end{DoxyParamCaption})}
+
+
+
+Define o valor monetário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & Valor em formato double (ex\+: 150.\+75) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & Se o valor estiver fora do intervalo 1.\+00-\/1000000.\+00\\
+\hline
+\end{DoxyExceptions}
+Converte o valor para centavos (multiplica por 100) e valida antes de armazenar. Valores inválidos resultam em exceção com mensagem descritiva. \Hypertarget{class_dinheiro_a3ee40e305a5352b3714e531da94576c2}\index{Dinheiro@{Dinheiro}!validar@{validar}}
+\index{validar@{validar}!Dinheiro@{Dinheiro}}
+\doxysubsubsection{\texorpdfstring{validar()}{validar()}}
+{\footnotesize\ttfamily \label{class_dinheiro_a3ee40e305a5352b3714e531da94576c2} 
+bool Dinheiro\+::validar (\begin{DoxyParamCaption}\item[{double}]{valor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valida o valor monetário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & Valor em double a ser validado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se o valor for válido, false caso contrário
+\end{DoxyReturn}
+Verifica se o valor está dentro do intervalo permitido\+:
+\begin{DoxyItemize}
+\item Mínimo\+: 1.\+00 (R\$ 1,00)
+\item Máximo\+: 1000000.\+00 (R\$ 1.\+000.\+000,00) 
+\end{DoxyItemize}
+
+\label{doc-variable-members}
+\Hypertarget{class_dinheiro_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_dinheiro_a2f5f189571248ef2f4182182e3bc26da}\index{Dinheiro@{Dinheiro}!valor@{valor}}
+\index{valor@{valor}!Dinheiro@{Dinheiro}}
+\doxysubsubsection{\texorpdfstring{valor}{valor}}
+{\footnotesize\ttfamily \label{class_dinheiro_a2f5f189571248ef2f4182182e3bc26da} 
+int Dinheiro\+::valor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valor armazenado em centavos para precisão. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/dominios/\mbox{\hyperlink{dinheiro_8hpp}{dinheiro.\+hpp}}\item 
+src/dominios/\mbox{\hyperlink{dinheiro_8cpp}{dinheiro.\+cpp}}\end{DoxyCompactItemize}

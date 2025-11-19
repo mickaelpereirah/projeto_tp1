@@ -1,0 +1,142 @@
+\doxysection{Telefone Class Reference}
+\hypertarget{class_telefone}{}\label{class_telefone}\index{Telefone@{Telefone}}
+
+
+Representa um número de telefone internacional válido.  
+
+
+
+
+{\ttfamily \#include $<$telefone.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_telefone_acda75eb982b4e867380983fb4661bd46}{set\+Valor}} (string)
+\begin{DoxyCompactList}\small\item\em Define o número de telefone. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_telefone_aea95f28a8b57a433ec07c8be27af05a0}{get\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o número de telefone armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_telefone_a32743a4965d46d33d72cdcdd2c1f1180}{validar}} (string)
+\begin{DoxyCompactList}\small\item\em Valida o número de telefone conforme formato internacional. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_telefone_a8e0b7b0e590d390a7efe99aa0d808ede}{texto}}
+\begin{DoxyCompactList}\small\item\em Número de telefone armazenado como string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um número de telefone internacional válido. 
+
+A classe \doxylink{class_telefone}{Telefone} é responsável por armazenar e validar números de telefone no formato internacional padrão. A validação inclui\+:
+\begin{DoxyItemize}
+\item Comprimento fixo de 14 caracteres total
+\item Formato\+: \textquotesingle{}+\textquotesingle{} seguido de 13 dígitos
+\item Primeiro caractere deve ser \textquotesingle{}+\textquotesingle{}
+\item Os 13 caracteres restantes devem ser apenas dígitos (0-\/9)
+\item Compatível com números internacionais reais
+\end{DoxyItemize}
+
+Exemplos de números válidos\+:
+\begin{DoxyItemize}
+\item +5561999999999 (Brasil\+: +55 61 99999-\/9999)
+\item +5511999999999 (Brasil\+: +55 11 99999-\/9999)
+\item +1234567890123 (Exemplo internacional) 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_telefone_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_telefone_aea95f28a8b57a433ec07c8be27af05a0}\index{Telefone@{Telefone}!getValor@{getValor}}
+\index{getValor@{getValor}!Telefone@{Telefone}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_telefone_aea95f28a8b57a433ec07c8be27af05a0} 
+string Telefone\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém o número de telefone armazenado. 
+
+Implementação inline do método get\+Valor.
+
+\begin{DoxyReturn}{Returns}
+string Número de telefone no formato internacional
+\end{DoxyReturn}
+Retorna o número no formato padrão internacional pronto para uso em sistemas de telefonia ou exibição.
+
+\begin{DoxyReturn}{Returns}
+string Número de telefone armazenado
+\end{DoxyReturn}
+Retorna o número de telefone armazenado internamente no formato internacional padrão. \Hypertarget{class_telefone_acda75eb982b4e867380983fb4661bd46}\index{Telefone@{Telefone}!setValor@{setValor}}
+\index{setValor@{setValor}!Telefone@{Telefone}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_telefone_acda75eb982b4e867380983fb4661bd46} 
+void Telefone\+::set\+Valor (\begin{DoxyParamCaption}\item[{string}]{texto}{}\end{DoxyParamCaption})}
+
+
+
+Define o número de telefone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texto} & Número de telefone em formato string \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & Se o telefone for inválido\\
+\hline
+\end{DoxyExceptions}
+Realiza a validação completa antes de armazenar o valor. Números de telefone que não atendem ao formato internacional padrão resultam em exceção com mensagem descritiva do erro.
+
+\begin{DoxyNote}{Note}
+O formato aceito é estritamente internacional\+: \textquotesingle{}+\textquotesingle{} seguido de 13 dígitos, sem espaços, hífens ou parênteses. 
+\end{DoxyNote}
+\Hypertarget{class_telefone_a32743a4965d46d33d72cdcdd2c1f1180}\index{Telefone@{Telefone}!validar@{validar}}
+\index{validar@{validar}!Telefone@{Telefone}}
+\doxysubsubsection{\texorpdfstring{validar()}{validar()}}
+{\footnotesize\ttfamily \label{class_telefone_a32743a4965d46d33d72cdcdd2c1f1180} 
+bool Telefone\+::validar (\begin{DoxyParamCaption}\item[{string}]{texto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valida o número de telefone conforme formato internacional. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texto} & Número de telefone a ser validado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se o telefone for válido, false caso contrário
+\end{DoxyReturn}
+Implementa a validação completa do telefone, incluindo\+:
+\begin{DoxyItemize}
+\item Verificação de comprimento total (14 caracteres)
+\item Primeiro caractere deve ser \textquotesingle{}+\textquotesingle{}
+\item Os 13 caracteres restantes devem ser dígitos (0-\/9)
+\item Validação de formato internacional padrão 
+\end{DoxyItemize}
+
+\label{doc-variable-members}
+\Hypertarget{class_telefone_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_telefone_a8e0b7b0e590d390a7efe99aa0d808ede}\index{Telefone@{Telefone}!texto@{texto}}
+\index{texto@{texto}!Telefone@{Telefone}}
+\doxysubsubsection{\texorpdfstring{texto}{texto}}
+{\footnotesize\ttfamily \label{class_telefone_a8e0b7b0e590d390a7efe99aa0d808ede} 
+string Telefone\+::texto\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Número de telefone armazenado como string. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/dominios/\mbox{\hyperlink{telefone_8hpp}{telefone.\+hpp}}\item 
+src/dominios/\mbox{\hyperlink{telefone_8cpp}{telefone.\+cpp}}\end{DoxyCompactItemize}

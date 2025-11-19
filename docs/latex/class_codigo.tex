@@ -1,0 +1,121 @@
+\doxysection{Codigo Class Reference}
+\hypertarget{class_codigo}{}\label{class_codigo}\index{Codigo@{Codigo}}
+
+
+Representa um código identificador válido.  
+
+
+
+
+{\ttfamily \#include $<$codigo.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_codigo_afdc4d9c6e42358cd0d48001d4c671584}{set\+Valor}} (string)
+\begin{DoxyCompactList}\small\item\em Define o código. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_codigo_aa78a03ad29c1cb6a3e953db2137d6278}{get\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o código armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_codigo_ac5f23076fb06cb67121050014b861fa8}{validar}} (string)
+\begin{DoxyCompactList}\small\item\em Valida o código conforme as regras do domínio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_codigo_a1489ca5ff70fdbdfe2467b6370402cbc}{caracteres}}
+\begin{DoxyCompactList}\small\item\em Sequência de caracteres do código armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um código identificador válido. 
+
+A classe \doxylink{class_codigo}{Codigo} é responsável por armazenar e validar códigos utilizados no sistema para identificação de entidades.
+
+As regras de validação típicas podem incluir\+:
+\begin{DoxyItemize}
+\item Formato específico (ex\+: AAA000)
+\item Tamanho fixo ou variável
+\item Caracteres permitidos (letras, números)
+\end{DoxyItemize}
+
+A implementação específica das regras de validação é definida no método \doxylink{class_codigo_ac5f23076fb06cb67121050014b861fa8}{validar()} privado. 
+
+\label{doc-func-members}
+\Hypertarget{class_codigo_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_codigo_aa78a03ad29c1cb6a3e953db2137d6278}\index{Codigo@{Codigo}!getValor@{getValor}}
+\index{getValor@{getValor}!Codigo@{Codigo}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_codigo_aa78a03ad29c1cb6a3e953db2137d6278} 
+string Codigo\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém o código armazenado. 
+
+Implementação inline do método \doxylink{class_codigo_aa78a03ad29c1cb6a3e953db2137d6278}{get\+Valor()}.
+
+\begin{DoxyReturn}{Returns}
+string Código armazenado 
+\end{DoxyReturn}
+\Hypertarget{class_codigo_afdc4d9c6e42358cd0d48001d4c671584}\index{Codigo@{Codigo}!setValor@{setValor}}
+\index{setValor@{setValor}!Codigo@{Codigo}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_codigo_afdc4d9c6e42358cd0d48001d4c671584} 
+void Codigo\+::set\+Valor (\begin{DoxyParamCaption}\item[{string}]{caracteres}{}\end{DoxyParamCaption})}
+
+
+
+Define o código. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em caracteres} & Código em formato string \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & se o código for inválido\\
+\hline
+\end{DoxyExceptions}
+Realiza a validação completa antes de armazenar o valor. Códigos que não atendem às regras de validação resultam em exceção. \Hypertarget{class_codigo_ac5f23076fb06cb67121050014b861fa8}\index{Codigo@{Codigo}!validar@{validar}}
+\index{validar@{validar}!Codigo@{Codigo}}
+\doxysubsubsection{\texorpdfstring{validar()}{validar()}}
+{\footnotesize\ttfamily \label{class_codigo_ac5f23076fb06cb67121050014b861fa8} 
+bool Codigo\+::validar (\begin{DoxyParamCaption}\item[{string}]{caracteres}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valida o código conforme as regras do domínio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em caracteres} & Código a ser validado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se o código for válido, false caso contrário
+\end{DoxyReturn}
+Implementa as regras de validação específicas para códigos no sistema, como formato, tamanho e caracteres permitidos. 
+
+\label{doc-variable-members}
+\Hypertarget{class_codigo_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_codigo_a1489ca5ff70fdbdfe2467b6370402cbc}\index{Codigo@{Codigo}!caracteres@{caracteres}}
+\index{caracteres@{caracteres}!Codigo@{Codigo}}
+\doxysubsubsection{\texorpdfstring{caracteres}{caracteres}}
+{\footnotesize\ttfamily \label{class_codigo_a1489ca5ff70fdbdfe2467b6370402cbc} 
+string Codigo\+::caracteres\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sequência de caracteres do código armazenado. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/dominios/\mbox{\hyperlink{codigo_8hpp}{codigo.\+hpp}}\item 
+src/dominios/\mbox{\hyperlink{codigo_8cpp}{codigo.\+cpp}}\end{DoxyCompactItemize}

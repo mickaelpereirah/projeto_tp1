@@ -1,0 +1,70 @@
+\doxysection{reserva.\+hpp}
+\hypertarget{reserva_8hpp_source}{}\label{reserva_8hpp_source}\index{include/entidades/reserva.hpp@{include/entidades/reserva.hpp}}
+\mbox{\hyperlink{reserva_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RESERVA\_HPP\_INCLUDED}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RESERVA\_HPP\_INCLUDED}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_d_o_m_i_n_i_o_s_8hpp}{DOMINIOS.hpp}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_reserva}{Reserva}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{class_data}{Data}}\ \mbox{\hyperlink{class_reserva_af113be4fd87e3555bc76374f041a92ce}{chegada}};}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_data}{Data}}\ \mbox{\hyperlink{class_reserva_a62980245c7447a5dcae5d367de72fc1a}{partida}};}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_dinheiro}{Dinheiro}}\ \mbox{\hyperlink{class_reserva_aa2505bd3307f983dc0486206b1510a58}{valor}};}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_codigo}{Codigo}}\ \mbox{\hyperlink{class_reserva_ad3ed738a9fba5bb520c9cf920b9bfdca}{codigo}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reserva_ae4ee5d4f54dce66620105d8ac2f1e85d}{setData}}(\mbox{\hyperlink{class_data}{Data}});}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_data}{Data}}\ \mbox{\hyperlink{class_reserva_a34c7838bc91bad711b4c2073630cca1d}{getData}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reserva_ae4ee5d4f54dce66620105d8ac2f1e85d}{setData}}(\mbox{\hyperlink{class_data}{Data}});}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_data}{Data}}\ \mbox{\hyperlink{class_reserva_a34c7838bc91bad711b4c2073630cca1d}{getData}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reserva_aefc3971390598f835b9d91292f595c3f}{setDinheiro}}(\mbox{\hyperlink{class_dinheiro}{Dinheiro}});}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_dinheiro}{Dinheiro}}\ \mbox{\hyperlink{class_reserva_aaad530ec61f62e7692d6e42a9158a0e0}{getDinheiro}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reserva_a3eff3dd3b188af925e7aee2a878e3c07}{setCodigo}}(\mbox{\hyperlink{class_codigo}{Codigo}});}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_codigo}{Codigo}}\ \mbox{\hyperlink{class_reserva_a1204609ea4b0d944c28405368976887f}{getCodigo}}();}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reserva_ae4ee5d4f54dce66620105d8ac2f1e85d}{Reserva::setData}}(\mbox{\hyperlink{class_data}{Data}}\ \mbox{\hyperlink{class_reserva_af113be4fd87e3555bc76374f041a92ce}{chegada}})}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ this-\/>chegada\ =\ \mbox{\hyperlink{class_reserva_af113be4fd87e3555bc76374f041a92ce}{chegada}};}
+\DoxyCodeLine{00027\ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_data}{Data}}\ \mbox{\hyperlink{class_reserva_a34c7838bc91bad711b4c2073630cca1d}{Reserva::getData}}()}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_reserva_af113be4fd87e3555bc76374f041a92ce}{chegada}};}
+\DoxyCodeLine{00032\ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reserva_ae4ee5d4f54dce66620105d8ac2f1e85d}{Reserva::setData}}(\mbox{\hyperlink{class_data}{Data}}\ partida)}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ this-\/>partida\ =\ \mbox{\hyperlink{class_reserva_a62980245c7447a5dcae5d367de72fc1a}{partida}};}
+\DoxyCodeLine{00037\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_data}{Data}}\ \mbox{\hyperlink{class_reserva_a34c7838bc91bad711b4c2073630cca1d}{Reserva::getData}}()}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_reserva_a62980245c7447a5dcae5d367de72fc1a}{partida}};}
+\DoxyCodeLine{00042\ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reserva_aefc3971390598f835b9d91292f595c3f}{Reserva::setDinheiro}}(\mbox{\hyperlink{class_dinheiro}{Dinheiro}}\ \mbox{\hyperlink{class_reserva_aa2505bd3307f983dc0486206b1510a58}{valor}})}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ this-\/>valor\ =\ \mbox{\hyperlink{class_reserva_aa2505bd3307f983dc0486206b1510a58}{valor}};}
+\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_dinheiro}{Dinheiro}}\ \mbox{\hyperlink{class_reserva_aaad530ec61f62e7692d6e42a9158a0e0}{Reserva::getDinheiro}}()}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_reserva_aa2505bd3307f983dc0486206b1510a58}{valor}};}
+\DoxyCodeLine{00052\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_reserva_a3eff3dd3b188af925e7aee2a878e3c07}{Reserva::setCodigo}}(\mbox{\hyperlink{class_codigo}{Codigo}}\ \mbox{\hyperlink{class_reserva_ad3ed738a9fba5bb520c9cf920b9bfdca}{codigo}})}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ this-\/>codigo\ =\ \mbox{\hyperlink{class_reserva_ad3ed738a9fba5bb520c9cf920b9bfdca}{codigo}};}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_codigo}{Codigo}}\ \mbox{\hyperlink{class_reserva_a1204609ea4b0d944c28405368976887f}{Reserva::getCodigo}}()}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_reserva_ad3ed738a9fba5bb520c9cf920b9bfdca}{codigo}};}
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
