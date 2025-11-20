@@ -1,6 +1,9 @@
 #include "ramal.hpp"
 #include <stdexcept>
 
+using namespace std;
+
+
 bool Ramal::validar(int valor) {
     return (valor >= 0 && valor <= 50);
 }

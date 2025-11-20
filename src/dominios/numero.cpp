@@ -1,6 +1,8 @@
 #include "numero.hpp"
 #include <stdexcept>
 
+using namespace std;
+
 bool Numero::validar(int valor) {
     return (valor >= 1 && valor <= 999);
 }
