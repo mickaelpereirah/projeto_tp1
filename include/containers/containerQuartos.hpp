@@ -9,11 +9,11 @@ using namespace std;
 
 class ContainerQuarto {
     private:
-        unordered_map<string, Quarto*> container;
+        unordered_map<int, Quarto*> container;
     public: 
         bool incluir(Quarto*);
-        bool remover(string);
-        Quarto *pesquisar(string);
+        bool remover(int);
+        Quarto *pesquisar(int);
         bool atualizar(Quarto*);
 
 };
