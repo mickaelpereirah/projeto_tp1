@@ -231,14 +231,16 @@
 	"email.hpp"
 	<stdexcept>
 
-1763663549 source:z:\projeto_tp1\main.cpp
+1763673039 source:z:\projeto_tp1\main.cpp
 	<iostream>
 	<string>
 	<iomanip>
 	<stdexcept>
 	"DOMINIOS.hpp"
-	"hospede.hpp"
-	"containerHospedes.hpp"
+	"quarto.hpp"
+	"containerQuartos.hpp"
+	"reserva.hpp"
+	"containerReservas.hpp"
 
 1763662432 z:\projeto_tp1\include\dominios\dominios.hpp
 	"cartao.hpp"

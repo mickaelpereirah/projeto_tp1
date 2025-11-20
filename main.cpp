@@ -14,109 +14,110 @@ using namespace std;
 
 int main()
 {
-    ContainerQuarto container;
+    ContainerReserva container;
 
-    Numero n;
-    int numero;
+    Codigo c;
+    string codigo;
 
-    cout << "Digite o numero: ";
-    cin >> numero;
-    n.setValor(numero);
+    cout << "Digite o codigo: ";
+    cin >> codigo;
+    c.setValor(codigo);
 
-    Capacidade c;
-    int capacidade;
-    cout << "Digite a capacidade: ";
-    cin >> capacidade;
-    c.setValor(capacidade);
+    Data ch;
+    string chegada;
+
+    cout << "Digite a data de chegada: ";
+    cin >> chegada;
+    ch.setValor(chegada);
+
+    Data p;
+    string partida;
+
+    cout << "Digite a data da partida: ";
+    cin >> partida;
+    p.setValor(partida);
 
     Dinheiro d;
-    double diaria;
+    int total_reserva;
 
-    cout << "Digite o valor da diária: ";
-    cin >> diaria;
-    d.setValor(diaria);
+    cout << "Digite o valor total da reserva: ";
+    cin >> total_reserva;
+    d.setValor(total_reserva);
 
-    Ramal r;
-    int ramal;
+    Reserva *reserva = new Reserva();
+    reserva->setCodigo(c);
+    reserva->setChegada(ch);
+    reserva->setPartida(p);
+    reserva->setDinheiro(d);
 
-    cout << "Digite o ramal: ";
-    cin >> ramal;
-    r.setValor(ramal);
-
-    Quarto *quarto = new Quarto();
-    quarto->setNumero(n);
-    quarto->setCapacidade(c);
-    quarto->setDinheiro(d);
-    quarto->setRamal(r);
-
-    Quarto *quarto_encontrado = container.pesquisar(numero);
-    if (quarto_encontrado)
+    Reserva *reserva_encontrada = container.pesquisar(codigo);
+    if (reserva_encontrada)
     {
-        cout << "Quarto existe" << endl;
-        cout << quarto_encontrado->getNumero().getValor() << endl;
-        cout << quarto_encontrado->getCapacidade().getValor() << endl;
-        cout << quarto_encontrado->getDinheiro().getValor() << endl;
-        cout << quarto_encontrado->getRamal().getValor() << endl;
+        cout << "Reserva existe" << endl;
+        cout << reserva_encontrada->getCodigo().getValor() << endl;
+        cout << reserva_encontrada->getChegada().getValor() << endl;
+        cout << reserva_encontrada->getPartida().getValor() << endl;
+        cout << reserva_encontrada->getDinheiro().getValor() << endl;
     }
     else
     {
-        cout << "Quarto inexistente" << endl; // ESPERADO
+        cout << "Reserva inexistente" << endl; // ESPERADO
     }
 
-    container.incluir(quarto);
+    container.incluir(reserva);
 
-    quarto_encontrado = container.pesquisar(numero);
-    if (quarto_encontrado)
+    reserva_encontrada = container.pesquisar(codigo);
+    if (reserva_encontrada)
     {
-        cout << "Quarto existe" << endl; // ESPERADO
-        cout << quarto_encontrado->getNumero().getValor() << endl;
-        cout << quarto_encontrado->getCapacidade().getValor() << endl;
-        cout << quarto_encontrado->getDinheiro().getValor() << endl;
-        cout << quarto_encontrado->getRamal().getValor() << endl;
+        cout << "Reserva existe" << endl; // ESPERADO
+        cout << reserva_encontrada->getCodigo().getValor() << endl;
+        cout << reserva_encontrada->getChegada().getValor() << endl;
+        cout << reserva_encontrada->getPartida().getValor() << endl;
+        cout << reserva_encontrada->getDinheiro().getValor() << endl;
     }
     else
     {
-        cout << "Quarto inexistente" << endl;
+        cout << "Reserva inexistente" << endl;
     }
 
-    Ramal r_novo;
-    r_novo.setValor(23);
-    Capacidade c_nova;
-    c_nova.setValor(3);
+    Data ch_nova;
+    ch_nova.setValor("14-MAI-2001");
+    Data p_nova;
+    p_nova.setValor("24-MAI-2001");
     Dinheiro d_novo;
-    d_novo.setValor(1.00);
-    quarto_encontrado->setRamal(r_novo);
-    quarto_encontrado->setCapacidade(c_nova);
-    quarto_encontrado->setDinheiro(d_novo);
+    d_novo.setValor(15.99);
+    reserva_encontrada->setChegada(ch_nova);
+    reserva_encontrada->setPartida(p_nova);
+    reserva_encontrada->setDinheiro(d_novo);
 
-    container.atualizar(quarto_encontrado);
-    if (quarto_encontrado)
+    container.atualizar(reserva_encontrada);
+    if (reserva_encontrada)
     {
-        cout << "Quarto existe" << endl; // ESPERADO ATUALIZADO
-        cout << quarto_encontrado->getNumero().getValor() << endl;
-        cout << quarto_encontrado->getCapacidade().getValor() << endl;
-        cout << quarto_encontrado->getDinheiro().getValor() << endl;
-        cout << quarto_encontrado->getRamal().getValor() << endl;
+        cout << "reserva existe" << endl; // ESPERADO ATUALIZADO
+        cout << reserva_encontrada->getCodigo().getValor() << endl;
+        cout << reserva_encontrada->getChegada().getValor() << endl;
+        cout << reserva_encontrada->getPartida().getValor() << endl;
+        cout << reserva_encontrada->getDinheiro().getValor() << endl;
     }
     else
     {
-        cout << "Quarto inexistente" << endl;
+        cout << "Reserva inexistente" << endl;
     }
 
-    container.remover(numero);
+    container.remover(codigo);
 
-    quarto_encontrado = container.pesquisar(numero);
-    if (quarto_encontrado)
+    reserva_encontrada = container.pesquisar(codigo);
+    if (reserva_encontrada)
     {
-        cout << "Quarto existe" << endl;
-        cout << quarto_encontrado->getNumero().getValor() << endl;
-        cout << quarto_encontrado->getCapacidade().getValor() << endl;
-        cout << quarto_encontrado->getDinheiro().getValor() << endl;
-        cout << quarto_encontrado->getRamal().getValor() << endl;
+        cout << "reserva existe" << endl;
+        cout << reserva_encontrada->getCodigo().getValor() << endl;
+        cout << reserva_encontrada->getChegada().getValor() << endl;
+        cout << reserva_encontrada->getPartida().getValor() << endl;
+        cout << reserva_encontrada->getDinheiro().getValor() << endl;
     }
     else
     {
-        cout << "Quarto inexistente" << endl; // ESPERADO
+        cout << "Reserva inexistente" << endl; // ESPERADO
     }
 
     ////////////////////////////////////////////////////////
