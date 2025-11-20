@@ -92,27 +92,87 @@ $(function(){initNavTree('class_reserva.html','','class_reserva-members'); });
 </div><!--header-->
 <div class="contents">
 
+<p>Classe que representa uma reserva no sistema de gestão de hotéis.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="reserva_8hpp_source.html">reserva.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae4ee5d4f54dce66620105d8ac2f1e85d" id="r_ae4ee5d4f54dce66620105d8ac2f1e85d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4ee5d4f54dce66620105d8ac2f1e85d">setData</a> (<a class="el" href="class_data.html">Data</a>)</td></tr>
-<tr class="memitem:a34c7838bc91bad711b4c2073630cca1d" id="r_a34c7838bc91bad711b4c2073630cca1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html">Data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34c7838bc91bad711b4c2073630cca1d">getData</a> ()</td></tr>
-<tr class="memitem:ae4ee5d4f54dce66620105d8ac2f1e85d" id="r_ae4ee5d4f54dce66620105d8ac2f1e85d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4ee5d4f54dce66620105d8ac2f1e85d">setData</a> (<a class="el" href="class_data.html">Data</a>)</td></tr>
-<tr class="memitem:a34c7838bc91bad711b4c2073630cca1d" id="r_a34c7838bc91bad711b4c2073630cca1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html">Data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34c7838bc91bad711b4c2073630cca1d">getData</a> ()</td></tr>
+<tr class="memitem:afd143f0e70e25f850a07d471f5297ca2" id="r_afd143f0e70e25f850a07d471f5297ca2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd143f0e70e25f850a07d471f5297ca2">setChegada</a> (<a class="el" href="class_data.html">Data</a>)</td></tr>
+<tr class="memdesc:afd143f0e70e25f850a07d471f5297ca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a data de chegada da reserva.  <br /></td></tr>
+<tr class="memitem:ad40a81b07cbd0364eda9d27bf5ca1875" id="r_ad40a81b07cbd0364eda9d27bf5ca1875"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html">Data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad40a81b07cbd0364eda9d27bf5ca1875">getChegada</a> ()</td></tr>
+<tr class="memdesc:ad40a81b07cbd0364eda9d27bf5ca1875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém a data de chegada da reserva.  <br /></td></tr>
+<tr class="memitem:aa838e8188954be73eb4aeb35893c2457" id="r_aa838e8188954be73eb4aeb35893c2457"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa838e8188954be73eb4aeb35893c2457">setPartida</a> (<a class="el" href="class_data.html">Data</a>)</td></tr>
+<tr class="memdesc:aa838e8188954be73eb4aeb35893c2457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a data de partida da reserva.  <br /></td></tr>
+<tr class="memitem:a817e880ac3317fafe1da8dd59ed750fe" id="r_a817e880ac3317fafe1da8dd59ed750fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html">Data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a817e880ac3317fafe1da8dd59ed750fe">getPartida</a> ()</td></tr>
+<tr class="memdesc:a817e880ac3317fafe1da8dd59ed750fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém a data de partida da reserva.  <br /></td></tr>
 <tr class="memitem:aefc3971390598f835b9d91292f595c3f" id="r_aefc3971390598f835b9d91292f595c3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefc3971390598f835b9d91292f595c3f">setDinheiro</a> (<a class="el" href="class_dinheiro.html">Dinheiro</a>)</td></tr>
+<tr class="memdesc:aefc3971390598f835b9d91292f595c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o valor da reserva.  <br /></td></tr>
 <tr class="memitem:aaad530ec61f62e7692d6e42a9158a0e0" id="r_aaad530ec61f62e7692d6e42a9158a0e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dinheiro.html">Dinheiro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaad530ec61f62e7692d6e42a9158a0e0">getDinheiro</a> ()</td></tr>
+<tr class="memdesc:aaad530ec61f62e7692d6e42a9158a0e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém o valor da reserva.  <br /></td></tr>
 <tr class="memitem:a3eff3dd3b188af925e7aee2a878e3c07" id="r_a3eff3dd3b188af925e7aee2a878e3c07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3eff3dd3b188af925e7aee2a878e3c07">setCodigo</a> (<a class="el" href="class_codigo.html">Codigo</a>)</td></tr>
+<tr class="memdesc:a3eff3dd3b188af925e7aee2a878e3c07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o código da reserva.  <br /></td></tr>
 <tr class="memitem:a1204609ea4b0d944c28405368976887f" id="r_a1204609ea4b0d944c28405368976887f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_codigo.html">Codigo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1204609ea4b0d944c28405368976887f">getCodigo</a> ()</td></tr>
+<tr class="memdesc:a1204609ea4b0d944c28405368976887f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém o código da reserva.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:af113be4fd87e3555bc76374f041a92ce" id="r_af113be4fd87e3555bc76374f041a92ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html">Data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af113be4fd87e3555bc76374f041a92ce">chegada</a></td></tr>
+<tr class="memdesc:af113be4fd87e3555bc76374f041a92ce"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> de chegada da reserva.  <br /></td></tr>
 <tr class="memitem:a62980245c7447a5dcae5d367de72fc1a" id="r_a62980245c7447a5dcae5d367de72fc1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html">Data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62980245c7447a5dcae5d367de72fc1a">partida</a></td></tr>
+<tr class="memdesc:a62980245c7447a5dcae5d367de72fc1a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> de partida da reserva.  <br /></td></tr>
 <tr class="memitem:aa2505bd3307f983dc0486206b1510a58" id="r_aa2505bd3307f983dc0486206b1510a58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dinheiro.html">Dinheiro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2505bd3307f983dc0486206b1510a58">valor</a></td></tr>
+<tr class="memdesc:aa2505bd3307f983dc0486206b1510a58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valor total da reserva.  <br /></td></tr>
 <tr class="memitem:ad3ed738a9fba5bb520c9cf920b9bfdca" id="r_ad3ed738a9fba5bb520c9cf920b9bfdca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_codigo.html">Codigo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3ed738a9fba5bb520c9cf920b9bfdca">codigo</a></td></tr>
+<tr class="memdesc:ad3ed738a9fba5bb520c9cf920b9bfdca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Código único de identificação da reserva (chave primária).  <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Classe que representa uma reserva no sistema de gestão de hotéis. </p>
+<p>Esta classe encapsula as informações de uma reserva, incluindo datas de chegada e partida, valor total e código de identificação.</p>
+<p>Atributos:</p><ul>
+<li>chegada: <a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> de chegada da reserva (tipo <a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a>)</li>
+<li>partida: <a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> de partida da reserva (tipo <a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a>)</li>
+<li>valor: Valor total da reserva (tipo <a class="el" href="class_dinheiro.html" title="Representa um valor monetário válido entre R$ 1,00 e R$ 1.000.000,00.">Dinheiro</a>)</li>
+<li>codigo: Código único de identificação da reserva (tipo <a class="el" href="class_codigo.html" title="Representa um código identificador válido.">Codigo</a> - chave primária)</li>
+</ul>
+<p>Relacionamentos:</p><ul>
+<li>É feita por Hóspede (0:* para 1)</li>
+<li><a class="el" href="class_reserva.html" title="Classe que representa uma reserva no sistema de gestão de hotéis.">Reserva</a> <a class="el" href="class_quarto.html" title="Classe que representa um quarto de hotel no sistema de gestão.">Quarto</a> (1 para 0:*)</li>
+</ul>
+<p>Regras de negócio:</p><ul>
+<li>Não podem ocorrer conflitos entre reservas do mesmo quarto</li>
+<li><a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> de partida deve ser posterior à data de chegada </li>
+</ul>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ad40a81b07cbd0364eda9d27bf5ca1875" name="ad40a81b07cbd0364eda9d27bf5ca1875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad40a81b07cbd0364eda9d27bf5ca1875">&#9670;&#160;</a></span>getChegada()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_data.html">Data</a> Reserva::getChegada </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtém a data de chegada da reserva. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> de chegada da reserva </dd></dl>
+
+</div>
+</div>
 <a id="a1204609ea4b0d944c28405368976887f" name="a1204609ea4b0d944c28405368976887f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1204609ea4b0d944c28405368976887f">&#9670;&#160;</a></span>getCodigo()</h2>
 
@@ -136,47 +196,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a34c7838bc91bad711b4c2073630cca1d" name="a34c7838bc91bad711b4c2073630cca1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34c7838bc91bad711b4c2073630cca1d">&#9670;&#160;</a></span>getData() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_data.html">Data</a> Reserva::getData </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a34c7838bc91bad711b4c2073630cca1d" name="a34c7838bc91bad711b4c2073630cca1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34c7838bc91bad711b4c2073630cca1d">&#9670;&#160;</a></span>getData() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_data.html">Data</a> Reserva::getData </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Obtém o código da reserva. </p>
+<dl class="section return"><dt>Returns</dt><dd>Código da reserva (chave primária) </dd></dl>
 
 </div>
 </div>
@@ -203,6 +224,70 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Obtém o valor da reserva. </p>
+<dl class="section return"><dt>Returns</dt><dd>Valor da reserva </dd></dl>
+
+</div>
+</div>
+<a id="a817e880ac3317fafe1da8dd59ed750fe" name="a817e880ac3317fafe1da8dd59ed750fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a817e880ac3317fafe1da8dd59ed750fe">&#9670;&#160;</a></span>getPartida()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_data.html">Data</a> Reserva::getPartida </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtém a data de partida da reserva. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> de partida da reserva </dd></dl>
+
+</div>
+</div>
+<a id="afd143f0e70e25f850a07d471f5297ca2" name="afd143f0e70e25f850a07d471f5297ca2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd143f0e70e25f850a07d471f5297ca2">&#9670;&#160;</a></span>setChegada()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Reserva::setChegada </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_data.html">Data</a></td>          <td class="paramname"><span class="paramname"><em>chegada</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Define a data de chegada da reserva. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chegada</td><td>Objeto do tipo <a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> contendo a data de chegada </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a3eff3dd3b188af925e7aee2a878e3c07" name="a3eff3dd3b188af925e7aee2a878e3c07"></a>
@@ -228,47 +313,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ae4ee5d4f54dce66620105d8ac2f1e85d" name="ae4ee5d4f54dce66620105d8ac2f1e85d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4ee5d4f54dce66620105d8ac2f1e85d">&#9670;&#160;</a></span>setData() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Reserva::setData </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_data.html">Data</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae4ee5d4f54dce66620105d8ac2f1e85d" name="ae4ee5d4f54dce66620105d8ac2f1e85d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4ee5d4f54dce66620105d8ac2f1e85d">&#9670;&#160;</a></span>setData() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Reserva::setData </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_data.html">Data</a></td>          <td class="paramname"><span class="paramname"><em>chegada</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Define o código da reserva. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codigo</td><td>Objeto do tipo <a class="el" href="class_codigo.html" title="Representa um código identificador válido.">Codigo</a> contendo o código a ser atribuído (chave primária) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -295,6 +346,47 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Define o valor da reserva. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valor</td><td>Objeto do tipo <a class="el" href="class_dinheiro.html" title="Representa um valor monetário válido entre R$ 1,00 e R$ 1.000.000,00.">Dinheiro</a> contendo o valor a ser atribuído </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa838e8188954be73eb4aeb35893c2457" name="aa838e8188954be73eb4aeb35893c2457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa838e8188954be73eb4aeb35893c2457">&#9670;&#160;</a></span>setPartida()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Reserva::setPartida </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_data.html">Data</a></td>          <td class="paramname"><span class="paramname"><em>partida</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Define a data de partida da reserva. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">partida</td><td>Objeto do tipo <a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> contendo a data de partida </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
@@ -318,6 +410,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> de chegada da reserva. </p>
+
 </div>
 </div>
 <a id="ad3ed738a9fba5bb520c9cf920b9bfdca" name="ad3ed738a9fba5bb520c9cf920b9bfdca"></a>
@@ -339,6 +433,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Código único de identificação da reserva (chave primária). </p>
 
 </div>
 </div>
@@ -362,6 +458,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> de partida da reserva. </p>
+
 </div>
 </div>
 <a id="aa2505bd3307f983dc0486206b1510a58" name="aa2505bd3307f983dc0486206b1510a58"></a>
@@ -383,6 +481,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Valor total da reserva. </p>
 
 </div>
 </div>

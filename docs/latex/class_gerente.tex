@@ -2,27 +2,72 @@
 \hypertarget{class_gerente}{}\label{class_gerente}\index{Gerente@{Gerente}}
 
 
+Classe que representa um gerente no sistema de gestão de hotéis.  
+
+
+
+
 {\ttfamily \#include $<$gerente.\+hpp$>$}
 
+Inheritance diagram for Gerente\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gerente}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_gerente_ab497a26b365ff2824219b0ebb56f1238}{set\+Ramal}} (\mbox{\hyperlink{class_ramal}{Ramal}})
-\item 
+\begin{DoxyCompactList}\small\item\em Define o ramal do gerente. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_ramal}{Ramal}} \mbox{\hyperlink{class_gerente_a2e928302de5892957f6d8c3040a3ea36}{get\+Ramal}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Obtém o ramal do gerente. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_gerente_a9bd0a2c120629d175aa773d6b0f71d91}{set\+Senha}} (\mbox{\hyperlink{class_senha}{Senha}})
-\item 
+\begin{DoxyCompactList}\small\item\em Define a senha do gerente. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_senha}{Senha}} \mbox{\hyperlink{class_gerente_a32c237255f6ee3f125bd52cff3127952}{get\+Senha}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Obtém a senha do gerente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_pessoa}{Pessoa}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_pessoa_a5923891b2acbdbff839cb0425960af1d}{set\+Nome}} (\mbox{\hyperlink{class_nome}{Nome}})
+\begin{DoxyCompactList}\small\item\em Define o nome da pessoa. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_nome}{Nome}} \mbox{\hyperlink{class_pessoa_a79d0d4923e0a0fdccddac4bfb2679087}{get\+Nome}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o nome da pessoa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pessoa_ac2b331ad7043c54c1da09e1affaf0af6}{set\+Email}} (\mbox{\hyperlink{class_email}{Email}})
+\begin{DoxyCompactList}\small\item\em Define o email da pessoa. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_email}{Email}} \mbox{\hyperlink{class_pessoa_a4a9367778bc8be30a4ae0380aab51552}{get\+Email}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o email da pessoa. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_ramal}{Ramal}} \mbox{\hyperlink{class_gerente_a272b032b36be1127b8077ddb14370fc9}{ramal}}
-\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{class_ramal}{Ramal} do gerente para comunicação interna. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_senha}{Senha}} \mbox{\hyperlink{class_gerente_a0f3a5cfda26ca1136d389cb3de66abc2}{senha}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_senha}{Senha} de acesso do gerente ao sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Classe que representa um gerente no sistema de gestão de hotéis. 
+
+Esta classe herda de \doxylink{class_pessoa}{Pessoa} e adiciona atributos específicos para gerentes. Um gerente tem acesso ao sistema através de ramal e senha, podendo gerenciar hotéis, quartos, reservas e hóspedes.
+
+Atributos herdados de \doxylink{class_pessoa}{Pessoa}\+:
+\begin{DoxyItemize}
+\item nome\+: \doxylink{class_nome}{Nome} do gerente
+\item email\+: \doxylink{class_email}{Email} do gerente
+\end{DoxyItemize}
+
+Atributos específicos\+:
+\begin{DoxyItemize}
+\item ramal\+: \doxylink{class_ramal}{Ramal} do gerente para comunicação interna (tipo \doxylink{class_ramal}{Ramal})
+\item senha\+: \doxylink{class_senha}{Senha} de acesso ao sistema (tipo \doxylink{class_senha}{Senha})
+\end{DoxyItemize}
+
+Relacionamentos\+:
+\begin{DoxyItemize}
+\item Herda de \doxylink{class_pessoa}{Pessoa} (1\+:1)
+\item Gerencia \doxylink{class_hotel}{Hotel} (0\+:\texorpdfstring{$\ast$}{*} para 1) 
+\end{DoxyItemize}
 
 \label{doc-func-members}
 \Hypertarget{class_gerente_doc-func-members}
@@ -33,24 +78,56 @@ void \mbox{\hyperlink{class_gerente_a9bd0a2c120629d175aa773d6b0f71d91}{set\+Senh
 {\footnotesize\ttfamily \label{class_gerente_a2e928302de5892957f6d8c3040a3ea36} 
 \mbox{\hyperlink{class_ramal}{Ramal}} Gerente\+::get\+Ramal (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Obtém o ramal do gerente. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_ramal}{Ramal} do gerente 
+\end{DoxyReturn}
 \Hypertarget{class_gerente_a32c237255f6ee3f125bd52cff3127952}\index{Gerente@{Gerente}!getSenha@{getSenha}}
 \index{getSenha@{getSenha}!Gerente@{Gerente}}
 \doxysubsubsection{\texorpdfstring{getSenha()}{getSenha()}}
 {\footnotesize\ttfamily \label{class_gerente_a32c237255f6ee3f125bd52cff3127952} 
 \mbox{\hyperlink{class_senha}{Senha}} Gerente\+::get\+Senha (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Obtém a senha do gerente. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_senha}{Senha} do gerente 
+\end{DoxyReturn}
 \Hypertarget{class_gerente_ab497a26b365ff2824219b0ebb56f1238}\index{Gerente@{Gerente}!setRamal@{setRamal}}
 \index{setRamal@{setRamal}!Gerente@{Gerente}}
 \doxysubsubsection{\texorpdfstring{setRamal()}{setRamal()}}
 {\footnotesize\ttfamily \label{class_gerente_ab497a26b365ff2824219b0ebb56f1238} 
 void Gerente\+::set\+Ramal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ramal}{Ramal}}}]{ramal}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Define o ramal do gerente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ramal} & Objeto do tipo \doxylink{class_ramal}{Ramal} contendo o ramal a ser atribuído \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_gerente_a9bd0a2c120629d175aa773d6b0f71d91}\index{Gerente@{Gerente}!setSenha@{setSenha}}
 \index{setSenha@{setSenha}!Gerente@{Gerente}}
 \doxysubsubsection{\texorpdfstring{setSenha()}{setSenha()}}
 {\footnotesize\ttfamily \label{class_gerente_a9bd0a2c120629d175aa773d6b0f71d91} 
 void Gerente\+::set\+Senha (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_senha}{Senha}}}]{senha}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Define a senha do gerente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em senha} & Objeto do tipo \doxylink{class_senha}{Senha} contendo a senha a ser atribuída \\
+\hline
+\end{DoxyParams}
 
 
 \label{doc-variable-members}
@@ -62,11 +139,19 @@ void Gerente\+::set\+Senha (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clas
 {\footnotesize\ttfamily \label{class_gerente_a272b032b36be1127b8077ddb14370fc9} 
 \mbox{\hyperlink{class_ramal}{Ramal}} Gerente\+::ramal\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+\doxylink{class_ramal}{Ramal} do gerente para comunicação interna. 
+
 \Hypertarget{class_gerente_a0f3a5cfda26ca1136d389cb3de66abc2}\index{Gerente@{Gerente}!senha@{senha}}
 \index{senha@{senha}!Gerente@{Gerente}}
 \doxysubsubsection{\texorpdfstring{senha}{senha}}
 {\footnotesize\ttfamily \label{class_gerente_a0f3a5cfda26ca1136d389cb3de66abc2} 
 \mbox{\hyperlink{class_senha}{Senha}} Gerente\+::senha\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_senha}{Senha} de acesso do gerente ao sistema. 
 
 
 

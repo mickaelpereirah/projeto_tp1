@@ -2,39 +2,63 @@
 \hypertarget{class_hotel}{}\label{class_hotel}\index{Hotel@{Hotel}}
 
 
+Classe que representa um hotel no sistema de gestão.  
+
+
+
+
 {\ttfamily \#include $<$hotel.\+hpp$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_hotel_aa235ac59507d8bac285dbfffd5642413}{set\+Nome}} (\mbox{\hyperlink{class_nome}{Nome}})
-\item 
+\begin{DoxyCompactList}\small\item\em Define o nome do hotel. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_nome}{Nome}} \mbox{\hyperlink{class_hotel_aa4e160a608094c9c9ca890c2f4388760}{get\+Nome}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Obtém o nome do hotel. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_hotel_a78e34fcb99cc5a6ab70ae0eee7156aae}{set\+Endereco}} (\mbox{\hyperlink{class_endereco}{Endereco}})
-\item 
+\begin{DoxyCompactList}\small\item\em Define o endereço do hotel. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_endereco}{Endereco}} \mbox{\hyperlink{class_hotel_a8f727bdaacdfafe44ac0d11dc9618816}{get\+Endereco}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Obtém o endereço do hotel. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_hotel_a841b6eb4e433b1f528cefb0f5d2c2d3c}{set\+Telefone}} (\mbox{\hyperlink{class_telefone}{Telefone}})
-\item 
+\begin{DoxyCompactList}\small\item\em Define o telefone do hotel. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_telefone}{Telefone}} \mbox{\hyperlink{class_hotel_a2955e1b623b429b19db587c80c8d8463}{get\+Telefone}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Obtém o telefone do hotel. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_hotel_a1ee6de5f2a7b5b6fde1c19bae0ee21a5}{set\+Codigo}} (\mbox{\hyperlink{class_codigo}{Codigo}})
-\item 
+\begin{DoxyCompactList}\small\item\em Define o código do hotel. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_codigo}{Codigo}} \mbox{\hyperlink{class_hotel_a6121863a3c78ea7d6b23615083d586e0}{get\+Codigo}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Obtém o código do hotel. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_nome}{Nome}} \mbox{\hyperlink{class_hotel_a23b2f01ca7bf4fccab0ac9151402dc01}{nome}}
-\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{class_nome}{Nome} do hotel. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_endereco}{Endereco}} \mbox{\hyperlink{class_hotel_acdcfff4846bb32596ddb52d227239994}{endereco}}
-\item 
+\begin{DoxyCompactList}\small\item\em Endereço do hotel. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_telefone}{Telefone}} \mbox{\hyperlink{class_hotel_af703090f183a39a0d37f93b5e2a3e2ba}{telefone}}
-\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{class_telefone}{Telefone} de contato do hotel. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_codigo}{Codigo}} \mbox{\hyperlink{class_hotel_a6ce8943370aaf28955033f35897841ff}{codigo}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Código único de identificação do hotel (chave primária). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Classe que representa um hotel no sistema de gestão. 
+
+Esta classe encapsula as informações básicas de um hotel, incluindo identificação, localização e dados de contato.
+
+Atributos\+:
+\begin{DoxyItemize}
+\item nome\+: \doxylink{class_nome}{Nome} do hotel (tipo \doxylink{class_nome}{Nome})
+\item endereco\+: Endereço do hotel (tipo \doxylink{class_endereco}{Endereco})
+\item telefone\+: \doxylink{class_telefone}{Telefone} de contato do hotel (tipo \doxylink{class_telefone}{Telefone})
+\item codigo\+: Código único de identificação do hotel (tipo \doxylink{class_codigo}{Codigo} -\/ chave primária)
+\end{DoxyItemize}
+
+Relacionamentos\+:
+\begin{DoxyItemize}
+\item É gerenciado por \doxylink{class_gerente}{Gerente} (0\+:\texorpdfstring{$\ast$}{*} para 1)
+\item Possui \doxylink{class_quarto}{Quarto} (1 para 1\+:\texorpdfstring{$\ast$}{*}) 
+\end{DoxyItemize}
 
 \label{doc-func-members}
 \Hypertarget{class_hotel_doc-func-members}
@@ -45,48 +69,112 @@ void \mbox{\hyperlink{class_hotel_a1ee6de5f2a7b5b6fde1c19bae0ee21a5}{set\+Codigo
 {\footnotesize\ttfamily \label{class_hotel_a6121863a3c78ea7d6b23615083d586e0} 
 \mbox{\hyperlink{class_codigo}{Codigo}} Hotel\+::get\+Codigo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Obtém o código do hotel. 
+
+\begin{DoxyReturn}{Returns}
+Código do hotel (chave primária) 
+\end{DoxyReturn}
 \Hypertarget{class_hotel_a8f727bdaacdfafe44ac0d11dc9618816}\index{Hotel@{Hotel}!getEndereco@{getEndereco}}
 \index{getEndereco@{getEndereco}!Hotel@{Hotel}}
 \doxysubsubsection{\texorpdfstring{getEndereco()}{getEndereco()}}
 {\footnotesize\ttfamily \label{class_hotel_a8f727bdaacdfafe44ac0d11dc9618816} 
 \mbox{\hyperlink{class_endereco}{Endereco}} Hotel\+::get\+Endereco (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Obtém o endereço do hotel. 
+
+\begin{DoxyReturn}{Returns}
+Endereço do hotel 
+\end{DoxyReturn}
 \Hypertarget{class_hotel_aa4e160a608094c9c9ca890c2f4388760}\index{Hotel@{Hotel}!getNome@{getNome}}
 \index{getNome@{getNome}!Hotel@{Hotel}}
 \doxysubsubsection{\texorpdfstring{getNome()}{getNome()}}
 {\footnotesize\ttfamily \label{class_hotel_aa4e160a608094c9c9ca890c2f4388760} 
 \mbox{\hyperlink{class_nome}{Nome}} Hotel\+::get\+Nome (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Obtém o nome do hotel. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_nome}{Nome} do hotel 
+\end{DoxyReturn}
 \Hypertarget{class_hotel_a2955e1b623b429b19db587c80c8d8463}\index{Hotel@{Hotel}!getTelefone@{getTelefone}}
 \index{getTelefone@{getTelefone}!Hotel@{Hotel}}
 \doxysubsubsection{\texorpdfstring{getTelefone()}{getTelefone()}}
 {\footnotesize\ttfamily \label{class_hotel_a2955e1b623b429b19db587c80c8d8463} 
 \mbox{\hyperlink{class_telefone}{Telefone}} Hotel\+::get\+Telefone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Obtém o telefone do hotel. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_telefone}{Telefone} do hotel 
+\end{DoxyReturn}
 \Hypertarget{class_hotel_a1ee6de5f2a7b5b6fde1c19bae0ee21a5}\index{Hotel@{Hotel}!setCodigo@{setCodigo}}
 \index{setCodigo@{setCodigo}!Hotel@{Hotel}}
 \doxysubsubsection{\texorpdfstring{setCodigo()}{setCodigo()}}
 {\footnotesize\ttfamily \label{class_hotel_a1ee6de5f2a7b5b6fde1c19bae0ee21a5} 
 void Hotel\+::set\+Codigo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_codigo}{Codigo}}}]{codigo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Define o código do hotel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em codigo} & Objeto do tipo \doxylink{class_codigo}{Codigo} contendo o código a ser atribuído (chave primária) \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_hotel_a78e34fcb99cc5a6ab70ae0eee7156aae}\index{Hotel@{Hotel}!setEndereco@{setEndereco}}
 \index{setEndereco@{setEndereco}!Hotel@{Hotel}}
 \doxysubsubsection{\texorpdfstring{setEndereco()}{setEndereco()}}
 {\footnotesize\ttfamily \label{class_hotel_a78e34fcb99cc5a6ab70ae0eee7156aae} 
 void Hotel\+::set\+Endereco (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_endereco}{Endereco}}}]{endereco}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Define o endereço do hotel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em endereco} & Objeto do tipo \doxylink{class_endereco}{Endereco} contendo o endereço a ser atribuído \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_hotel_aa235ac59507d8bac285dbfffd5642413}\index{Hotel@{Hotel}!setNome@{setNome}}
 \index{setNome@{setNome}!Hotel@{Hotel}}
 \doxysubsubsection{\texorpdfstring{setNome()}{setNome()}}
 {\footnotesize\ttfamily \label{class_hotel_aa235ac59507d8bac285dbfffd5642413} 
 void Hotel\+::set\+Nome (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_nome}{Nome}}}]{nome}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Define o nome do hotel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Objeto do tipo \doxylink{class_nome}{Nome} contendo o nome a ser atribuído \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_hotel_a841b6eb4e433b1f528cefb0f5d2c2d3c}\index{Hotel@{Hotel}!setTelefone@{setTelefone}}
 \index{setTelefone@{setTelefone}!Hotel@{Hotel}}
 \doxysubsubsection{\texorpdfstring{setTelefone()}{setTelefone()}}
 {\footnotesize\ttfamily \label{class_hotel_a841b6eb4e433b1f528cefb0f5d2c2d3c} 
 void Hotel\+::set\+Telefone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_telefone}{Telefone}}}]{telefone}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Define o telefone do hotel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em telefone} & Objeto do tipo \doxylink{class_telefone}{Telefone} contendo o telefone a ser atribuído \\
+\hline
+\end{DoxyParams}
 
 
 \label{doc-variable-members}
@@ -98,11 +186,19 @@ void Hotel\+::set\+Telefone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cla
 {\footnotesize\ttfamily \label{class_hotel_a6ce8943370aaf28955033f35897841ff} 
 \mbox{\hyperlink{class_codigo}{Codigo}} Hotel\+::codigo\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Código único de identificação do hotel (chave primária). 
+
 \Hypertarget{class_hotel_acdcfff4846bb32596ddb52d227239994}\index{Hotel@{Hotel}!endereco@{endereco}}
 \index{endereco@{endereco}!Hotel@{Hotel}}
 \doxysubsubsection{\texorpdfstring{endereco}{endereco}}
 {\footnotesize\ttfamily \label{class_hotel_acdcfff4846bb32596ddb52d227239994} 
 \mbox{\hyperlink{class_endereco}{Endereco}} Hotel\+::endereco\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Endereço do hotel. 
 
 \Hypertarget{class_hotel_a23b2f01ca7bf4fccab0ac9151402dc01}\index{Hotel@{Hotel}!nome@{nome}}
 \index{nome@{nome}!Hotel@{Hotel}}
@@ -110,11 +206,19 @@ void Hotel\+::set\+Telefone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cla
 {\footnotesize\ttfamily \label{class_hotel_a23b2f01ca7bf4fccab0ac9151402dc01} 
 \mbox{\hyperlink{class_nome}{Nome}} Hotel\+::nome\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+\doxylink{class_nome}{Nome} do hotel. 
+
 \Hypertarget{class_hotel_af703090f183a39a0d37f93b5e2a3e2ba}\index{Hotel@{Hotel}!telefone@{telefone}}
 \index{telefone@{telefone}!Hotel@{Hotel}}
 \doxysubsubsection{\texorpdfstring{telefone}{telefone}}
 {\footnotesize\ttfamily \label{class_hotel_af703090f183a39a0d37f93b5e2a3e2ba} 
 \mbox{\hyperlink{class_telefone}{Telefone}} Hotel\+::telefone\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_telefone}{Telefone} de contato do hotel. 
 
 
 
