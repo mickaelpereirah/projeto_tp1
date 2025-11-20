@@ -227,14 +227,14 @@
 	"email.hpp"
 	<stdexcept>
 
-1763653958 source:z:\projeto_tp1\main.cpp
+1763663549 source:z:\projeto_tp1\main.cpp
 	<iostream>
 	<string>
 	<iomanip>
 	<stdexcept>
 	"DOMINIOS.hpp"
-	"gerente.hpp"
-	"containerGerentes.hpp"
+	"hospede.hpp"
+	"containerHospedes.hpp"
 
 1763511730 z:\projeto_tp1\include\dominios\dominios.hpp
 	"cartao.hpp"
@@ -344,7 +344,9 @@
 	<cctype>
 	<stdexcept>
 
-1763646533 source:z:\projeto_tp1\src\containers\containerhospedes.cpp
+1763662536 source:z:\projeto_tp1\src\containers\containerhospedes.cpp
+	"containerHospedes.hpp"
+	<iostream>
 
 1763646577 source:z:\projeto_tp1\src\containers\containerhoteis.cpp
 
@@ -352,7 +354,7 @@
 	"containerGerentes.hpp"
 	<iostream>
 
-1763651480 z:\projeto_tp1\include\containers\containergerentes.hpp
+1763660311 z:\projeto_tp1\include\containers\containergerentes.hpp
 	<unordered_map>
 	<string>
 	"gerente.hpp"
@@ -367,4 +369,13 @@
 1763646588 source:z:\projeto_tp1\src\containers\containerquartos.cpp
 
 1763646609 source:z:\projeto_tp1\src\containers\containerreservas.cpp
+
+1763645691 z:\projeto_tp1\include\entidades\hospede.hpp
+	"DOMINIOS.hpp"
+	"pessoa.hpp"
+
+1763660203 z:\projeto_tp1\include\containers\containerhospedes.hpp
+	<unordered_map>
+	<string>
+	"hospede.hpp"
 

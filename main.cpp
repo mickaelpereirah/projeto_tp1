@@ -4,14 +4,14 @@
 #include <stdexcept>
 
 #include "DOMINIOS.hpp"
-#include "gerente.hpp"
-#include "containerGerentes.hpp"
+#include "hospede.hpp"
+#include "containerHospedes.hpp"
 
 using namespace std;
 
 int main()
 {
-    ContainerGerente container;
+    ContainerHospede container;
 
     Nome n;
     string nome;
@@ -27,94 +27,93 @@ int main()
     cin.ignore();
     e.setValor(email);
 
-    Ramal r;
-    int ramal;
+    Endereco en;
+    string endereco;
 
-    cout << "Digite o ramal (0-50): ";
-    cin >> ramal;
-    cin.ignore();
-    r.setValor(ramal);
+    cout << "Digite o endereco: ";
+    getline(cin >> ws, endereco); // ws elimina espaços em branco pendentes
+    en.setValor(endereco);
 
-    Senha s;
-    string senha;
+    Cartao c;
+    string cartao;
 
-    cout << "Digite a senha (5 caracteres): ";
-    getline(cin, senha);
-    s.setValor(senha);
+    cout << "Digite o número do cartão: ";
+    getline(cin, cartao);
+    c.setValor(cartao);
 
-    Gerente *gerente = new Gerente();
-    gerente->setNome(n);
-    gerente->setEmail(e);
-    gerente->setRamal(r);
-    gerente->setSenha(s);
+    Hospede *hospede = new Hospede();
+    hospede->setNome(n);
+    hospede->setEmail(e);
+    hospede->setEndereco(en);
+    hospede->setCartao(c);
 
-    Gerente *gerente_encontrado = container.pesquisar(email);
-    if (gerente_encontrado)
+    Hospede *hospede_encontrado = container.pesquisar(email);
+    if (hospede_encontrado)
     {
-        cout << "Gerente existe" << endl;
-        cout << gerente_encontrado->getNome().getValor() << endl;
-        cout << gerente_encontrado->getEmail().getValor() << endl;
-        cout << gerente_encontrado->getRamal().getValor() << endl;
-        cout << gerente_encontrado->getSenha().getValor() << endl;
+        cout << "Hospede existe" << endl;
+        cout << hospede_encontrado->getNome().getValor() << endl;
+        cout << hospede_encontrado->getEmail().getValor() << endl;
+        cout << hospede_encontrado->getEndereco().getValor() << endl;
+        cout << hospede_encontrado->getCartao().getValor() << endl;
     }
     else
     {
-        cout << "Gerente inexistente" << endl; // ESPERADO
+        cout << "Hospede inexistente" << endl; // ESPERADO
     }
 
-    container.incluir(gerente);
+    container.incluir(hospede);
 
-    gerente_encontrado = container.pesquisar(email);
-    if (gerente_encontrado)
+    hospede_encontrado = container.pesquisar(email);
+    if (hospede_encontrado)
     {
-        cout << "Gerente existe" << endl; // ESPERADO
-        cout << gerente_encontrado->getNome().getValor() << endl;
-        cout << gerente_encontrado->getEmail().getValor() << endl;
-        cout << gerente_encontrado->getRamal().getValor() << endl;
-        cout << gerente_encontrado->getSenha().getValor() << endl;
+        cout << "Hospede existe" << endl; // ESPERADO
+        cout << hospede_encontrado->getNome().getValor() << endl;
+        cout << hospede_encontrado->getEmail().getValor() << endl;
+        cout << hospede_encontrado->getEndereco().getValor() << endl;
+        cout << hospede_encontrado->getCartao().getValor() << endl;
     }
     else
     {
-        cout << "Gerente inexistente" << endl;
+        cout << "Hospede inexistente" << endl;
     }
 
     Nome n_novo;
     n_novo.setValor("Roberto");
-    Ramal r_novo;
-    r_novo.setValor(45);
-    Senha s_nova;
-    s_nova.setValor("A1b2!");
-    gerente_encontrado->setNome(n_novo);
-    gerente_encontrado->setRamal(r_novo);
-    gerente_encontrado->setSenha(s_nova);
+    Endereco en_novo;
+    en_novo.setValor("Rua das Flores, 123");
+    Cartao c_novo;
+    c_novo.setValor("4556737586899855");
+    hospede_encontrado->setNome(n_novo);
+    hospede_encontrado->setEndereco(en_novo);
+    hospede_encontrado->setCartao(c_novo);
 
-    container.atualizar(gerente_encontrado);
-    if (gerente_encontrado)
+    container.atualizar(hospede_encontrado);
+    if (hospede_encontrado)
     {
-        cout << "Gerente existe" << endl; // ESPERADO ATUALIZADO
-        cout << gerente_encontrado->getNome().getValor() << endl;
-        cout << gerente_encontrado->getEmail().getValor() << endl;
-        cout << gerente_encontrado->getRamal().getValor() << endl;
-        cout << gerente_encontrado->getSenha().getValor() << endl;
+        cout << "Hospede existe" << endl; // ESPERADO ATUALIZADO
+        cout << hospede_encontrado->getNome().getValor() << endl;
+        cout << hospede_encontrado->getEmail().getValor() << endl;
+        cout << hospede_encontrado->getEndereco().getValor() << endl;
+        cout << hospede_encontrado->getCartao().getValor() << endl;
     }
     else
     {
-        cout << "Gerente inexistente" << endl;
+        cout << "Hospede inexistente" << endl;
     }
 
     container.remover(email);
 
-    gerente_encontrado = container.pesquisar(email);
-    if (gerente_encontrado)
+    hospede_encontrado = container.pesquisar(email);
+    if (hospede_encontrado)
     {
-        cout << "Gerente existe" << endl;
-        cout << gerente_encontrado->getNome().getValor() << endl;
-        cout << gerente_encontrado->getEmail().getValor() << endl;
-        cout << gerente_encontrado->getRamal().getValor() << endl;
-        cout << gerente_encontrado->getSenha().getValor() << endl;
+        cout << "Hospede existe" << endl;
+        cout << hospede_encontrado->getNome().getValor() << endl;
+        cout << hospede_encontrado->getEmail().getValor() << endl;
+        cout << hospede_encontrado->getEndereco().getValor() << endl;
+        cout << hospede_encontrado->getCartao().getValor() << endl;
     }
     else
     {
-        cout << "Gerente inexistente" << endl; // ESPERADO
+        cout << "Hospede inexistente" << endl; // ESPERADO
     }
 }
