@@ -103,6 +103,22 @@ vector<Reserva*> ContainerReserva::pesquisarPorHospede(string email)
     return resultado;
 }
 
+vector<string> ContainerReserva::pesquisarEmailsHospedesPorQuarto(int numero_quarto)
+{
+    vector<string> resultado;
+    
+    if (container.count(numero_quarto))
+    {
+        // Iterar sobre todos os hóspedes deste quarto e coletar os emails
+        for (auto& hospede_pair : container[numero_quarto])
+        {
+            resultado.push_back(hospede_pair.first);  // Adiciona o email (chave do map interno)
+        }
+    }
+    
+    return resultado;
+}
+
 bool ContainerReserva::atualizar(Reserva *reserva_atualizada)
 {
     string codigo_reserva = reserva_atualizada->getCodigo().getValor();
