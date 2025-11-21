@@ -1,14 +1,13 @@
 # depslib dependency file v1.0
-1763669403 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\main.cpp
+1763758421 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\main.cpp
 	<iostream>
 	<string>
 	<iomanip>
 	<stdexcept>
 	"DOMINIOS.hpp"
-	"hospede.hpp"
-	"containerHospedes.hpp"
-	"hotel.hpp"
-	"containerHoteis.hpp"
+	"cadastroHospede.hpp"
+	"centralContainers.hpp"
+	"atualizarHospede.hpp"
 
 1763661548 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\dominios\capacidade.hpp
 
@@ -42,7 +41,7 @@
 	<cstdlib>
 	<stdexcept>
 
-1763661548 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\dominios\data.hpp
+1763752284 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\dominios\data.hpp
 	<string>
 
 1763493487 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\dominios\dominios.hpp
@@ -441,9 +440,13 @@
 1763661548 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\entidades\hotel.hpp
 	"DOMINIOS.hpp"
 
-1763661548 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\containers\containerquartos.cpp
+1763671649 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\containers\containerquartos.cpp
+	"containerQuartos.hpp"
+	<iostream>
 
-1763661548 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\containers\containerreservas.cpp
+1763671649 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\containers\containerreservas.cpp
+	"containerReservas.hpp"
+	<iostream>
 
 1763749605 z:\projeto_tp1\include\containers\containerhoteis.hpp
 	<unordered_map>
@@ -611,5 +614,124 @@
 	"DOMINIOS.hpp"
 	"../cadastro.hpp"
 	"reserva.hpp"
+	"centralContainers.hpp"
+
+1763757133 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\servicos\cadastro\cadastrohospede.hpp
+	"DOMINIOS.hpp"
+	"cadastro.hpp"
+	"hospede.hpp"
+	"centralContainers.hpp"
+
+1763757133 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\servicos\cadastro\cadastro.hpp
+	<unordered_map>
+	<string>
+	"DOMINIOS.hpp"
+
+1763756658 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\servicos\centralcontainers.hpp
+	"CONTAINERS.hpp"
+
+1763752284 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\containers\containers.hpp
+	"containerReservas.hpp"
+	"containerHospedes.hpp"
+	"containerHoteis.hpp"
+	"containerGerentes.hpp"
+	"containerQuartos.hpp"
+
+1763661548 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\containers\containerreservas.hpp
+	<unordered_map>
+	<string>
+	"reserva.hpp"
+
+1763661548 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\entidades\reserva.hpp
+	"DOMINIOS.hpp"
+
+1763671649 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\containers\containerquartos.hpp
+	<unordered_map>
+	<string>
+	"quarto.hpp"
+
+1763661548 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\entidades\quarto.hpp
+	"DOMINIOS.hpp"
+
+1763757658 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\servicos\atualizar\atualizarhospede.hpp
+	"DOMINIOS.hpp"
+	"../cadastro/cadastro.hpp"
+	"ENTIDADES.hpp"
+	"centralContainers.hpp"
+
+1763752284 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\entidades\entidades.hpp
+	"gerente.hpp"
+	"hospede.hpp"
+	"hotel.hpp"
+	"pessoa.hpp"
+	"quarto.hpp"
+	"reserva.hpp"
+
+1763757133 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\servicos\atualizar\atualizargerente.cpp
+	<iostream>
+	"atualizarGerente.hpp"
+
+1763757133 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\servicos\atualizar\atualizargerente.hpp
+	"DOMINIOS.hpp"
+	"../cadastro/cadastro.hpp"
+	"gerente.hpp"
+	"centralContainers.hpp"
+
+1763757133 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\servicos\cadastro\cadastro.cpp
+	<iostream>
+	<stdexcept>
+	"cadastro.hpp"
+	"DOMINIOS.hpp"
+
+1763756658 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\servicos\cadastro\cadastrogerente.cpp
+	<iostream>
+	<stdexcept>
+	"cadastroGerente.hpp"
+
+1763757133 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\servicos\cadastro\cadastrogerente.hpp
+	"DOMINIOS.hpp"
+	"cadastro.hpp"
+	"gerente.hpp"
+	"centralContainers.hpp"
+
+1763756658 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\servicos\cadastro\cadastrohospede.cpp
+	<iostream>
+	<stdexcept>
+	"cadastroHospede.hpp"
+
+1763756658 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\servicos\cadastro\cadastrohotel.cpp
+	<iostream>
+	<stdexcept>
+	"cadastroHotel.hpp"
+
+1763757133 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\servicos\cadastro\cadastrohotel.hpp
+	"DOMINIOS.hpp"
+	"cadastro.hpp"
+	"hotel.hpp"
+	"centralContainers.hpp"
+
+1763756658 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\servicos\cadastro\cadastroquarto.cpp
+	<iostream>
+	<stdexcept>
+	"cadastroQuarto.hpp"
+
+1763757133 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\servicos\cadastro\cadastroquarto.hpp
+	"DOMINIOS.hpp"
+	"cadastro.hpp"
+	"quarto.hpp"
+	"centralContainers.hpp"
+
+1763756658 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\servicos\cadastro\cadastroreserva.cpp
+	<iostream>
+	<stdexcept>
+	"cadastroReserva.hpp"
+
+1763757133 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\servicos\cadastro\cadastroreserva.hpp
+	"DOMINIOS.hpp"
+	"cadastro.hpp"
+	"reserva.hpp"
+	"centralContainers.hpp"
+
+1763752284 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\servicos\centralcontainers.cpp
 	"centralContainers.hpp"
 

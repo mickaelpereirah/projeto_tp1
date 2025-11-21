@@ -64,6 +64,7 @@
 		<Unit filename="include/entidades/quarto.hpp" />
 		<Unit filename="include/entidades/reserva.hpp" />
 		<Unit filename="include/servicos/atualizar/atualizarGerente.hpp" />
+		<Unit filename="include/servicos/atualizar/atualizarHospede.hpp" />
 		<Unit filename="include/servicos/cadastro/cadastro.hpp" />
 		<Unit filename="include/servicos/cadastro/cadastroGerente.hpp" />
 		<Unit filename="include/servicos/cadastro/cadastroHospede.hpp" />
@@ -90,6 +91,7 @@
 		<Unit filename="src/dominios/senha.cpp" />
 		<Unit filename="src/dominios/telefone.cpp" />
 		<Unit filename="src/servicos/atualizar/atualizarGerente.cpp" />
+		<Unit filename="src/servicos/atualizar/atualizarHospede.cpp" />
 		<Unit filename="src/servicos/cadastro/cadastro.cpp" />
 		<Unit filename="src/servicos/cadastro/cadastroGerente.cpp" />
 		<Unit filename="src/servicos/cadastro/cadastroHospede.cpp" />
