@@ -22,6 +22,8 @@ class ContainerReserva {
         vector<Reserva*> pesquisarPorQuarto(int numero_quarto);  // Todas reservas do quarto
         vector<Reserva*> pesquisarPorHospede(string email);  // Todas reservas do hóspede
         vector<string> pesquisarEmailsHospedesPorQuarto(int numero_quarto);  // Emails dos hóspedes que têm reservas no quarto
+        bool removerTodasPorQuarto(int numero_quarto);  // Remove todas as reservas de um quarto
+        bool removerTodasPorHospede(string email);  // Remove todas as reservas de um hóspede
         bool atualizar(Reserva*);
 
 };

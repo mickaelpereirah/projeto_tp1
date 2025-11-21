@@ -14,6 +14,7 @@ class ContainerHotel {
     public: 
         bool incluir(Hotel*, string email_gerente);
         bool remover(string codigo);
+        bool removerTodosPorGerente(string email_gerente);  // Remove todos os hotéis de um gerente
         vector<Hotel*> pesquisar(string email_gerente);  // Retorna todos os hotéis do gerente
         Hotel* pesquisarPorCodigo(string codigo);  // Busca por código do hotel
         bool atualizar(Hotel*);

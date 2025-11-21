@@ -37,6 +37,16 @@ bool ContainerQuarto::remover(int numero)
     return false;
 }
 
+bool ContainerQuarto::removerTodosPorHotel(string codigo_hotel)
+{
+    if (container.count(codigo_hotel))
+    {
+        container.erase(codigo_hotel);  // Remove todos os quartos do hotel
+        return true;
+    }
+    return false;
+}
+
 vector<Quarto*> ContainerQuarto::pesquisar(string codigo_hotel)
 {
     if (container.count(codigo_hotel))

@@ -37,6 +37,16 @@ bool ContainerHotel::remover(string codigo)
     return false;
 }
 
+bool ContainerHotel::removerTodosPorGerente(string email_gerente)
+{
+    if (container.count(email_gerente))
+    {
+        container.erase(email_gerente);  // Remove todos os hotéis do gerente
+        return true;
+    }
+    return false;
+}
+
 vector<Hotel*> ContainerHotel::pesquisar(string email_gerente)
 {
     if (container.count(email_gerente))

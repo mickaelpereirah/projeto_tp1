@@ -119,6 +119,34 @@ vector<string> ContainerReserva::pesquisarEmailsHospedesPorQuarto(int numero_qua
     return resultado;
 }
 
+bool ContainerReserva::removerTodasPorQuarto(int numero_quarto)
+{
+    if (container.count(numero_quarto))
+    {
+        container[numero_quarto].clear();  // Remove todas as reservas do quarto
+        container.erase(numero_quarto);    // Remove a entrada do quarto
+        return true;
+    }
+    return false;
+}
+
+bool ContainerReserva::removerTodasPorHospede(string email)
+{
+    bool removido = false;
+    
+    // Iterar sobre todos os quartos procurando o email do hóspede
+    for (auto& quarto_pair : container)
+    {
+        if (quarto_pair.second.count(email))
+        {
+            quarto_pair.second.erase(email);  // Remove todas as reservas do hóspede neste quarto
+            removido = true;
+        }
+    }
+    
+    return removido;
+}
+
 bool ContainerReserva::atualizar(Reserva *reserva_atualizada)
 {
     string codigo_reserva = reserva_atualizada->getCodigo().getValor();

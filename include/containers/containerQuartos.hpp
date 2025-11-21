@@ -14,6 +14,7 @@ class ContainerQuarto {
     public: 
         bool incluir(Quarto*, string codigo_hotel);
         bool remover(int numero);
+        bool removerTodosPorHotel(string codigo_hotel);  // Remove todos os quartos de um hotel
         vector<Quarto*> pesquisar(string codigo_hotel);  // Retorna todos os quartos do hotel
         Quarto* pesquisarPorNumero(int numero);  // Busca por número do quarto
         bool atualizar(Quarto*);
