@@ -4,7 +4,7 @@
 #include <stdexcept>
 
 #include "DOMINIOS.hpp"
-#include "cadastroReserva.hpp"
+#include "cadastroQuarto.hpp"
 #include "quarto.hpp"
 #include "centralContainers.hpp"
 
@@ -14,33 +14,33 @@ using namespace std;
 
 int main()
 {
-    CadastroReserva cadastro_reserva;
+    CadastroQuarto cadastro_quarto;
 
-    Reserva *r = CentralContainers::getContainerReservas().pesquisar("AAAAA00000");
-    if (r)
+    Quarto *q = CentralContainers::getContainerQuartos().pesquisar(2);
+    if (q)
     {
-        cout << r->getChegada().getValor() << endl;
-        cout << r->getPartida().getValor() << endl;
-        cout << r->getCodigo().getValor() << endl;
-        cout << r->getDinheiro().getValor() << endl;
+        cout << q->getCapacidade().getValor() << endl;
+        cout << q->getNumero().getValor() << endl;
+        cout << q->getDinheiro().getValor() << endl;
+        cout << q->getRamal().getValor() << endl;
     }
     else
     {
-        cout << "Reserva nao existe" << endl;
+        cout << "Quarto nao existe" << endl;
     }
 
-    cadastro_reserva.nova_reserva();
+    cadastro_quarto.novo_quarto();
     cout << "--------------------" << endl;
-    r = CentralContainers::getContainerReservas().pesquisar("AAAAA00000");
-    if (r)
+    q = CentralContainers::getContainerQuartos().pesquisar(2);
+    if (q)
     {
-        cout << r->getChegada().getValor() << endl;
-        cout << r->getPartida().getValor() << endl;
-        cout << r->getCodigo().getValor() << endl;
-        cout << r->getDinheiro().getValor() << endl;
+        cout << q->getCapacidade().getValor() << endl;
+        cout << q->getNumero().getValor() << endl;
+        cout << q->getDinheiro().getValor() << endl;
+        cout << q->getRamal().getValor() << endl;
     }
     else
     {
-        cout << "Reserva nao existe" << endl;
+        cout << "Quarto nao existe" << endl;
     }
 }

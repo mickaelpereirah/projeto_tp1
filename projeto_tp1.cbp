@@ -64,6 +64,7 @@
 		<Unit filename="include/servicos/cadastro.hpp" />
 		<Unit filename="include/servicos/cadastroGerente.hpp" />
 		<Unit filename="include/servicos/cadastroHospede.hpp" />
+		<Unit filename="include/servicos/cadastroQuarto.hpp" />
 		<Unit filename="include/servicos/cadastroReserva.hpp" />
 		<Unit filename="include/servicos/centralContainers.hpp" />
 		<Unit filename="main.cpp" />
@@ -87,6 +88,7 @@
 		<Unit filename="src/servicos/cadastro.cpp" />
 		<Unit filename="src/servicos/cadastroGerente.cpp" />
 		<Unit filename="src/servicos/cadastroHospede.cpp" />
+		<Unit filename="src/servicos/cadastroQuarto.cpp" />
 		<Unit filename="src/servicos/cadastroReserva.cpp" />
 		<Unit filename="src/servicos/centralContainers.cpp" />
 		<Extensions />
