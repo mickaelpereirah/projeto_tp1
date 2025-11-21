@@ -234,7 +234,15 @@
 1763752945 D
 	"cadastroGerente.hpp"
 
-1763754148 source:z:\projeto_tp1\main.cpp
+1763759409 source:z:\projeto_tp1\main.cpp
+	<iostream>
+	<string>
+	<iomanip>
+	<stdexcept>
+	"DOMINIOS.hpp"
+	"cadastro/cadastroHotel.hpp"
+	"centralContainers.hpp"
+	"atualizar/atualizarHotel.hpp"
 
 1763753749 gin/main
 	<iostream>
@@ -563,9 +571,9 @@
 	<stdexcept>
 	"cadastroGerente.hpp"
 
-1763755943 z:\projeto_tp1\include\servicos\cadastro\cadastrogerente.hpp
+1763757894 z:\projeto_tp1\include\servicos\cadastro\cadastrogerente.hpp
 	"DOMINIOS.hpp"
-	"../cadastro.hpp"
+	"cadastro.hpp"
 	"gerente.hpp"
 	"centralContainers.hpp"
 
@@ -574,9 +582,9 @@
 	<stdexcept>
 	"cadastroHospede.hpp"
 
-1763755943 z:\projeto_tp1\include\servicos\cadastro\cadastrohospede.hpp
+1763757894 z:\projeto_tp1\include\servicos\cadastro\cadastrohospede.hpp
 	"DOMINIOS.hpp"
-	"../cadastro.hpp"
+	"cadastro.hpp"
 	"hospede.hpp"
 	"centralContainers.hpp"
 
@@ -585,9 +593,9 @@
 	<stdexcept>
 	"cadastroHotel.hpp"
 
-1763755943 z:\projeto_tp1\include\servicos\cadastro\cadastrohotel.hpp
+1763757894 z:\projeto_tp1\include\servicos\cadastro\cadastrohotel.hpp
 	"DOMINIOS.hpp"
-	"../cadastro.hpp"
+	"cadastro.hpp"
 	"hotel.hpp"
 	"centralContainers.hpp"
 
@@ -596,9 +604,9 @@
 	<stdexcept>
 	"cadastroQuarto.hpp"
 
-1763755943 z:\projeto_tp1\include\servicos\cadastro\cadastroquarto.hpp
+1763757894 z:\projeto_tp1\include\servicos\cadastro\cadastroquarto.hpp
 	"DOMINIOS.hpp"
-	"../cadastro.hpp"
+	"cadastro.hpp"
 	"quarto.hpp"
 	"centralContainers.hpp"
 
@@ -607,9 +615,44 @@
 	<stdexcept>
 	"cadastroReserva.hpp"
 
-1763755943 z:\projeto_tp1\include\servicos\cadastro\cadastroreserva.hpp
+1763757894 z:\projeto_tp1\include\servicos\cadastro\cadastroreserva.hpp
 	"DOMINIOS.hpp"
-	"../cadastro.hpp"
+	"cadastro.hpp"
 	"reserva.hpp"
 	"centralContainers.hpp"
+
+1763757894 z:\projeto_tp1\include\servicos\cadastro\cadastro.hpp
+	<unordered_map>
+	<string>
+	"DOMINIOS.hpp"
+
+1763759413 z:\projeto_tp1\include\servicos\atualizar\atualizarhotel.hpp
+	"DOMINIOS.hpp"
+	"../cadastro/cadastro.hpp"
+	"ENTIDADES.hpp"
+	"centralContainers.hpp"
+
+1763673332 z:\projeto_tp1\include\entidades\entidades.hpp
+	"gerente.hpp"
+	"hospede.hpp"
+	"hotel.hpp"
+	"pessoa.hpp"
+	"quarto.hpp"
+	"reserva.hpp"
+
+1763757894 source:z:\projeto_tp1\src\servicos\atualizar\atualizargerente.cpp
+	<iostream>
+	"atualizarGerente.hpp"
+
+1763757894 z:\projeto_tp1\include\servicos\atualizar\atualizargerente.hpp
+	"DOMINIOS.hpp"
+	"../cadastro/cadastro.hpp"
+	"gerente.hpp"
+	"centralContainers.hpp"
+
+1763757894 source:z:\projeto_tp1\src\servicos\cadastro\cadastro.cpp
+	<iostream>
+	<stdexcept>
+	"cadastro.hpp"
+	"DOMINIOS.hpp"
 

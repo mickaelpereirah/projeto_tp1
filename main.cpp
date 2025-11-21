@@ -4,57 +4,57 @@
 #include <stdexcept>
 
 #include "DOMINIOS.hpp"
-#include "cadastroGerente.hpp"
+#include "cadastro/cadastroHotel.hpp"
 #include "centralContainers.hpp"
-#include "atualizarGerente.hpp"
+#include "atualizar/atualizarHotel.hpp"
 
 using namespace std;
 
 int main()
 {
-    CadastroGerente cadastro_gerente;
-    AtualizarGerente atualizar_gerente;
+    CadastroHotel cadastro_hotel;
+    AtualizarHotel atualizar_hotel;
 
-    Gerente *g = CentralContainers::getContainerGerentes().pesquisar("luisa@gmail.com");
-    if (g)
+    Hotel *h = CentralContainers::getContainerHoteis().pesquisar("AAAAA00000");
+    if (h)
     {
-        cout << g->getNome().getValor() << endl;
-        cout << g->getEmail().getValor() << endl;
-        cout << g->getSenha().getValor() << endl;
-        cout << g->getRamal().getValor() << endl;
+        cout << h->getNome().getValor() << endl;
+        cout << h->getEndereco().getValor() << endl;
+        cout << h->getTelefone().getValor() << endl;
+        cout << h->getCodigo().getValor() << endl;
     }
     else
     {
-        cout << "Gerente nao existe" << endl;
+        cout << "Hotel nao existe" << endl;
     }
 
-    cadastro_gerente.novo_gerente();
+    cadastro_hotel.novo_hotel();
     cout << "--------------------" << endl;
-    g = CentralContainers::getContainerGerentes().pesquisar("luisa@gmail.com");
-    if (g)
+    h = CentralContainers::getContainerHoteis().pesquisar("AAAAA00000");
+    if (h)
     {
-        cout << g->getNome().getValor() << endl;
-        cout << g->getEmail().getValor() << endl;
-        cout << g->getSenha().getValor() << endl;
-        cout << g->getRamal().getValor() << endl;
+        cout << h->getNome().getValor() << endl;
+        cout << h->getEndereco().getValor() << endl;
+        cout << h->getTelefone().getValor() << endl;
+        cout << h->getCodigo().getValor() << endl;
     }
     else
     {
-        cout << "Gerente nao existe" << endl;
+        cout << "Hotel nao existe" << endl;
     }
 
-    atualizar_gerente.atualizar_gerente(g); 
+    atualizar_hotel.atualizar_hotel(h); 
     cout << "--------------------" << endl;
-    g = CentralContainers::getContainerGerentes().pesquisar("luisa@gmail.com");
-    if (g)
+    h = CentralContainers::getContainerHoteis().pesquisar("AAAAA00000");
+    if (h)
     {
-        cout << g->getNome().getValor() << endl;
-        cout << g->getEmail().getValor() << endl;
-        cout << g->getSenha().getValor() << endl;
-        cout << g->getRamal().getValor() << endl;
+        cout << h->getNome().getValor() << endl;
+        cout << h->getEndereco().getValor() << endl;
+        cout << h->getTelefone().getValor() << endl;
+        cout << h->getCodigo().getValor() << endl;
     }
     else
     {
-        cout << "Gerente nao existe" << endl;
+        cout << "Hotel nao existe" << endl;
     }
 }
