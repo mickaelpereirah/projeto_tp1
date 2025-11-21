@@ -151,19 +151,28 @@ Reserva *AtualizarReserva::modificar_reserva(Reserva *reserva)
 {
     cout << "ATUALIZAR RESERVA" << endl;
 
-    cout << "Deseja atualizar o nome (sim / nao): ";
+    cout << "Deseja atualizar a data de chegada (sim / nao): ";
     if (validar_resposta())
     {
         Data inicial = atualizar_data_inicial();
         reserva->setChegada(inicial);
     }
-    cout << "Deseja atualizar o endereço (sim / nao): ";
+    cout << "Deseja atualizar a data de partida (sim / nao): ";
     if (validar_resposta())
     {
         Data final = atualizar_data_final();
-        reserva->setPartida(final);
+        // Validar que a data final é posterior à data inicial
+        bool datas_validas = validar_datas(reserva->getChegada(), final);
+        if (datas_validas)
+        {
+            reserva->setPartida(final);
+        }
+        else
+        {
+            cout << "Erro: A data de partida deve ser posterior à data de chegada." << endl;
+        }
     }
-    cout << "Deseja atualizar o cartao (sim / nao): ";
+    cout << "Deseja atualizar o valor (sim / nao): ";
     if (validar_resposta())
     {
         Dinheiro dinheiro = criar_dinheiro();

@@ -1,6 +1,6 @@
 
-#ifndef ATUALIZAR_HOSPEDE_HPP_INCLUDED
-#define ATUALIZAR_HOSPEDE_HPP_INCLUDED
+#ifndef ATUALIZAR_RESERVA_HPP_INCLUDED
+#define ATUALIZAR_RESERVA_HPP_INCLUDED
 
 #include "DOMINIOS.hpp"
 #include "../cadastro/cadastro.hpp"
