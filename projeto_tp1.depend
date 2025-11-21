@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1763758421 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\main.cpp
+1763760774 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\main.cpp
 	<iostream>
 	<string>
 	<iomanip>
 	<stdexcept>
 	"DOMINIOS.hpp"
-	"cadastroHospede.hpp"
+	"cadastroQuarto.hpp"
 	"centralContainers.hpp"
-	"atualizarHospede.hpp"
+	"atualizarQuarto.hpp"
 
 1763661548 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\dominios\capacidade.hpp
 
@@ -733,5 +733,15 @@
 	"centralContainers.hpp"
 
 1763752284 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\servicos\centralcontainers.cpp
+	"centralContainers.hpp"
+
+1763758073 source:c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\src\servicos\atualizar\atualizarhospede.cpp
+	<iostream>
+	"atualizarHospede.hpp"
+
+1763760600 c:\users\mickael\onedrive\햞ea de trabalho\projeto_tp1\include\servicos\atualizar\atualizarquarto.hpp
+	"DOMINIOS.hpp"
+	"../cadastro/cadastro.hpp"
+	"ENTIDADES.hpp"
 	"centralContainers.hpp"
 

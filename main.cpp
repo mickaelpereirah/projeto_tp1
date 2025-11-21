@@ -4,54 +4,57 @@
 #include <stdexcept>
 
 #include "DOMINIOS.hpp"
-#include "cadastroHospede.hpp"
+#include "cadastroQuarto.hpp"
 #include "centralContainers.hpp"
-#include "atualizarHospede.hpp"
+#include "atualizarQuarto.hpp"
 
 using namespace std;
 
 int main()
 {
-    CadastroHospede cadastro_hospede;
-    AtualizarHospede atualizar_hospede;
+    CadastroQuarto cadastro_quarto;
+    AtualizarQuarto atualizar_quarto;
 
-    Hospede *h = CentralContainers::getContainerHospedes().pesquisar("luisa@gmail.com");
-    if (h)
+    Quarto *q = CentralContainers::getContainerQuartos().pesquisar(1);
+    if (q)
     {
-        cout << h->getNome().getValor() << endl;
-        cout << h->getEndereco().getValor() << endl;
-        cout << h->getCartao().getValor() << endl;
+        cout << q->getNumero().getValor() << endl;
+        cout << q->getCapacidade().getValor() << endl;
+        cout << q->getDinheiro().getValor() << endl;
+        cout << q->getRamal().getValor() << endl;
     }
     else
     {
-        cout << "Hospede nao existe" << endl;
+        cout << "Quarto nao existe" << endl;
     }
 
-    cadastro_hospede.novo_hospede();
+    cadastro_quarto.novo_quarto();
     cout << "--------------------" << endl;
-    h = CentralContainers::getContainerHospedes().pesquisar("luisa@gmail.com");
-    if (h)
+    q = CentralContainers::getContainerQuartos().pesquisar(1);
+    if (q)
     {
-        cout << h->getNome().getValor() << endl;
-        cout << h->getEndereco().getValor() << endl;
-        cout << h->getCartao().getValor() << endl;
+        cout << q->getNumero().getValor() << endl;
+        cout << q->getCapacidade().getValor() << endl;
+        cout << q->getDinheiro().getValor() << endl;
+        cout << q->getRamal().getValor() << endl;
     }
     else
     {
-        cout << "Hospede nao existe" << endl;
+        cout << "Quarto nao existe" << endl;
     }
 
-    atualizar_hospede.atualizar_hospede(h);
+    atualizar_quarto.atualizar_quarto(q);
     cout << "--------------------" << endl;
-    h = CentralContainers::getContainerHospedes().pesquisar("luisa@gmail.com");
-    if (h)
+    q = CentralContainers::getContainerQuartos().pesquisar(1);
+    if (q)
     {
-        cout << h->getNome().getValor() << endl;
-        cout << h->getEndereco().getValor() << endl;
-        cout << h->getCartao().getValor() << endl;
+        cout << q->getNumero().getValor() << endl;
+        cout << q->getCapacidade().getValor() << endl;
+        cout << q->getDinheiro().getValor() << endl;
+        cout << q->getRamal().getValor() << endl;
     }
     else
     {
-        cout << "Hospede nao existe" << endl;
+        cout << "Quarto nao existe" << endl;
     }
 }
