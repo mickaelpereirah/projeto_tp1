@@ -9,13 +9,13 @@
 
 using namespace std;
 
-class CadastroGerente : Cadastro
+class CadastroGerente : public Cadastro
 {
 private:
+    int test;
+public:
     static ContainerGerente container;
     Gerente *criar_gerente();
-
-public:
     bool novo_gerente();
 };
 

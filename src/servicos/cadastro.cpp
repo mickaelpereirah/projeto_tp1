@@ -1,4 +1,4 @@
-#include <iostream>>
+#include <iostream>
 #include <stdexcept>
 
 #include "cadastro.hpp"
@@ -28,12 +28,27 @@ Capacidade Cadastro::criar_capacidade()
     return c;
 }
 
-Cartao criar_cartao();
-Codigo criar_codigo();
-Data criar_data();
-Dinheiro criar_dinheiro();
+Cartao Cadastro::criar_cartao() {
+    Cartao c;
+    return c;
+}
 
-Email criar_email() {
+Codigo Cadastro::criar_codigo() {
+    Codigo c;
+    return c;
+}
+
+Data Cadastro::criar_data() {
+    Data d;
+    return d;
+}
+
+Dinheiro Cadastro::criar_dinheiro() {
+    Dinheiro d;
+    return d;
+}
+
+Email Cadastro::criar_email() {
     Email e;
     string email;
     while (true) {
@@ -53,12 +68,32 @@ Email criar_email() {
 }
 
 
-Endereco criar_endereco();
-Nome criar_nome() {
+Endereco Cadastro::criar_endereco()
+{
+    Endereco e;
+    string endereco;
+    while (true)
+    {
+        cout << "Digite o endereco:";
+        getline(cin, endereco);
+        try
+        {
+            e.setValor(endereco);
+            break;
+        }
+        catch (const invalid_argument &)
+        {
+            cout << "[Endereco Invalido:" << endereco << "]" << endl;
+        }
+    }
+    return e;
+}
+
+Nome Cadastro::criar_nome() {
     Nome n;
     string nome;
     while (true) {
-        cout << "Digite o email:";
+        cout << "Digite o nome:";
         getline(cin, nome);
         try
         {
@@ -74,9 +109,33 @@ Nome criar_nome() {
 
 }
 
-Numero criar_numero();
-Ramal criar_ramal();
-Senha criar_senha()
+Numero Cadastro::criar_numero() {
+    Numero n;
+    return n;
+}
+
+Ramal Cadastro::criar_ramal() {
+    Ramal r;
+    string input;
+    int ramal;
+    while (true) {
+        cout << "Digite o Ramal: ";
+        getline(cin, input);
+        try
+        {
+            ramal = stoi(input);
+            r.setValor(ramal);
+            break;
+        }
+        catch (const invalid_argument &e)
+        {
+            cout << "[Ramal Invalido:" << ramal << "] Deve ser um numero inteiro entre [0, 50]" << endl;
+        }
+    }
+    return r;
+}
+
+Senha Cadastro::criar_senha()
 {
     Senha s;
     string senha;
@@ -103,4 +162,23 @@ Senha criar_senha()
     }
     return s;
 }
-Telefone criar_telefone();
+Telefone Cadastro::criar_telefone()
+{
+    Telefone t;
+    string telefone;
+    while (true)
+    {
+        cout << "Digite o telefone:";
+        getline(cin, telefone);
+        try
+        {
+            t.setValor(telefone);
+            break;
+        }
+        catch (const invalid_argument &)
+        {
+            cout << "[Telefone Invalido:" << telefone << "]" << endl;
+        }
+    }
+    return t;
+}

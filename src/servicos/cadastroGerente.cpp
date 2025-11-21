@@ -1,9 +1,11 @@
-#include <iostream>>
+#include <iostream>
 #include <stdexcept>
 
 #include "cadastroGerente.hpp"
 
 using namespace std;
+
+ContainerGerente CadastroGerente::container;
 
 Gerente *CadastroGerente::criar_gerente()
 {
@@ -26,5 +28,5 @@ Gerente *CadastroGerente::criar_gerente()
 bool CadastroGerente::novo_gerente()
 {
     Gerente *gerente = criar_gerente();
-    container.incluir(gerente);
+    return container.incluir(gerente);
 }
