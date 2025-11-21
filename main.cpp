@@ -4,6 +4,7 @@
 #include <stdexcept>
 
 #include "DOMINIOS.hpp"
+#include "cadastroGerente.hpp"
 #include "quarto.hpp"
 #include "containerQuartos.hpp"
 
@@ -14,6 +15,11 @@ using namespace std;
 
 int main()
 {
+    CadastroGerente cadastro_gerente;
+
+    cadastro_gerente.novo_gerente();
+    CadastroGerente::container.pesquisar("luisa@gmail.com");
+    /*
     ContainerReserva container;
 
     Codigo c;
@@ -118,7 +124,5 @@ int main()
     else
     {
         cout << "Reserva inexistente" << endl; // ESPERADO
-    }
-
-    ////////////////////////////////////////////////////////
+    }*/
 }
