@@ -2,7 +2,7 @@
 #define CADASTRO_HOSPEDE_HPP_INCLUDED
 
 #include "DOMINIOS.hpp"
-#include "../cadastro.hpp"
+#include "cadastro.hpp"
 #include "hospede.hpp"
 #include "centralContainers.hpp"
 

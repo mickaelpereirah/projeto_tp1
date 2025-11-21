@@ -18,6 +18,7 @@
 					<Add directory="include/entidades" />
 					<Add directory="include/servicos" />
 					<Add directory="include/servicos/cadastro" />
+					<Add directory="include/servicos/atualizar" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -62,8 +63,8 @@
 		<Unit filename="include/entidades/pessoa.hpp" />
 		<Unit filename="include/entidades/quarto.hpp" />
 		<Unit filename="include/entidades/reserva.hpp" />
-		<Unit filename="include/servicos/atualizarGerente.hpp" />
-		<Unit filename="include/servicos/cadastro.hpp" />
+		<Unit filename="include/servicos/atualizar/atualizarGerente.hpp" />
+		<Unit filename="include/servicos/cadastro/cadastro.hpp" />
 		<Unit filename="include/servicos/cadastro/cadastroGerente.hpp" />
 		<Unit filename="include/servicos/cadastro/cadastroHospede.hpp" />
 		<Unit filename="include/servicos/cadastro/cadastroHotel.hpp" />
@@ -88,8 +89,8 @@
 		<Unit filename="src/dominios/ramal.cpp" />
 		<Unit filename="src/dominios/senha.cpp" />
 		<Unit filename="src/dominios/telefone.cpp" />
-		<Unit filename="src/servicos/atualizarGerente.cpp" />
-		<Unit filename="src/servicos/cadastro.cpp" />
+		<Unit filename="src/servicos/atualizar/atualizarGerente.cpp" />
+		<Unit filename="src/servicos/cadastro/cadastro.cpp" />
 		<Unit filename="src/servicos/cadastro/cadastroGerente.cpp" />
 		<Unit filename="src/servicos/cadastro/cadastroHospede.cpp" />
 		<Unit filename="src/servicos/cadastro/cadastroHotel.cpp" />

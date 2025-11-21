@@ -2,7 +2,7 @@
 #define CADASTRO_GERENTE_HPP_INCLUDED
 
 #include "DOMINIOS.hpp"
-#include "../cadastro.hpp"
+#include "cadastro.hpp"
 #include "quarto.hpp"
 #include "centralContainers.hpp"
 
