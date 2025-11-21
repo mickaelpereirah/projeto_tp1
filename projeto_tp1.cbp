@@ -71,6 +71,7 @@
 		<Unit filename="include/servicos/cadastro/cadastroHotel.hpp" />
 		<Unit filename="include/servicos/cadastro/cadastroQuarto.hpp" />
 		<Unit filename="include/servicos/cadastro/cadastroReserva.hpp" />
+		<Unit filename="include/servicos/listar/listarHotel.hpp" />
 		<Unit filename="include/servicos/centralContainers.hpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/containers/containerGerentes.cpp" />
@@ -98,6 +99,7 @@
 		<Unit filename="src/servicos/cadastro/cadastroHotel.cpp" />
 		<Unit filename="src/servicos/cadastro/cadastroQuarto.cpp" />
 		<Unit filename="src/servicos/cadastro/cadastroReserva.cpp" />
+		<Unit filename="src/servicos/listar/listarHotel.cpp" />
 		<Unit filename="src/servicos/centralContainers.cpp" />
 		<Extensions />
 	</Project>
