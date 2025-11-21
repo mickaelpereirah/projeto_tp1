@@ -1,10 +1,10 @@
-#ifndef CADASTRO_GERENTE_HPP_INCLUDED
-#define CADASTRO_GERENTE_HPP_INCLUDED
+#ifndef CADASTRO_RESERVA_HPP_INCLUDED
+#define CADASTRO_RESERVA_HPP_INCLUDED
 
 #include "DOMINIOS.hpp"
 #include "cadastro.hpp"
 #include "reserva.hpp"
-#include "containerReservas.hpp"
+#include "centralContainers.hpp"
 
 using namespace std;
 
@@ -16,7 +16,6 @@ private:
     bool validar_datas(const Data &inicial, const Data &final);
 
 public:
-    static ContainerReserva container;
     Reserva *criar_reserva();
     bool nova_reserva();
 };

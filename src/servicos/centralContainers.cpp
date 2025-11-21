@@ -1,7 +1,7 @@
 #include "centralContainers.hpp"
 
-ContainerReserva CentralContainers::containerReserva;
-ContainerHospede CentralContainers::containerHospede;
-ContainerHotei CentralContainers::containerHoteis;
+ContainerReserva CentralContainers::containerReservas;
+ContainerHospede CentralContainers::containerHospedes;
+ContainerHotel CentralContainers::containerHoteis;
 ContainerGerente CentralContainers::containerGerentes;
 ContainerQuarto CentralContainers::containerQuartos;

@@ -6,10 +6,9 @@
 #include "DOMINIOS.hpp"
 #include "cadastroReserva.hpp"
 #include "quarto.hpp"
-#include "containerQuartos.hpp"
+#include "centralContainers.hpp"
 
 #include "reserva.hpp"
-#include "containerReservas.hpp"
 
 using namespace std;
 
@@ -17,7 +16,7 @@ int main()
 {
     CadastroReserva cadastro_reserva;
 
-    Reserva *r = CadastroReserva::container.pesquisar("AAAAA00000");
+    Reserva *r = CentralContainers::getContainerReservas().pesquisar("AAAAA00000");
     if (r)
     {
         cout << r->getChegada().getValor() << endl;
@@ -32,7 +31,7 @@ int main()
 
     cadastro_reserva.nova_reserva();
     cout << "--------------------" << endl;
-    r = CadastroReserva::container.pesquisar("AAAAA00000");
+    r = CentralContainers::getContainerReservas().pesquisar("AAAAA00000");
     if (r)
     {
         cout << r->getChegada().getValor() << endl;

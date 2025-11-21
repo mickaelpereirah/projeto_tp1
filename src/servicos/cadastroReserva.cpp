@@ -5,7 +5,6 @@
 
 using namespace std;
 
-ContainerReserva CadastroReserva::container;
 
 Data CadastroReserva::criar_data_inicial()
 {
@@ -163,5 +162,5 @@ Reserva *CadastroReserva::criar_reserva()
 bool CadastroReserva::nova_reserva()
 {
     Reserva *reserva = criar_reserva();
-    return container.incluir(reserva);
+    return CentralContainers::getContainerReservas().incluir(reserva);
 }

@@ -5,7 +5,6 @@
 
 using namespace std;
 
-ContainerHospede CadastroHospede::container;
 
 Hospede *CadastroHospede::criar_hospede()
 {
@@ -28,5 +27,5 @@ Hospede *CadastroHospede::criar_hospede()
 bool CadastroHospede::novo_hospede()
 {
     Hospede *hospede = criar_hospede();
-    return container.incluir(hospede);
+    return CentralContainers::getContainerHospedes().incluir(hospede);
 }

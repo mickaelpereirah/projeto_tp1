@@ -8,30 +8,30 @@ using namespace std;
 class CentralContainers
 {
 private:
-    static ContainerReserva containerReserva;
-    static ContainerHospede containerHospede;
+    static ContainerReserva containerReservas;
+    static ContainerHospede containerHospedes;
     static ContainerHotel containerHoteis;
     static ContainerGerente containerGerentes;
     static ContainerQuarto containerQuartos;
 public:
-    static ContainerReserva &getContainerReserva();
-    static ContainerHospede &getContainerHospede();
+    static ContainerReserva &getContainerReservas();
+    static ContainerHospede &getContainerHospedes();
     static ContainerHotel &getContainerHoteis();
     static ContainerGerente &getContainerGerentes();
     static ContainerQuarto &getContainerQuartos();
 };
 
-inline ContainerReserva &CentralContainers::getContainerReserva()
+inline ContainerReserva &CentralContainers::getContainerReservas()
 {
-    return containerReserva;
+    return containerReservas;
 }
 
-inline ContainerHospede &CentralContainers::getContainerHospede()
+inline ContainerHospede &CentralContainers::getContainerHospedes()
 {
-    return containerHospede;
+    return containerHospedes;
 }
 
-inline ContainerHotei &CentralContainers::getContainerHoteis()
+inline ContainerHotel &CentralContainers::getContainerHoteis()
 {
     return containerHoteis;
 }
