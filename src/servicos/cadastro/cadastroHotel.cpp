@@ -26,5 +26,11 @@ Hotel *CadastroHotel::criar_hotel()
 bool CadastroHotel::novo_hotel()
 {
     Hotel *hotel = criar_hotel();
-    return CentralContainers::getContainerHoteis().incluir(hotel);
+    
+    // Solicitar email do gerente
+    cout << "Digite o email do gerente responsável: ";
+    Email email_gerente_obj = criar_email();
+    string email_gerente = email_gerente_obj.getValor();
+    
+    return CentralContainers::getContainerHoteis().incluir(hotel, email_gerente);
 }

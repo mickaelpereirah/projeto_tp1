@@ -26,5 +26,11 @@ Quarto *CadastroQuarto::criar_quarto()
 bool CadastroQuarto::novo_quarto()
 {
     Quarto *quarto = criar_quarto();
-    return CentralContainers::getContainerQuartos().incluir(quarto);
+    
+    // Solicitar código do hotel
+    cout << "Digite o código do hotel: ";
+    Codigo codigo_hotel_obj = criar_codigo();
+    string codigo_hotel = codigo_hotel_obj.getValor();
+    
+    return CentralContainers::getContainerQuartos().incluir(quarto, codigo_hotel);
 }

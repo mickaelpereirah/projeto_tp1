@@ -3,40 +3,82 @@
 
 using namespace std;
 
-bool ContainerQuarto::incluir(Quarto *quarto)
+bool ContainerQuarto::incluir(Quarto *quarto, string codigo_hotel)
 {
+    // Verificar se o quarto já existe (por número)
     int numero_quarto = quarto->getNumero().getValor();
-    Quarto *quarto_encontrado = pesquisar(numero_quarto);
+    Quarto *quarto_encontrado = pesquisarPorNumero(numero_quarto);
 
     if (quarto_encontrado != nullptr)
     {
-        return false;
+        return false;  // Quarto já existe
     }
-    else
-    {
-        container.insert({numero_quarto, quarto});
-        return true;        
-    }
+
+    // Adicionar ao vector do hotel
+    container[codigo_hotel].push_back(quarto);
+    return true;
 }
 
 bool ContainerQuarto::remover(int numero)
 {
-    return container.erase(numero);
+    // Iterar sobre todos os hotéis para encontrar o quarto
+    for (auto& par : container)
+    {
+        vector<Quarto*>& quartos = par.second;
+        for (auto it = quartos.begin(); it != quartos.end(); ++it)
+        {
+            if ((*it)->getNumero().getValor() == numero)
+            {
+                quartos.erase(it);
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
-Quarto *ContainerQuarto::pesquisar(int numero)
+vector<Quarto*> ContainerQuarto::pesquisar(string codigo_hotel)
 {
-    if (container.count(numero))
-    { // retorna 0 se não existir e 1 se existir
-        return container.at(numero);
+    if (container.count(codigo_hotel))
+    {
+        return container.at(codigo_hotel);
+    }
+    return vector<Quarto*>();  // Retorna vector vazio
+}
+
+Quarto* ContainerQuarto::pesquisarPorNumero(int numero)
+{
+    // Iterar sobre todos os hotéis para encontrar o quarto
+    for (auto& par : container)
+    {
+        vector<Quarto*>& quartos = par.second;
+        for (Quarto* quarto : quartos)
+        {
+            if (quarto->getNumero().getValor() == numero)
+            {
+                return quarto;
+            }
+        }
     }
     return nullptr;
 }
 
 bool ContainerQuarto::atualizar(Quarto *quarto_atualizado)
 {
-    int numero_quarto = quarto_atualizado->getNumero().getValor();    
-    container[numero_quarto] = quarto_atualizado;
-
-    return true;
+    int numero_quarto = quarto_atualizado->getNumero().getValor();
+    
+    // Encontrar e atualizar o quarto
+    for (auto& par : container)
+    {
+        vector<Quarto*>& quartos = par.second;
+        for (Quarto*& q : quartos)
+        {
+            if (q->getNumero().getValor() == numero_quarto)
+            {
+                q = quarto_atualizado;  // Atualiza o ponteiro
+                return true;
+            }
+        }
+    }
+    return false;
 }

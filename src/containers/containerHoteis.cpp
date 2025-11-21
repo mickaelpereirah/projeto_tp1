@@ -3,40 +3,82 @@
 
 using namespace std;
 
-bool ContainerHotel::incluir(Hotel *hotel)
+bool ContainerHotel::incluir(Hotel *hotel, string email_gerente)
 {
+    // Verificar se o hotel já existe (por código)
     string codigo = hotel->getCodigo().getValor();
-    Hotel *hotel_encontrado = pesquisar(codigo);
+    Hotel *hotel_encontrado = pesquisarPorCodigo(codigo);
 
     if (hotel_encontrado != nullptr)
     {
-
-        return false;
+        return false;  // Hotel já existe
     }
 
-    container.insert({codigo, hotel});
+    // Adicionar ao vector do gerente
+    container[email_gerente].push_back(hotel);
     return true;
 }
 
 bool ContainerHotel::remover(string codigo)
 {
-    return container.erase(codigo);
+    // Iterar sobre todos os gerentes para encontrar o hotel
+    for (auto& par : container)
+    {
+        vector<Hotel*>& hoteis = par.second;
+        for (auto it = hoteis.begin(); it != hoteis.end(); ++it)
+        {
+            if ((*it)->getCodigo().getValor() == codigo)
+            {
+                hoteis.erase(it);
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
-Hotel *ContainerHotel::pesquisar(string codigo)
+vector<Hotel*> ContainerHotel::pesquisar(string email_gerente)
 {
-    if (container.count(codigo))
+    if (container.count(email_gerente))
     {
-        return container.at(codigo);
+        return container.at(email_gerente);
     }
+    return vector<Hotel*>();  // Retorna vector vazio
+}
 
+Hotel* ContainerHotel::pesquisarPorCodigo(string codigo)
+{
+    // Iterar sobre todos os gerentes para encontrar o hotel
+    for (auto& par : container)
+    {
+        vector<Hotel*>& hoteis = par.second;
+        for (Hotel* hotel : hoteis)
+        {
+            if (hotel->getCodigo().getValor() == codigo)
+            {
+                return hotel;
+            }
+        }
+    }
     return nullptr;
 }
 
 bool ContainerHotel::atualizar(Hotel *hotel)
 {
     string codigo = hotel->getCodigo().getValor();
-    container[codigo] = hotel;
-
-    return true;
+    
+    // Encontrar e atualizar o hotel
+    for (auto& par : container)
+    {
+        vector<Hotel*>& hoteis = par.second;
+        for (Hotel*& h : hoteis)
+        {
+            if (h->getCodigo().getValor() == codigo)
+            {
+                h = hotel;  // Atualiza o ponteiro
+                return true;
+            }
+        }
+    }
+    return false;
 }

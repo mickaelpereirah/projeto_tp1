@@ -162,5 +162,16 @@ Reserva *CadastroReserva::criar_reserva()
 bool CadastroReserva::nova_reserva()
 {
     Reserva *reserva = criar_reserva();
-    return CentralContainers::getContainerReservas().incluir(reserva);
+    
+    // Solicitar número do quarto
+    cout << "Digite o número do quarto: ";
+    Numero numero_obj = criar_numero();
+    int numero_quarto = numero_obj.getValor();
+    
+    // Solicitar email do hóspede
+    cout << "Digite o email do hóspede: ";
+    Email email_hospede_obj = criar_email();
+    string email_hospede = email_hospede_obj.getValor();
+    
+    return CentralContainers::getContainerReservas().incluir(reserva, numero_quarto, email_hospede);
 }
