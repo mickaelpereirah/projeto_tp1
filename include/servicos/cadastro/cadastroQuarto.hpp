@@ -1,19 +1,18 @@
-
 #ifndef CADASTRO_GERENTE_HPP_INCLUDED
 #define CADASTRO_GERENTE_HPP_INCLUDED
 
 #include "DOMINIOS.hpp"
-#include "cadastro.hpp"
-#include "gerente.hpp"
+#include "../cadastro.hpp"
+#include "quarto.hpp"
 #include "centralContainers.hpp"
 
 using namespace std;
 
-class CadastroGerente : public Cadastro
+class CadastroQuarto : public Cadastro
 {
 public:
-    Gerente *criar_gerente();
-    bool novo_gerente();
+    Quarto *criar_quarto();
+    bool novo_quarto();
 };
 
 #endif

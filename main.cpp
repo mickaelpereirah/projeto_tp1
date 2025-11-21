@@ -4,7 +4,7 @@
 #include <stdexcept>
 
 #include "DOMINIOS.hpp"
-#include "cadastroHotel.hpp"
+#include "cadastro/cadastroHotel.hpp"
 #include "hotel.hpp"
 #include "centralContainers.hpp"
 
