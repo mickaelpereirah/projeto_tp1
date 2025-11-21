@@ -231,14 +231,14 @@
 	"email.hpp"
 	<stdexcept>
 
-1763752447 source:z:\projeto_tp1\main.cpp
+1763754148 source:z:\projeto_tp1\main.cpp
 	<iostream>
 	<string>
 	<iomanip>
 	<stdexcept>
 	"DOMINIOS.hpp"
-	"cadastroQuarto.hpp"
-	"quarto.hpp"
+	"cadastroHotel.hpp"
+	"hotel.hpp"
 	"centralContainers.hpp"
 	"reserva.hpp"
 
@@ -504,7 +504,7 @@
 	<stdexcept>
 	"cadastroReserva.hpp"
 
-1763751311 z:\projeto_tp1\include\servicos\centralcontainers.hpp
+1763753909 z:\projeto_tp1\include\servicos\centralcontainers.hpp
 	"CONTAINERS.hpp"
 
 1763751311 z:\projeto_tp1\include\containers\containers.hpp
@@ -531,5 +531,11 @@
 	"DOMINIOS.hpp"
 	"cadastro.hpp"
 	"quarto.hpp"
+	"centralContainers.hpp"
+
+1763753749 z:\projeto_tp1\include\servicos\cadastrohotel.hpp
+	"DOMINIOS.hpp"
+	"cadastro.hpp"
+	"hotel.hpp"
 	"centralContainers.hpp"
 
