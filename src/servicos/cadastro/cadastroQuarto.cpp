@@ -8,10 +8,10 @@ using namespace std;
 Quarto *CadastroQuarto::criar_quarto()
 {
     Quarto *q = new Quarto();
-    
+
     cout << "CRIAR QUARTO" << endl;
     Numero numero = criar_numero();
-    Capacidade capacidade= criar_capacidade();
+    Capacidade capacidade = criar_capacidade();
     Dinheiro dinheiro = criar_dinheiro();
     Ramal ramal = criar_ramal();
 

@@ -231,13 +231,22 @@
 	"email.hpp"
 	<stdexcept>
 
+<<<<<<< HEAD
 1763755369 source:z:\projeto_tp1\main.cpp
+=======
+1763754148 source:z:\projeto_tp1\main.cpp
+>>>>>>> origin/main
 	<iostream>
 	<string>
 	<iomanip>
 	<stdexcept>
 	"DOMINIOS.hpp"
+<<<<<<< HEAD
 	"cadastroGerente.hpp"
+=======
+	"cadastroHotel.hpp"
+	"hotel.hpp"
+>>>>>>> origin/main
 	"centralContainers.hpp"
 	"atualizarGerente.hpp"
 
@@ -503,7 +512,11 @@
 	<stdexcept>
 	"cadastroReserva.hpp"
 
+<<<<<<< HEAD
 1763750893 z:\projeto_tp1\include\servicos\centralcontainers.hpp
+=======
+1763753909 z:\projeto_tp1\include\servicos\centralcontainers.hpp
+>>>>>>> origin/main
 	"CONTAINERS.hpp"
 
 1763749609 z:\projeto_tp1\include\containers\containers.hpp
@@ -532,9 +545,16 @@
 	"quarto.hpp"
 	"centralContainers.hpp"
 
+<<<<<<< HEAD
 1763755316 z:\projeto_tp1\include\servicos\atualizargerente.hpp
 	"DOMINIOS.hpp"
 	"cadastro.hpp"
 	"gerente.hpp"
+=======
+1763753749 z:\projeto_tp1\include\servicos\cadastrohotel.hpp
+	"DOMINIOS.hpp"
+	"cadastro.hpp"
+	"hotel.hpp"
+>>>>>>> origin/main
 	"centralContainers.hpp"
 

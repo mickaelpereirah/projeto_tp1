@@ -2,7 +2,7 @@
 #define CADASTRO_RESERVA_HPP_INCLUDED
 
 #include "DOMINIOS.hpp"
-#include "cadastro.hpp"
+#include "../cadastro.hpp"
 #include "reserva.hpp"
 #include "centralContainers.hpp"
 

@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 Gerente *CadastroGerente::criar_gerente()
 {
     Gerente *g = new Gerente();
