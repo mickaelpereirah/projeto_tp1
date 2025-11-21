@@ -5,13 +5,14 @@
 #include "DOMINIOS.hpp"
 #include "cadastro.hpp"
 #include "gerente.hpp"
-#include "centralContainers.hpp"
+#include "containerGerentes.hpp"
 
 using namespace std;
 
 class CadastroGerente : public Cadastro
 {
 public:
+    static ContainerGerente container;
     Gerente *criar_gerente();
     bool novo_gerente();
 };

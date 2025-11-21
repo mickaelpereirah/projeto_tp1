@@ -1,4 +1,3 @@
-
 #ifndef CADASTRO_GERENTE_HPP_INCLUDED
 #define CADASTRO_GERENTE_HPP_INCLUDED
 
@@ -11,9 +10,6 @@ using namespace std;
 
 class CadastroHospede : public Cadastro
 {
-private:
-    int test;
-
 public:
     static ContainerHospede container;
     Hospede *criar_hospede();
