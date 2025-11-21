@@ -5,10 +5,10 @@
 
 using namespace std;
 
-
-Gerente *CadastroGerente::criar_gerente() {
+Gerente *CadastroGerente::criar_gerente()
+{
     Gerente *g = new Gerente();
-    
+
     cout << "CRIAR GERENTE" << endl;
     Nome nome = criar_nome();
     Ramal ramal = criar_ramal();
@@ -21,4 +21,10 @@ Gerente *CadastroGerente::criar_gerente() {
     g->setSenha(senha);
 
     return g;
+}
+
+bool CadastroGerente::novo_gerente()
+{
+    Gerente *gerente = criar_gerente();
+    container.incluir(gerente);
 }
