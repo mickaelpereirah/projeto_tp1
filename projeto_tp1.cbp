@@ -36,12 +36,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/containers/CONTAINERS.hpp" />
 		<Unit filename="include/containers/containerGerentes.hpp" />
 		<Unit filename="include/containers/containerHospedes.hpp" />
 		<Unit filename="include/containers/containerHoteis.hpp" />
 		<Unit filename="include/containers/containerQuartos.hpp" />
 		<Unit filename="include/containers/containerReservas.hpp" />
-		<Unit filename="include/containers/CONTAINERS.hpp" />
 		<Unit filename="include/dominios/DOMINIOS.hpp" />
 		<Unit filename="include/dominios/capacidade.hpp" />
 		<Unit filename="include/dominios/cartao.hpp" />
@@ -61,6 +61,7 @@
 		<Unit filename="include/entidades/pessoa.hpp" />
 		<Unit filename="include/entidades/quarto.hpp" />
 		<Unit filename="include/entidades/reserva.hpp" />
+		<Unit filename="include/servicos/atualizarGerente.hpp" />
 		<Unit filename="include/servicos/cadastro.hpp" />
 		<Unit filename="include/servicos/cadastroGerente.hpp" />
 		<Unit filename="include/servicos/cadastroHospede.hpp" />
@@ -85,6 +86,7 @@
 		<Unit filename="src/dominios/ramal.cpp" />
 		<Unit filename="src/dominios/senha.cpp" />
 		<Unit filename="src/dominios/telefone.cpp" />
+		<Unit filename="src/servicos/atualizarGerente.cpp" />
 		<Unit filename="src/servicos/cadastro.cpp" />
 		<Unit filename="src/servicos/cadastroGerente.cpp" />
 		<Unit filename="src/servicos/cadastroHospede.cpp" />

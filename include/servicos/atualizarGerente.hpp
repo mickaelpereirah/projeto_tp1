@@ -1,20 +1,20 @@
 
-#ifndef CADASTRO_GERENTE_HPP_INCLUDED
-#define CADASTRO_GERENTE_HPP_INCLUDED
+#ifndef ATUALIZAR_GERENTE_HPP_INCLUDED
+#define ATUALIZAR_GERENTE_HPP_INCLUDED
 
 #include "DOMINIOS.hpp"
 #include "cadastro.hpp"
 #include "gerente.hpp"
-#include "containerGerentes.hpp"
+#include "centralContainers.hpp"
 
 using namespace std;
 
-class CadastroGerente : public Cadastro
+class AtualizarGerente : public Cadastro
 {
 public:
-    static ContainerGerente container;
-    Gerente *criar_gerente();
-    bool novo_gerente();
+    Gerente *modificar_gerente(Gerente*);
+    bool atualizar_gerente(Gerente*);
+    bool validar_resposta();
 };
 
 #endif

@@ -4,43 +4,57 @@
 #include <stdexcept>
 
 #include "DOMINIOS.hpp"
-#include "cadastroQuarto.hpp"
-#include "quarto.hpp"
+#include "cadastroGerente.hpp"
 #include "centralContainers.hpp"
-
-#include "reserva.hpp"
+#include "atualizarGerente.hpp"
 
 using namespace std;
 
 int main()
 {
-    CadastroQuarto cadastro_quarto;
+    CadastroGerente cadastro_gerente;
+    AtualizarGerente atualizar_gerente;
 
-    Quarto *q = CentralContainers::getContainerQuartos().pesquisar(2);
-    if (q)
+    Gerente *g = CentralContainers::getContainerGerentes().pesquisar("luisa@gmail.com");
+    if (g)
     {
-        cout << q->getCapacidade().getValor() << endl;
-        cout << q->getNumero().getValor() << endl;
-        cout << q->getDinheiro().getValor() << endl;
-        cout << q->getRamal().getValor() << endl;
+        cout << g->getNome().getValor() << endl;
+        cout << g->getEmail().getValor() << endl;
+        cout << g->getSenha().getValor() << endl;
+        cout << g->getRamal().getValor() << endl;
     }
     else
     {
-        cout << "Quarto nao existe" << endl;
+        cout << "Gerente nao existe" << endl;
     }
 
-    cadastro_quarto.novo_quarto();
+    cadastro_gerente.novo_gerente();
     cout << "--------------------" << endl;
-    q = CentralContainers::getContainerQuartos().pesquisar(2);
-    if (q)
+    g = CentralContainers::getContainerGerentes().pesquisar("luisa@gmail.com");
+    if (g)
     {
-        cout << q->getCapacidade().getValor() << endl;
-        cout << q->getNumero().getValor() << endl;
-        cout << q->getDinheiro().getValor() << endl;
-        cout << q->getRamal().getValor() << endl;
+        cout << g->getNome().getValor() << endl;
+        cout << g->getEmail().getValor() << endl;
+        cout << g->getSenha().getValor() << endl;
+        cout << g->getRamal().getValor() << endl;
     }
     else
     {
-        cout << "Quarto nao existe" << endl;
+        cout << "Gerente nao existe" << endl;
+    }
+
+    atualizar_gerente.atualizar_gerente(g); 
+    cout << "--------------------" << endl;
+    g = CentralContainers::getContainerGerentes().pesquisar("luisa@gmail.com");
+    if (g)
+    {
+        cout << g->getNome().getValor() << endl;
+        cout << g->getEmail().getValor() << endl;
+        cout << g->getSenha().getValor() << endl;
+        cout << g->getRamal().getValor() << endl;
+    }
+    else
+    {
+        cout << "Gerente nao existe" << endl;
     }
 }
