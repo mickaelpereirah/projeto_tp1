@@ -4,57 +4,57 @@
 #include <stdexcept>
 
 #include "DOMINIOS.hpp"
-#include "cadastroQuarto.hpp"
+#include "cadastro/cadastroReserva.hpp"
 #include "centralContainers.hpp"
-#include "atualizarQuarto.hpp"
+#include "atualizar/atualizarReserva.hpp"
 
 using namespace std;
 
 int main()
 {
-    CadastroQuarto cadastro_quarto;
-    AtualizarQuarto atualizar_quarto;
+    CadastroReserva cadastro_reserva;
+    AtualizarReserva atualizar_reserva;
 
-    Quarto *q = CentralContainers::getContainerQuartos().pesquisar(1);
-    if (q)
+    Reserva *r = CentralContainers::getContainerReservas().pesquisar("AAAAA00000");
+    if (r)
     {
-        cout << q->getNumero().getValor() << endl;
-        cout << q->getCapacidade().getValor() << endl;
-        cout << q->getDinheiro().getValor() << endl;
-        cout << q->getRamal().getValor() << endl;
+        cout << r->getChegada().getValor() << endl;
+        cout << r->getPartida().getValor() << endl;
+        cout << r->getDinheiro().getValor() << endl;
+        cout << r->getCodigo().getValor() << endl;
     }
     else
     {
-        cout << "Quarto nao existe" << endl;
+        cout << "Reserva nao existe" << endl;
     }
 
-    cadastro_quarto.novo_quarto();
+    cadastro_reserva.nova_reserva();
     cout << "--------------------" << endl;
-    q = CentralContainers::getContainerQuartos().pesquisar(1);
-    if (q)
+    r = CentralContainers::getContainerReservas().pesquisar("AAAAA00000");
+    if (r)
     {
-        cout << q->getNumero().getValor() << endl;
-        cout << q->getCapacidade().getValor() << endl;
-        cout << q->getDinheiro().getValor() << endl;
-        cout << q->getRamal().getValor() << endl;
+        cout << r->getChegada().getValor() << endl;
+        cout << r->getPartida().getValor() << endl;
+        cout << r->getDinheiro().getValor() << endl;
+        cout << r->getCodigo().getValor() << endl;
     }
     else
     {
-        cout << "Quarto nao existe" << endl;
+        cout << "Reserva nao existe" << endl;
     }
 
-    atualizar_quarto.atualizar_quarto(q);
+    atualizar_reserva.atualizar_reserva(r);
     cout << "--------------------" << endl;
-    q = CentralContainers::getContainerQuartos().pesquisar(1);
-    if (q)
+    r = CentralContainers::getContainerReservas().pesquisar("AAAAA00000");
+    if (r)
     {
-        cout << q->getNumero().getValor() << endl;
-        cout << q->getCapacidade().getValor() << endl;
-        cout << q->getDinheiro().getValor() << endl;
-        cout << q->getRamal().getValor() << endl;
+        cout << r->getChegada().getValor() << endl;
+        cout << r->getPartida().getValor() << endl;
+        cout << r->getDinheiro().getValor() << endl;
+        cout << r->getCodigo().getValor() << endl;
     }
     else
     {
-        cout << "Quarto nao existe" << endl;
+        cout << "Reserva nao existe" << endl;
     }
 }

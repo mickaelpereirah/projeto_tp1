@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1763760774 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\main.cpp
+1763760774 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\main.cpp
 	<iostream>
 	<string>
 	<iomanip>
@@ -9,30 +9,30 @@
 	"centralContainers.hpp"
 	"atualizarQuarto.hpp"
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\capacidade.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\dominios\capacidade.hpp
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\codigo.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\dominios\codigo.hpp
 	<string>
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\cartao.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\dominios\cartao.hpp
 	<string>
 
-1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\capacidade.cpp
+1763492694 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\dominios\capacidade.cpp
 	"capacidade.hpp"
 	<stdexcept>
 
-1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\cartao.cpp
+1763492694 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\dominios\cartao.cpp
 	"cartao.hpp"
 	<string>
 	<stdexcept>
 
-1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\codigo.cpp
+1763492694 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\dominios\codigo.cpp
 	"codigo.hpp"
 	<cctype>
 	<string>
 	<stdexcept>
 
-1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\data.cpp
+1763492694 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\dominios\data.cpp
 	"data.hpp"
 	<string>
 	<regex>
@@ -41,10 +41,10 @@
 	<cstdlib>
 	<stdexcept>
 
-1763752284 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\data.hpp
+1763752284 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\dominios\data.hpp
 	<string>
 
-1763493487 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\dominios.hpp
+1763493487 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\dominios\dominios.hpp
 	"cartao.hpp"
 	"capacidade.hpp"
 	"codigo.hpp"
@@ -58,37 +58,37 @@
 	"telefone.hpp"
 	"email.hpp"
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\dinheiro.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\dominios\dinheiro.hpp
 	<string>
 
-1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\dinheiro.cpp
+1763492694 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\dominios\dinheiro.cpp
 	"dinheiro.hpp"
 	<stdexcept>
 
-1763481600 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\capacidade.cpp
+1763481600 source:c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\src\dominios\capacidade.cpp
 	"capacidade.hpp"
 	<stdexcept>
 
-1763481604 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\capacidade.hpp
+1763481604 c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\include\dominios\capacidade.hpp
 
-1763481548 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\cartao.cpp
+1763481548 source:c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\src\dominios\cartao.cpp
 	"cartao.hpp"
 	<string>
 	<stdexcept>
 
-1763481552 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\cartao.hpp
+1763481552 c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\include\dominios\cartao.hpp
 	<string>
 
-1763481451 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\codigo.cpp
+1763481451 source:c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\src\dominios\codigo.cpp
 	"codigo.hpp"
 	<cctype>
 	<string>
 	<stdexcept>
 
-1763481461 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\codigo.hpp
+1763481461 c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\include\dominios\codigo.hpp
 	<string>
 
-1763481454 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\data.cpp
+1763481454 source:c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\src\dominios\data.cpp
 	"data.hpp"
 	<string>
 	<regex>
@@ -97,69 +97,69 @@
 	<cstdlib>
 	<stdexcept>
 
-1763481457 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\data.hpp
+1763481457 c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\include\dominios\data.hpp
 	<string>
 
-1763481469 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\dinheiro.cpp
+1763481469 source:c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\src\dominios\dinheiro.cpp
 	"dinheiro.hpp"
 	<stdexcept>
 
-1763481473 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\dinheiro.hpp
+1763481473 c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\include\dominios\dinheiro.hpp
 	<string>
 
-1763481561 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\senha..cpp
+1763481561 source:c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\src\dominios\senha..cpp
 	"senha.hpp"
 	<cctype>
 	<string>
 	<stdexcept>
 
-1763481533 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\senha.hpp
+1763481533 c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\include\dominios\senha.hpp
 	<string>
 
-1763485087 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\endereco.cpp
+1763485087 source:c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\src\dominios\endereco.cpp
 	"endereco.hpp"
 	<stdexcept>
 	<cctype>
 
-1763481483 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\endereco.hpp
+1763481483 c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\include\dominios\endereco.hpp
 	<string>
 
-1763484496 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\nome.cpp
+1763484496 source:c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\src\dominios\nome.cpp
 	"nome.hpp"
 	<cctype>
 	<stdexcept>
 
-1763481479 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\nome.hpp
+1763481479 c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\include\dominios\nome.hpp
 	<string>
 
-1763484833 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\numero.cpp
+1763484833 source:c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\src\dominios\numero.cpp
 	"numero.hpp"
 	<stdexcept>
 
-1763481489 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\numero.hpp
+1763481489 c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\include\dominios\numero.hpp
 
-1763482708 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\ramal.cpp
+1763482708 source:c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\src\dominios\ramal.cpp
 	"ramal.hpp"
 	<stdexcept>
 
-1763481493 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\ramal.hpp
+1763481493 c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\include\dominios\ramal.hpp
 
-1763486085 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\telefone.cpp
+1763486085 source:c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\src\dominios\telefone.cpp
 	"telefone.hpp"
 	<cctype>
 	<stdexcept>
 
-1763482708 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\telefone.hpp
+1763482708 c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\include\dominios\telefone.hpp
 	<string>
 
-1763484833 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\main.cpp
+1763484833 source:c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\main.cpp
 	<iostream>
 	<string>
 	<iomanip>
 	"DOMINIOS.hpp"
 	<stdexcept>
 
-1763483451 c:\users\usuário\documents\trabalho_tp1\projeto_tp1\include\dominios\dominios.hpp
+1763483451 c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\include\dominios\dominios.hpp
 	"cartao.hpp"
 	"capacidade.hpp"
 	"codigo.hpp"
@@ -172,61 +172,61 @@
 	"senha.hpp"
 	"telefone.hpp"
 
-1763481561 source:c:\users\usuário\documents\trabalho_tp1\projeto_tp1\src\dominios\senha.cpp
+1763481561 source:c:\users\usuï¿½rio\documents\trabalho_tp1\projeto_tp1\src\dominios\senha.cpp
 	"senha.hpp"
 	<cctype>
 	<string>
 	<stdexcept>
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\endereco.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\dominios\endereco.hpp
 	<string>
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\nome.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\dominios\nome.hpp
 	<string>
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\numero.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\dominios\numero.hpp
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\ramal.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\dominios\ramal.hpp
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\senha.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\dominios\senha.hpp
 	<string>
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\telefone.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\dominios\telefone.hpp
 	<string>
 
-1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\endereco.cpp
+1763492694 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\dominios\endereco.cpp
 	"endereco.hpp"
 	<stdexcept>
 	<cctype>
 
-1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\nome.cpp
+1763492694 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\dominios\nome.cpp
 	"nome.hpp"
 	<cctype>
 	<stdexcept>
 
-1763661548 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\numero.cpp
+1763661548 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\dominios\numero.cpp
 	"numero.hpp"
 	<stdexcept>
 
-1763661548 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\ramal.cpp
+1763661548 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\dominios\ramal.cpp
 	"ramal.hpp"
 	<stdexcept>
 
-1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\senha.cpp
+1763492694 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\dominios\senha.cpp
 	"senha.hpp"
 	<cctype>
 	<string>
 	<stdexcept>
 
-1763492694 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\telefone.cpp
+1763492694 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\dominios\telefone.cpp
 	"telefone.hpp"
 	<cctype>
 	<stdexcept>
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\dominios\email.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\dominios\email.hpp
 	<string>
 
-1763493617 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\dominios\email.cpp
+1763493617 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\dominios\email.cpp
 	"email.hpp"
 	<stdexcept>
 
@@ -250,7 +250,7 @@
 	"cadastroHotel.hpp"
 	"hotel.hpp"
 
-1763511730 z:\projeto_tp1\include\dominios\dominios.hpp
+1763662432 z:\projeto_tp1\include\dominios\dominios.hpp
 	"cartao.hpp"
 	"capacidade.hpp"
 	"codigo.hpp"
@@ -264,55 +264,55 @@
 	"telefone.hpp"
 	"email.hpp"
 
-1763645691 z:\projeto_tp1\include\dominios\cartao.hpp
+1763741003 z:\projeto_tp1\include\dominios\cartao.hpp
 	<string>
 
-1763645691 z:\projeto_tp1\include\dominios\capacidade.hpp
+1763662432 z:\projeto_tp1\include\dominios\capacidade.hpp
 
-1763645691 z:\projeto_tp1\include\dominios\codigo.hpp
+1763662432 z:\projeto_tp1\include\dominios\codigo.hpp
 	<string>
 
-1763749762 z:\projeto_tp1\include\dominios\data.hpp
+1763747747 z:\projeto_tp1\include\dominios\data.hpp
 	<string>
 
-1763645691 z:\projeto_tp1\include\dominios\dinheiro.hpp
+1763662432 z:\projeto_tp1\include\dominios\dinheiro.hpp
 	<string>
 
-1763645691 z:\projeto_tp1\include\dominios\endereco.hpp
+1763662432 z:\projeto_tp1\include\dominios\endereco.hpp
 	<string>
 
-1763645691 z:\projeto_tp1\include\dominios\nome.hpp
+1763662432 z:\projeto_tp1\include\dominios\nome.hpp
 	<string>
 
-1763645691 z:\projeto_tp1\include\dominios\numero.hpp
+1763662432 z:\projeto_tp1\include\dominios\numero.hpp
 
-1763645691 z:\projeto_tp1\include\dominios\ramal.hpp
+1763662432 z:\projeto_tp1\include\dominios\ramal.hpp
 
-1763645691 z:\projeto_tp1\include\dominios\senha.hpp
+1763662432 z:\projeto_tp1\include\dominios\senha.hpp
 	<string>
 
-1763645691 z:\projeto_tp1\include\dominios\telefone.hpp
+1763662432 z:\projeto_tp1\include\dominios\telefone.hpp
 	<string>
 
-1763645691 z:\projeto_tp1\include\dominios\email.hpp
+1763662432 z:\projeto_tp1\include\dominios\email.hpp
 	<string>
 
-1763511730 source:z:\projeto_tp1\src\dominios\capacidade.cpp
+1763662432 source:z:\projeto_tp1\src\dominios\capacidade.cpp
 	"capacidade.hpp"
 	<stdexcept>
 
-1763511730 source:z:\projeto_tp1\src\dominios\cartao.cpp
+1763662432 source:z:\projeto_tp1\src\dominios\cartao.cpp
 	"cartao.hpp"
 	<string>
 	<stdexcept>
 
-1763511730 source:z:\projeto_tp1\src\dominios\codigo.cpp
+1763662432 source:z:\projeto_tp1\src\dominios\codigo.cpp
 	"codigo.hpp"
 	<cctype>
 	<string>
 	<stdexcept>
 
-1763511730 source:z:\projeto_tp1\src\dominios\data.cpp
+1763662432 source:z:\projeto_tp1\src\dominios\data.cpp
 	"data.hpp"
 	<string>
 	<regex>
@@ -321,155 +321,155 @@
 	<cstdlib>
 	<stdexcept>
 
-1763511730 source:z:\projeto_tp1\src\dominios\dinheiro.cpp
+1763662432 source:z:\projeto_tp1\src\dominios\dinheiro.cpp
 	"dinheiro.hpp"
 	<stdexcept>
 
-1763511730 source:z:\projeto_tp1\src\dominios\email.cpp
+1763662432 source:z:\projeto_tp1\src\dominios\email.cpp
 	"email.hpp"
 	<stdexcept>
 
-1763511730 source:z:\projeto_tp1\src\dominios\endereco.cpp
+1763662432 source:z:\projeto_tp1\src\dominios\endereco.cpp
 	"endereco.hpp"
 	<stdexcept>
 	<cctype>
 
-1763511730 source:z:\projeto_tp1\src\dominios\nome.cpp
+1763662432 source:z:\projeto_tp1\src\dominios\nome.cpp
 	"nome.hpp"
 	<cctype>
 	<stdexcept>
 
-1763645932 source:z:\projeto_tp1\src\dominios\numero.cpp
+1763662432 source:z:\projeto_tp1\src\dominios\numero.cpp
 	"numero.hpp"
 	<stdexcept>
 
-1763646099 source:z:\projeto_tp1\src\dominios\ramal.cpp
+1763662432 source:z:\projeto_tp1\src\dominios\ramal.cpp
 	"ramal.hpp"
 	<stdexcept>
 
-1763511730 source:z:\projeto_tp1\src\dominios\senha.cpp
+1763662432 source:z:\projeto_tp1\src\dominios\senha.cpp
 	"senha.hpp"
 	<cctype>
 	<string>
 	<stdexcept>
 
-1763511730 source:z:\projeto_tp1\src\dominios\telefone.cpp
+1763662432 source:z:\projeto_tp1\src\dominios\telefone.cpp
 	"telefone.hpp"
 	<cctype>
 	<stdexcept>
 
-1763662536 source:z:\projeto_tp1\src\containers\containerhospedes.cpp
+1763665086 source:z:\projeto_tp1\src\containers\containerhospedes.cpp
 	"containerHospedes.hpp"
 	<iostream>
 
-1763671657 source:z:\projeto_tp1\src\containers\containerhoteis.cpp
+1763669592 source:z:\projeto_tp1\src\containers\containerhoteis.cpp
 	"containerHoteis.hpp"
 	<iostream>
 
-1763651694 source:z:\projeto_tp1\src\containers\containergerentes.cpp
+1763662432 source:z:\projeto_tp1\src\containers\containergerentes.cpp
 	"containerGerentes.hpp"
 	<iostream>
 
-1763749603 z:\projeto_tp1\include\containers\containergerentes.hpp
+1763662432 z:\projeto_tp1\include\containers\containergerentes.hpp
 	<unordered_map>
 	<string>
 	"gerente.hpp"
 
-1763645691 z:\projeto_tp1\include\entidades\gerente.hpp
+1763662432 z:\projeto_tp1\include\entidades\gerente.hpp
 	"DOMINIOS.hpp"
 	"pessoa.hpp"
 
-1763645691 z:\projeto_tp1\include\entidades\pessoa.hpp
+1763662432 z:\projeto_tp1\include\entidades\pessoa.hpp
 	"DOMINIOS.hpp"
 
-1763671657 source:z:\projeto_tp1\src\containers\containerquartos.cpp
+1763669599 source:z:\projeto_tp1\src\containers\containerquartos.cpp
 	"containerQuartos.hpp"
 	<iostream>
 
-1763671657 source:z:\projeto_tp1\src\containers\containerreservas.cpp
+1763669658 source:z:\projeto_tp1\src\containers\containerreservas.cpp
 	"containerReservas.hpp"
 	<iostream>
 
-1763645691 z:\projeto_tp1\include\entidades\hospede.hpp
+1763662432 z:\projeto_tp1\include\entidades\hospede.hpp
 	"DOMINIOS.hpp"
 	"pessoa.hpp"
 
-1763749604 z:\projeto_tp1\include\containers\containerhospedes.hpp
+1763662432 z:\projeto_tp1\include\containers\containerhospedes.hpp
 	<unordered_map>
 	<string>
 	"hospede.hpp"
 
-1763661548 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\containers\containergerentes.cpp
+1763661548 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\containers\containergerentes.cpp
 	"containerGerentes.hpp"
 	<iostream>
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\containers\containergerentes.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\containers\containergerentes.hpp
 	<unordered_map>
 	<string>
 	"gerente.hpp"
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\entidades\gerente.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\entidades\gerente.hpp
 	"DOMINIOS.hpp"
 	"pessoa.hpp"
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\entidades\pessoa.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\entidades\pessoa.hpp
 	"DOMINIOS.hpp"
 
-1763664792 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\containers\containerhospedes.cpp
+1763664792 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\containers\containerhospedes.cpp
 	"containerHospedes.hpp"
 	<iostream>
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\containers\containerhospedes.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\containers\containerhospedes.hpp
 	<unordered_map>
 	<string>
 	"hospede.hpp"
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\entidades\hospede.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\entidades\hospede.hpp
 	"DOMINIOS.hpp"
 	"pessoa.hpp"
 
-1763664797 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\containers\containerhoteis.cpp
+1763664797 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\containers\containerhoteis.cpp
 	"containerHoteis.hpp"
 	<iostream>
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\containers\containerhoteis.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\containers\containerhoteis.hpp
 	<unordered_map>
 	<string>
 	"hotel.hpp"
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\entidades\hotel.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\entidades\hotel.hpp
 	"DOMINIOS.hpp"
 
-1763671649 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\containers\containerquartos.cpp
+1763671649 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\containers\containerquartos.cpp
 	"containerQuartos.hpp"
 	<iostream>
 
-1763671649 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\containers\containerreservas.cpp
+1763671649 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\containers\containerreservas.cpp
 	"containerReservas.hpp"
 	<iostream>
 
-1763749605 z:\projeto_tp1\include\containers\containerhoteis.hpp
+1763662432 z:\projeto_tp1\include\containers\containerhoteis.hpp
 	<unordered_map>
 	<string>
 	"hotel.hpp"
 
-1763645691 z:\projeto_tp1\include\entidades\hotel.hpp
+1763662432 z:\projeto_tp1\include\entidades\hotel.hpp
 	"DOMINIOS.hpp"
 
-1763749607 z:\projeto_tp1\include\containers\containerquartos.hpp
+1763669599 z:\projeto_tp1\include\containers\containerquartos.hpp
 	<unordered_map>
 	<string>
 	"quarto.hpp"
 
-1763645691 z:\projeto_tp1\include\entidades\quarto.hpp
+1763662432 z:\projeto_tp1\include\entidades\quarto.hpp
 	"DOMINIOS.hpp"
 
-1763749608 z:\projeto_tp1\include\containers\containerreservas.hpp
+1763662432 z:\projeto_tp1\include\containers\containerreservas.hpp
 	<unordered_map>
 	<string>
 	"reserva.hpp"
 
-1763645691 z:\projeto_tp1\include\entidades\reserva.hpp
+1763662432 z:\projeto_tp1\include\entidades\reserva.hpp
 	"DOMINIOS.hpp"
 
 1763749593 z:\projeto_tp1\include\servicos\cadastrogerente.hpp
@@ -516,10 +516,10 @@
 	<stdexcept>
 	"cadastroReserva.hpp"
 
-1763755943 z:\projeto_tp1\include\servicos\centralcontainers.hpp
+1763753909 z:\projeto_tp1\include\servicos\centralcontainers.hpp
 	"CONTAINERS.hpp"
 
-1763749609 z:\projeto_tp1\include\containers\containers.hpp
+1763751311 z:\projeto_tp1\include\containers\containers.hpp
 	"containerReservas.hpp"
 	"containerHospedes.hpp"
 	"containerHoteis.hpp"
@@ -531,7 +531,7 @@
 	<stdexcept>
 	"cadastroReserva.hpp"
 
-1763750779 source:z:\projeto_tp1\src\servicos\centralcontainers.cpp
+1763751311 source:z:\projeto_tp1\src\servicos\centralcontainers.cpp
 	"centralContainers.hpp"
 
 1763752945 source:z:\projeto_tp1\src\servicos\cadastroquarto.cpp
@@ -561,105 +561,105 @@
 	<iostream>
 	"atualizarGerente.hpp"
 
-1763755943 source:z:\projeto_tp1\src\servicos\cadastro\cadastrogerente.cpp
+1763754883 source:z:\projeto_tp1\src\servicos\cadastro\cadastrogerente.cpp
 	<iostream>
 	<stdexcept>
 	"cadastroGerente.hpp"
 
-1763755943 z:\projeto_tp1\include\servicos\cadastro\cadastrogerente.hpp
+1763757025 z:\projeto_tp1\include\servicos\cadastro\cadastrogerente.hpp
 	"DOMINIOS.hpp"
-	"../cadastro.hpp"
+	"cadastro.hpp"
 	"gerente.hpp"
 	"centralContainers.hpp"
 
-1763755943 source:z:\projeto_tp1\src\servicos\cadastro\cadastrohospede.cpp
+1763759381 source:z:\projeto_tp1\src\servicos\cadastro\cadastrohospede.cpp
 	<iostream>
 	<stdexcept>
 	"cadastroHospede.hpp"
 
-1763755943 z:\projeto_tp1\include\servicos\cadastro\cadastrohospede.hpp
-	"DOMINIOS.hpp"
-	"../cadastro.hpp"
-	"hospede.hpp"
-	"centralContainers.hpp"
-
-1763755943 source:z:\projeto_tp1\src\servicos\cadastro\cadastrohotel.cpp
-	<iostream>
-	<stdexcept>
-	"cadastroHotel.hpp"
-
-1763755943 z:\projeto_tp1\include\servicos\cadastro\cadastrohotel.hpp
-	"DOMINIOS.hpp"
-	"../cadastro.hpp"
-	"hotel.hpp"
-	"centralContainers.hpp"
-
-1763755943 source:z:\projeto_tp1\src\servicos\cadastro\cadastroquarto.cpp
-	<iostream>
-	<stdexcept>
-	"cadastroQuarto.hpp"
-
-1763755943 z:\projeto_tp1\include\servicos\cadastro\cadastroquarto.hpp
-	"DOMINIOS.hpp"
-	"../cadastro.hpp"
-	"quarto.hpp"
-	"centralContainers.hpp"
-
-1763755943 source:z:\projeto_tp1\src\servicos\cadastro\cadastroreserva.cpp
-	<iostream>
-	<stdexcept>
-	"cadastroReserva.hpp"
-
-1763755943 z:\projeto_tp1\include\servicos\cadastro\cadastroreserva.hpp
-	"DOMINIOS.hpp"
-	"../cadastro.hpp"
-	"reserva.hpp"
-	"centralContainers.hpp"
-
-1763757133 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\servicos\cadastro\cadastrohospede.hpp
+1763757025 z:\projeto_tp1\include\servicos\cadastro\cadastrohospede.hpp
 	"DOMINIOS.hpp"
 	"cadastro.hpp"
 	"hospede.hpp"
 	"centralContainers.hpp"
 
-1763757133 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\servicos\cadastro\cadastro.hpp
+1763754883 source:z:\projeto_tp1\src\servicos\cadastro\cadastrohotel.cpp
+	<iostream>
+	<stdexcept>
+	"cadastroHotel.hpp"
+
+1763757026 z:\projeto_tp1\include\servicos\cadastro\cadastrohotel.hpp
+	"DOMINIOS.hpp"
+	"cadastro.hpp"
+	"hotel.hpp"
+	"centralContainers.hpp"
+
+1763754883 source:z:\projeto_tp1\src\servicos\cadastro\cadastroquarto.cpp
+	<iostream>
+	<stdexcept>
+	"cadastroQuarto.hpp"
+
+1763757025 z:\projeto_tp1\include\servicos\cadastro\cadastroquarto.hpp
+	"DOMINIOS.hpp"
+	"cadastro.hpp"
+	"quarto.hpp"
+	"centralContainers.hpp"
+
+1763751311 source:z:\projeto_tp1\src\servicos\cadastro\cadastroreserva.cpp
+	<iostream>
+	<stdexcept>
+	"cadastroReserva.hpp"
+
+1763757026 z:\projeto_tp1\include\servicos\cadastro\cadastroreserva.hpp
+	"DOMINIOS.hpp"
+	"cadastro.hpp"
+	"reserva.hpp"
+	"centralContainers.hpp"
+
+1763757133 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\servicos\cadastro\cadastrohospede.hpp
+	"DOMINIOS.hpp"
+	"cadastro.hpp"
+	"hospede.hpp"
+	"centralContainers.hpp"
+
+1763757133 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\servicos\cadastro\cadastro.hpp
 	<unordered_map>
 	<string>
 	"DOMINIOS.hpp"
 
-1763756658 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\servicos\centralcontainers.hpp
+1763756658 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\servicos\centralcontainers.hpp
 	"CONTAINERS.hpp"
 
-1763752284 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\containers\containers.hpp
+1763752284 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\containers\containers.hpp
 	"containerReservas.hpp"
 	"containerHospedes.hpp"
 	"containerHoteis.hpp"
 	"containerGerentes.hpp"
 	"containerQuartos.hpp"
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\containers\containerreservas.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\containers\containerreservas.hpp
 	<unordered_map>
 	<string>
 	"reserva.hpp"
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\entidades\reserva.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\entidades\reserva.hpp
 	"DOMINIOS.hpp"
 
-1763671649 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\containers\containerquartos.hpp
+1763671649 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\containers\containerquartos.hpp
 	<unordered_map>
 	<string>
 	"quarto.hpp"
 
-1763661548 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\entidades\quarto.hpp
+1763661548 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\entidades\quarto.hpp
 	"DOMINIOS.hpp"
 
-1763757658 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\servicos\atualizar\atualizarhospede.hpp
+1763757658 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\servicos\atualizar\atualizarhospede.hpp
 	"DOMINIOS.hpp"
 	"../cadastro/cadastro.hpp"
 	"ENTIDADES.hpp"
 	"centralContainers.hpp"
 
-1763752284 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\entidades\entidades.hpp
+1763752284 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\entidades\entidades.hpp
 	"gerente.hpp"
 	"hospede.hpp"
 	"hotel.hpp"
@@ -667,79 +667,118 @@
 	"quarto.hpp"
 	"reserva.hpp"
 
-1763757133 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\servicos\atualizar\atualizargerente.cpp
+1763757133 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\servicos\atualizar\atualizargerente.cpp
 	<iostream>
 	"atualizarGerente.hpp"
 
-1763757133 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\servicos\atualizar\atualizargerente.hpp
+1763757133 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\servicos\atualizar\atualizargerente.hpp
 	"DOMINIOS.hpp"
 	"../cadastro/cadastro.hpp"
 	"gerente.hpp"
 	"centralContainers.hpp"
 
-1763757133 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\servicos\cadastro\cadastro.cpp
+1763757133 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\servicos\cadastro\cadastro.cpp
 	<iostream>
 	<stdexcept>
 	"cadastro.hpp"
 	"DOMINIOS.hpp"
 
-1763756658 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\servicos\cadastro\cadastrogerente.cpp
+1763756658 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\servicos\cadastro\cadastrogerente.cpp
 	<iostream>
 	<stdexcept>
 	"cadastroGerente.hpp"
 
-1763757133 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\servicos\cadastro\cadastrogerente.hpp
+1763757133 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\servicos\cadastro\cadastrogerente.hpp
 	"DOMINIOS.hpp"
 	"cadastro.hpp"
 	"gerente.hpp"
 	"centralContainers.hpp"
 
-1763756658 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\servicos\cadastro\cadastrohospede.cpp
+1763756658 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\servicos\cadastro\cadastrohospede.cpp
 	<iostream>
 	<stdexcept>
 	"cadastroHospede.hpp"
 
-1763756658 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\servicos\cadastro\cadastrohotel.cpp
+1763756658 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\servicos\cadastro\cadastrohotel.cpp
 	<iostream>
 	<stdexcept>
 	"cadastroHotel.hpp"
 
-1763757133 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\servicos\cadastro\cadastrohotel.hpp
+1763757133 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\servicos\cadastro\cadastrohotel.hpp
 	"DOMINIOS.hpp"
 	"cadastro.hpp"
 	"hotel.hpp"
 	"centralContainers.hpp"
 
-1763756658 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\servicos\cadastro\cadastroquarto.cpp
+1763756658 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\servicos\cadastro\cadastroquarto.cpp
 	<iostream>
 	<stdexcept>
 	"cadastroQuarto.hpp"
 
-1763757133 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\servicos\cadastro\cadastroquarto.hpp
+1763757133 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\servicos\cadastro\cadastroquarto.hpp
 	"DOMINIOS.hpp"
 	"cadastro.hpp"
 	"quarto.hpp"
 	"centralContainers.hpp"
 
-1763756658 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\servicos\cadastro\cadastroreserva.cpp
+1763756658 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\servicos\cadastro\cadastroreserva.cpp
 	<iostream>
 	<stdexcept>
 	"cadastroReserva.hpp"
 
-1763757133 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\servicos\cadastro\cadastroreserva.hpp
+1763757133 c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\include\servicos\cadastro\cadastroreserva.hpp
 	"DOMINIOS.hpp"
 	"cadastro.hpp"
 	"reserva.hpp"
 	"centralContainers.hpp"
 
-1763752284 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\servicos\centralcontainers.cpp
+1763752284 source:c:\users\mickael\onedrive\ï¿½rea de trabalho\projeto_tp1\src\servicos\centralcontainers.cpp
 	"centralContainers.hpp"
 
-1763758073 source:c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\src\servicos\atualizar\atualizarhospede.cpp
+1763756741 source:z:\projeto_tp1\src\servicos\atualizar\atualizargerente.cpp
+	<iostream>
+	"atualizarGerente.hpp"
+
+1763757026 z:\projeto_tp1\include\servicos\atualizar\atualizargerente.hpp
+	"DOMINIOS.hpp"
+	"../cadastro/cadastro.hpp"
+	"gerente.hpp"
+	"centralContainers.hpp"
+
+1763747743 z:\projeto_tp1\include\servicos\cadastro\cadastro.hpp
+	<unordered_map>
+	<string>
+	"DOMINIOS.hpp"
+
+1763748460 source:z:\projeto_tp1\src\servicos\cadastro\cadastro.cpp
+	<iostream>
+	<stdexcept>
+	"cadastro.hpp"
+	"DOMINIOS.hpp"
+
+1763759055 source:z:\projeto_tp1\src\servicos\atualizar\atualizarhospede.cpp
 	<iostream>
 	"atualizarHospede.hpp"
 
-1763760600 c:\users\mickael\onedrive\Área de trabalho\projeto_tp1\include\servicos\atualizar\atualizarquarto.hpp
+1763759055 z:\projeto_tp1\include\servicos\atualizar\atualizarhospede.hpp
+	"DOMINIOS.hpp"
+	"../cadastro/cadastro.hpp"
+	"ENTIDADES.hpp"
+	"centralContainers.hpp"
+
+1763733212 z:\projeto_tp1\include\entidades\entidades.hpp
+	"gerente.hpp"
+	"hospede.hpp"
+	"hotel.hpp"
+	"pessoa.hpp"
+	"quarto.hpp"
+	"reserva.hpp"
+
+1763760391 source:z:\projeto_tp1\src\servicos\atualizar\atualizarreserva.cpp
+	<iostream>
+	"atualizarReserva.hpp"
+
+1763759827 z:\projeto_tp1\include\servicos\atualizar\atualizarreserva.hpp
 	"DOMINIOS.hpp"
 	"../cadastro/cadastro.hpp"
 	"ENTIDADES.hpp"
