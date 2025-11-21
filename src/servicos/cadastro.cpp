@@ -11,7 +11,8 @@ Capacidade Cadastro::criar_capacidade()
     Capacidade c;
     string input;
     int capacidade;
-    while (true) {
+    while (true)
+    {
         cout << "Digite a capacidade:";
         getline(cin, input);
         try
@@ -28,30 +29,100 @@ Capacidade Cadastro::criar_capacidade()
     return c;
 }
 
-Cartao Cadastro::criar_cartao() {
+Cartao Cadastro::criar_cartao()
+{
     Cartao c;
+    string cartao;
+    while (true)
+    {
+        cout << "Digite o numero do cartao:";
+        cin >> cartao;
+        try
+        {
+            c.setValor(cartao);
+            break;
+        }
+        catch (const invalid_argument &e)
+        {
+            cout << "[Cartao Invalido:" << cartao << "] Deve ter 16 digitos e um digito verificador" << endl;
+        }
+    }
     return c;
 }
 
-Codigo Cadastro::criar_codigo() {
+Codigo Cadastro::criar_codigo()
+{
     Codigo c;
+    string codigo;
+    while (true)
+    {
+        cout << "Digite seu codigo:";
+        cin >> codigo;
+        try
+        {
+            c.setValor(codigo);
+            break;
+        }
+        catch (const invalid_argument &e)
+        {
+            cout << "[Codigo Invalido:" << codigo << "] Deve ter 10 caracteres com letras (a-z) ou digitos (0-9)" << endl;
+        }
+    }
     return c;
 }
 
-Data Cadastro::criar_data() {
+Data Cadastro::criar_data()
+{
     Data d;
+    string data;
+    while (true)
+    {
+        cout << "Digite uma data:"; // seria interessante essa parte de "digite uma data" estar direto na cama de apresentação
+        cin >> data;
+        try
+        {
+            d.setValor(data);
+            break;
+        }
+        catch (const invalid_argument &e)
+        {
+            cout << "[Data Invalida:" << data << "]" << endl;
+            cout << "- Formato: dia-mes-ano" << endl;
+            cout << "- Dia deve ser um numero de 1 a 31" << endl;
+            cout << "- Mes deve ser um dos seguintes: JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ" << endl;
+        }
+    }
     return d;
 }
 
-Dinheiro Cadastro::criar_dinheiro() {
+Dinheiro Cadastro::criar_dinheiro()
+{
     Dinheiro d;
+    double dinheiro;
+    while (true)
+    {
+        cout << "Digite o valor: ";
+        cin >> dinheiro;
+        try
+        {
+            d.setValor(dinheiro);
+            break;
+        }
+        catch (const invalid_argument &e)
+        {
+            cout << "[Valor Invalido:" << dinheiro << "] Deve estar entre 0,01 e 1.000.000,00" << endl;
+            // verificar se em dinheiro é armazenado em centavos
+        }
+    }
     return d;
 }
 
-Email Cadastro::criar_email() {
+Email Cadastro::criar_email()
+{
     Email e;
     string email;
-    while (true) {
+    while (true)
+    {
         cout << "Digite o email:";
         getline(cin, email);
         try
@@ -66,7 +137,6 @@ Email Cadastro::criar_email() {
     }
     return e;
 }
-
 
 Endereco Cadastro::criar_endereco()
 {
@@ -89,10 +159,12 @@ Endereco Cadastro::criar_endereco()
     return e;
 }
 
-Nome Cadastro::criar_nome() {
+Nome Cadastro::criar_nome()
+{
     Nome n;
     string nome;
-    while (true) {
+    while (true)
+    {
         cout << "Digite o nome:";
         getline(cin, nome);
         try
@@ -106,19 +178,38 @@ Nome Cadastro::criar_nome() {
         }
     }
     return n;
-
 }
 
-Numero Cadastro::criar_numero() {
+Numero Cadastro::criar_numero()
+{
     Numero n;
+    string input;
+    int numero;
+    while (true)
+    {
+        cout << "Digite o Numero:"; // talvez seja melhor deixar só na camada de apresentação
+        getline(cin, input);
+        try
+        {
+            numero = stoi(input);
+            n.setValor(numero);
+            break;
+        }
+        catch (const invalid_argument &e)
+        {
+            cout << "[Numero Invalido:" << numero << "] Deve ser um numero inteiro entre [001,999]" << endl;
+        }
+    }
     return n;
 }
 
-Ramal Cadastro::criar_ramal() {
+Ramal Cadastro::criar_ramal()
+{
     Ramal r;
     string input;
     int ramal;
-    while (true) {
+    while (true)
+    {
         cout << "Digite o Ramal: ";
         getline(cin, input);
         try
@@ -162,6 +253,7 @@ Senha Cadastro::criar_senha()
     }
     return s;
 }
+
 Telefone Cadastro::criar_telefone()
 {
     Telefone t;
