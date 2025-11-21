@@ -71,40 +71,18 @@ Codigo Cadastro::criar_codigo()
     return c;
 }
 
-Data Cadastro::criar_data() //fazer método direto no serviço da entidade para colocar data de partida e data de chegada
-{
-    Data d;
-    string data;
-    while (true)
-    {
-        cout << "Digite uma data: ";
-        getline(cin, data);
-        try
-        {
-            d.setValor(data);
-            break;
-        }
-        catch (const invalid_argument &e)
-        {
-            cout << "[Data Invalida:" << data << "]" << endl;
-            cout << "- Formato: dia-mes-ano" << endl;
-            cout << "- Dia deve ser um numero de 1 a 31" << endl;
-            cout << "- Mes deve ser um dos seguintes: JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ" << endl;
-        }
-    }
-    return d;
-}
-
 Dinheiro Cadastro::criar_dinheiro()
 {
     Dinheiro d;
+    string input;
     double dinheiro;
     while (true)
     {
         cout << "Digite o valor: ";
-        cin >> dinheiro;
+        getline(cin, input);
         try
         {
+            dinheiro = stod(input);
             d.setValor(dinheiro);
             break;
         }

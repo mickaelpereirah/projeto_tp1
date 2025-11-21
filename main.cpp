@@ -4,7 +4,7 @@
 #include <stdexcept>
 
 #include "DOMINIOS.hpp"
-#include "cadastroHospede.hpp"
+#include "cadastroReserva.hpp"
 #include "quarto.hpp"
 #include "containerQuartos.hpp"
 
@@ -15,33 +15,33 @@ using namespace std;
 
 int main()
 {
-    CadastroHospede cadastro_hospede;
+    CadastroReserva cadastro_reserva;
 
-    Hospede *h = CadastroHospede::container.pesquisar("luisa@gmail.com");
-    if (h)
+    Reserva *r = CadastroReserva::container.pesquisar("AAAAA00000");
+    if (r)
     {
-        cout << h->getNome().getValor() << endl;
-        cout << h->getEmail().getValor() << endl;
-        cout << h->getCartao().getValor() << endl;
-        cout << h->getEndereco().getValor() << endl;
+        cout << r->getChegada().getValor() << endl;
+        cout << r->getPartida().getValor() << endl;
+        cout << r->getCodigo().getValor() << endl;
+        cout << r->getDinheiro().getValor() << endl;
     }
     else
     {
-        cout << "Hospede nao existe" << endl;
+        cout << "Reserva nao existe" << endl;
     }
 
-    cadastro_hospede.novo_hospede();
+    cadastro_reserva.nova_reserva();
     cout << "--------------------" << endl;
-    h = CadastroHospede::container.pesquisar("luisa@gmail.com");
-    if (h)
+    r = CadastroReserva::container.pesquisar("AAAAA00000");
+    if (r)
     {
-        cout << h->getNome().getValor() << endl;
-        cout << h->getEmail().getValor() << endl;
-        cout << h->getCartao().getValor() << endl;
-        cout << h->getEndereco().getValor() << endl;
+        cout << r->getChegada().getValor() << endl;
+        cout << r->getPartida().getValor() << endl;
+        cout << r->getCodigo().getValor() << endl;
+        cout << r->getDinheiro().getValor() << endl;
     }
     else
     {
-        cout << "Hospede nao existe" << endl;
+        cout << "Reserva nao existe" << endl;
     }
 }

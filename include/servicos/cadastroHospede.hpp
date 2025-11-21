@@ -11,9 +11,6 @@ using namespace std;
 
 class CadastroHospede : public Cadastro
 {
-private:
-    int test;
-
 public:
     static ContainerHospede container;
     Hospede *criar_hospede();

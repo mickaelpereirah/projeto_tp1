@@ -11,8 +11,6 @@ using namespace std;
 
 class CadastroGerente : public Cadastro
 {
-private:
-    int test;
 public:
     static ContainerGerente container;
     Gerente *criar_gerente();
