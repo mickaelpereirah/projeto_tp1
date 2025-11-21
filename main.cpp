@@ -4,7 +4,7 @@
 #include <stdexcept>
 
 #include "DOMINIOS.hpp"
-#include "cadastroGerente.hpp"
+#include "cadastroHospede.hpp"
 #include "quarto.hpp"
 #include "containerQuartos.hpp"
 
@@ -15,29 +15,33 @@ using namespace std;
 
 int main()
 {
-    CadastroGerente cadastro_gerente;
+    CadastroHospede cadastro_hospede;
 
-    Gerente *g = CadastroGerente::container.pesquisar("luisa@gmail.com");
-    if (g) {
-        cout << g->getNome().getValor() << endl;
-        cout << g->getEmail().getValor() << endl;
-        cout << g->getRamal().getValor() << endl;
-        cout << g->getSenha().getValor() << endl;
+    Hospede *h = CadastroHospede::container.pesquisar("luisa@gmail.com");
+    if (h)
+    {
+        cout << h->getNome().getValor() << endl;
+        cout << h->getEmail().getValor() << endl;
+        cout << h->getCartao().getValor() << endl;
+        cout << h->getEndereco().getValor() << endl;
     }
-    else {
-        cout << "Gerente nao existe" << endl;
+    else
+    {
+        cout << "Hospede nao existe" << endl;
     }
 
-    cadastro_gerente.novo_gerente();
+    cadastro_hospede.novo_hospede();
     cout << "--------------------" << endl;
-    g = CadastroGerente::container.pesquisar("luisa@gmail.com");
-    if (g) {
-        cout << g->getNome().getValor() << endl;
-        cout << g->getEmail().getValor() << endl;
-        cout << g->getRamal().getValor() << endl;
-        cout << g->getSenha().getValor() << endl;
+    h = CadastroHospede::container.pesquisar("luisa@gmail.com");
+    if (h)
+    {
+        cout << h->getNome().getValor() << endl;
+        cout << h->getEmail().getValor() << endl;
+        cout << h->getCartao().getValor() << endl;
+        cout << h->getEndereco().getValor() << endl;
     }
-    else {
-        cout << "Gerente nao existe" << endl;
+    else
+    {
+        cout << "Hospede nao existe" << endl;
     }
 }

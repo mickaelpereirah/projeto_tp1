@@ -13,7 +13,7 @@ Capacidade Cadastro::criar_capacidade()
     int capacidade;
     while (true)
     {
-        cout << "Digite a capacidade:";
+        cout << "Digite a capacidade: ";
         getline(cin, input);
         try
         {
@@ -35,8 +35,8 @@ Cartao Cadastro::criar_cartao()
     string cartao;
     while (true)
     {
-        cout << "Digite o numero do cartao:";
-        cin >> cartao;
+        cout << "Digite o numero do cartao: ";
+        getline(cin, cartao);
         try
         {
             c.setValor(cartao);
@@ -56,8 +56,8 @@ Codigo Cadastro::criar_codigo()
     string codigo;
     while (true)
     {
-        cout << "Digite seu codigo:";
-        cin >> codigo;
+        cout << "Digite seu codigo: ";
+        getline(cin, codigo);
         try
         {
             c.setValor(codigo);
@@ -71,14 +71,14 @@ Codigo Cadastro::criar_codigo()
     return c;
 }
 
-Data Cadastro::criar_data()
+Data Cadastro::criar_data() //fazer método direto no serviço da entidade para colocar data de partida e data de chegada
 {
     Data d;
     string data;
     while (true)
     {
-        cout << "Digite uma data:"; // seria interessante essa parte de "digite uma data" estar direto na cama de apresentação
-        cin >> data;
+        cout << "Digite uma data: ";
+        getline(cin, data);
         try
         {
             d.setValor(data);
@@ -123,7 +123,7 @@ Email Cadastro::criar_email()
     string email;
     while (true)
     {
-        cout << "Digite o email:";
+        cout << "Digite o email: ";
         getline(cin, email);
         try
         {
@@ -144,7 +144,7 @@ Endereco Cadastro::criar_endereco()
     string endereco;
     while (true)
     {
-        cout << "Digite o endereco:";
+        cout << "Digite o endereco: ";
         getline(cin, endereco);
         try
         {
@@ -165,7 +165,7 @@ Nome Cadastro::criar_nome()
     string nome;
     while (true)
     {
-        cout << "Digite o nome:";
+        cout << "Digite o nome: ";
         getline(cin, nome);
         try
         {
@@ -187,7 +187,7 @@ Numero Cadastro::criar_numero()
     int numero;
     while (true)
     {
-        cout << "Digite o Numero:"; // talvez seja melhor deixar só na camada de apresentação
+        cout << "Digite o Numero do quarto: ";
         getline(cin, input);
         try
         {
@@ -232,8 +232,8 @@ Senha Cadastro::criar_senha()
     string senha;
     while (true)
     {
-        cout << "Digite uma senha:";
-        cin >> senha;
+        cout << "Digite uma senha: ";
+        getline(cin, senha);
         try
         {
             s.setValor(senha);
@@ -260,7 +260,7 @@ Telefone Cadastro::criar_telefone()
     string telefone;
     while (true)
     {
-        cout << "Digite o telefone:";
+        cout << "Digite o telefone: ";
         getline(cin, telefone);
         try
         {

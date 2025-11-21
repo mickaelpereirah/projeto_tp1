@@ -231,13 +231,13 @@
 	"email.hpp"
 	<stdexcept>
 
-1763736216 source:z:\projeto_tp1\main.cpp
+1763740737 source:z:\projeto_tp1\main.cpp
 	<iostream>
 	<string>
 	<iomanip>
 	<stdexcept>
 	"DOMINIOS.hpp"
-	"cadastroGerente.hpp"
+	"cadastroHospede.hpp"
 	"quarto.hpp"
 	"containerQuartos.hpp"
 	"reserva.hpp"
@@ -257,7 +257,7 @@
 	"telefone.hpp"
 	"email.hpp"
 
-1763662432 z:\projeto_tp1\include\dominios\cartao.hpp
+1763741003 z:\projeto_tp1\include\dominios\cartao.hpp
 	<string>
 
 1763662432 z:\projeto_tp1\include\dominios\capacidade.hpp
@@ -461,18 +461,18 @@
 1763662432 z:\projeto_tp1\include\entidades\reserva.hpp
 	"DOMINIOS.hpp"
 
-1763737414 z:\projeto_tp1\include\servicos\cadastrogerente.hpp
+1763738473 z:\projeto_tp1\include\servicos\cadastrogerente.hpp
 	"DOMINIOS.hpp"
 	"cadastro.hpp"
 	"gerente.hpp"
 	"containerGerentes.hpp"
 
-1763674037 z:\projeto_tp1\include\servicos\cadastro.hpp
+1763733212 z:\projeto_tp1\include\servicos\cadastro.hpp
 	<unordered_map>
 	<string>
 	"DOMINIOS.hpp"
 
-1763737523 source:z:\projeto_tp1\src\servicos\cadastrogerente.cpp
+1763738473 source:z:\projeto_tp1\src\servicos\cadastrogerente.cpp
 	<iostream>
 	<stdexcept>
 	"cadastroGerente.hpp"
@@ -482,4 +482,15 @@
 	<stdexcept>
 	"cadastro.hpp"
 	"DOMINIOS.hpp"
+
+1763740795 z:\projeto_tp1\include\servicos\cadastrohospede.hpp
+	"DOMINIOS.hpp"
+	"cadastro.hpp"
+	"hospede.hpp"
+	"containerHospedes.hpp"
+
+1763740799 source:z:\projeto_tp1\src\servicos\cadastrohospede.cpp
+	<iostream>
+	<stdexcept>
+	"cadastroHospede.hpp"
 
