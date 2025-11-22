@@ -1,4 +1,5 @@
 #include "MenuPrincipal.hpp"
+#include "MenuGerente.hpp"
 #include "Utilidades.hpp"
 #include "cadastroGerente.hpp"
 #include "autenticarGerente.hpp"
@@ -14,7 +15,7 @@ void MenuPrincipal::exibir()
     while (!sair)
     {
         Utilidades::limparTela();
-        Utilidades::mostrarCabecalho("SISTEMA DE GESTAO DE HOTEIS - 100%");
+        Utilidades::mostrarCabecalho("SISTEMA DE GESTAO DE HOTEIS");
         
         cout << endl;
         cout << "1. Criar conta" << endl;
@@ -33,11 +34,11 @@ void MenuPrincipal::exibir()
                 Gerente* gerente = fazerLogin();
                 if (gerente != nullptr)
                 {
-                    // TODO: Chamar MenuGerente::exibir(gerente);
                     Utilidades::mostrarSucesso("Login realizado com sucesso!");
-                    Utilidades::mostrarMensagem("Bem-vindo, " + gerente->getNome().getValor() + "!");
-                    Utilidades::mostrarMensagem("[Menu do Gerente ainda nao implementado]");
                     Utilidades::pausar();
+                    
+                    // Chama o menu do gerente
+                    MenuGerente::exibir(gerente);
                 }
                 break;
             }

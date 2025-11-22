@@ -4,7 +4,7 @@
  * @file main.cpp
  * @brief Ponto de entrada da aplicação
  * 
- * Sistema de Gestão de Hotéis - 100%
+ * Sistema de Gestão de Hotéis
  * Permite gerentes cadastrarem e gerenciarem hotéis, quartos, 
  * reservas e hóspedes através de uma interface de terminal.
  */

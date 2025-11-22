@@ -103,20 +103,21 @@ bool Utilidades::confirmar(string pergunta)
     
     while (true)
     {
-        cout << endl << pergunta << " (S/N): ";
+        cout << endl << pergunta << " (sim/nao): ";
         getline(cin, resposta);
         
-        if (resposta == "S" || resposta == "s")
+        if (resposta == "sim" || resposta == "Sim" || resposta == "SIM")
         {
             return true;
         }
-        else if (resposta == "N" || resposta == "n")
+        else if (resposta == "nao" || resposta == "Nao" || resposta == "NAO" || 
+                 resposta == "não" || resposta == "Não" || resposta == "NÃO")
         {
             return false;
         }
         else
         {
-            mostrarErro("Resposta invalida! Digite S para Sim ou N para Nao.");
+            mostrarErro("Resposta invalida! Digite 'sim' ou 'nao'.");
         }
     }
 }

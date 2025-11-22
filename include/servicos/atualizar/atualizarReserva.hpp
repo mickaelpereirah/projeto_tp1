@@ -1,4 +1,3 @@
-
 #ifndef ATUALIZAR_RESERVA_HPP_INCLUDED
 #define ATUALIZAR_RESERVA_HPP_INCLUDED
 
@@ -17,8 +16,8 @@ private:
     bool validar_datas(const Data &inicial, const Data &final);
 
 public:
-    Reserva *modificar_reserva(Reserva *);
-    bool atualizar_reserva(Reserva *);
+    Reserva *modificar_reserva(Reserva *, int numero_quarto);
+    bool atualizar_reserva(Reserva *, int numero_quarto);
     bool validar_resposta();
 };
 

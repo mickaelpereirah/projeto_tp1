@@ -233,20 +233,8 @@
 1763754883 D
 	"cadastroGerente.hpp"
 
-1763764573 source:z:\projeto_tp1\main.cpp
-	<iostream>
-	<string>
-	<iomanip>
-	<stdexcept>
-	<vector>
-	"DOMINIOS.hpp"
-	"cadastro/cadastroGerente.hpp"
-	"cadastro/cadastroHotel.hpp"
-	"cadastro/cadastroQuarto.hpp"
-	"cadastro/cadastroHospede.hpp"
-	"cadastro/cadastroReserva.hpp"
-	"centralContainers.hpp"
-	"listar/listarHotel.hpp"
+1763818798 source:z:\projeto_tp1\main.cpp
+	"MenuPrincipal.hpp"
 
 1763757025 gin/main
 	<iostream>
@@ -697,11 +685,13 @@
 	"ENTIDADES.hpp"
 	"centralContainers.hpp"
 
-1763765499 source:z:\projeto_tp1\src\servicos\atualizar\atualizarreserva.cpp
+1763826754 source:z:\projeto_tp1\src\servicos\atualizar\atualizarreserva.cpp
 	<iostream>
 	"atualizarReserva.hpp"
+	"validar/validarReserva.hpp"
+	"listarQuarto.hpp"
 
-1763765499 z:\projeto_tp1\include\servicos\atualizar\atualizarreserva.hpp
+1763826351 z:\projeto_tp1\include\servicos\atualizar\atualizarreserva.hpp
 	"DOMINIOS.hpp"
 	"../cadastro/cadastro.hpp"
 	"ENTIDADES.hpp"
@@ -710,8 +700,9 @@
 1763765499 source:z:\projeto_tp1\src\servicos\listar\listarhotel.cpp
 	"listar/listarHotel.hpp"
 
-1763770104 source:z:\projeto_tp1\src\apresentacao\menuprincipal.cpp
+1763820463 source:z:\projeto_tp1\src\apresentacao\menuprincipal.cpp
 	"MenuPrincipal.hpp"
+	"MenuGerente.hpp"
 	"Utilidades.hpp"
 	"cadastroGerente.hpp"
 	"autenticarGerente.hpp"
@@ -728,7 +719,7 @@
 	"gerente.hpp"
 	"centralContainers.hpp"
 
-1763770056 source:z:\projeto_tp1\src\apresentacao\utilidades.cpp
+1763822240 source:z:\projeto_tp1\src\apresentacao\utilidades.cpp
 	"Utilidades.hpp"
 	<iostream>
 	<limits>
@@ -811,4 +802,65 @@
 	"DOMINIOS.hpp"
 	"ENTIDADES.hpp"
 	"centralContainers.hpp"
+
+1763827801 z:\projeto_tp1\include\apresentacao\menugerente.hpp
+	"gerente.hpp"
+
+1763821801 source:z:\projeto_tp1\src\apresentacao\menuconta.cpp
+	"MenuConta.hpp"
+	"Utilidades.hpp"
+	"atualizarGerente.hpp"
+	"removerGerente.hpp"
+	<iostream>
+
+1763821006 z:\projeto_tp1\include\apresentacao\menuconta.hpp
+	"gerente.hpp"
+
+1763822919 source:z:\projeto_tp1\src\apresentacao\menugerente.cpp
+	"MenuGerente.hpp"
+	"MenuConta.hpp"
+	"MenuHoteis.hpp"
+	"Utilidades.hpp"
+	"listarHotel.hpp"
+	<iostream>
+
+1763825332 z:\projeto_tp1\include\apresentacao\menuhoteis.hpp
+	"gerente.hpp"
+	"hotel.hpp"
+	<vector>
+
+1763825545 source:z:\projeto_tp1\src\apresentacao\menuhoteis.cpp
+	"MenuHoteis.hpp"
+	"Utilidades.hpp"
+	"cadastroHotel.hpp"
+	"atualizarHotel.hpp"
+	"removerHotel.hpp"
+	"listarHotel.hpp"
+	"listarQuarto.hpp"
+	<iostream>
+
+1763827180 source:z:\projeto_tp1\src\apresentacao\menuquartos.cpp
+	"MenuQuartos.hpp"
+	"Utilidades.hpp"
+	"cadastroQuarto.hpp"
+	"atualizarQuarto.hpp"
+	"removerQuarto.hpp"
+	"listarQuarto.hpp"
+	"listarReserva.hpp"
+	<iostream>
+
+1763827117 z:\projeto_tp1\include\apresentacao\menuquartos.hpp
+	"hotel.hpp"
+	"quarto.hpp"
+	<vector>
+
+1763826552 z:\projeto_tp1\include\servicos\validar\validarreserva.hpp
+	"reserva.hpp"
+	"quarto.hpp"
+	"centralContainers.hpp"
+	<vector>
+
+1763826269 source:z:\projeto_tp1\src\servicos\validar\validarreserva.cpp
+	"validar/validarReserva.hpp"
+	<iostream>
 
