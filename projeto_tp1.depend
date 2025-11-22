@@ -230,7 +230,7 @@
 	"email.hpp"
 	<stdexcept>
 
-1763752945 D
+1763754883 D
 	"cadastroGerente.hpp"
 
 1763764573 source:z:\projeto_tp1\main.cpp
@@ -248,7 +248,7 @@
 	"centralContainers.hpp"
 	"listar/listarHotel.hpp"
 
-1763753749 gin/main
+1763757025 gin/main
 	<iostream>
 	<string>
 	<iomanip>
@@ -257,6 +257,10 @@
 	"centralContainers.hpp"
 	"atualizarGerente.hpp"
 	"CONTAINERS.hpp"
+	"centralContainers.hpp"
+	"DOMINIOS.hpp"
+	"cadastro.hpp"
+	"gerente.hpp"
 	"centralContainers.hpp"
 
 1763754148 erente.hpp"
@@ -301,13 +305,13 @@
 
 1763662432 z:\projeto_tp1\include\dominios\ramal.hpp
 
-1763662432 z:\projeto_tp1\include\dominios\senha.hpp
+1763768081 z:\projeto_tp1\include\dominios\senha.hpp
 	<string>
 
 1763662432 z:\projeto_tp1\include\dominios\telefone.hpp
 	<string>
 
-1763662432 z:\projeto_tp1\include\dominios\email.hpp
+1763768081 z:\projeto_tp1\include\dominios\email.hpp
 	<string>
 
 1763662432 source:z:\projeto_tp1\src\dominios\capacidade.cpp
@@ -461,7 +465,7 @@
 	"containerReservas.hpp"
 	<iostream>
 
-1763763649 z:\projeto_tp1\include\containers\containerhoteis.hpp
+1763768877 z:\projeto_tp1\include\containers\containerhoteis.hpp
 	<unordered_map>
 	<vector>
 	<string>
@@ -470,7 +474,7 @@
 1763662432 z:\projeto_tp1\include\entidades\hotel.hpp
 	"DOMINIOS.hpp"
 
-1763763667 z:\projeto_tp1\include\containers\containerquartos.hpp
+1763768877 z:\projeto_tp1\include\containers\containerquartos.hpp
 	<unordered_map>
 	<vector>
 	<string>
@@ -479,7 +483,7 @@
 1763662432 z:\projeto_tp1\include\entidades\quarto.hpp
 	"DOMINIOS.hpp"
 
-1763763667 z:\projeto_tp1\include\containers\containerreservas.hpp
+1763768877 z:\projeto_tp1\include\containers\containerreservas.hpp
 	<unordered_map>
 	<vector>
 	<string>
@@ -582,72 +586,64 @@
 	<stdexcept>
 	"cadastroGerente.hpp"
 
-<<<<<<< HEAD
-1763757894 z:\projeto_tp1\include\servicos\cadastro\cadastrogerente.hpp
-=======
 1763757025 z:\projeto_tp1\include\servicos\cadastro\cadastrogerente.hpp
->>>>>>> origin/main
-	"DOMINIOS.hpp"
-	"cadastro.hpp"
-	"gerente.hpp"
-	"centralContainers.hpp"
 
 1763759381 source:z:\projeto_tp1\src\servicos\cadastro\cadastrohospede.cpp
 	<iostream>
 	<stdexcept>
 	"cadastroHospede.hpp"
 
-1763757894 z:\projeto_tp1\include\servicos\cadastro\cadastrohospede.hpp
+1763757025 z:\projeto_tp1\include\servicos\cadastro\cadastrohospede.hpp
 	"DOMINIOS.hpp"
 	"cadastro.hpp"
 	"hospede.hpp"
 	"centralContainers.hpp"
 
-1763763667 source:z:\projeto_tp1\src\servicos\cadastro\cadastrohotel.cpp
+1763765499 source:z:\projeto_tp1\src\servicos\cadastro\cadastrohotel.cpp
 	<iostream>
 	<stdexcept>
 	"cadastroHotel.hpp"
 
-1763764539 z:\projeto_tp1\include\servicos\cadastro\cadastrohotel.hpp
+1763765499 z:\projeto_tp1\include\servicos\cadastro\cadastrohotel.hpp
 	"DOMINIOS.hpp"
 	"cadastro.hpp"
 	"hotel.hpp"
 	"centralContainers.hpp"
 
-1763763649 source:z:\projeto_tp1\src\servicos\cadastro\cadastroquarto.cpp
+1763765499 source:z:\projeto_tp1\src\servicos\cadastro\cadastroquarto.cpp
 	<iostream>
 	<stdexcept>
 	"cadastroQuarto.hpp"
 
-1763764539 z:\projeto_tp1\include\servicos\cadastro\cadastroquarto.hpp
+1763765499 z:\projeto_tp1\include\servicos\cadastro\cadastroquarto.hpp
 	"DOMINIOS.hpp"
 	"cadastro.hpp"
 	"quarto.hpp"
 	"centralContainers.hpp"
 
-1763763649 source:z:\projeto_tp1\src\servicos\cadastro\cadastroreserva.cpp
+1763765499 source:z:\projeto_tp1\src\servicos\cadastro\cadastroreserva.cpp
 	<iostream>
 	<stdexcept>
 	"cadastroReserva.hpp"
 
-1763757894 z:\projeto_tp1\include\servicos\cadastro\cadastroreserva.hpp
+1763757026 z:\projeto_tp1\include\servicos\cadastro\cadastroreserva.hpp
 	"DOMINIOS.hpp"
 	"cadastro.hpp"
 	"reserva.hpp"
 	"centralContainers.hpp"
 
-1763757894 z:\projeto_tp1\include\servicos\cadastro\cadastro.hpp
+1763747743 z:\projeto_tp1\include\servicos\cadastro\cadastro.hpp
 	<unordered_map>
 	<string>
 	"DOMINIOS.hpp"
 
-1763759413 z:\projeto_tp1\include\servicos\atualizar\atualizarhotel.hpp
+1763765499 z:\projeto_tp1\include\servicos\atualizar\atualizarhotel.hpp
 	"DOMINIOS.hpp"
 	"../cadastro/cadastro.hpp"
 	"ENTIDADES.hpp"
 	"centralContainers.hpp"
 
-1763673332 z:\projeto_tp1\include\entidades\entidades.hpp
+1763733212 z:\projeto_tp1\include\entidades\entidades.hpp
 	"gerente.hpp"
 	"hospede.hpp"
 	"hotel.hpp"
@@ -655,29 +651,62 @@
 	"quarto.hpp"
 	"reserva.hpp"
 
-1763757894 source:z:\projeto_tp1\src\servicos\atualizar\atualizargerente.cpp
+1763756741 source:z:\projeto_tp1\src\servicos\atualizar\atualizargerente.cpp
 	<iostream>
 	"atualizarGerente.hpp"
 
-1763757894 z:\projeto_tp1\include\servicos\atualizar\atualizargerente.hpp
+1763757026 z:\projeto_tp1\include\servicos\atualizar\atualizargerente.hpp
 	"DOMINIOS.hpp"
 	"../cadastro/cadastro.hpp"
 	"gerente.hpp"
 	"centralContainers.hpp"
 
-1763757894 source:z:\projeto_tp1\src\servicos\cadastro\cadastro.cpp
+1763748460 source:z:\projeto_tp1\src\servicos\cadastro\cadastro.cpp
 	<iostream>
 	<stdexcept>
 	"cadastro.hpp"
 	"DOMINIOS.hpp"
 
-1763759997 source:z:\projeto_tp1\src\servicos\atualizar\atualizarhotel.cpp
+1763765499 source:z:\projeto_tp1\src\servicos\atualizar\atualizarhotel.cpp
 	<iostream>
 	"atualizarHotel.hpp"
 
-1763763948 z:\projeto_tp1\include\servicos\listar\listarhotel.hpp
+1763765499 z:\projeto_tp1\include\servicos\listar\listarhotel.hpp
 	<vector>
 	"DOMINIOS.hpp"
 	"ENTIDADES.hpp"
 	"centralContainers.hpp"
+
+1763759055 source:z:\projeto_tp1\src\servicos\atualizar\atualizarhospede.cpp
+	<iostream>
+	"atualizarHospede.hpp"
+
+1763759055 z:\projeto_tp1\include\servicos\atualizar\atualizarhospede.hpp
+	"DOMINIOS.hpp"
+	"../cadastro/cadastro.hpp"
+	"ENTIDADES.hpp"
+	"centralContainers.hpp"
+
+1763761329 source:z:\projeto_tp1\src\servicos\atualizar\atualizarquarto.cpp
+	<iostream>
+	"atualizarQuarto.hpp"
+
+1763761329 z:\projeto_tp1\include\servicos\atualizar\atualizarquarto.hpp
+	"DOMINIOS.hpp"
+	"../cadastro/cadastro.hpp"
+	"ENTIDADES.hpp"
+	"centralContainers.hpp"
+
+1763765499 source:z:\projeto_tp1\src\servicos\atualizar\atualizarreserva.cpp
+	<iostream>
+	"atualizarReserva.hpp"
+
+1763765499 z:\projeto_tp1\include\servicos\atualizar\atualizarreserva.hpp
+	"DOMINIOS.hpp"
+	"../cadastro/cadastro.hpp"
+	"ENTIDADES.hpp"
+	"centralContainers.hpp"
+
+1763765499 source:z:\projeto_tp1\src\servicos\listar\listarhotel.cpp
+	"listar/listarHotel.hpp"
 

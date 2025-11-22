@@ -19,6 +19,10 @@
 					<Add directory="include/servicos" />
 					<Add directory="include/servicos/cadastro" />
 					<Add directory="include/servicos/atualizar" />
+					<Add directory="include/servicos/autenticar" />
+					<Add directory="include/servicos/listar" />
+					<Add directory="include/servicos/remover" />
+					<Add directory="include/apresentacao" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -28,6 +32,16 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include/dominios" />
+					<Add directory="include/containers" />
+					<Add directory="include/entidades" />
+					<Add directory="include/servicos" />
+					<Add directory="include/servicos/cadastro" />
+					<Add directory="include/servicos/atualizar" />
+					<Add directory="include/servicos/autenticar" />
+					<Add directory="include/servicos/listar" />
+					<Add directory="include/servicos/remover" />
+					<Add directory="include/apresentacao" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -38,12 +52,21 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		
+		<!-- CONTAINERS -->
 		<Unit filename="include/containers/CONTAINERS.hpp" />
 		<Unit filename="include/containers/containerGerentes.hpp" />
 		<Unit filename="include/containers/containerHospedes.hpp" />
 		<Unit filename="include/containers/containerHoteis.hpp" />
 		<Unit filename="include/containers/containerQuartos.hpp" />
 		<Unit filename="include/containers/containerReservas.hpp" />
+		<Unit filename="src/containers/containerGerentes.cpp" />
+		<Unit filename="src/containers/containerHospedes.cpp" />
+		<Unit filename="src/containers/containerHoteis.cpp" />
+		<Unit filename="src/containers/containerQuartos.cpp" />
+		<Unit filename="src/containers/containerReservas.cpp" />
+		
+		<!-- DOMINIOS -->
 		<Unit filename="include/dominios/DOMINIOS.hpp" />
 		<Unit filename="include/dominios/capacidade.hpp" />
 		<Unit filename="include/dominios/cartao.hpp" />
@@ -57,34 +80,6 @@
 		<Unit filename="include/dominios/ramal.hpp" />
 		<Unit filename="include/dominios/senha.hpp" />
 		<Unit filename="include/dominios/telefone.hpp" />
-		<Unit filename="include/entidades/gerente.hpp" />
-		<Unit filename="include/entidades/hospede.hpp" />
-		<Unit filename="include/entidades/hotel.hpp" />
-		<Unit filename="include/entidades/pessoa.hpp" />
-		<Unit filename="include/entidades/quarto.hpp" />
-		<Unit filename="include/entidades/reserva.hpp" />
-		<Unit filename="include/servicos/atualizar/atualizarGerente.hpp" />
-<<<<<<< HEAD
-		<Unit filename="include/servicos/atualizar/atualizarHotel.hpp" />
-=======
-		<Unit filename="include/servicos/atualizar/atualizarReserva.hpp" />
-		<Unit filename="include/servicos/atualizar/atualizarHospede.hpp" />
-		<Unit filename="include/servicos/atualizar/atualizarQuarto.hpp" />
->>>>>>> origin/main
-		<Unit filename="include/servicos/cadastro/cadastro.hpp" />
-		<Unit filename="include/servicos/cadastro/cadastroGerente.hpp" />
-		<Unit filename="include/servicos/cadastro/cadastroHospede.hpp" />
-		<Unit filename="include/servicos/cadastro/cadastroHotel.hpp" />
-		<Unit filename="include/servicos/cadastro/cadastroQuarto.hpp" />
-		<Unit filename="include/servicos/cadastro/cadastroReserva.hpp" />
-		<Unit filename="include/servicos/listar/listarHotel.hpp" />
-		<Unit filename="include/servicos/centralContainers.hpp" />
-		<Unit filename="main.cpp" />
-		<Unit filename="src/containers/containerGerentes.cpp" />
-		<Unit filename="src/containers/containerHospedes.cpp" />
-		<Unit filename="src/containers/containerHoteis.cpp" />
-		<Unit filename="src/containers/containerQuartos.cpp" />
-		<Unit filename="src/containers/containerReservas.cpp" />
 		<Unit filename="src/dominios/capacidade.cpp" />
 		<Unit filename="src/dominios/cartao.cpp" />
 		<Unit filename="src/dominios/codigo.cpp" />
@@ -97,19 +92,81 @@
 		<Unit filename="src/dominios/ramal.cpp" />
 		<Unit filename="src/dominios/senha.cpp" />
 		<Unit filename="src/dominios/telefone.cpp" />
+		
+		<!-- ENTIDADES -->
+		<Unit filename="include/entidades/ENTIDADES.hpp" />
+		<Unit filename="include/entidades/gerente.hpp" />
+		<Unit filename="include/entidades/hospede.hpp" />
+		<Unit filename="include/entidades/hotel.hpp" />
+		<Unit filename="include/entidades/pessoa.hpp" />
+		<Unit filename="include/entidades/quarto.hpp" />
+		<Unit filename="include/entidades/reserva.hpp" />
+		
+		<!-- SERVICOS - CENTRAL -->
+		<Unit filename="include/servicos/centralContainers.hpp" />
+		<Unit filename="src/servicos/centralContainers.cpp" />
+		
+		<!-- SERVICOS - ATUALIZAR -->
+		<Unit filename="include/servicos/atualizar/atualizarGerente.hpp" />
+		<Unit filename="include/servicos/atualizar/atualizarHospede.hpp" />
+		<Unit filename="include/servicos/atualizar/atualizarHotel.hpp" />
+		<Unit filename="include/servicos/atualizar/atualizarQuarto.hpp" />
+		<Unit filename="include/servicos/atualizar/atualizarReserva.hpp" />
 		<Unit filename="src/servicos/atualizar/atualizarGerente.cpp" />
-		<Unit filename="src/servicos/atualizar/atualizarHotel.cpp" />
-		<Unit filename="src/servicos/atualizar/atualizarReserva.cpp" />
 		<Unit filename="src/servicos/atualizar/atualizarHospede.cpp" />
+		<Unit filename="src/servicos/atualizar/atualizarHotel.cpp" />
 		<Unit filename="src/servicos/atualizar/atualizarQuarto.cpp" />
+		<Unit filename="src/servicos/atualizar/atualizarReserva.cpp" />
+		
+		<!-- SERVICOS - AUTENTICAR (NOVO) -->
+		<Unit filename="include/servicos/autenticar/autenticarGerente.hpp" />
+		<Unit filename="src/servicos/autenticar/autenticarGerente.cpp" />
+		
+		<!-- SERVICOS - CADASTRO -->
+		<Unit filename="include/servicos/cadastro/cadastro.hpp" />
+		<Unit filename="include/servicos/cadastro/cadastroGerente.hpp" />
+		<Unit filename="include/servicos/cadastro/cadastroHospede.hpp" />
+		<Unit filename="include/servicos/cadastro/cadastroHotel.hpp" />
+		<Unit filename="include/servicos/cadastro/cadastroQuarto.hpp" />
+		<Unit filename="include/servicos/cadastro/cadastroReserva.hpp" />
 		<Unit filename="src/servicos/cadastro/cadastro.cpp" />
 		<Unit filename="src/servicos/cadastro/cadastroGerente.cpp" />
 		<Unit filename="src/servicos/cadastro/cadastroHospede.cpp" />
 		<Unit filename="src/servicos/cadastro/cadastroHotel.cpp" />
 		<Unit filename="src/servicos/cadastro/cadastroQuarto.cpp" />
 		<Unit filename="src/servicos/cadastro/cadastroReserva.cpp" />
+		
+		<!-- SERVICOS - LISTAR -->
+		<Unit filename="include/servicos/listar/listarHospede.hpp" />
+		<Unit filename="include/servicos/listar/listarHotel.hpp" />
+		<Unit filename="include/servicos/listar/listarQuarto.hpp" />
+		<Unit filename="include/servicos/listar/listarReserva.hpp" />
+		<Unit filename="src/servicos/listar/listarHospede.cpp" />
 		<Unit filename="src/servicos/listar/listarHotel.cpp" />
-		<Unit filename="src/servicos/centralContainers.cpp" />
+		<Unit filename="src/servicos/listar/listarQuarto.cpp" />
+		<Unit filename="src/servicos/listar/listarReserva.cpp" />
+		
+		<!-- SERVICOS - REMOVER -->
+		<Unit filename="include/servicos/remover/removerGerente.hpp" />
+		<Unit filename="include/servicos/remover/removerHospede.hpp" />
+		<Unit filename="include/servicos/remover/removerHotel.hpp" />
+		<Unit filename="include/servicos/remover/removerQuarto.hpp" />
+		<Unit filename="include/servicos/remover/removerReserva.hpp" />
+		<Unit filename="src/servicos/remover/removerGerente.cpp" />
+		<Unit filename="src/servicos/remover/removerHospede.cpp" />
+		<Unit filename="src/servicos/remover/removerHotel.cpp" />
+		<Unit filename="src/servicos/remover/removerQuarto.cpp" />
+		<Unit filename="src/servicos/remover/removerReserva.cpp" />
+		
+		<!-- APRESENTACAO (NOVO) -->
+		<Unit filename="include/apresentacao/MenuPrincipal.hpp" />
+		<Unit filename="include/apresentacao/Utilidades.hpp" />
+		<Unit filename="src/apresentacao/MenuPrincipal.cpp" />
+		<Unit filename="src/apresentacao/Utilidades.cpp" />
+		
+		<!-- MAIN -->
+		<Unit filename="main.cpp" />
+		
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
