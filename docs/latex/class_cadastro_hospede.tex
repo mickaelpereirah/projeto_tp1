@@ -1,0 +1,106 @@
+\doxysection{Cadastro\+Hospede Class Reference}
+\hypertarget{class_cadastro_hospede}{}\label{class_cadastro_hospede}\index{CadastroHospede@{CadastroHospede}}
+
+
+Serviço responsável pelo cadastro de hóspedes no sistema.  
+
+
+
+
+{\ttfamily \#include $<$cadastro\+Hospede.\+hpp$>$}
+
+Inheritance diagram for Cadastro\+Hospede\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_cadastro_hospede}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_cadastro_hospede_a9f3c6baa749d75a923528ad017ad31de}{criar\+\_\+hospede}} ()
+\begin{DoxyCompactList}\small\item\em Cria novo objeto \doxylink{class_hospede}{Hospede} com dados do usuário. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_cadastro_hospede_ae790cba932b88d2b78f5fcdf09f89e55}{novo\+\_\+hospede}} ()
+\begin{DoxyCompactList}\small\item\em Cadastra novo hóspede no sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_cadastro}{Cadastro}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_capacidade}{Capacidade}} \mbox{\hyperlink{class_cadastro_ae0f1aef4dffd9a941d4ac2a45ff109ef}{criar\+\_\+capacidade}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_capacidade}{Capacidade} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cartao}{Cartao}} \mbox{\hyperlink{class_cadastro_a63b6d24ecf2fb514a573823ea04f45dd}{criar\+\_\+cartao}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_cartao}{Cartao} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_codigo}{Codigo}} \mbox{\hyperlink{class_cadastro_aa7442d6ad39328e9d8f121dfb908c520}{criar\+\_\+codigo}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_codigo}{Codigo} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dinheiro}{Dinheiro}} \mbox{\hyperlink{class_cadastro_a49bc1b72c5727099f0707c06f01084a6}{criar\+\_\+dinheiro}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_dinheiro}{Dinheiro} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_email}{Email}} \mbox{\hyperlink{class_cadastro_ac4a85667841ee8f52519fd282d4aeefb}{criar\+\_\+email}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_email}{Email} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_endereco}{Endereco}} \mbox{\hyperlink{class_cadastro_abbf9f1d8c67242008b67b9c5834a0e41}{criar\+\_\+endereco}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_endereco}{Endereco} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_nome}{Nome}} \mbox{\hyperlink{class_cadastro_a6dda8f5f9bf2e0ad8d079feea26a09c9}{criar\+\_\+nome}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_nome}{Nome} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_numero}{Numero}} \mbox{\hyperlink{class_cadastro_aafe87d4725b418647670f016aa7465d0}{criar\+\_\+numero}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_numero}{Numero} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ramal}{Ramal}} \mbox{\hyperlink{class_cadastro_a5f499af2625ce49d4f37758f06daf12f}{criar\+\_\+ramal}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_ramal}{Ramal} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_senha}{Senha}} \mbox{\hyperlink{class_cadastro_ac2446156d85f11ac21412a2fc93799cd}{criar\+\_\+senha}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_senha}{Senha} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_telefone}{Telefone}} \mbox{\hyperlink{class_cadastro_a160f64602001e1b479bd58c87651ca0d}{criar\+\_\+telefone}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_telefone}{Telefone} válido. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serviço responsável pelo cadastro de hóspedes no sistema. 
+
+Gerencia o cadastro de hóspedes, coletando dados pessoais e de pagamento.
+
+{\bfseries{DADOS COLETADOS\+:}}
+\begin{DoxyItemize}
+\item \doxylink{class_nome}{Nome} (5-\/20 caracteres)
+\item \doxylink{class_email}{Email} (único, chave primária)
+\item Endereço (5-\/30 caracteres)
+\item Cartão (16 dígitos + Luhn)
+\end{DoxyItemize}
+
+{\bfseries{VALIDAÇÕ\+ES\+:}}
+\begin{DoxyItemize}
+\item \doxylink{class_email}{Email} único no sistema
+\item Cartão com dígito verificador válido (Luhn)
+\item Todos os domínios validados individualmente 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_cadastro_hospede_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_cadastro_hospede_a9f3c6baa749d75a923528ad017ad31de}\index{CadastroHospede@{CadastroHospede}!criar\_hospede@{criar\_hospede}}
+\index{criar\_hospede@{criar\_hospede}!CadastroHospede@{CadastroHospede}}
+\doxysubsubsection{\texorpdfstring{criar\_hospede()}{criar\_hospede()}}
+{\footnotesize\ttfamily \label{class_cadastro_hospede_a9f3c6baa749d75a923528ad017ad31de} 
+\mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} Cadastro\+Hospede\+::criar\+\_\+hospede (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cria novo objeto \doxylink{class_hospede}{Hospede} com dados do usuário. 
+
+\begin{DoxyReturn}{Returns}
+Hospede\texorpdfstring{$\ast$}{*} Ponteiro para o hóspede criado 
+\end{DoxyReturn}
+\Hypertarget{class_cadastro_hospede_ae790cba932b88d2b78f5fcdf09f89e55}\index{CadastroHospede@{CadastroHospede}!novo\_hospede@{novo\_hospede}}
+\index{novo\_hospede@{novo\_hospede}!CadastroHospede@{CadastroHospede}}
+\doxysubsubsection{\texorpdfstring{novo\_hospede()}{novo\_hospede()}}
+{\footnotesize\ttfamily \label{class_cadastro_hospede_ae790cba932b88d2b78f5fcdf09f89e55} 
+bool Cadastro\+Hospede\+::novo\+\_\+hospede (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cadastra novo hóspede no sistema. 
+
+\begin{DoxyReturn}{Returns}
+true se cadastrado, false se email já existe 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/servicos/cadastro/\mbox{\hyperlink{cadastro_hospede_8hpp}{cadastro\+Hospede.\+hpp}}\item 
+src/servicos/cadastro/\mbox{\hyperlink{cadastro_hospede_8cpp}{cadastro\+Hospede.\+cpp}}\end{DoxyCompactItemize}

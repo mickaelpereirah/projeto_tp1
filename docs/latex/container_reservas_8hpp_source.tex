@@ -1,0 +1,45 @@
+\doxysection{container\+Reservas.\+hpp}
+\hypertarget{container_reservas_8hpp_source}{}\label{container_reservas_8hpp_source}\index{include/containers/containerReservas.hpp@{include/containers/containerReservas.hpp}}
+\mbox{\hyperlink{container_reservas_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ CONTAINER\_RESERVAS\_HPP\_INCLUDED}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CONTAINER\_RESERVAS\_HPP\_INCLUDED}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{reserva_8hpp}{reserva.hpp}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_container_reserva}{ContainerReserva}}\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ unordered\_map<int,\ unordered\_map<string,\ vector<Reserva*>>>\ \mbox{\hyperlink{class_container_reserva_adf6c44707a861f6b73648a947b495a9f}{container}};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_container_reserva_a649e4de1b21adb11210f7c7fdb008cdd}{incluir}}(\mbox{\hyperlink{class_reserva}{Reserva}}*,\ \textcolor{keywordtype}{int}\ numero\_quarto,\ \textcolor{keywordtype}{string}\ email\_hospede);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_container_reserva_a4bd6e4f8f627cc886bc16ed68e4c9e2a}{remover}}(\textcolor{keywordtype}{string}\ codigo);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_reserva}{Reserva}}*\ \mbox{\hyperlink{class_container_reserva_ab9a58acecc5a9c69795c2eb3a3b7064e}{pesquisar}}(\textcolor{keywordtype}{string}\ codigo);}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ vector<Reserva*>\ \mbox{\hyperlink{class_container_reserva_ab9a58acecc5a9c69795c2eb3a3b7064e}{pesquisar}}(\textcolor{keywordtype}{int}\ numero\_quarto,\ \textcolor{keywordtype}{string}\ email\_hospede);}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ vector<Reserva*>\ \mbox{\hyperlink{class_container_reserva_a048aeb37610099ee08819609efe0942b}{pesquisarPorQuarto}}(\textcolor{keywordtype}{int}\ numero\_quarto);}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ vector<Reserva*>\ \mbox{\hyperlink{class_container_reserva_a8a90d73f1e74fabe530dfd9f68c467e2}{pesquisarPorHospede}}(\textcolor{keywordtype}{string}\ email);}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ vector<string>\ \mbox{\hyperlink{class_container_reserva_a96fe193e83314bc1d764f50516e75d22}{pesquisarEmailsHospedesPorQuarto}}(\textcolor{keywordtype}{int}\ numero\_quarto);}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_container_reserva_a27d41534d70826965afcc73bf1ad245d}{removerTodasPorQuarto}}(\textcolor{keywordtype}{int}\ numero\_quarto);}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_container_reserva_a79557bbab5c8992ec7788c71545463c5}{removerTodasPorHospede}}(\textcolor{keywordtype}{string}\ email);}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_container_reserva_ae94b3f81f06adef853ef718c743f58f7}{atualizar}}(\mbox{\hyperlink{class_reserva}{Reserva}}*);}
+\DoxyCodeLine{00271\ \};}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

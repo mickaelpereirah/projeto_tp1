@@ -76,7 +76,7 @@ void Email::setValor(string email)
 {
     if (!validar(email))
     {
-        throw invalid_argument("Email invalido");
+        throw std::invalid_argument("Email invalido");
     }
     this->email = email;
 }

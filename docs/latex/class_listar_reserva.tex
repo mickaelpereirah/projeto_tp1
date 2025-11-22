@@ -1,0 +1,133 @@
+\doxysection{Listar\+Reserva Class Reference}
+\hypertarget{class_listar_reserva}{}\label{class_listar_reserva}\index{ListarReserva@{ListarReserva}}
+
+
+Lista reservas com diferentes filtros de consulta.  
+
+
+
+
+{\ttfamily \#include $<$listar\+Reserva.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_listar_reserva_a3661faf3e466aa86772fb05f003c0f37}{listar\+\_\+reservas\+\_\+por\+\_\+quarto}} (\mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*}quarto)
+\begin{DoxyCompactList}\small\item\em Lista todas as reservas de um quarto específico. \end{DoxyCompactList}\item 
+static vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_listar_reserva_a1210e1548026d13bd6c5fafef6c67a0a}{listar\+\_\+reservas\+\_\+por\+\_\+hospede}} (\mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*}hospede)
+\begin{DoxyCompactList}\small\item\em Lista todas as reservas de um hóspede específico. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lista reservas com diferentes filtros de consulta. 
+
+{\bfseries{Duas Formas de Listagem\+:}}
+
+{\bfseries{Por \doxylink{class_quarto}{Quarto}\+:}}
+\begin{DoxyItemize}
+\item Lista todas as reservas de um quarto específico
+\item Útil para verificar agenda/ocupação do quarto
+\item \doxylink{class_gerente}{Gerente} visualiza histórico completo
+\end{DoxyItemize}
+
+{\bfseries{Por Hóspede\+:}}
+\begin{DoxyItemize}
+\item Lista todas as reservas de um hóspede específico
+\item Útil para histórico do cliente
+\item Visualiza reservas em qualquer hotel 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_listar_reserva_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_listar_reserva_a1210e1548026d13bd6c5fafef6c67a0a}\index{ListarReserva@{ListarReserva}!listar\_reservas\_por\_hospede@{listar\_reservas\_por\_hospede}}
+\index{listar\_reservas\_por\_hospede@{listar\_reservas\_por\_hospede}!ListarReserva@{ListarReserva}}
+\doxysubsubsection{\texorpdfstring{listar\_reservas\_por\_hospede()}{listar\_reservas\_por\_hospede()}}
+{\footnotesize\ttfamily \label{class_listar_reserva_a1210e1548026d13bd6c5fafef6c67a0a} 
+vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$ Listar\+Reserva\+::listar\+\_\+reservas\+\_\+por\+\_\+hospede (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*}}]{hospede}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lista todas as reservas de um hóspede específico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hospede} & Ponteiro para o hóspede \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Reserva\texorpdfstring{$\ast$}{*}$>$ Vetor com reservas do hóspede
+\end{DoxyReturn}
+{\bfseries{Comportamento\+:}}
+\begin{DoxyEnumerate}
+\item Busca no container de reservas
+\item Filtra reservas onde reserva.\+hospede == hospede.\+email
+\item Retorna lista de todas as reservas do hóspede
+\item Lista vazia se hóspede nunca fez reservas
+\end{DoxyEnumerate}
+
+{\bfseries{Inclui\+:}}
+\begin{DoxyItemize}
+\item Reservas em diferentes hotéis
+\item Reservas passadas, ativas e futuras
+\item Histórico completo do cliente
+\end{DoxyItemize}
+
+{\bfseries{Exemplo de uso\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vector<Reserva*>\ historico\ =\ \mbox{\hyperlink{class_listar_reserva_a1210e1548026d13bd6c5fafef6c67a0a}{ListarReserva::listar\_reservas\_por\_hospede}}(maria);}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Maria\ tem\ "{}}\ <<\ historico.size()\ <<\ \textcolor{stringliteral}{"{}\ reserva(s)\ no\ histórico"{}}\ <<\ endl;}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ r\ :\ historico)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Hotel:\ "{}}\ <<\ r-\/>getQuarto()-\/>getHotel()-\/>getNome()\ <<\ endl;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_listar_reserva_a3661faf3e466aa86772fb05f003c0f37}\index{ListarReserva@{ListarReserva}!listar\_reservas\_por\_quarto@{listar\_reservas\_por\_quarto}}
+\index{listar\_reservas\_por\_quarto@{listar\_reservas\_por\_quarto}!ListarReserva@{ListarReserva}}
+\doxysubsubsection{\texorpdfstring{listar\_reservas\_por\_quarto()}{listar\_reservas\_por\_quarto()}}
+{\footnotesize\ttfamily \label{class_listar_reserva_a3661faf3e466aa86772fb05f003c0f37} 
+vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$ Listar\+Reserva\+::listar\+\_\+reservas\+\_\+por\+\_\+quarto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*}}]{quarto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lista todas as reservas de um quarto específico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quarto} & Ponteiro para o quarto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Reserva\texorpdfstring{$\ast$}{*}$>$ Vetor com reservas do quarto
+\end{DoxyReturn}
+{\bfseries{Comportamento\+:}}
+\begin{DoxyEnumerate}
+\item Busca no container de reservas
+\item Filtra reservas onde reserva.\+quarto == quarto.\+numero
+\item Retorna lista ordenada (pode incluir passadas e futuras)
+\item Lista vazia se quarto nunca teve reservas
+\end{DoxyEnumerate}
+
+{\bfseries{Inclui\+:}}
+\begin{DoxyItemize}
+\item Reservas passadas (já finalizadas)
+\item Reservas ativas (em andamento)
+\item Reservas futuras (agendadas)
+\end{DoxyItemize}
+
+{\bfseries{Exemplo de uso\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vector<Reserva*>\ reservas\ =\ \mbox{\hyperlink{class_listar_reserva_a3661faf3e466aa86772fb05f003c0f37}{ListarReserva::listar\_reservas\_por\_quarto}}(quarto101);}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Quarto\ 101\ tem\ "{}}\ <<\ reservas.size()\ <<\ \textcolor{stringliteral}{"{}\ reserva(s)"{}}\ <<\ endl;}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ r\ :\ reservas)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Reserva\ "{}}\ <<\ r-\/>getCodigo()\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ r-\/>getDataInicial()\ <<\ \textcolor{stringliteral}{"{}\ até\ "{}}\ <<\ r-\/>getDataFinal()\ <<\ endl;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/servicos/listar/\mbox{\hyperlink{listar_reserva_8hpp}{listar\+Reserva.\+hpp}}\item 
+src/servicos/listar/\mbox{\hyperlink{listar_reserva_8cpp}{listar\+Reserva.\+cpp}}\end{DoxyCompactItemize}

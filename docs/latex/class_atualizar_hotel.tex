@@ -1,0 +1,125 @@
+\doxysection{Atualizar\+Hotel Class Reference}
+\hypertarget{class_atualizar_hotel}{}\label{class_atualizar_hotel}\index{AtualizarHotel@{AtualizarHotel}}
+
+
+Atualiza dados de hotéis cadastrados.  
+
+
+
+
+{\ttfamily \#include $<$atualizar\+Hotel.\+hpp$>$}
+
+Inheritance diagram for Atualizar\+Hotel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_atualizar_hotel}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_atualizar_hotel_a30bf1930fe3dafb6324607201e6574b1}{modificar\+\_\+hotel}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Modifica dados do hotel conforme escolhas do usuário. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_atualizar_hotel_ac0ef4962b37181ab2dea4d62655567b9}{atualizar\+\_\+hotel}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Atualiza hotel no container. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_atualizar_hotel_ae1e31add94da4fdb30e21e28b04acbcf}{validar\+\_\+resposta}} ()
+\begin{DoxyCompactList}\small\item\em Valida resposta sim/não do usuário. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_cadastro}{Cadastro}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_capacidade}{Capacidade}} \mbox{\hyperlink{class_cadastro_ae0f1aef4dffd9a941d4ac2a45ff109ef}{criar\+\_\+capacidade}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_capacidade}{Capacidade} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cartao}{Cartao}} \mbox{\hyperlink{class_cadastro_a63b6d24ecf2fb514a573823ea04f45dd}{criar\+\_\+cartao}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_cartao}{Cartao} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_codigo}{Codigo}} \mbox{\hyperlink{class_cadastro_aa7442d6ad39328e9d8f121dfb908c520}{criar\+\_\+codigo}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_codigo}{Codigo} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dinheiro}{Dinheiro}} \mbox{\hyperlink{class_cadastro_a49bc1b72c5727099f0707c06f01084a6}{criar\+\_\+dinheiro}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_dinheiro}{Dinheiro} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_email}{Email}} \mbox{\hyperlink{class_cadastro_ac4a85667841ee8f52519fd282d4aeefb}{criar\+\_\+email}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_email}{Email} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_endereco}{Endereco}} \mbox{\hyperlink{class_cadastro_abbf9f1d8c67242008b67b9c5834a0e41}{criar\+\_\+endereco}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_endereco}{Endereco} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_nome}{Nome}} \mbox{\hyperlink{class_cadastro_a6dda8f5f9bf2e0ad8d079feea26a09c9}{criar\+\_\+nome}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_nome}{Nome} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_numero}{Numero}} \mbox{\hyperlink{class_cadastro_aafe87d4725b418647670f016aa7465d0}{criar\+\_\+numero}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_numero}{Numero} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ramal}{Ramal}} \mbox{\hyperlink{class_cadastro_a5f499af2625ce49d4f37758f06daf12f}{criar\+\_\+ramal}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_ramal}{Ramal} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_senha}{Senha}} \mbox{\hyperlink{class_cadastro_ac2446156d85f11ac21412a2fc93799cd}{criar\+\_\+senha}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_senha}{Senha} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_telefone}{Telefone}} \mbox{\hyperlink{class_cadastro_a160f64602001e1b479bd58c87651ca0d}{criar\+\_\+telefone}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_telefone}{Telefone} válido. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Atualiza dados de hotéis cadastrados. 
+
+{\bfseries{Permite alterar\+:}} \doxylink{class_nome}{Nome}, Endereço, \doxylink{class_telefone}{Telefone} ~\newline
+ {\bfseries{NÃO permite alterar\+:}} Código (chave primária) ~\newline
+ {\bfseries{Processo\+:}} Pergunta campo por campo se deseja alterar 
+
+\label{doc-func-members}
+\Hypertarget{class_atualizar_hotel_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_atualizar_hotel_ac0ef4962b37181ab2dea4d62655567b9}\index{AtualizarHotel@{AtualizarHotel}!atualizar\_hotel@{atualizar\_hotel}}
+\index{atualizar\_hotel@{atualizar\_hotel}!AtualizarHotel@{AtualizarHotel}}
+\doxysubsubsection{\texorpdfstring{atualizar\_hotel()}{atualizar\_hotel()}}
+{\footnotesize\ttfamily \label{class_atualizar_hotel_ac0ef4962b37181ab2dea4d62655567b9} 
+bool Atualizar\+Hotel\+::atualizar\+\_\+hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})}
+
+
+
+Atualiza hotel no container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel atualizado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se atualizado com sucesso, false caso contrário 
+\end{DoxyReturn}
+\Hypertarget{class_atualizar_hotel_a30bf1930fe3dafb6324607201e6574b1}\index{AtualizarHotel@{AtualizarHotel}!modificar\_hotel@{modificar\_hotel}}
+\index{modificar\_hotel@{modificar\_hotel}!AtualizarHotel@{AtualizarHotel}}
+\doxysubsubsection{\texorpdfstring{modificar\_hotel()}{modificar\_hotel()}}
+{\footnotesize\ttfamily \label{class_atualizar_hotel_a30bf1930fe3dafb6324607201e6574b1} 
+\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} Atualizar\+Hotel\+::modificar\+\_\+hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})}
+
+
+
+Modifica dados do hotel conforme escolhas do usuário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel a ser modificado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Hotel\texorpdfstring{$\ast$}{*} Ponteiro para o hotel modificado
+\end{DoxyReturn}
+Pergunta ao usuário campo por campo se deseja alterar\+:
+\begin{DoxyItemize}
+\item \doxylink{class_nome}{Nome} (sim/não)
+\item Endereço (sim/não)
+\item \doxylink{class_telefone}{Telefone} (sim/não)
+\end{DoxyItemize}
+
+Mantém valores originais dos campos não alterados. \Hypertarget{class_atualizar_hotel_ae1e31add94da4fdb30e21e28b04acbcf}\index{AtualizarHotel@{AtualizarHotel}!validar\_resposta@{validar\_resposta}}
+\index{validar\_resposta@{validar\_resposta}!AtualizarHotel@{AtualizarHotel}}
+\doxysubsubsection{\texorpdfstring{validar\_resposta()}{validar\_resposta()}}
+{\footnotesize\ttfamily \label{class_atualizar_hotel_ae1e31add94da4fdb30e21e28b04acbcf} 
+bool Atualizar\+Hotel\+::validar\+\_\+resposta (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Valida resposta sim/não do usuário. 
+
+\begin{DoxyReturn}{Returns}
+true se resposta foi "{}sim"{}, false se "{}nao"{}
+\end{DoxyReturn}
+Repete pergunta até receber "{}sim"{} ou "{}nao"{}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/servicos/atualizar/\mbox{\hyperlink{atualizar_hotel_8hpp}{atualizar\+Hotel.\+hpp}}\item 
+src/servicos/atualizar/\mbox{\hyperlink{atualizar_hotel_8cpp}{atualizar\+Hotel.\+cpp}}\end{DoxyCompactItemize}

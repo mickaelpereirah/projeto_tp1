@@ -1,0 +1,46 @@
+\doxysection{Menu\+Hospedes.\+hpp}
+\hypertarget{_menu_hospedes_8hpp_source}{}\label{_menu_hospedes_8hpp_source}\index{include/apresentacao/MenuHospedes.hpp@{include/apresentacao/MenuHospedes.hpp}}
+\mbox{\hyperlink{_menu_hospedes_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ MENU\_HOSPEDES\_HPP\_INCLUDED}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ MENU\_HOSPEDES\_HPP\_INCLUDED}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hotel_8hpp}{hotel.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hospede_8hpp}{hospede.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{reserva_8hpp}{reserva.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_menu_hospedes}{MenuHospedes}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_hospedes_ac71963b360db33116f3de361d201694f}{exibir}}(\mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{static}\ vector<Hospede*>\ \mbox{\hyperlink{class_menu_hospedes_a0f8cd7665b866890743368b7c6c4ed74}{listarHospedes}}(\mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_hospedes_a7e9c914f83019132539dbb0044279069}{exibirListaHospedes}}(vector<Hospede*>\ hospedes);}
+\DoxyCodeLine{00069\ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_hospedes_a1509053f66b18696d0ff21395ecd1f9d}{listarTodosHospedesMenu}}();}
+\DoxyCodeLine{00077\ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_hospedes_a0f44631b926abce368529d9b8ffe40a0}{listarHospedesDoHotelMenu}}(\mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00085\ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_hospedes_aeeb0080b0e1f4ec52924faf3dca5910e}{verDetalhesHospede}}(\mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00093\ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_hospedes_a54851e2b4cfe8e0e3b736098e0a3a343}{mostrarDetalhesHospede}}(\mbox{\hyperlink{class_hospede}{Hospede}}*\ hospede);}
+\DoxyCodeLine{00101\ \ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_hospedes_aa69b2f6c7f6044141d345cf00458b916}{criarHospede}}(\mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00115\ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_hospedes_a9f5f94559c380a121c9cae46c811859e}{editarHospede}}(\mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00124\ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_hospedes_ae9f437820d2fa62761ef69c5f0c03b7f}{excluirHospede}}(\mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00134\ \ \ \ \ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_hospede}{Hospede}}*\ \mbox{\hyperlink{class_menu_hospedes_a5dcd788b5c5a231c3a4a097c56de097d}{selecionarHospede}}(vector<Hospede*>\ hospedes);}
+\DoxyCodeLine{00144\ \};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

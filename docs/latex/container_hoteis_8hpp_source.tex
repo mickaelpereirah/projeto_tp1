@@ -1,0 +1,37 @@
+\doxysection{container\+Hoteis.\+hpp}
+\hypertarget{container_hoteis_8hpp_source}{}\label{container_hoteis_8hpp_source}\index{include/containers/containerHoteis.hpp@{include/containers/containerHoteis.hpp}}
+\mbox{\hyperlink{container_hoteis_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ CONTAINER\_HOTEIS\_HPP\_INCLUDED}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CONTAINER\_HOTEIS\_HPP\_INCLUDED\ }}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hotel_8hpp}{hotel.hpp}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_container_hotel}{ContainerHotel}}\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ unordered\_map<string,\ vector<Hotel*>>\ \mbox{\hyperlink{class_container_hotel_ade397ad4a17dc97bb8fe073548c32428}{container}};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_container_hotel_a2be9a13bcf661379ce6a709151a0f610}{incluir}}(\mbox{\hyperlink{class_hotel}{Hotel}}*,\ \textcolor{keywordtype}{string}\ email\_gerente);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_container_hotel_a68cbca6f3a9541fa3f18e60534b153dc}{remover}}(\textcolor{keywordtype}{string}\ codigo);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_container_hotel_a232816878d44eeff3fcd54f6db3580a3}{removerTodosPorGerente}}(\textcolor{keywordtype}{string}\ email\_gerente);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ vector<Hotel*>\ \mbox{\hyperlink{class_container_hotel_aff533f64344a0051ebfff70350488edb}{pesquisar}}(\textcolor{keywordtype}{string}\ email\_gerente);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hotel}{Hotel}}*\ \mbox{\hyperlink{class_container_hotel_a22d7394e6ea9c815b97569466441cde2}{pesquisarPorCodigo}}(\textcolor{keywordtype}{string}\ codigo);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_container_hotel_a45a47bc213b5fc9e2b57e861fce42763}{atualizar}}(\mbox{\hyperlink{class_hotel}{Hotel}}*);}
+\DoxyCodeLine{00163\ \};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

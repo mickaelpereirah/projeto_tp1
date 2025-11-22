@@ -2,7 +2,7 @@
 \hypertarget{class_ramal}{}\label{class_ramal}\index{Ramal@{Ramal}}
 
 
-Representa um número de ramal telefônico válido de 0 a 50.  
+Representa um ramal telefônico de quarto.  
 
 
 
@@ -15,35 +15,52 @@ Representa um número de ramal telefônico válido de 0 a 50.
 void \mbox{\hyperlink{class_ramal_ab8d34c0fa4fca0ebed5dd031c13cf2ee}{set\+Valor}} (int)
 \begin{DoxyCompactList}\small\item\em Define o número do ramal. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_ramal_aa2863dae21d699e5930004f9af4bfb8e}{get\+Valor}} ()
-\begin{DoxyCompactList}\small\item\em Obtém o número do ramal armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Obtém o número do ramal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{class_ramal_a28fc1ffaad9526af9d210ca5b9256537}{validar}} (int)
-\begin{DoxyCompactList}\small\item\em Valida o número do ramal conforme regras do domínio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Valida o número do ramal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{class_ramal_ad0cd380bda1142c72c35caa94ddb5a07}{valor}}
-\begin{DoxyCompactList}\small\item\em Valor do ramal armazenado como inteiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Número do ramal armazenado (0 a 50). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Representa um número de ramal telefônico válido de 0 a 50. 
+Representa um ramal telefônico de quarto. 
 
-A classe \doxylink{class_ramal}{Ramal} é responsável por armazenar e validar números de ramal telefônico dentro de um intervalo específico. A validação inclui\+:
+A classe \doxylink{class_ramal}{Ramal} armazena e valida números de ramais telefônicos associados a quartos de hotel.
+
+{\bfseries{FORMATO VÁ\+LIDO\+:}}
 \begin{DoxyItemize}
-\item Intervalo de valores\+: 0 a 50 (inclusive)
-\item Apenas valores inteiros são aceitos
+\item Valores de 00 a 50
 \end{DoxyItemize}
 
-A classe é útil para sistemas que necessitam gerenciar ramais telefônicos com validação de intervalo e formatação consistente.
-
-Exemplos de valores válidos\+:
+{\bfseries{REGRAS DE VALIDAÇÃO\+:}}
 \begin{DoxyItemize}
-\item 0 (formatado como 0)
-\item 5 (formatado como 5)
-\item 50 (formatado como 50) 
+\item Valor mínimo\+: 0 (representado como 00)
+\item Valor máximo\+: 50
+\item Armazenado como inteiro (0 a 50)
+\item Exibido com 2 dígitos (00, 01, ..., 50)
+\end{DoxyItemize}
+
+{\bfseries{EXEMPLOS\+:}}
+\begin{DoxyItemize}
+\item ✅ Válido\+: 0 (ramal 00)
+\item ✅ Válido\+: 10 (ramal 10)
+\item ✅ Válido\+: 50 (ramal máximo)
+\item ❌ Inválido\+: -\/1 (valor negativo)
+\item ❌ Inválido\+: 51 (acima do máximo)
+\item ❌ Inválido\+: 100 (muito acima do máximo)
+\end{DoxyItemize}
+
+{\bfseries{NOTA DE USO\+:}}
+\begin{DoxyItemize}
+\item Ramais podem ser repetidos em quartos diferentes
+\item \doxylink{class_ramal}{Ramal} 00 pode indicar que não há ramal associado
+\item Usado para comunicação interna do hotel 
 \end{DoxyItemize}
 
 \label{doc-func-members}
@@ -57,16 +74,16 @@ int Ramal\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hsp
 
 
 
-Obtém o número do ramal armazenado. 
+Obtém o número do ramal. 
 
 Implementação inline do método get\+Valor.
 
 \begin{DoxyReturn}{Returns}
-int \doxylink{class_ramal}{Ramal} armazenado como inteiro
+int \doxylink{class_ramal}{Ramal} armazenado (0 a 50)
 
-int Número do ramal armazenado
+int Número do ramal armazenado 
 \end{DoxyReturn}
-Retorna o valor numérico do ramal armazenado internamente. \Hypertarget{class_ramal_ab8d34c0fa4fca0ebed5dd031c13cf2ee}\index{Ramal@{Ramal}!setValor@{setValor}}
+\Hypertarget{class_ramal_ab8d34c0fa4fca0ebed5dd031c13cf2ee}\index{Ramal@{Ramal}!setValor@{setValor}}
 \index{setValor@{setValor}!Ramal@{Ramal}}
 \doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
 {\footnotesize\ttfamily \label{class_ramal_ab8d34c0fa4fca0ebed5dd031c13cf2ee} 
@@ -78,15 +95,28 @@ Define o número do ramal.
 
 
 \begin{DoxyParams}{Parameters}
-{\em valor} & Número do ramal inteiro a ser armazenado \\
+{\em valor} & Número do ramal (0 a 50) \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em invalid\+\_\+argument} & Se o ramal for inválido (fora do intervalo 0-\/50)\\
+{\em invalid\+\_\+argument} & Se o ramal estiver fora do intervalo\\
 \hline
 \end{DoxyExceptions}
-Realiza a validação antes de armazenar o valor. Ramais fora do intervalo permitido resultam em exceção com mensagem descritiva do erro. \Hypertarget{class_ramal_a28fc1ffaad9526af9d210ca5b9256537}\index{Ramal@{Ramal}!validar@{validar}}
+Valida o ramal antes de armazenar. Se o ramal for inválido, lança exceção e o estado do objeto permanece inalterado.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Ramal\ ramalQuarto;}
+\DoxyCodeLine{\textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ ramalQuarto.\mbox{\hyperlink{class_ramal_ab8d34c0fa4fca0ebed5dd031c13cf2ee}{setValor}}(25);}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ramal:\ "{}}\ <<\ ramalQuarto.\mbox{\hyperlink{class_ramal_aa2863dae21d699e5930004f9af4bfb8e}{getValor}}();}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{catch}\ (invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ramal\ inválido:\ "{}}\ <<\ e.what();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_ramal_a28fc1ffaad9526af9d210ca5b9256537}\index{Ramal@{Ramal}!validar@{validar}}
 \index{validar@{validar}!Ramal@{Ramal}}
 \doxysubsubsection{\texorpdfstring{validar()}{validar()}}
 {\footnotesize\ttfamily \label{class_ramal_a28fc1ffaad9526af9d210ca5b9256537} 
@@ -94,17 +124,17 @@ bool Ramal\+::validar (\begin{DoxyParamCaption}\item[{int}]{valor}{}\end{DoxyPar
 
 
 
-Valida o número do ramal conforme regras do domínio. 
+Valida o número do ramal. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em valor} & Número do ramal a ser validado \\
+{\em valor} & \doxylink{class_ramal}{Ramal} a ser validado \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true se o ramal for válido, false caso contrário
+true se o ramal estiver entre 0 e 50, false caso contrário
 \end{DoxyReturn}
-Implementa a validação do ramal, verificando se está dentro do intervalo permitido (0 a 50 inclusive). Valores fora deste intervalo são considerados inválidos. 
+Verifica se o valor está no intervalo \mbox{[}0, 50\mbox{]}. 
 
 \label{doc-variable-members}
 \Hypertarget{class_ramal_doc-variable-members}
@@ -117,7 +147,7 @@ int Ramal\+::valor\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Valor do ramal armazenado como inteiro. 
+Número do ramal armazenado (0 a 50). 
 
 
 

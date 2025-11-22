@@ -2,7 +2,7 @@
 \hypertarget{class_email}{}\label{class_email}\index{Email@{Email}}
 
 
-Representa um endereço de email válido conforme padrões RFC.  
+Representa um endereço de email válido.  
 
 
 
@@ -20,30 +20,62 @@ string \mbox{\hyperlink{class_email_a0a3ffabafaaa30f0e96b7a24de82a9cf}{get\+Valo
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{class_email_a74beeb111377941c871ad565f0fb576d}{validar}} (string \mbox{\hyperlink{class_email_ac0a91a44652858a0c5178ef836ec9c93}{email}})
-\begin{DoxyCompactList}\small\item\em Valida o endereço de email conforme padrões RFC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Valida o endereço de email. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{class_email_ac0a91a44652858a0c5178ef836ec9c93}{email}}
-\begin{DoxyCompactList}\small\item\em Endereço de email armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Endereço de email armazenado (formato\+: local@dominio). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Representa um endereço de email válido conforme padrões RFC. 
+Representa um endereço de email válido. 
 
-A classe \doxylink{class_email}{Email} é responsável por armazenar e validar endereços de email de acordo com as especificações RFC 5322. A validação inclui\+:
+A classe \doxylink{class_email}{Email} armazena e valida endereços de email seguindo regras específicas para parte local e domínio.
+
+{\bfseries{FORMATO VÁ\+LIDO\+:}}
 \begin{DoxyItemize}
-\item Verificação da estrutura básica (parte local @ domínio)
-\item Validação de caracteres permitidos em cada parte
-\item Verificação do comprimento máximo (até 254 caracteres)
-\item Validação do domínio (extensão, pontos, etc.)
+\item parte-\/local@domínio
 \end{DoxyItemize}
 
-Exemplos de emails válidos\+:
+{\bfseries{REGRAS DA PARTE LOCAL (antes do @)\+:}}
 \begin{DoxyItemize}
-\item \href{mailto:usuario@exemplo.com}{\texttt{usuario@exemplo.\+com}}
-\item \href{mailto:nome.sobrenome@empresa.com.br}{\texttt{nome.\+sobrenome@empresa.\+com.\+br}}
-\item \href{mailto:user+tag@domain.org}{\texttt{user+tag@domain.\+org}} 
+\item Pode conter\+: letra (a-\/z), dígito (0-\/9), ponto (.) ou hífen (-\/)
+\item NÃO pode iniciar ou terminar com ponto ou hífen
+\item Ponto ou hífen deve ser seguido por letra(s) ou dígito(s)
+\item Comprimento máximo\+: 64 caracteres
+\end{DoxyItemize}
+
+{\bfseries{REGRAS DO DOMÍ\+NIO (após o @)\+:}}
+\begin{DoxyItemize}
+\item Composto por uma ou mais partes separadas por ponto (.)
+\item Cada parte pode conter\+: letra (a-\/z), dígito (0-\/9) ou hífen (-\/)
+\item NÃO pode iniciar ou terminar com hífen
+\item Comprimento máximo\+: 255 caracteres
+\end{DoxyItemize}
+
+{\bfseries{EXEMPLOS\+:}}
+\begin{DoxyItemize}
+\item ✅ Válido\+: "{}usuario@exemplo.\+com"{}
+\item ✅ Válido\+: "{}nome.\+sobrenome@empresa.\+com.\+br"{}
+\item ✅ Válido\+: "{}user-\/name@dominio.\+org"{}
+\item ✅ Válido\+: "{}contato123@site.\+com"{}
+\item ✅ Válido\+: "{}a@b.\+co"{} (mínimo)
+\item ❌ Inválido\+: "{}.\+usuario@exemplo.\+com"{} (começa com ponto)
+\item ❌ Inválido\+: "{}usuario.@exemplo.\+com"{} (termina com ponto)
+\item ❌ Inválido\+: "{}usuario@"{} (falta domínio)
+\item ❌ Inválido\+: "{}@exemplo.\+com"{} (falta parte local)
+\item ❌ Inválido\+: "{}usuario..\+nome@exemplo.\+com"{} (pontos consecutivos)
+\item ❌ Inválido\+: "{}usuario@-\/exemplo.\+com"{} (domínio começa com hífen)
+\item ❌ Inválido\+: "{}usuario@exemplo-\/.\+com"{} (domínio termina com hífen)
+\item ❌ Inválido\+: "{}usuario nome@exemplo.\+com"{} (espaço não permitido)
+\end{DoxyItemize}
+
+{\bfseries{DETALHES TÉ\+CNICOS\+:}}
+\begin{DoxyItemize}
+\item Total máximo\+: 64 (local) + 1 (@) + 255 (domínio) = 320 caracteres
+\item Apenas caracteres ASCII básicos (sem acentuação)
+\item Case-\/insensitive (\href{mailto:user@EXEMPLO.com}{\texttt{user@\+EXEMPLO.\+com}} = \href{mailto:user@exemplo.com}{\texttt{user@exemplo.\+com}}) 
 \end{DoxyItemize}
 
 \label{doc-func-members}
@@ -62,7 +94,7 @@ Obtém o endereço de email armazenado.
 Implementação inline do método get\+Valor.
 
 \begin{DoxyReturn}{Returns}
-string Endereço de email no formato válido
+string Endereço de email no formato local@dominio
 
 string Endereço de email armazenado 
 \end{DoxyReturn}
@@ -86,7 +118,20 @@ Define o endereço de email.
 {\em invalid\+\_\+argument} & Se o email for inválido\\
 \hline
 \end{DoxyExceptions}
-Realiza a validação completa antes de armazenar o valor. Emails que não atendem aos padrões RFC resultam em exceção com mensagem descritiva do erro de validação. \Hypertarget{class_email_a74beeb111377941c871ad565f0fb576d}\index{Email@{Email}!validar@{validar}}
+Realiza a validação completa antes de armazenar.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Email\ emailGerente;}
+\DoxyCodeLine{\textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ emailGerente.\mbox{\hyperlink{class_email_a1ae8e06dc7ed37d74c9223c4e5ade734}{setValor}}(\textcolor{stringliteral}{"{}gerente@hotel.com"{}});}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Email\ válido:\ "{}}\ <<\ emailGerente.\mbox{\hyperlink{class_email_a0a3ffabafaaa30f0e96b7a24de82a9cf}{getValor}}();}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{catch}\ (invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Email\ inválido:\ "{}}\ <<\ e.what();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_email_a74beeb111377941c871ad565f0fb576d}\index{Email@{Email}!validar@{validar}}
 \index{validar@{validar}!Email@{Email}}
 \doxysubsubsection{\texorpdfstring{validar()}{validar()}}
 {\footnotesize\ttfamily \label{class_email_a74beeb111377941c871ad565f0fb576d} 
@@ -94,7 +139,7 @@ bool Email\+::validar (\begin{DoxyParamCaption}\item[{string}]{email}{}\end{Doxy
 
 
 
-Valida o endereço de email conforme padrões RFC. 
+Valida o endereço de email. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -104,14 +149,24 @@ Valida o endereço de email conforme padrões RFC.
 \begin{DoxyReturn}{Returns}
 true se o email for válido, false caso contrário
 \end{DoxyReturn}
-Implementa a validação completa do email, incluindo\+:
+Executa as seguintes validações\+:
+\begin{DoxyEnumerate}
+\item Verifica presença de exatamente um \textquotesingle{}@\textquotesingle{}
+\item Valida parte local\+:
 \begin{DoxyItemize}
-\item Presença do caractere \textquotesingle{}@\textquotesingle{} separando partes local e domínio
-\item Comprimento máximo de 254 caracteres
-\item Caracteres permitidos na parte local (antes do @)
-\item Validação da parte do domínio (após o @)
-\item Extensões de domínio válidas 
+\item Comprimento máximo 64 caracteres
+\item Caracteres permitidos\+: a-\/z, 0-\/9, ponto, hífen
+\item Não começa/termina com ponto ou hífen
+\item Ponto/hífen seguido por letra ou dígito
 \end{DoxyItemize}
+\item Valida domínio\+:
+\begin{DoxyItemize}
+\item Comprimento máximo 255 caracteres
+\item Partes separadas por ponto
+\item Cada parte\+: a-\/z, 0-\/9, hífen
+\item Não começa/termina com hífen 
+\end{DoxyItemize}
+\end{DoxyEnumerate}
 
 \label{doc-variable-members}
 \Hypertarget{class_email_doc-variable-members}
@@ -124,7 +179,7 @@ string Email\+::email\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Endereço de email armazenado. 
+Endereço de email armazenado (formato\+: local@dominio). 
 
 
 

@@ -1,0 +1,101 @@
+\doxysection{Remover\+Reserva Class Reference}
+\hypertarget{class_remover_reserva}{}\label{class_remover_reserva}\index{RemoverReserva@{RemoverReserva}}
+
+
+Remove reservas do sistema.  
+
+
+
+
+{\ttfamily \#include $<$remover\+Reserva.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_remover_reserva_aee80f52ac0ade5e9db6c2d0eeecb9622}{remover\+\_\+reserva}} (\mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*}reserva)
+\begin{DoxyCompactList}\small\item\em Remove uma reserva específica do sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Remove reservas do sistema. 
+
+{\bfseries{Remoção Simples\+:}}
+\begin{DoxyItemize}
+\item Remove apenas a RESERVA
+\item NÃO remove \doxylink{class_quarto}{Quarto} (fica disponível)
+\item NÃO remove Hóspede (mantém cadastro)
+\end{DoxyItemize}
+
+{\bfseries{Regra de Negócio\+:}}
+\begin{DoxyItemize}
+\item \doxylink{class_reserva}{Reserva} pode ser cancelada a qualquer momento
+\item \doxylink{class_quarto}{Quarto} volta a ficar disponível após remoção
+\item Hóspede mantém outras reservas (se houver)
+\end{DoxyItemize}
+
+{\bfseries{Uso Principal\+:}}
+\begin{DoxyItemize}
+\item Cancelamento de reservas
+\item Liberação de quartos
+\item Correção de erros de cadastro 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_remover_reserva_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_remover_reserva_aee80f52ac0ade5e9db6c2d0eeecb9622}\index{RemoverReserva@{RemoverReserva}!remover\_reserva@{remover\_reserva}}
+\index{remover\_reserva@{remover\_reserva}!RemoverReserva@{RemoverReserva}}
+\doxysubsubsection{\texorpdfstring{remover\_reserva()}{remover\_reserva()}}
+{\footnotesize\ttfamily \label{class_remover_reserva_aee80f52ac0ade5e9db6c2d0eeecb9622} 
+bool Remover\+Reserva\+::remover\+\_\+reserva (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*}}]{reserva}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove uma reserva específica do sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reserva} & Ponteiro para a reserva a ser removida \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removida com sucesso, false caso contrário
+\end{DoxyReturn}
+{\bfseries{Processo de Remoção\+:}}
+\begin{DoxyEnumerate}
+\item Localiza reserva no container
+\item Remove do mapa de reservas por quarto
+\item Libera quarto (estado volta para disponível)
+\item Mantém hóspede cadastrado
+\end{DoxyEnumerate}
+
+{\bfseries{Efeitos\+:}}
+\begin{DoxyItemize}
+\item \doxylink{class_quarto}{Quarto}\+: liberado para novas reservas
+\item Hóspede\+: continua no sistema
+\item Histórico\+: reserva removida permanentemente
+\end{DoxyItemize}
+
+{\bfseries{Exemplo de uso\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Reserva*\ r\ =\ container.pesquisar(\textcolor{stringliteral}{"{}ABC1234567"{}});}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Deseja\ cancelar\ esta\ reserva?\ (sim/nao):\ "{}};}
+\DoxyCodeLine{\textcolor{keywordtype}{string}\ resposta;}
+\DoxyCodeLine{cin\ >>\ resposta;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(resposta\ ==\ \textcolor{stringliteral}{"{}sim"{}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_remover_reserva_aee80f52ac0ade5e9db6c2d0eeecb9622}{RemoverReserva::remover\_reserva}}(r))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Reserva\ "{}}\ <<\ r-\/>\mbox{\hyperlink{class_reserva_a1204609ea4b0d944c28405368976887f}{getCodigo}}()\ <<\ \textcolor{stringliteral}{"{}\ cancelada\ com\ sucesso!"{}}\ <<\ endl;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Quarto\ "{}}\ <<\ r-\/>getQuarto()-\/>getNumero()\ <<\ \textcolor{stringliteral}{"{}\ está\ disponível\ novamente."{}}\ <<\ endl;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+{\bfseries{Nota\+:}} No MVP não há política de reembolso ou multas por cancelamento. Remoção é irreversível, sem possibilidade de recuperação. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/servicos/remover/\mbox{\hyperlink{remover_reserva_8hpp}{remover\+Reserva.\+hpp}}\item 
+src/servicos/remover/\mbox{\hyperlink{remover_reserva_8cpp}{remover\+Reserva.\+cpp}}\end{DoxyCompactItemize}

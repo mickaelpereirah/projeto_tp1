@@ -92,7 +92,7 @@ $(function(){initNavTree('class_nome.html','','class_nome-members'); });
 </div><!--header-->
 <div class="contents">
 
-<p>Representa um nome pessoal válido de 5 a 20 caracteres.  
+<p>Representa um nome pessoal válido.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="nome_8hpp_source.html">nome.hpp</a>&gt;</code></p>
@@ -107,27 +107,60 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ac7288ba646f6b5245eb1f2d47604ca34" id="r_ac7288ba646f6b5245eb1f2d47604ca34"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7288ba646f6b5245eb1f2d47604ca34">validar</a> (string)</td></tr>
-<tr class="memdesc:ac7288ba646f6b5245eb1f2d47604ca34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida o nome pessoal conforme regras do domínio.  <br /></td></tr>
+<tr class="memdesc:ac7288ba646f6b5245eb1f2d47604ca34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida o nome pessoal.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a7c7a7c0513e4997120619e15bed88b7d" id="r_a7c7a7c0513e4997120619e15bed88b7d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c7a7c0513e4997120619e15bed88b7d">texto</a></td></tr>
-<tr class="memdesc:a7c7a7c0513e4997120619e15bed88b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texto do nome armazenado.  <br /></td></tr>
+<tr class="memdesc:a7c7a7c0513e4997120619e15bed88b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texto do nome armazenado (5-20 caracteres).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Representa um nome pessoal válido de 5 a 20 caracteres. </p>
-<p>A classe <a class="el" href="class_nome.html" title="Representa um nome pessoal válido de 5 a 20 caracteres.">Nome</a> é responsável por armazenar e validar nomes pessoais conforme regras específicas de formatação. A validação inclui:</p><ul>
-<li>Comprimento entre 5 e 20 caracteres</li>
-<li>Caracteres permitidos: apenas letras (a-z, A-Z) e espaços em branco</li>
-<li>Primeira letra de cada termo deve ser maiúscula (A-Z)</li>
-<li>Espaço em branco deve ser seguido por letra</li>
-<li>Último caractere não pode ser espaço em branco</li>
+<div class="textblock"><p>Representa um nome pessoal válido. </p>
+<p>A classe <a class="el" href="class_nome.html" title="Representa um nome pessoal válido.">Nome</a> armazena e valida nomes pessoais seguindo regras específicas de formatação e capitalização.</p>
+<p><b>FORMATO VÁLIDO:</b></p><ul>
+<li>Texto com 5 a 20 caracteres</li>
 </ul>
-<p>Exemplos de nomes válidos:</p><ul>
-<li>Joao Silva</li>
-<li>Maria Santos</li>
-<li>Carlos Alberto</li>
-<li>Ana Claudia </li>
+<p><b>CARACTERES PERMITIDOS:</b></p><ul>
+<li>Letra (a-z ou A-Z)</li>
+<li>Espaço em branco ( )</li>
+</ul>
+<p><b>REGRAS DE FORMATAÇÃO:</b></p><ul>
+<li>Cada caracter pode ser letra (a-z ou A-Z) ou espaço em branco</li>
+<li>Primeiro caracter de cada termo é letra maiúscula (A-Z)</li>
+<li>Espaço em branco é seguido por letra</li>
+<li>Último caracter não pode ser espaço em branco</li>
+</ul>
+<p><b>DEFINIÇÃO DE TERMO:</b></p><ul>
+<li>Termo: sequência de letras separada por espaço</li>
+<li>Exemplo: "Joao Silva" tem 2 termos: "Joao" e "Silva"</li>
+<li>Cada termo deve começar com letra maiúscula</li>
+</ul>
+<p><b>EXEMPLOS:</b></p><ul>
+<li>✅ Válido: "Joao Silva" (5 caracteres, 2 termos capitalizados)</li>
+<li>✅ Válido: "Maria Santos" (12 caracteres)</li>
+<li>✅ Válido: "Carlos Alberto Souza" (20 caracteres, 3 termos)</li>
+<li>✅ Válido: "Ana C" (5 caracteres, inicial permitida)</li>
+<li>✅ Válido: "Pedro De Almeida" ("De" capitalizado)</li>
+<li>❌ Inválido: "João" (apenas 4 caracteres, mínimo é 5)</li>
+<li>❌ Inválido: "Nome Muito Grande Demais" (mais de 20 caracteres)</li>
+<li>❌ Inválido: "joao silva" (não começa com maiúscula)</li>
+<li>❌ Inválido: "Joao silva" (segundo termo não começa com maiúscula)</li>
+<li>❌ Inválido: "JOAO SILVA" (todas maiúsculas, não segue padrão)</li>
+<li>❌ Inválido: "Joao Silva " (termina com espaço)</li>
+<li>❌ Inválido: " Joao Silva" (começa com espaço)</li>
+<li>❌ Inválido: "Joao  Silva" (espaços consecutivos)</li>
+<li>❌ Inválido: "Joao123" (contém dígito)</li>
+<li>❌ Inválido: "Joao-Silva" (contém hífen)</li>
+<li>❌ Inválido: "João Silva" (contém acentuação)</li>
+</ul>
+<p><b>VALIDAÇÕES ESPECÍFICAS:</b></p><ul>
+<li>Comprimento entre 5 e 20 caracteres (inclusive)</li>
+<li>Apenas letras (a-z, A-Z) e espaços permitidos</li>
+<li>Primeiro caractere de cada termo: maiúscula (A-Z)</li>
+<li>Após o primeiro caractere de cada termo: minúsculas (a-z)</li>
+<li>Espaço sempre seguido por letra maiúscula (início de novo termo)</li>
+<li>Não pode começar ou terminar com espaço</li>
+<li>Não permite espaços consecutivos </li>
 </ul>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a8afd62560d48fd2102e8136b97be709c" name="a8afd62560d48fd2102e8136b97be709c"></a>
@@ -155,9 +188,9 @@ Private Attributes</h2></td></tr>
 
 <p>Obtém o nome armazenado. </p>
 <p>Implementação inline do método getValor.</p>
-<dl class="section return"><dt>Returns</dt><dd>string <a class="el" href="class_nome.html" title="Representa um nome pessoal válido de 5 a 20 caracteres.">Nome</a> no formato válido</dd>
+<dl class="section return"><dt>Returns</dt><dd>string <a class="el" href="class_nome.html" title="Representa um nome pessoal válido.">Nome</a> no formato válido (5-20 caracteres)</dd>
 <dd>
-string <a class="el" href="class_nome.html" title="Representa um nome pessoal válido de 5 a 20 caracteres.">Nome</a> armazenado </dd></dl>
+string <a class="el" href="class_nome.html" title="Representa um nome pessoal válido.">Nome</a> armazenado </dd></dl>
 
 </div>
 </div>
@@ -179,7 +212,7 @@ string <a class="el" href="class_nome.html" title="Representa um nome pessoal v�
 <p>Define o nome pessoal. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">texto</td><td><a class="el" href="class_nome.html" title="Representa um nome pessoal válido de 5 a 20 caracteres.">Nome</a> em formato string </td></tr>
+    <tr><td class="paramname">texto</td><td><a class="el" href="class_nome.html" title="Representa um nome pessoal válido.">Nome</a> em formato string (5-20 caracteres) </td></tr>
   </table>
   </dd>
 </dl>
@@ -189,8 +222,18 @@ string <a class="el" href="class_nome.html" title="Representa um nome pessoal v�
   </table>
   </dd>
 </dl>
-<p>Realiza a validação completa antes de armazenar o valor. Nomes que não atendem às regras de validação resultam em exceção com mensagem descritiva do erro. </p>
-
+<p>Realiza a validação completa antes de armazenar.</p>
+<p>Exemplo de uso: </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_nome.html">Nome</a> nomeGerente;</div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    nomeGerente.<a class="code hl_function" href="#aaad6a1ad8718cce8dde090a435c3cd81">setValor</a>(<span class="stringliteral">&quot;Carlos Silva&quot;</span>);</div>
+<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Nome válido: &quot;</span> &lt;&lt; nomeGerente.<a class="code hl_function" href="#a8afd62560d48fd2102e8136b97be709c">getValor</a>();</div>
+<div class="line">} <span class="keywordflow">catch</span> (invalid_argument&amp; e) {</div>
+<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Nome inválido: &quot;</span> &lt;&lt; e.what();</div>
+<div class="line">}</div>
+<div class="ttc" id="aclass_nome_html"><div class="ttname"><a href="class_nome.html">Nome</a></div><div class="ttdoc">Representa um nome pessoal válido.</div><div class="ttdef"><b>Definition</b> nome.hpp:65</div></div>
+<div class="ttc" id="aclass_nome_html_a8afd62560d48fd2102e8136b97be709c"><div class="ttname"><a href="#a8afd62560d48fd2102e8136b97be709c">Nome::getValor</a></div><div class="ttdeci">string getValor()</div><div class="ttdoc">Obtém o nome armazenado.</div><div class="ttdef"><b>Definition</b> nome.hpp:120</div></div>
+<div class="ttc" id="aclass_nome_html_aaad6a1ad8718cce8dde090a435c3cd81"><div class="ttname"><a href="#aaad6a1ad8718cce8dde090a435c3cd81">Nome::setValor</a></div><div class="ttdeci">void setValor(string)</div><div class="ttdoc">Define o nome pessoal.</div><div class="ttdef"><b>Definition</b> nome.cpp:51</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="ac7288ba646f6b5245eb1f2d47604ca34" name="ac7288ba646f6b5245eb1f2d47604ca34"></a>
@@ -216,22 +259,23 @@ string <a class="el" href="class_nome.html" title="Representa um nome pessoal v�
 </table>
 </div><div class="memdoc">
 
-<p>Valida o nome pessoal conforme regras do domínio. </p>
+<p>Valida o nome pessoal. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">texto</td><td><a class="el" href="class_nome.html" title="Representa um nome pessoal válido de 5 a 20 caracteres.">Nome</a> a ser validado </td></tr>
+    <tr><td class="paramname">texto</td><td><a class="el" href="class_nome.html" title="Representa um nome pessoal válido.">Nome</a> a ser validado </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true se o nome for válido, false caso contrário</dd></dl>
-<p>Implementa a validação completa do nome, incluindo:</p><ul>
-<li>Verificação de comprimento (5-20 caracteres)</li>
-<li>Validação de caracteres permitidos (apenas letras e espaços)</li>
-<li>Primeira letra de cada termo deve ser maiúscula</li>
-<li>Espaço em branco deve ser seguido por letra</li>
-<li>Último caractere não pode ser espaço</li>
-<li>Não permite espaços consecutivos </li>
-</ul>
+<p>Executa as seguintes validações:</p><ol type="1">
+<li>Verifica comprimento (5 a 20 caracteres)</li>
+<li>Valida caracteres permitidos (apenas letras e espaços)</li>
+<li>Verifica que primeiro caractere de cada termo é maiúscula</li>
+<li>Verifica que demais caracteres do termo são minúsculas</li>
+<li>Garante que espaço é sempre seguido por letra (início de termo)</li>
+<li>Verifica que não começa nem termina com espaço</li>
+<li>Garante que não há espaços consecutivos </li>
+</ol>
 
 </div>
 </div>
@@ -256,7 +300,7 @@ string <a class="el" href="class_nome.html" title="Representa um nome pessoal v�
 </table>
 </div><div class="memdoc">
 
-<p>Texto do nome armazenado. </p>
+<p>Texto do nome armazenado (5-20 caracteres). </p>
 
 </div>
 </div>

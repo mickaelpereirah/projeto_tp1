@@ -1,17 +1,19 @@
 var searchData=
 [
-  ['setcapacidade_0',['setCapacidade',['../class_quarto.html#aa192e47c3f1e6384fb025db27aff82b8',1,'Quarto']]],
-  ['setcartao_1',['setCartao',['../class_hospede.html#a3c3484fa37a998be35e952100ce50cd2',1,'Hospede']]],
-  ['setchegada_2',['setChegada',['../class_reserva.html#afd143f0e70e25f850a07d471f5297ca2',1,'Reserva']]],
-  ['setcodigo_3',['setCodigo',['../class_hotel.html#a1ee6de5f2a7b5b6fde1c19bae0ee21a5',1,'Hotel::setCodigo()'],['../class_reserva.html#a3eff3dd3b188af925e7aee2a878e3c07',1,'Reserva::setCodigo()']]],
-  ['setdinheiro_4',['setDinheiro',['../class_quarto.html#a67f6c484fab2ca072207a3bf7241b0c4',1,'Quarto::setDinheiro()'],['../class_reserva.html#aefc3971390598f835b9d91292f595c3f',1,'Reserva::setDinheiro()']]],
-  ['setemail_5',['setEmail',['../class_pessoa.html#ac2b331ad7043c54c1da09e1affaf0af6',1,'Pessoa']]],
-  ['setendereco_6',['setEndereco',['../class_hospede.html#a654e897afb0538d35a82e1be6ced019c',1,'Hospede::setEndereco()'],['../class_hotel.html#a78e34fcb99cc5a6ab70ae0eee7156aae',1,'Hotel::setEndereco(Endereco)']]],
-  ['setnome_7',['setNome',['../class_hotel.html#aa235ac59507d8bac285dbfffd5642413',1,'Hotel::setNome()'],['../class_pessoa.html#a5923891b2acbdbff839cb0425960af1d',1,'Pessoa::setNome()']]],
-  ['setnumero_8',['setNumero',['../class_quarto.html#af9154549817ef36125bf3b3dfb8adeba',1,'Quarto']]],
-  ['setpartida_9',['setPartida',['../class_reserva.html#aa838e8188954be73eb4aeb35893c2457',1,'Reserva']]],
-  ['setramal_10',['setRamal',['../class_gerente.html#ab497a26b365ff2824219b0ebb56f1238',1,'Gerente::setRamal()'],['../class_quarto.html#a5f5d126aafd0b296b9f4cf0415a2d777',1,'Quarto::setRamal()']]],
-  ['setsenha_11',['setSenha',['../class_gerente.html#a9bd0a2c120629d175aa773d6b0f71d91',1,'Gerente']]],
-  ['settelefone_12',['setTelefone',['../class_hotel.html#a841b6eb4e433b1f528cefb0f5d2c2d3c',1,'Hotel']]],
-  ['setvalor_13',['setValor',['../class_capacidade.html#a8da632e9051370ca5f172911a839197a',1,'Capacidade::setValor()'],['../class_cartao.html#acb2256da2b23424f6d96bb526229bbbc',1,'Cartao::setValor()'],['../class_codigo.html#afdc4d9c6e42358cd0d48001d4c671584',1,'Codigo::setValor()'],['../class_data.html#aee3a6598533a28a3f446c5f8ecb63c0f',1,'Data::setValor()'],['../class_dinheiro.html#a45655ca3dfe7bdee726d74f8350626c5',1,'Dinheiro::setValor()'],['../class_email.html#a1ae8e06dc7ed37d74c9223c4e5ade734',1,'Email::setValor()'],['../class_endereco.html#a189ec1b65353c9e32c3a127c8ed7b996',1,'Endereco::setValor()'],['../class_nome.html#aaad6a1ad8718cce8dde090a435c3cd81',1,'Nome::setValor()'],['../class_numero.html#a9135951ce367e7651a63d36516c86db4',1,'Numero::setValor()'],['../class_ramal.html#ab8d34c0fa4fca0ebed5dd031c13cf2ee',1,'Ramal::setValor()'],['../class_senha.html#a379d90c214392ccb42aaf49e3d39e112',1,'Senha::setValor()'],['../class_telefone.html#acda75eb982b4e867380983fb4661bd46',1,'Telefone::setValor()']]]
+  ['editardados_0',['editarDados',['../class_menu_conta.html#a05ce5cdecab368e36d2446a59e5b5e4d',1,'MenuConta']]],
+  ['editarhospede_1',['editarHospede',['../class_menu_hospedes.html#a9f5f94559c380a121c9cae46c811859e',1,'MenuHospedes']]],
+  ['editarhotel_2',['editarHotel',['../class_menu_hoteis.html#a18024c8d58e3fe3bb893d97d2b06a6f7',1,'MenuHoteis']]],
+  ['editarquarto_3',['editarQuarto',['../class_menu_quartos.html#a6f3cdae96c94f54c235b6ab6dcff9e7e',1,'MenuQuartos']]],
+  ['editarreserva_4',['editarReserva',['../class_menu_reservas.html#a1ba12050e6b027e655f5bf16b7991948',1,'MenuReservas']]],
+  ['excluirconta_5',['excluirConta',['../class_menu_conta.html#ad5dd15b1127b09a332ca9d60c6d3231c',1,'MenuConta']]],
+  ['excluirhospede_6',['excluirHospede',['../class_menu_hospedes.html#ae9f437820d2fa62761ef69c5f0c03b7f',1,'MenuHospedes']]],
+  ['excluirhotel_7',['excluirHotel',['../class_menu_hoteis.html#a39ea59bd4ee8cf15b786f5e6e06330aa',1,'MenuHoteis']]],
+  ['excluirquarto_8',['excluirQuarto',['../class_menu_quartos.html#a1543645623459bda158f5309482ca3a7',1,'MenuQuartos']]],
+  ['excluirreserva_9',['excluirReserva',['../class_menu_reservas.html#af224bd1f4b6db4038f05b2c9bf58659a',1,'MenuReservas']]],
+  ['exibir_10',['exibir',['../class_menu_conta.html#a4e420210e24bb67831da2fd2bceb1fe2',1,'MenuConta::exibir()'],['../class_menu_gerente.html#a4825b64f5992610164df03b03ce56c92',1,'MenuGerente::exibir()'],['../class_menu_hospedes.html#ac71963b360db33116f3de361d201694f',1,'MenuHospedes::exibir()'],['../class_menu_hoteis.html#a5f019e73a2d3de402dd2b0efee1ab23b',1,'MenuHoteis::exibir()'],['../class_menu_principal.html#aafdfc6f584c095a2e933bb72f8d04228',1,'MenuPrincipal::exibir()'],['../class_menu_quartos.html#a67007da57f6f7490018747b709886052',1,'MenuQuartos::exibir()'],['../class_menu_reservas.html#aa3a8979212a4cafa8230780f9307e176',1,'MenuReservas::exibir()']]],
+  ['exibircabecalho_11',['exibirCabecalho',['../class_menu_gerente.html#a65b7d2429c3a407a1a1e6445cde31c22',1,'MenuGerente']]],
+  ['exibirlistahospedes_12',['exibirListaHospedes',['../class_menu_hospedes.html#a7e9c914f83019132539dbb0044279069',1,'MenuHospedes']]],
+  ['exibirlistahoteis_13',['exibirListaHoteis',['../class_menu_hoteis.html#a825ef1633283f652c06e2baef417ce4d',1,'MenuHoteis']]],
+  ['exibirlistaquartos_14',['exibirListaQuartos',['../class_menu_quartos.html#abc336e25e0b72625250abbfd35734193',1,'MenuQuartos']]],
+  ['exibirlistareservas_15',['exibirListaReservas',['../class_menu_reservas.html#a6805bc7bac6abc63562b5c10c2c6edcf',1,'MenuReservas']]]
 ];

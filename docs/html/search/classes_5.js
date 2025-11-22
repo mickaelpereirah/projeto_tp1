@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['nome_0',['Nome',['../class_nome.html',1,'']]],
-  ['numero_1',['Numero',['../class_numero.html',1,'']]]
+  ['hospede_0',['Hospede',['../class_hospede.html',1,'']]],
+  ['hotel_1',['Hotel',['../class_hotel.html',1,'']]]
 ];

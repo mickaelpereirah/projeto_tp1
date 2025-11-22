@@ -1,0 +1,229 @@
+\doxysection{Menu\+Quartos Class Reference}
+\hypertarget{class_menu_quartos}{}\label{class_menu_quartos}\index{MenuQuartos@{MenuQuartos}}
+
+
+Classe responsável pelo gerenciamento de quartos de um hotel.  
+
+
+
+
+{\ttfamily \#include $<$Menu\+Quartos.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_menu_quartos_a67007da57f6f7490018747b709886052}{exibir}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Exibe o menu de gerenciamento de quartos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static vector$<$ \mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_menu_quartos_abfe06063b26a20bb559d15c76864f2ce}{listar\+Quartos}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Obtém a lista de quartos de um hotel. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_quartos_abc336e25e0b72625250abbfd35734193}{exibir\+Lista\+Quartos}} (vector$<$ \mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*} $>$ quartos)
+\begin{DoxyCompactList}\small\item\em Exibe a lista de quartos formatada. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_quartos_ac4d2d8d58bb4b4a0b1bc6cb13ed00680}{listar\+Quartos\+Menu}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Menu para listar todos os quartos do hotel. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_quartos_ad734fa3a5a73a3ff44960d8afdc4808d}{ver\+Detalhes\+Quarto}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Permite visualizar detalhes completos de um quarto. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_quartos_af4cb01eefb253697eaa1d7c969228d3f}{mostrar\+Detalhes\+Quarto}} (\mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*}quarto)
+\begin{DoxyCompactList}\small\item\em Exibe os detalhes completos de um quarto específico. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_quartos_acc38df7f842f75e54437cf2d4ac31d08}{criar\+Quarto}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Cria um novo quarto no hotel. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_quartos_a6f3cdae96c94f54c235b6ab6dcff9e7e}{editar\+Quarto}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Edita um quarto existente. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_quartos_a1543645623459bda158f5309482ca3a7}{excluir\+Quarto}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Exclui um quarto do hotel. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_menu_quartos_a3d55f66c5498144697f580b4a6a0512f}{selecionar\+Quarto}} (vector$<$ \mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*} $>$ quartos)
+\begin{DoxyCompactList}\small\item\em Permite ao usuário selecionar um quarto da lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável pelo gerenciamento de quartos de um hotel. 
+
+Esta classe fornece uma interface completa para operações CRUD (Create, Read, Update, Delete) de quartos dentro de um hotel específico. Permite visualizar, criar, editar e excluir quartos, bem como consultar seus detalhes completos incluindo número, capacidade, diária e ramal.
+
+Todos os métodos operam no contexto de um hotel específico, garantindo que as operações sejam realizadas no hotel correto. 
+
+\label{doc-func-members}
+\Hypertarget{class_menu_quartos_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_menu_quartos_acc38df7f842f75e54437cf2d4ac31d08}\index{MenuQuartos@{MenuQuartos}!criarQuarto@{criarQuarto}}
+\index{criarQuarto@{criarQuarto}!MenuQuartos@{MenuQuartos}}
+\doxysubsubsection{\texorpdfstring{criarQuarto()}{criarQuarto()}}
+{\footnotesize\ttfamily \label{class_menu_quartos_acc38df7f842f75e54437cf2d4ac31d08} 
+void Menu\+Quartos\+::criar\+Quarto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Cria um novo quarto no hotel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel\\
+\hline
+\end{DoxyParams}
+Solicita ao usuário os dados do novo quarto\+:
+\begin{DoxyItemize}
+\item Número (001 a 999, único)
+\item \doxylink{class_capacidade}{Capacidade} (1, 2, 3 ou 4 pessoas)
+\item Diária (0.\+01 a 1.\+000.\+000,00)
+\item \doxylink{class_ramal}{Ramal} (00 a 50)
+\end{DoxyItemize}
+
+Valida os dados e inclui no container se válidos. \Hypertarget{class_menu_quartos_a6f3cdae96c94f54c235b6ab6dcff9e7e}\index{MenuQuartos@{MenuQuartos}!editarQuarto@{editarQuarto}}
+\index{editarQuarto@{editarQuarto}!MenuQuartos@{MenuQuartos}}
+\doxysubsubsection{\texorpdfstring{editarQuarto()}{editarQuarto()}}
+{\footnotesize\ttfamily \label{class_menu_quartos_a6f3cdae96c94f54c235b6ab6dcff9e7e} 
+void Menu\+Quartos\+::editar\+Quarto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Edita um quarto existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel\\
+\hline
+\end{DoxyParams}
+Permite alterar\+: capacidade, diária e ramal. O número do quarto NÃO pode ser alterado (chave primária). \Hypertarget{class_menu_quartos_a1543645623459bda158f5309482ca3a7}\index{MenuQuartos@{MenuQuartos}!excluirQuarto@{excluirQuarto}}
+\index{excluirQuarto@{excluirQuarto}!MenuQuartos@{MenuQuartos}}
+\doxysubsubsection{\texorpdfstring{excluirQuarto()}{excluirQuarto()}}
+{\footnotesize\ttfamily \label{class_menu_quartos_a1543645623459bda158f5309482ca3a7} 
+void Menu\+Quartos\+::excluir\+Quarto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Exclui um quarto do hotel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel\\
+\hline
+\end{DoxyParams}
+Solicita confirmação antes de excluir. ATENÇÃO\+: Não verifica se há reservas associadas ao quarto. TODO\+: Implementar verificação de integridade referencial. \Hypertarget{class_menu_quartos_a67007da57f6f7490018747b709886052}\index{MenuQuartos@{MenuQuartos}!exibir@{exibir}}
+\index{exibir@{exibir}!MenuQuartos@{MenuQuartos}}
+\doxysubsubsection{\texorpdfstring{exibir()}{exibir()}}
+{\footnotesize\ttfamily \label{class_menu_quartos_a67007da57f6f7490018747b709886052} 
+void Menu\+Quartos\+::exibir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exibe o menu de gerenciamento de quartos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel cujos quartos serão gerenciados\\
+\hline
+\end{DoxyParams}
+Apresenta as seguintes opções\+:
+\begin{DoxyEnumerate}
+\item Listar quartos
+\item Ver detalhes de um quarto
+\item Criar novo quarto
+\item Editar quarto
+\item Excluir quarto
+\item Voltar
+\end{DoxyEnumerate}
+
+O menu permanece ativo até que o usuário escolha voltar. \Hypertarget{class_menu_quartos_abc336e25e0b72625250abbfd35734193}\index{MenuQuartos@{MenuQuartos}!exibirListaQuartos@{exibirListaQuartos}}
+\index{exibirListaQuartos@{exibirListaQuartos}!MenuQuartos@{MenuQuartos}}
+\doxysubsubsection{\texorpdfstring{exibirListaQuartos()}{exibirListaQuartos()}}
+{\footnotesize\ttfamily \label{class_menu_quartos_abc336e25e0b72625250abbfd35734193} 
+void Menu\+Quartos\+::exibir\+Lista\+Quartos (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*} $>$}]{quartos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Exibe a lista de quartos formatada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quartos} & Vector com os quartos a serem exibidos\\
+\hline
+\end{DoxyParams}
+Apresenta cada quarto com\+: número de índice, número do quarto, capacidade, diária e ramal. \Hypertarget{class_menu_quartos_abfe06063b26a20bb559d15c76864f2ce}\index{MenuQuartos@{MenuQuartos}!listarQuartos@{listarQuartos}}
+\index{listarQuartos@{listarQuartos}!MenuQuartos@{MenuQuartos}}
+\doxysubsubsection{\texorpdfstring{listarQuartos()}{listarQuartos()}}
+{\footnotesize\ttfamily \label{class_menu_quartos_abfe06063b26a20bb559d15c76864f2ce} 
+vector$<$ \mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*} $>$ Menu\+Quartos\+::listar\+Quartos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Obtém a lista de quartos de um hotel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector contendo ponteiros para todos os quartos do hotel
+\end{DoxyReturn}
+Utiliza o serviço \doxylink{class_listar_quarto}{Listar\+Quarto} para buscar os quartos no container. \Hypertarget{class_menu_quartos_ac4d2d8d58bb4b4a0b1bc6cb13ed00680}\index{MenuQuartos@{MenuQuartos}!listarQuartosMenu@{listarQuartosMenu}}
+\index{listarQuartosMenu@{listarQuartosMenu}!MenuQuartos@{MenuQuartos}}
+\doxysubsubsection{\texorpdfstring{listarQuartosMenu()}{listarQuartosMenu()}}
+{\footnotesize\ttfamily \label{class_menu_quartos_ac4d2d8d58bb4b4a0b1bc6cb13ed00680} 
+void Menu\+Quartos\+::listar\+Quartos\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Menu para listar todos os quartos do hotel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel\\
+\hline
+\end{DoxyParams}
+Exibe a quantidade total de quartos e a lista completa. Pausa a tela após a exibição. \Hypertarget{class_menu_quartos_af4cb01eefb253697eaa1d7c969228d3f}\index{MenuQuartos@{MenuQuartos}!mostrarDetalhesQuarto@{mostrarDetalhesQuarto}}
+\index{mostrarDetalhesQuarto@{mostrarDetalhesQuarto}!MenuQuartos@{MenuQuartos}}
+\doxysubsubsection{\texorpdfstring{mostrarDetalhesQuarto()}{mostrarDetalhesQuarto()}}
+{\footnotesize\ttfamily \label{class_menu_quartos_af4cb01eefb253697eaa1d7c969228d3f} 
+void Menu\+Quartos\+::mostrar\+Detalhes\+Quarto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*}}]{quarto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Exibe os detalhes completos de um quarto específico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quarto} & Ponteiro para o quarto\\
+\hline
+\end{DoxyParams}
+Mostra\+: número, capacidade, valor da diária e ramal. \Hypertarget{class_menu_quartos_a3d55f66c5498144697f580b4a6a0512f}\index{MenuQuartos@{MenuQuartos}!selecionarQuarto@{selecionarQuarto}}
+\index{selecionarQuarto@{selecionarQuarto}!MenuQuartos@{MenuQuartos}}
+\doxysubsubsection{\texorpdfstring{selecionarQuarto()}{selecionarQuarto()}}
+{\footnotesize\ttfamily \label{class_menu_quartos_a3d55f66c5498144697f580b4a6a0512f} 
+\mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*} Menu\+Quartos\+::selecionar\+Quarto (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*} $>$}]{quartos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Permite ao usuário selecionar um quarto da lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quartos} & Vector com os quartos disponíveis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o quarto selecionado ou nullptr se cancelado
+\end{DoxyReturn}
+Exibe a lista numerada e solicita ao usuário digitar o número correspondente. Permite cancelar digitando 0. \Hypertarget{class_menu_quartos_ad734fa3a5a73a3ff44960d8afdc4808d}\index{MenuQuartos@{MenuQuartos}!verDetalhesQuarto@{verDetalhesQuarto}}
+\index{verDetalhesQuarto@{verDetalhesQuarto}!MenuQuartos@{MenuQuartos}}
+\doxysubsubsection{\texorpdfstring{verDetalhesQuarto()}{verDetalhesQuarto()}}
+{\footnotesize\ttfamily \label{class_menu_quartos_ad734fa3a5a73a3ff44960d8afdc4808d} 
+void Menu\+Quartos\+::ver\+Detalhes\+Quarto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Permite visualizar detalhes completos de um quarto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel\\
+\hline
+\end{DoxyParams}
+Solicita ao usuário selecionar um quarto da lista e exibe todos os seus detalhes. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/apresentacao/\mbox{\hyperlink{_menu_quartos_8hpp}{Menu\+Quartos.\+hpp}}\item 
+src/apresentacao/\mbox{\hyperlink{_menu_quartos_8cpp}{Menu\+Quartos.\+cpp}}\end{DoxyCompactItemize}

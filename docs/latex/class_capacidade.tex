@@ -2,7 +2,7 @@
 \hypertarget{class_capacidade}{}\label{class_capacidade}\index{Capacidade@{Capacidade}}
 
 
-Representa a capacidade de um quarto, hotel ou entidade relacionada.  
+Representa a capacidade de pessoas em um quarto.  
 
 
 
@@ -25,21 +25,36 @@ bool \mbox{\hyperlink{class_capacidade_a5866b52b5abb4087574514577ca6b771}{valida
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{class_capacidade_a2604edf4c88204769c62949ace1a68c9}{valor}}
-\begin{DoxyCompactList}\small\item\em Valor inteiro que representa a capacidade. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Valor inteiro que representa a capacidade (1, 2, 3 ou 4). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Representa a capacidade de um quarto, hotel ou entidade relacionada. 
+Representa a capacidade de pessoas em um quarto. 
 
-A classe \doxylink{class_capacidade}{Capacidade} é responsável por armazenar e validar um valor inteiro que representa a capacidade (por exemplo, número de pessoas).
+A classe \doxylink{class_capacidade}{Capacidade} armazena e valida o número de pessoas que um quarto pode acomodar. O valor deve estar dentro do conjunto permitido pelo sistema.
 
-Regras típicas de validação (exemplo)\+:
+{\bfseries{FORMATO VÁ\+LIDO\+:}}
 \begin{DoxyItemize}
-\item Deve ser um número positivo.
-\item Deve ser menor ou igual ao limite definido pelo sistema.
+\item Valores aceitos\+: 1, 2, 3 ou 4
 \end{DoxyItemize}
 
-O método \doxylink{class_capacidade_a8da632e9051370ca5f172911a839197a}{set\+Valor()} realiza a validação e só atribui o valor se ele for válido. O método \doxylink{class_capacidade_a51e9e105f9466a368541bff39017815b}{get\+Valor()} retorna o valor armazenado. 
+{\bfseries{REGRAS DE VALIDAÇÃO\+:}}
+\begin{DoxyItemize}
+\item Apenas os valores 1, 2, 3 ou 4 são aceitos
+\item Qualquer outro valor resulta em exceção invalid\+\_\+argument
+\end{DoxyItemize}
+
+{\bfseries{EXEMPLOS\+:}}
+\begin{DoxyItemize}
+\item ✅ Válido\+: 1 (quarto individual)
+\item ✅ Válido\+: 2 (quarto duplo)
+\item ✅ Válido\+: 3 (quarto triplo)
+\item ✅ Válido\+: 4 (quarto quádruplo)
+\item ❌ Inválido\+: 0 (não há quarto sem capacidade)
+\item ❌ Inválido\+: 5 (acima do limite permitido)
+\end{DoxyItemize}
+
+O método \doxylink{class_capacidade_a8da632e9051370ca5f172911a839197a}{set\+Valor()} realiza a validação e lança exceção se inválido. O método \doxylink{class_capacidade_a51e9e105f9466a368541bff39017815b}{get\+Valor()} retorna o valor armazenado. 
 
 \label{doc-func-members}
 \Hypertarget{class_capacidade_doc-func-members}
@@ -57,7 +72,7 @@ Retorna o valor atual da capacidade.
 Implementação inline do método get\+Valor.
 
 \begin{DoxyReturn}{Returns}
-Valor inteiro armazenado
+int Valor armazenado (1, 2, 3 ou 4)
 
 int Valor da capacidade armazenado 
 \end{DoxyReturn}
@@ -71,19 +86,30 @@ void Capacidade\+::set\+Valor (\begin{DoxyParamCaption}\item[{int}]{valor}{}\end
 
 Define o valor da capacidade. 
 
-Chama a função \doxylink{class_capacidade_a5866b52b5abb4087574514577ca6b771}{validar()}. Caso o valor seja inválido, deve lançar execeção do tipo invalid\+\_\+argument.
-
 
 \begin{DoxyParams}{Parameters}
-{\em valor} & Novo valor da capacidade. \\
+{\em valor} & Novo valor da capacidade (deve ser 1, 2, 3 ou 4) \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em invalid\+\_\+argument} & Se o valor estiver fora do intervalo 1-\/4 \\
+{\em invalid\+\_\+argument} & Se o valor não for 1, 2, 3 ou 4\\
 \hline
 \end{DoxyExceptions}
-\Hypertarget{class_capacidade_a5866b52b5abb4087574514577ca6b771}\index{Capacidade@{Capacidade}!validar@{validar}}
+Valida o valor antes de armazenar. Se o valor for inválido, lança exceção e o estado do objeto permanece inalterado.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Capacidade\ cap;}
+\DoxyCodeLine{\textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ cap.\mbox{\hyperlink{class_capacidade_a8da632e9051370ca5f172911a839197a}{setValor}}(2);\ \ \textcolor{comment}{//\ OK:\ quarto\ duplo}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Capacidade\ definida:\ "{}}\ <<\ cap.\mbox{\hyperlink{class_capacidade_a51e9e105f9466a368541bff39017815b}{getValor}}();}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{catch}\ (invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Erro:\ "{}}\ <<\ e.what();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_capacidade_a5866b52b5abb4087574514577ca6b771}\index{Capacidade@{Capacidade}!validar@{validar}}
 \index{validar@{validar}!Capacidade@{Capacidade}}
 \doxysubsubsection{\texorpdfstring{validar()}{validar()}}
 {\footnotesize\ttfamily \label{class_capacidade_a5866b52b5abb4087574514577ca6b771} 
@@ -95,13 +121,13 @@ Valida o valor da capacidade.
 
 
 \begin{DoxyParams}{Parameters}
-{\em valor} & 0 valor a ser valido. \\
+{\em valor} & Valor a ser validado \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true se o valor for válido, false caso contrário. 
+true se o valor for 1, 2, 3 ou 4; false caso contrário
 \end{DoxyReturn}
-
+Verifica se o valor está no conjunto \{1, 2, 3, 4\}. 
 
 \label{doc-variable-members}
 \Hypertarget{class_capacidade_doc-variable-members}
@@ -114,7 +140,7 @@ int Capacidade\+::valor\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Valor inteiro que representa a capacidade. 
+Valor inteiro que representa a capacidade (1, 2, 3 ou 4). 
 
 
 

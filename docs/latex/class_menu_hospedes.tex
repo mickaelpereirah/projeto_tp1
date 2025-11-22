@@ -1,0 +1,249 @@
+\doxysection{Menu\+Hospedes Class Reference}
+\hypertarget{class_menu_hospedes}{}\label{class_menu_hospedes}\index{MenuHospedes@{MenuHospedes}}
+
+
+Classe responsável pelo gerenciamento de hóspedes de um hotel.  
+
+
+
+
+{\ttfamily \#include $<$Menu\+Hospedes.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_menu_hospedes_ac71963b360db33116f3de361d201694f}{exibir}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Exibe o menu de gerenciamento de hóspedes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static vector$<$ \mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_menu_hospedes_a0f8cd7665b866890743368b7c6c4ed74}{listar\+Hospedes}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Obtém a lista de hóspedes do hotel. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_hospedes_a7e9c914f83019132539dbb0044279069}{exibir\+Lista\+Hospedes}} (vector$<$ \mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} $>$ hospedes)
+\begin{DoxyCompactList}\small\item\em Exibe a lista de hóspedes formatada. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_hospedes_a1509053f66b18696d0ff21395ecd1f9d}{listar\+Todos\+Hospedes\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Lista TODOS os hóspedes cadastrados no sistema. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_hospedes_a0f44631b926abce368529d9b8ffe40a0}{listar\+Hospedes\+Do\+Hotel\+Menu}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Lista apenas hóspedes DESTE HOTEL (com reservas). \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_hospedes_aeeb0080b0e1f4ec52924faf3dca5910e}{ver\+Detalhes\+Hospede}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Permite visualizar detalhes completos de um hóspede. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_hospedes_a54851e2b4cfe8e0e3b736098e0a3a343}{mostrar\+Detalhes\+Hospede}} (\mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*}hospede)
+\begin{DoxyCompactList}\small\item\em Exibe os detalhes completos de um hóspede específico. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_hospedes_aa69b2f6c7f6044141d345cf00458b916}{criar\+Hospede}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Cria um novo hóspede. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_hospedes_a9f5f94559c380a121c9cae46c811859e}{editar\+Hospede}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Edita um hóspede existente. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_hospedes_ae9f437820d2fa62761ef69c5f0c03b7f}{excluir\+Hospede}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Exclui um hóspede do sistema. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_menu_hospedes_a5dcd788b5c5a231c3a4a097c56de097d}{selecionar\+Hospede}} (vector$<$ \mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} $>$ hospedes)
+\begin{DoxyCompactList}\small\item\em Permite ao usuário selecionar um hóspede da lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável pelo gerenciamento de hóspedes de um hotel. 
+
+Esta classe fornece interface para operações CRUD de hóspedes dentro do contexto de um hotel. Gerencia cadastro, visualização, edição e exclusão de hóspedes, incluindo validação de dados como email, nome, endereço e número de cartão de crédito.
+
+Características\+:
+\begin{DoxyItemize}
+\item \doxylink{class_email}{Email} como identificador único (não pode ser alterado)
+\item Validação de formato de cartão (16 dígitos com algoritmo de Luhn)
+\item Validação de nome (5-\/20 caracteres, primeira letra maiúscula)
+\item Validação de endereço (5-\/30 caracteres)
+\item Listagem de todos os hóspedes ou apenas do hotel específico 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_menu_hospedes_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_menu_hospedes_aa69b2f6c7f6044141d345cf00458b916}\index{MenuHospedes@{MenuHospedes}!criarHospede@{criarHospede}}
+\index{criarHospede@{criarHospede}!MenuHospedes@{MenuHospedes}}
+\doxysubsubsection{\texorpdfstring{criarHospede()}{criarHospede()}}
+{\footnotesize\ttfamily \label{class_menu_hospedes_aa69b2f6c7f6044141d345cf00458b916} 
+void Menu\+Hospedes\+::criar\+Hospede (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Cria um novo hóspede. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel\\
+\hline
+\end{DoxyParams}
+Solicita ao usuário os dados do novo hóspede\+:
+\begin{DoxyItemize}
+\item \doxylink{class_nome}{Nome} (5-\/20 caracteres, primeira letra maiúscula)
+\item \doxylink{class_email}{Email} (formato válido, único no sistema)
+\item Endereço (5-\/30 caracteres)
+\item Cartão (16 dígitos com validação de Luhn)
+\end{DoxyItemize}
+
+IMPORTANTE\+: Todos os campos são obrigatórios e validados. \Hypertarget{class_menu_hospedes_a9f5f94559c380a121c9cae46c811859e}\index{MenuHospedes@{MenuHospedes}!editarHospede@{editarHospede}}
+\index{editarHospede@{editarHospede}!MenuHospedes@{MenuHospedes}}
+\doxysubsubsection{\texorpdfstring{editarHospede()}{editarHospede()}}
+{\footnotesize\ttfamily \label{class_menu_hospedes_a9f5f94559c380a121c9cae46c811859e} 
+void Menu\+Hospedes\+::editar\+Hospede (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Edita um hóspede existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel\\
+\hline
+\end{DoxyParams}
+Permite alterar\+: nome, endereço e cartão. O email NÃO pode ser alterado (chave primária). \Hypertarget{class_menu_hospedes_ae9f437820d2fa62761ef69c5f0c03b7f}\index{MenuHospedes@{MenuHospedes}!excluirHospede@{excluirHospede}}
+\index{excluirHospede@{excluirHospede}!MenuHospedes@{MenuHospedes}}
+\doxysubsubsection{\texorpdfstring{excluirHospede()}{excluirHospede()}}
+{\footnotesize\ttfamily \label{class_menu_hospedes_ae9f437820d2fa62761ef69c5f0c03b7f} 
+void Menu\+Hospedes\+::excluir\+Hospede (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Exclui um hóspede do sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel\\
+\hline
+\end{DoxyParams}
+Solicita confirmação antes de excluir. ATENÇÃO\+: Deve verificar se o hóspede possui reservas ativas antes de permitir a exclusão (integridade referencial). \Hypertarget{class_menu_hospedes_ac71963b360db33116f3de361d201694f}\index{MenuHospedes@{MenuHospedes}!exibir@{exibir}}
+\index{exibir@{exibir}!MenuHospedes@{MenuHospedes}}
+\doxysubsubsection{\texorpdfstring{exibir()}{exibir()}}
+{\footnotesize\ttfamily \label{class_menu_hospedes_ac71963b360db33116f3de361d201694f} 
+void Menu\+Hospedes\+::exibir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exibe o menu de gerenciamento de hóspedes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel cujos hóspedes serão gerenciados\\
+\hline
+\end{DoxyParams}
+Apresenta as seguintes opções\+:
+\begin{DoxyEnumerate}
+\item Listar todos os hóspedes do sistema
+\item Listar hóspedes deste hotel (com reservas)
+\item Ver detalhes de um hóspede
+\item Criar novo hóspede
+\item Editar hóspede
+\item Excluir hóspede
+\item Voltar
+\end{DoxyEnumerate}
+
+O menu mostra o total de hóspedes cadastrados no sistema. \Hypertarget{class_menu_hospedes_a7e9c914f83019132539dbb0044279069}\index{MenuHospedes@{MenuHospedes}!exibirListaHospedes@{exibirListaHospedes}}
+\index{exibirListaHospedes@{exibirListaHospedes}!MenuHospedes@{MenuHospedes}}
+\doxysubsubsection{\texorpdfstring{exibirListaHospedes()}{exibirListaHospedes()}}
+{\footnotesize\ttfamily \label{class_menu_hospedes_a7e9c914f83019132539dbb0044279069} 
+void Menu\+Hospedes\+::exibir\+Lista\+Hospedes (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} $>$}]{hospedes}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Exibe a lista de hóspedes formatada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hospedes} & Vector com os hóspedes a serem exibidos\\
+\hline
+\end{DoxyParams}
+Para cada hóspede mostra\+: número de índice, nome, email e endereço. \Hypertarget{class_menu_hospedes_a0f8cd7665b866890743368b7c6c4ed74}\index{MenuHospedes@{MenuHospedes}!listarHospedes@{listarHospedes}}
+\index{listarHospedes@{listarHospedes}!MenuHospedes@{MenuHospedes}}
+\doxysubsubsection{\texorpdfstring{listarHospedes()}{listarHospedes()}}
+{\footnotesize\ttfamily \label{class_menu_hospedes_a0f8cd7665b866890743368b7c6c4ed74} 
+vector$<$ \mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} $>$ Menu\+Hospedes\+::listar\+Hospedes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Obtém a lista de hóspedes do hotel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector contendo ponteiros para os hóspedes do hotel
+\end{DoxyReturn}
+Utiliza o serviço \doxylink{class_listar_hospede}{Listar\+Hospede} para buscar hóspedes no container. \Hypertarget{class_menu_hospedes_a0f44631b926abce368529d9b8ffe40a0}\index{MenuHospedes@{MenuHospedes}!listarHospedesDoHotelMenu@{listarHospedesDoHotelMenu}}
+\index{listarHospedesDoHotelMenu@{listarHospedesDoHotelMenu}!MenuHospedes@{MenuHospedes}}
+\doxysubsubsection{\texorpdfstring{listarHospedesDoHotelMenu()}{listarHospedesDoHotelMenu()}}
+{\footnotesize\ttfamily \label{class_menu_hospedes_a0f44631b926abce368529d9b8ffe40a0} 
+void Menu\+Hospedes\+::listar\+Hospedes\+Do\+Hotel\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Lista apenas hóspedes DESTE HOTEL (com reservas). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel\\
+\hline
+\end{DoxyParams}
+Mostra apenas hóspedes que possuem reservas neste hotel específico. \Hypertarget{class_menu_hospedes_a1509053f66b18696d0ff21395ecd1f9d}\index{MenuHospedes@{MenuHospedes}!listarTodosHospedesMenu@{listarTodosHospedesMenu}}
+\index{listarTodosHospedesMenu@{listarTodosHospedesMenu}!MenuHospedes@{MenuHospedes}}
+\doxysubsubsection{\texorpdfstring{listarTodosHospedesMenu()}{listarTodosHospedesMenu()}}
+{\footnotesize\ttfamily \label{class_menu_hospedes_a1509053f66b18696d0ff21395ecd1f9d} 
+void Menu\+Hospedes\+::listar\+Todos\+Hospedes\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Lista TODOS os hóspedes cadastrados no sistema. 
+
+Mostra hóspedes de todos os hotéis, independente de terem reservas. Útil para verificar todos os cadastros no sistema. \Hypertarget{class_menu_hospedes_a54851e2b4cfe8e0e3b736098e0a3a343}\index{MenuHospedes@{MenuHospedes}!mostrarDetalhesHospede@{mostrarDetalhesHospede}}
+\index{mostrarDetalhesHospede@{mostrarDetalhesHospede}!MenuHospedes@{MenuHospedes}}
+\doxysubsubsection{\texorpdfstring{mostrarDetalhesHospede()}{mostrarDetalhesHospede()}}
+{\footnotesize\ttfamily \label{class_menu_hospedes_a54851e2b4cfe8e0e3b736098e0a3a343} 
+void Menu\+Hospedes\+::mostrar\+Detalhes\+Hospede (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*}}]{hospede}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Exibe os detalhes completos de um hóspede específico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hospede} & Ponteiro para o hóspede\\
+\hline
+\end{DoxyParams}
+Mostra\+: nome, email, endereço e número do cartão de crédito. \Hypertarget{class_menu_hospedes_a5dcd788b5c5a231c3a4a097c56de097d}\index{MenuHospedes@{MenuHospedes}!selecionarHospede@{selecionarHospede}}
+\index{selecionarHospede@{selecionarHospede}!MenuHospedes@{MenuHospedes}}
+\doxysubsubsection{\texorpdfstring{selecionarHospede()}{selecionarHospede()}}
+{\footnotesize\ttfamily \label{class_menu_hospedes_a5dcd788b5c5a231c3a4a097c56de097d} 
+\mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} Menu\+Hospedes\+::selecionar\+Hospede (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} $>$}]{hospedes}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Permite ao usuário selecionar um hóspede da lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hospedes} & Vector com os hóspedes disponíveis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o hóspede selecionado ou nullptr se cancelado
+\end{DoxyReturn}
+Exibe lista numerada e solicita ao usuário digitar o número correspondente. Permite cancelar digitando 0. \Hypertarget{class_menu_hospedes_aeeb0080b0e1f4ec52924faf3dca5910e}\index{MenuHospedes@{MenuHospedes}!verDetalhesHospede@{verDetalhesHospede}}
+\index{verDetalhesHospede@{verDetalhesHospede}!MenuHospedes@{MenuHospedes}}
+\doxysubsubsection{\texorpdfstring{verDetalhesHospede()}{verDetalhesHospede()}}
+{\footnotesize\ttfamily \label{class_menu_hospedes_aeeb0080b0e1f4ec52924faf3dca5910e} 
+void Menu\+Hospedes\+::ver\+Detalhes\+Hospede (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Permite visualizar detalhes completos de um hóspede. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel\\
+\hline
+\end{DoxyParams}
+Solicita ao usuário selecionar um hóspede e exibe todos os detalhes. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/apresentacao/\mbox{\hyperlink{_menu_hospedes_8hpp}{Menu\+Hospedes.\+hpp}}\item 
+src/apresentacao/\mbox{\hyperlink{_menu_hospedes_8cpp}{Menu\+Hospedes.\+cpp}}\end{DoxyCompactItemize}

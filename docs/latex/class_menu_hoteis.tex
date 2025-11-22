@@ -1,0 +1,217 @@
+\doxysection{Menu\+Hoteis Class Reference}
+\hypertarget{class_menu_hoteis}{}\label{class_menu_hoteis}\index{MenuHoteis@{MenuHoteis}}
+
+
+Classe responsável pelo gerenciamento de hotéis do gerente.  
+
+
+
+
+{\ttfamily \#include $<$Menu\+Hoteis.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_menu_hoteis_a5f019e73a2d3de402dd2b0efee1ab23b}{exibir}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Exibe o menu de gerenciamento de hotéis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static vector$<$ \mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_menu_hoteis_ae139acbee2f9e11626d174711a7f108a}{listar\+Hoteis}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Lista todos os hotéis do gerente. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_hoteis_a825ef1633283f652c06e2baef417ce4d}{exibir\+Lista\+Hoteis}} (vector$<$ \mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} $>$ hoteis)
+\begin{DoxyCompactList}\small\item\em Exibe a lista de hotéis formatada. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_hoteis_a26bc561b50becfc1343b2a1a31082816}{listar\+Hoteis\+Menu}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Lista todos os hotéis (opção do menu). \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_hoteis_a546e0bc737fe8ba07862e0d1935cf994}{ver\+Detalhes\+Hotel}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Exibe detalhes completos de um hotel. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_hoteis_a7de3c65f61ecd428113ff7c1cf0f92f1}{mostrar\+Detalhes\+Hotel}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Exibe os detalhes de um hotel específico. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_hoteis_a418ee81820622ff62a82a05471a3e85e}{criar\+Hotel}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Cria um novo hotel. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_hoteis_a18024c8d58e3fe3bb893d97d2b06a6f7}{editar\+Hotel}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Edita um hotel existente. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_hoteis_a39ea59bd4ee8cf15b786f5e6e06330aa}{excluir\+Hotel}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Exclui um hotel. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_menu_hoteis_a29a34fb28065e89e711cbfd78394c933}{selecionar\+Hotel}} (vector$<$ \mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} $>$ hoteis)
+\begin{DoxyCompactList}\small\item\em Seleciona um hotel da lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável pelo gerenciamento de hotéis do gerente. 
+
+Permite criar, listar, visualizar detalhes, editar e excluir hotéis. Em breve\+: selecionar hotel para gerenciar quartos, reservas e hóspedes. 
+
+\label{doc-func-members}
+\Hypertarget{class_menu_hoteis_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_menu_hoteis_a418ee81820622ff62a82a05471a3e85e}\index{MenuHoteis@{MenuHoteis}!criarHotel@{criarHotel}}
+\index{criarHotel@{criarHotel}!MenuHoteis@{MenuHoteis}}
+\doxysubsubsection{\texorpdfstring{criarHotel()}{criarHotel()}}
+{\footnotesize\ttfamily \label{class_menu_hoteis_a418ee81820622ff62a82a05471a3e85e} 
+void Menu\+Hoteis\+::criar\+Hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Cria um novo hotel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_menu_hoteis_a18024c8d58e3fe3bb893d97d2b06a6f7}\index{MenuHoteis@{MenuHoteis}!editarHotel@{editarHotel}}
+\index{editarHotel@{editarHotel}!MenuHoteis@{MenuHoteis}}
+\doxysubsubsection{\texorpdfstring{editarHotel()}{editarHotel()}}
+{\footnotesize\ttfamily \label{class_menu_hoteis_a18024c8d58e3fe3bb893d97d2b06a6f7} 
+void Menu\+Hoteis\+::editar\+Hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Edita um hotel existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_menu_hoteis_a39ea59bd4ee8cf15b786f5e6e06330aa}\index{MenuHoteis@{MenuHoteis}!excluirHotel@{excluirHotel}}
+\index{excluirHotel@{excluirHotel}!MenuHoteis@{MenuHoteis}}
+\doxysubsubsection{\texorpdfstring{excluirHotel()}{excluirHotel()}}
+{\footnotesize\ttfamily \label{class_menu_hoteis_a39ea59bd4ee8cf15b786f5e6e06330aa} 
+void Menu\+Hoteis\+::excluir\+Hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Exclui um hotel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_menu_hoteis_a5f019e73a2d3de402dd2b0efee1ab23b}\index{MenuHoteis@{MenuHoteis}!exibir@{exibir}}
+\index{exibir@{exibir}!MenuHoteis@{MenuHoteis}}
+\doxysubsubsection{\texorpdfstring{exibir()}{exibir()}}
+{\footnotesize\ttfamily \label{class_menu_hoteis_a5f019e73a2d3de402dd2b0efee1ab23b} 
+void Menu\+Hoteis\+::exibir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exibe o menu de gerenciamento de hotéis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente autenticado\\
+\hline
+\end{DoxyParams}
+Opções disponíveis\+:
+\begin{DoxyEnumerate}
+\item Listar meus hotéis
+\item Ver detalhes de um hotel
+\item Criar novo hotel
+\item Editar hotel
+\item Excluir hotel
+\item Voltar 
+\end{DoxyEnumerate}\Hypertarget{class_menu_hoteis_a825ef1633283f652c06e2baef417ce4d}\index{MenuHoteis@{MenuHoteis}!exibirListaHoteis@{exibirListaHoteis}}
+\index{exibirListaHoteis@{exibirListaHoteis}!MenuHoteis@{MenuHoteis}}
+\doxysubsubsection{\texorpdfstring{exibirListaHoteis()}{exibirListaHoteis()}}
+{\footnotesize\ttfamily \label{class_menu_hoteis_a825ef1633283f652c06e2baef417ce4d} 
+void Menu\+Hoteis\+::exibir\+Lista\+Hoteis (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} $>$}]{hoteis}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Exibe a lista de hotéis formatada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hoteis} & Vector com os hotéis \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_menu_hoteis_ae139acbee2f9e11626d174711a7f108a}\index{MenuHoteis@{MenuHoteis}!listarHoteis@{listarHoteis}}
+\index{listarHoteis@{listarHoteis}!MenuHoteis@{MenuHoteis}}
+\doxysubsubsection{\texorpdfstring{listarHoteis()}{listarHoteis()}}
+{\footnotesize\ttfamily \label{class_menu_hoteis_ae139acbee2f9e11626d174711a7f108a} 
+vector$<$ \mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} $>$ Menu\+Hoteis\+::listar\+Hoteis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Lista todos os hotéis do gerente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector com ponteiros para os hotéis 
+\end{DoxyReturn}
+\Hypertarget{class_menu_hoteis_a26bc561b50becfc1343b2a1a31082816}\index{MenuHoteis@{MenuHoteis}!listarHoteisMenu@{listarHoteisMenu}}
+\index{listarHoteisMenu@{listarHoteisMenu}!MenuHoteis@{MenuHoteis}}
+\doxysubsubsection{\texorpdfstring{listarHoteisMenu()}{listarHoteisMenu()}}
+{\footnotesize\ttfamily \label{class_menu_hoteis_a26bc561b50becfc1343b2a1a31082816} 
+void Menu\+Hoteis\+::listar\+Hoteis\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Lista todos os hotéis (opção do menu). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_menu_hoteis_a7de3c65f61ecd428113ff7c1cf0f92f1}\index{MenuHoteis@{MenuHoteis}!mostrarDetalhesHotel@{mostrarDetalhesHotel}}
+\index{mostrarDetalhesHotel@{mostrarDetalhesHotel}!MenuHoteis@{MenuHoteis}}
+\doxysubsubsection{\texorpdfstring{mostrarDetalhesHotel()}{mostrarDetalhesHotel()}}
+{\footnotesize\ttfamily \label{class_menu_hoteis_a7de3c65f61ecd428113ff7c1cf0f92f1} 
+void Menu\+Hoteis\+::mostrar\+Detalhes\+Hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Exibe os detalhes de um hotel específico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_menu_hoteis_a29a34fb28065e89e711cbfd78394c933}\index{MenuHoteis@{MenuHoteis}!selecionarHotel@{selecionarHotel}}
+\index{selecionarHotel@{selecionarHotel}!MenuHoteis@{MenuHoteis}}
+\doxysubsubsection{\texorpdfstring{selecionarHotel()}{selecionarHotel()}}
+{\footnotesize\ttfamily \label{class_menu_hoteis_a29a34fb28065e89e711cbfd78394c933} 
+\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} Menu\+Hoteis\+::selecionar\+Hotel (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} $>$}]{hoteis}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Seleciona um hotel da lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hoteis} & Vector com os hotéis disponíveis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o hotel selecionado ou nullptr se cancelado 
+\end{DoxyReturn}
+\Hypertarget{class_menu_hoteis_a546e0bc737fe8ba07862e0d1935cf994}\index{MenuHoteis@{MenuHoteis}!verDetalhesHotel@{verDetalhesHotel}}
+\index{verDetalhesHotel@{verDetalhesHotel}!MenuHoteis@{MenuHoteis}}
+\doxysubsubsection{\texorpdfstring{verDetalhesHotel()}{verDetalhesHotel()}}
+{\footnotesize\ttfamily \label{class_menu_hoteis_a546e0bc737fe8ba07862e0d1935cf994} 
+void Menu\+Hoteis\+::ver\+Detalhes\+Hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Exibe detalhes completos de um hotel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/apresentacao/\mbox{\hyperlink{_menu_hoteis_8hpp}{Menu\+Hoteis.\+hpp}}\item 
+src/apresentacao/\mbox{\hyperlink{_menu_hoteis_8cpp}{Menu\+Hoteis.\+cpp}}\end{DoxyCompactItemize}

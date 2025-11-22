@@ -1,0 +1,248 @@
+\doxysection{Container\+Hotel Class Reference}
+\hypertarget{class_container_hotel}{}\label{class_container_hotel}\index{ContainerHotel@{ContainerHotel}}
+
+
+Container para armazenar e gerenciar hotéis do sistema.  
+
+
+
+
+{\ttfamily \#include $<$container\+Hoteis.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_container_hotel_a2be9a13bcf661379ce6a709151a0f610}{incluir}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}, string email\+\_\+gerente)
+\begin{DoxyCompactList}\small\item\em Inclui um novo hotel no container associado a um gerente. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_container_hotel_a68cbca6f3a9541fa3f18e60534b153dc}{remover}} (string codigo)
+\begin{DoxyCompactList}\small\item\em Remove um hotel específico do container. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_container_hotel_a232816878d44eeff3fcd54f6db3580a3}{remover\+Todos\+Por\+Gerente}} (string email\+\_\+gerente)
+\begin{DoxyCompactList}\small\item\em Remove TODOS os hotéis de um gerente específico. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_container_hotel_aff533f64344a0051ebfff70350488edb}{pesquisar}} (string email\+\_\+gerente)
+\begin{DoxyCompactList}\small\item\em Busca todos os hotéis de um gerente. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_container_hotel_a22d7394e6ea9c815b97569466441cde2}{pesquisar\+Por\+Codigo}} (string codigo)
+\begin{DoxyCompactList}\small\item\em Busca um hotel específico por código. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_container_hotel_a45a47bc213b5fc9e2b57e861fce42763}{atualizar}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Atualiza os dados de um hotel existente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unordered\+\_\+map$<$ string, vector$<$ \mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{class_container_hotel_ade397ad4a17dc97bb8fe073548c32428}{container}}
+\begin{DoxyCompactList}\small\item\em Mapa hash para armazenar hotéis agrupados por gerente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container para armazenar e gerenciar hotéis do sistema. 
+
+Esta classe implementa um container para armazenamento em memória de objetos do tipo \doxylink{class_hotel}{Hotel}. Utiliza uma estrutura de unordered\+\_\+map onde a chave é o email do gerente e o valor é um vector de hotéis, permitindo que cada gerente possua múltiplos hotéis (relacionamento 1\+:N).
+
+Características principais\+:
+\begin{DoxyItemize}
+\item Um gerente pode ter vários hotéis
+\item Cada hotel possui código único no sistema
+\item Busca por gerente retorna todos os seus hotéis
+\item Busca por código retorna hotel específico
+\item Permite remoção de hotel individual ou de todos os hotéis de um gerente
+\end{DoxyItemize}
+
+Estrutura de dados\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{unordered\_map<string,\ vector<Hotel*>>}
+\DoxyCodeLine{\ \ \ \ Chave:\ email\ \textcolor{keywordflow}{do}\ gerente}
+\DoxyCodeLine{\ \ \ \ Valor:\ vector\ com\ todos\ os\ hotéis\ deste\ gerente}
+
+\end{DoxyCode}
+ 
+
+\label{doc-func-members}
+\Hypertarget{class_container_hotel_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_container_hotel_a45a47bc213b5fc9e2b57e861fce42763}\index{ContainerHotel@{ContainerHotel}!atualizar@{atualizar}}
+\index{atualizar@{atualizar}!ContainerHotel@{ContainerHotel}}
+\doxysubsubsection{\texorpdfstring{atualizar()}{atualizar()}}
+{\footnotesize\ttfamily \label{class_container_hotel_a45a47bc213b5fc9e2b57e861fce42763} 
+bool Container\+Hotel\+::atualizar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})}
+
+
+
+Atualiza os dados de um hotel existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel com dados atualizados \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se atualizado com sucesso, false se não encontrado
+\end{DoxyReturn}
+Busca o hotel pelo código e substitui o ponteiro no vector. O código do hotel NÃO pode ser alterado (é a chave primária).
+
+IMPORTANTE\+: O ponteiro antigo não é liberado. Se necessário, faça delete antes de atualizar para evitar memory leak.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Hotel*\ h\ =\ \mbox{\hyperlink{class_container_hotel_ade397ad4a17dc97bb8fe073548c32428}{container}}.pesquisarPorCodigo(\textcolor{stringliteral}{"{}HTL0001"{}});}
+\DoxyCodeLine{h-\/>\mbox{\hyperlink{class_hotel_aa235ac59507d8bac285dbfffd5642413}{setNome}}(novoNome);}
+\DoxyCodeLine{\mbox{\hyperlink{class_container_hotel_ade397ad4a17dc97bb8fe073548c32428}{container}}.atualizar(h);}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_hotel_a2be9a13bcf661379ce6a709151a0f610}\index{ContainerHotel@{ContainerHotel}!incluir@{incluir}}
+\index{incluir@{incluir}!ContainerHotel@{ContainerHotel}}
+\doxysubsubsection{\texorpdfstring{incluir()}{incluir()}}
+{\footnotesize\ttfamily \label{class_container_hotel_a2be9a13bcf661379ce6a709151a0f610} 
+bool Container\+Hotel\+::incluir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{, }\item[{string}]{email\+\_\+gerente}{}\end{DoxyParamCaption})}
+
+
+
+Inclui um novo hotel no container associado a um gerente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel a ser incluído \\
+\hline
+{\em email\+\_\+gerente} & \doxylink{class_email}{Email} do gerente proprietário do hotel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se incluído com sucesso, false se o código já existe
+\end{DoxyReturn}
+O código do hotel deve ser único no sistema. Se já existir um hotel com o mesmo código (mesmo de outro gerente), a operação falha.
+
+Se o gerente ainda não possui hotéis, cria uma nova entrada no map. Caso contrário, adiciona ao vector existente.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Hotel*\ h\ =\ \textcolor{keyword}{new}\ Hotel();}
+\DoxyCodeLine{h-\/>\mbox{\hyperlink{class_hotel_a1ee6de5f2a7b5b6fde1c19bae0ee21a5}{setCodigo}}(codigo);}
+\DoxyCodeLine{h-\/>\mbox{\hyperlink{class_hotel_aa235ac59507d8bac285dbfffd5642413}{setNome}}(nome);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(\mbox{\hyperlink{class_container_hotel_ade397ad4a17dc97bb8fe073548c32428}{container}}.incluir(h,\ \textcolor{stringliteral}{"{}gerente@email.com"{}}))\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Hotel\ incluído\ com\ sucesso"{}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_hotel_aff533f64344a0051ebfff70350488edb}\index{ContainerHotel@{ContainerHotel}!pesquisar@{pesquisar}}
+\index{pesquisar@{pesquisar}!ContainerHotel@{ContainerHotel}}
+\doxysubsubsection{\texorpdfstring{pesquisar()}{pesquisar()}}
+{\footnotesize\ttfamily \label{class_container_hotel_aff533f64344a0051ebfff70350488edb} 
+vector$<$ \mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} $>$ Container\+Hotel\+::pesquisar (\begin{DoxyParamCaption}\item[{string}]{email\+\_\+gerente}{}\end{DoxyParamCaption})}
+
+
+
+Busca todos os hotéis de um gerente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email\+\_\+gerente} & \doxylink{class_email}{Email} do gerente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector com ponteiros para todos os hotéis do gerente
+\end{DoxyReturn}
+Se o gerente não possui hotéis, retorna vector vazio. Complexidade\+: O(1) para acessar o vector do gerente
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vector<Hotel*>\ hoteis\ =\ \mbox{\hyperlink{class_container_hotel_ade397ad4a17dc97bb8fe073548c32428}{container}}.pesquisar(\textcolor{stringliteral}{"{}gerente@email.com"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(hoteis.empty())\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Gerente\ não\ possui\ hotéis\ cadastrados"{}};}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Total\ de\ hotéis:\ "{}}\ <<\ hoteis.size();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_hotel_a22d7394e6ea9c815b97569466441cde2}\index{ContainerHotel@{ContainerHotel}!pesquisarPorCodigo@{pesquisarPorCodigo}}
+\index{pesquisarPorCodigo@{pesquisarPorCodigo}!ContainerHotel@{ContainerHotel}}
+\doxysubsubsection{\texorpdfstring{pesquisarPorCodigo()}{pesquisarPorCodigo()}}
+{\footnotesize\ttfamily \label{class_container_hotel_a22d7394e6ea9c815b97569466441cde2} 
+\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} Container\+Hotel\+::pesquisar\+Por\+Codigo (\begin{DoxyParamCaption}\item[{string}]{codigo}{}\end{DoxyParamCaption})}
+
+
+
+Busca um hotel específico por código. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em codigo} & Código do hotel a ser buscado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o hotel encontrado ou nullptr se não existir
+\end{DoxyReturn}
+Busca em todos os vetores de todos os gerentes até encontrar o hotel com o código especificado. Complexidade\+: O(n\texorpdfstring{$\ast$}{*}m) onde n = número de gerentes e m = média de hotéis por gerente
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Hotel*\ h\ =\ \mbox{\hyperlink{class_container_hotel_ade397ad4a17dc97bb8fe073548c32428}{container}}.pesquisarPorCodigo(\textcolor{stringliteral}{"{}HTL0001"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(h\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Hotel:\ "{}}\ <<\ h-\/>\mbox{\hyperlink{class_hotel_aa4e160a608094c9c9ca890c2f4388760}{getNome}}().\mbox{\hyperlink{class_nome_a8afd62560d48fd2102e8136b97be709c}{getValor}}();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_hotel_a68cbca6f3a9541fa3f18e60534b153dc}\index{ContainerHotel@{ContainerHotel}!remover@{remover}}
+\index{remover@{remover}!ContainerHotel@{ContainerHotel}}
+\doxysubsubsection{\texorpdfstring{remover()}{remover()}}
+{\footnotesize\ttfamily \label{class_container_hotel_a68cbca6f3a9541fa3f18e60534b153dc} 
+bool Container\+Hotel\+::remover (\begin{DoxyParamCaption}\item[{string}]{codigo}{}\end{DoxyParamCaption})}
+
+
+
+Remove um hotel específico do container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em codigo} & Código do hotel a ser removido \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removido com sucesso, false se não encontrado
+\end{DoxyReturn}
+Busca o hotel em todos os vetores de gerentes pelo código e remove. Se era o único hotel do gerente, remove a entrada do gerente do map.
+
+IMPORTANTE\+: Não libera a memória do objeto \doxylink{class_hotel}{Hotel}. O chamador deve fazer delete do ponteiro se necessário. \Hypertarget{class_container_hotel_a232816878d44eeff3fcd54f6db3580a3}\index{ContainerHotel@{ContainerHotel}!removerTodosPorGerente@{removerTodosPorGerente}}
+\index{removerTodosPorGerente@{removerTodosPorGerente}!ContainerHotel@{ContainerHotel}}
+\doxysubsubsection{\texorpdfstring{removerTodosPorGerente()}{removerTodosPorGerente()}}
+{\footnotesize\ttfamily \label{class_container_hotel_a232816878d44eeff3fcd54f6db3580a3} 
+bool Container\+Hotel\+::remover\+Todos\+Por\+Gerente (\begin{DoxyParamCaption}\item[{string}]{email\+\_\+gerente}{}\end{DoxyParamCaption})}
+
+
+
+Remove TODOS os hotéis de um gerente específico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email\+\_\+gerente} & \doxylink{class_email}{Email} do gerente cujos hotéis serão removidos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removido com sucesso, false se gerente não encontrado
+\end{DoxyReturn}
+Útil quando um gerente é excluído do sistema -\/ remove todos os seus hotéis de uma vez para manter integridade referencial.
+
+IMPORTANTE\+: Não libera a memória dos objetos \doxylink{class_hotel}{Hotel}. O chamador deve iterar pelos hotéis e fazer delete de cada um se necessário. 
+
+\label{doc-variable-members}
+\Hypertarget{class_container_hotel_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_container_hotel_ade397ad4a17dc97bb8fe073548c32428}\index{ContainerHotel@{ContainerHotel}!container@{container}}
+\index{container@{container}!ContainerHotel@{ContainerHotel}}
+\doxysubsubsection{\texorpdfstring{container}{container}}
+{\footnotesize\ttfamily \label{class_container_hotel_ade397ad4a17dc97bb8fe073548c32428} 
+unordered\+\_\+map$<$string, vector$<$\mbox{\hyperlink{class_hotel}{Hotel}}\texorpdfstring{$\ast$}{*}$>$ $>$ Container\+Hotel\+::container\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapa hash para armazenar hotéis agrupados por gerente. 
+
+Chave\+: \doxylink{class_email}{Email} do gerente (string) Valor\+: Vector de ponteiros para hotéis deste gerente
+
+Esta estrutura permite\+:
+\begin{DoxyItemize}
+\item Buscar todos os hotéis de um gerente em O(1)
+\item Adicionar novos hotéis a um gerente existente
+\item Remover todos os hotéis de um gerente de uma vez 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/containers/\mbox{\hyperlink{container_hoteis_8hpp}{container\+Hoteis.\+hpp}}\item 
+src/containers/\mbox{\hyperlink{container_hoteis_8cpp}{container\+Hoteis.\+cpp}}\end{DoxyCompactItemize}

@@ -121,20 +121,20 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:af58f0a264bd85b610742c747a0cbcbd8" id="r_af58f0a264bd85b610742c747a0cbcbd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_numero.html">Numero</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af58f0a264bd85b610742c747a0cbcbd8">numero</a></td></tr>
 <tr class="memdesc:af58f0a264bd85b610742c747a0cbcbd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número identificador do quarto.  <br /></td></tr>
 <tr class="memitem:a0c91ed22e4e030086c02b3066c339469" id="r_a0c91ed22e4e030086c02b3066c339469"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_capacidade.html">Capacidade</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c91ed22e4e030086c02b3066c339469">capacidade</a></td></tr>
-<tr class="memdesc:a0c91ed22e4e030086c02b3066c339469"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_capacidade.html" title="Representa a capacidade de um quarto, hotel ou entidade relacionada.">Capacidade</a> de ocupação do quarto (1-4 pessoas).  <br /></td></tr>
+<tr class="memdesc:a0c91ed22e4e030086c02b3066c339469"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_capacidade.html" title="Representa a capacidade de pessoas em um quarto.">Capacidade</a> de ocupação do quarto (1-4 pessoas).  <br /></td></tr>
 <tr class="memitem:a1c88c9f302603ccd822a42241556522f" id="r_a1c88c9f302603ccd822a42241556522f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_dinheiro.html">Dinheiro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c88c9f302603ccd822a42241556522f">dinheiro</a></td></tr>
 <tr class="memdesc:a1c88c9f302603ccd822a42241556522f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valor da diária do quarto.  <br /></td></tr>
 <tr class="memitem:a849e85d92c816effb8f50f209a4f909f" id="r_a849e85d92c816effb8f50f209a4f909f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ramal.html">Ramal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a849e85d92c816effb8f50f209a4f909f">ramal</a></td></tr>
-<tr class="memdesc:a849e85d92c816effb8f50f209a4f909f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_ramal.html" title="Representa um número de ramal telefônico válido de 0 a 50.">Ramal</a> de comunicação do quarto.  <br /></td></tr>
+<tr class="memdesc:a849e85d92c816effb8f50f209a4f909f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_ramal.html" title="Representa um ramal telefônico de quarto.">Ramal</a> de comunicação do quarto.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe que representa um quarto de hotel no sistema de gestão. </p>
 <p>Esta classe encapsula as informações de um quarto, incluindo sua identificação, capacidade, valor da diária e ramal de comunicação.</p>
 <p>Atributos:</p><ul>
-<li>numero: Número do quarto (tipo <a class="el" href="class_numero.html" title="Representa um número inteiro válido de 1 a 999.">Numero</a>)</li>
-<li>capacidade: <a class="el" href="class_capacidade.html" title="Representa a capacidade de um quarto, hotel ou entidade relacionada.">Capacidade</a> de ocupação do quarto (tipo <a class="el" href="class_capacidade.html" title="Representa a capacidade de um quarto, hotel ou entidade relacionada.">Capacidade</a>)</li>
-<li>dinheiro: Valor da diária do quarto (tipo <a class="el" href="class_dinheiro.html" title="Representa um valor monetário válido entre R$ 1,00 e R$ 1.000.000,00.">Dinheiro</a>)</li>
-<li>ramal: <a class="el" href="class_ramal.html" title="Representa um número de ramal telefônico válido de 0 a 50.">Ramal</a> de comunicação do quarto (tipo <a class="el" href="class_ramal.html" title="Representa um número de ramal telefônico válido de 0 a 50.">Ramal</a>)</li>
+<li>numero: Número do quarto (tipo <a class="el" href="class_numero.html" title="Representa o número de um quarto.">Numero</a>)</li>
+<li>capacidade: <a class="el" href="class_capacidade.html" title="Representa a capacidade de pessoas em um quarto.">Capacidade</a> de ocupação do quarto (tipo <a class="el" href="class_capacidade.html" title="Representa a capacidade de pessoas em um quarto.">Capacidade</a>)</li>
+<li>dinheiro: Valor da diária do quarto (tipo <a class="el" href="class_dinheiro.html" title="Representa um valor monetário válido no sistema.">Dinheiro</a>)</li>
+<li>ramal: <a class="el" href="class_ramal.html" title="Representa um ramal telefônico de quarto.">Ramal</a> de comunicação do quarto (tipo <a class="el" href="class_ramal.html" title="Representa um ramal telefônico de quarto.">Ramal</a>)</li>
 </ul>
 <p>Relacionamentos:</p><ul>
 <li>Pertence a <a class="el" href="class_hotel.html" title="Classe que representa um hotel no sistema de gestão.">Hotel</a> (1:* para 1)</li>
@@ -165,7 +165,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Obtém a capacidade do quarto. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_capacidade.html" title="Representa a capacidade de um quarto, hotel ou entidade relacionada.">Capacidade</a> do quarto </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_capacidade.html" title="Representa a capacidade de pessoas em um quarto.">Capacidade</a> do quarto </dd></dl>
 
 </div>
 </div>
@@ -249,7 +249,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Obtém o ramal do quarto. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_ramal.html" title="Representa um número de ramal telefônico válido de 0 a 50.">Ramal</a> do quarto </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_ramal.html" title="Representa um ramal telefônico de quarto.">Ramal</a> do quarto </dd></dl>
 
 </div>
 </div>
@@ -279,7 +279,7 @@ Private Attributes</h2></td></tr>
 <p>Define a capacidade do quarto. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">capacidade</td><td>Objeto do tipo <a class="el" href="class_capacidade.html" title="Representa a capacidade de um quarto, hotel ou entidade relacionada.">Capacidade</a> contendo a capacidade a ser atribuída </td></tr>
+    <tr><td class="paramname">capacidade</td><td>Objeto do tipo <a class="el" href="class_capacidade.html" title="Representa a capacidade de pessoas em um quarto.">Capacidade</a> contendo a capacidade a ser atribuída </td></tr>
   </table>
   </dd>
 </dl>
@@ -312,7 +312,7 @@ Private Attributes</h2></td></tr>
 <p>Define o valor da diária do quarto. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dinheiro</td><td>Objeto do tipo <a class="el" href="class_dinheiro.html" title="Representa um valor monetário válido entre R$ 1,00 e R$ 1.000.000,00.">Dinheiro</a> contendo o valor a ser atribuído </td></tr>
+    <tr><td class="paramname">dinheiro</td><td>Objeto do tipo <a class="el" href="class_dinheiro.html" title="Representa um valor monetário válido no sistema.">Dinheiro</a> contendo o valor a ser atribuído </td></tr>
   </table>
   </dd>
 </dl>
@@ -345,7 +345,7 @@ Private Attributes</h2></td></tr>
 <p>Define o número do quarto. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">numero</td><td>Objeto do tipo <a class="el" href="class_numero.html" title="Representa um número inteiro válido de 1 a 999.">Numero</a> contendo o número a ser atribuído </td></tr>
+    <tr><td class="paramname">numero</td><td>Objeto do tipo <a class="el" href="class_numero.html" title="Representa o número de um quarto.">Numero</a> contendo o número a ser atribuído </td></tr>
   </table>
   </dd>
 </dl>
@@ -378,7 +378,7 @@ Private Attributes</h2></td></tr>
 <p>Define o ramal do quarto. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ramal</td><td>Objeto do tipo <a class="el" href="class_ramal.html" title="Representa um número de ramal telefônico válido de 0 a 50.">Ramal</a> contendo o ramal a ser atribuído </td></tr>
+    <tr><td class="paramname">ramal</td><td>Objeto do tipo <a class="el" href="class_ramal.html" title="Representa um ramal telefônico de quarto.">Ramal</a> contendo o ramal a ser atribuído </td></tr>
   </table>
   </dd>
 </dl>
@@ -406,7 +406,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_capacidade.html" title="Representa a capacidade de um quarto, hotel ou entidade relacionada.">Capacidade</a> de ocupação do quarto (1-4 pessoas). </p>
+<p><a class="el" href="class_capacidade.html" title="Representa a capacidade de pessoas em um quarto.">Capacidade</a> de ocupação do quarto (1-4 pessoas). </p>
 
 </div>
 </div>
@@ -478,7 +478,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_ramal.html" title="Representa um número de ramal telefônico válido de 0 a 50.">Ramal</a> de comunicação do quarto. </p>
+<p><a class="el" href="class_ramal.html" title="Representa um ramal telefônico de quarto.">Ramal</a> de comunicação do quarto. </p>
 
 </div>
 </div>

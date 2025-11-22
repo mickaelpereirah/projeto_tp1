@@ -1,0 +1,35 @@
+\doxysection{container\+Hospedes.\+hpp}
+\hypertarget{container_hospedes_8hpp_source}{}\label{container_hospedes_8hpp_source}\index{include/containers/containerHospedes.hpp@{include/containers/containerHospedes.hpp}}
+\mbox{\hyperlink{container_hospedes_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ CONTAINER\_HOSPEDES\_HPP\_INCLUDED}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CONTAINER\_HOSPEDES\_HPP\_INCLUDED\ }}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hospede_8hpp}{hospede.hpp}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_container_hospede}{ContainerHospede}}\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ unordered\_map<string,\ Hospede*>\ \mbox{\hyperlink{class_container_hospede_a0f1c497cd680f5e50de6590d1b8f0420}{container}};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_container_hospede_a0fb5311f192347d9c485a5cc84215b88}{incluir}}(\mbox{\hyperlink{class_hospede}{Hospede}}*);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_container_hospede_a7746a130a786fcc25b6acfb96f43275f}{remover}}(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_hospede}{Hospede}}\ *\mbox{\hyperlink{class_container_hospede_a58515f3e1c51651c7bf3a0a0fa5919fb}{pesquisar}}(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_container_hospede_a69f9782104ab72a4c8fe75384715876f}{atualizar}}(\mbox{\hyperlink{class_hospede}{Hospede}}*);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ vector<Hospede*>\ \mbox{\hyperlink{class_container_hospede_adec45f69b78a65787e50c043a2fb3cff}{listarTodos}}();}
+\DoxyCodeLine{00192\ \};}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

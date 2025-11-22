@@ -1,0 +1,186 @@
+\doxysection{Container\+Gerente Class Reference}
+\hypertarget{class_container_gerente}{}\label{class_container_gerente}\index{ContainerGerente@{ContainerGerente}}
+
+
+Container para armazenar e gerenciar gerentes do sistema.  
+
+
+
+
+{\ttfamily \#include $<$container\+Gerentes.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_container_gerente_a2c0e8dd57f07072c46ce21ba8250a941}{incluir}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Inclui um novo gerente no container. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_container_gerente_a968e61cdd06d2d3299d817693c1e69cd}{remover}} (string)
+\begin{DoxyCompactList}\small\item\em Remove um gerente do container. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_container_gerente_a45463d19f9e9539e6b5d2d15e6f308ac}{pesquisar}} (string)
+\begin{DoxyCompactList}\small\item\em Busca um gerente por email. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_container_gerente_aec2b42381f85a4cfc55b750b59068e1c}{atualizar}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Atualiza os dados de um gerente existente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_container_gerente_afe92586d28e6195fc8076ebf35b84eab}{container}}
+\begin{DoxyCompactList}\small\item\em Mapa hash para armazenar gerentes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container para armazenar e gerenciar gerentes do sistema. 
+
+Esta classe implementa um container para armazenamento em memória de objetos do tipo \doxylink{class_gerente}{Gerente}. Utiliza um unordered\+\_\+map com o email do gerente como chave, garantindo acesso rápido O(1) e unicidade de emails.
+
+O container é responsável por\+:
+\begin{DoxyItemize}
+\item Armazenar gerentes de forma única (um email = um gerente)
+\item Permitir busca eficiente por email
+\item Gerenciar inclusão, remoção e atualização de gerentes
+\item Manter a integridade dos dados (não permite emails duplicados)
+\end{DoxyItemize}
+
+IMPORTANTE\+: O container NÃO é responsável por liberar a memória dos objetos. A responsabilidade de delete dos ponteiros é de quem criou os objetos. 
+
+\label{doc-func-members}
+\Hypertarget{class_container_gerente_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_container_gerente_aec2b42381f85a4cfc55b750b59068e1c}\index{ContainerGerente@{ContainerGerente}!atualizar@{atualizar}}
+\index{atualizar@{atualizar}!ContainerGerente@{ContainerGerente}}
+\doxysubsubsection{\texorpdfstring{atualizar()}{atualizar()}}
+{\footnotesize\ttfamily \label{class_container_gerente_aec2b42381f85a4cfc55b750b59068e1c} 
+bool Container\+Gerente\+::atualizar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente\+\_\+atualizado}{}\end{DoxyParamCaption})}
+
+
+
+Atualiza os dados de um gerente existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente com dados atualizados \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se atualizado com sucesso, false se não encontrado
+\end{DoxyReturn}
+Busca o gerente pelo email e substitui o ponteiro no container. O email NÃO pode ser alterado (é a chave primária).
+
+IMPORTANTE\+: O ponteiro antigo não é liberado. Se necessário, faça delete antes de atualizar para evitar memory leak.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Gerente*\ g\ =\ \mbox{\hyperlink{class_container_gerente_afe92586d28e6195fc8076ebf35b84eab}{container}}.pesquisar(\textcolor{stringliteral}{"{}email@exemplo.com"{}});}
+\DoxyCodeLine{g-\/>\mbox{\hyperlink{class_pessoa_a5923891b2acbdbff839cb0425960af1d}{setNome}}(novoNome);}
+\DoxyCodeLine{\mbox{\hyperlink{class_container_gerente_afe92586d28e6195fc8076ebf35b84eab}{container}}.atualizar(g);}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_gerente_a2c0e8dd57f07072c46ce21ba8250a941}\index{ContainerGerente@{ContainerGerente}!incluir@{incluir}}
+\index{incluir@{incluir}!ContainerGerente@{ContainerGerente}}
+\doxysubsubsection{\texorpdfstring{incluir()}{incluir()}}
+{\footnotesize\ttfamily \label{class_container_gerente_a2c0e8dd57f07072c46ce21ba8250a941} 
+bool Container\+Gerente\+::incluir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})}
+
+
+
+Inclui um novo gerente no container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente a ser incluído \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se incluído com sucesso, false se o email já existe
+\end{DoxyReturn}
+O email do gerente é usado como chave. Se já existir um gerente com o mesmo email, a operação falha e retorna false.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Gerente*\ g\ =\ \textcolor{keyword}{new}\ Gerente();}
+\DoxyCodeLine{g-\/>\mbox{\hyperlink{class_pessoa_ac2b331ad7043c54c1da09e1affaf0af6}{setEmail}}(email);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(\mbox{\hyperlink{class_container_gerente_afe92586d28e6195fc8076ebf35b84eab}{container}}.incluir(g))\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Gerente\ incluído\ com\ sucesso"{}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_gerente_a45463d19f9e9539e6b5d2d15e6f308ac}\index{ContainerGerente@{ContainerGerente}!pesquisar@{pesquisar}}
+\index{pesquisar@{pesquisar}!ContainerGerente@{ContainerGerente}}
+\doxysubsubsection{\texorpdfstring{pesquisar()}{pesquisar()}}
+{\footnotesize\ttfamily \label{class_container_gerente_a45463d19f9e9539e6b5d2d15e6f308ac} 
+\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*} Container\+Gerente\+::pesquisar (\begin{DoxyParamCaption}\item[{string}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Busca um gerente por email. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & \doxylink{class_email}{Email} do gerente a ser buscado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o gerente encontrado ou nullptr se não existir
+\end{DoxyReturn}
+Complexidade\+: O(1) em média devido ao uso de unordered\+\_\+map
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Gerente*\ g\ =\ \mbox{\hyperlink{class_container_gerente_afe92586d28e6195fc8076ebf35b84eab}{container}}.pesquisar(\textcolor{stringliteral}{"{}email@exemplo.com"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(g\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Gerente\ encontrado:\ "{}}\ <<\ g-\/>\mbox{\hyperlink{class_pessoa_a79d0d4923e0a0fdccddac4bfb2679087}{getNome}}().\mbox{\hyperlink{class_nome_a8afd62560d48fd2102e8136b97be709c}{getValor}}();}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Gerente\ não\ encontrado"{}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_gerente_a968e61cdd06d2d3299d817693c1e69cd}\index{ContainerGerente@{ContainerGerente}!remover@{remover}}
+\index{remover@{remover}!ContainerGerente@{ContainerGerente}}
+\doxysubsubsection{\texorpdfstring{remover()}{remover()}}
+{\footnotesize\ttfamily \label{class_container_gerente_a968e61cdd06d2d3299d817693c1e69cd} 
+bool Container\+Gerente\+::remover (\begin{DoxyParamCaption}\item[{string}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Remove um gerente do container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & \doxylink{class_email}{Email} do gerente a ser removido \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removido com sucesso, false se não encontrado
+\end{DoxyReturn}
+IMPORTANTE\+: Este método apenas remove a referência do container. NÃO libera a memória do objeto. Quem chamou deve fazer delete do ponteiro se necessário.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Gerente*\ g\ =\ \mbox{\hyperlink{class_container_gerente_afe92586d28e6195fc8076ebf35b84eab}{container}}.pesquisar(\textcolor{stringliteral}{"{}email@exemplo.com"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(\mbox{\hyperlink{class_container_gerente_afe92586d28e6195fc8076ebf35b84eab}{container}}.remover(\textcolor{stringliteral}{"{}email@exemplo.com"{}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{delete}\ g;\ \ \textcolor{comment}{//\ Liberar\ memória\ se\ necessário}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{class_container_gerente_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_container_gerente_afe92586d28e6195fc8076ebf35b84eab}\index{ContainerGerente@{ContainerGerente}!container@{container}}
+\index{container@{container}!ContainerGerente@{ContainerGerente}}
+\doxysubsubsection{\texorpdfstring{container}{container}}
+{\footnotesize\ttfamily \label{class_container_gerente_afe92586d28e6195fc8076ebf35b84eab} 
+unordered\+\_\+map$<$string, \mbox{\hyperlink{class_gerente}{Gerente}}\texorpdfstring{$\ast$}{*}$>$ Container\+Gerente\+::container\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapa hash para armazenar gerentes. 
+
+Chave\+: \doxylink{class_email}{Email} do gerente (string) Valor\+: Ponteiro para o objeto \doxylink{class_gerente}{Gerente}
+
+Utiliza unordered\+\_\+map para garantir O(1) nas operações de busca, inserção e remoção. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/containers/\mbox{\hyperlink{container_gerentes_8hpp}{container\+Gerentes.\+hpp}}\item 
+src/containers/\mbox{\hyperlink{container_gerentes_8cpp}{container\+Gerentes.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,234 @@
+\doxysection{Central\+Containers Class Reference}
+\hypertarget{class_central_containers}{}\label{class_central_containers}\index{CentralContainers@{CentralContainers}}
+
+
+Classe central para gerenciar todos os containers do sistema.  
+
+
+
+
+{\ttfamily \#include $<$central\+Containers.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_container_reserva}{Container\+Reserva}} \& \mbox{\hyperlink{class_central_containers_a99ab33a07b1a82475aa2339326642b64}{get\+Container\+Reservas}} ()
+\begin{DoxyCompactList}\small\item\em Obtém referência para o container de reservas. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_container_hospede}{Container\+Hospede}} \& \mbox{\hyperlink{class_central_containers_af6cb68207659a986d38ef23792fa4793}{get\+Container\+Hospedes}} ()
+\begin{DoxyCompactList}\small\item\em Obtém referência para o container de hóspedes. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_container_hotel}{Container\+Hotel}} \& \mbox{\hyperlink{class_central_containers_a4c951ee46c25fc3387681e5b88fd8c33}{get\+Container\+Hoteis}} ()
+\begin{DoxyCompactList}\small\item\em Obtém referência para o container de hotéis. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_container_gerente}{Container\+Gerente}} \& \mbox{\hyperlink{class_central_containers_a06ca84e7a6ab3e1c3da43c35e9a983ee}{get\+Container\+Gerentes}} ()
+\begin{DoxyCompactList}\small\item\em Obtém referência para o container de gerentes. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_container_quarto}{Container\+Quarto}} \& \mbox{\hyperlink{class_central_containers_ab21274cceca5ee2a49d00f4267bb7465}{get\+Container\+Quartos}} ()
+\begin{DoxyCompactList}\small\item\em Obtém referência para o container de quartos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_container_reserva}{Container\+Reserva}} \mbox{\hyperlink{class_central_containers_afb2fd640b3d8b29853d50ab5b1997f6f}{container\+Reservas}}
+\begin{DoxyCompactList}\small\item\em Container de reservas (singleton). \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_container_hospede}{Container\+Hospede}} \mbox{\hyperlink{class_central_containers_a5767fc1a64bf8a134fe950f8845b9fab}{container\+Hospedes}}
+\begin{DoxyCompactList}\small\item\em Container de hóspedes (singleton). \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_container_hotel}{Container\+Hotel}} \mbox{\hyperlink{class_central_containers_aa1b2bb82d61fc80e2fdab9212bd25847}{container\+Hoteis}}
+\begin{DoxyCompactList}\small\item\em Container de hotéis (singleton). \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_container_gerente}{Container\+Gerente}} \mbox{\hyperlink{class_central_containers_adf83dcf8a7b5828a715a47c63afd13a7}{container\+Gerentes}}
+\begin{DoxyCompactList}\small\item\em Container de gerentes (singleton). \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_container_quarto}{Container\+Quarto}} \mbox{\hyperlink{class_central_containers_afba6ba31ad088fb91cfe5e3f3fc4d7e2}{container\+Quartos}}
+\begin{DoxyCompactList}\small\item\em Container de quartos (singleton). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe central para gerenciar todos os containers do sistema. 
+
+Esta classe implementa o padrão Singleton para fornecer acesso centralizado a todos os containers de armazenamento de dados do sistema. Cada container gerencia uma entidade específica do domínio (Reservas, Hóspedes, Hotéis, etc.).
+
+Os containers são estáticos e únicos durante toda a execução do programa, garantindo que todos os módulos acessem a mesma instância de dados.
+
+Arquitetura\+:
+\begin{DoxyItemize}
+\item Camada de Serviço\+: acessa containers através desta classe
+\item Camada de Apresentação\+: NÃO acessa diretamente, usa serviços
+\item Armazenamento\+: em memória (RAM) durante execução do programa
+\end{DoxyItemize}
+
+Responsabilidades\+:
+\begin{DoxyItemize}
+\item Fornecer acesso único aos containers
+\item Garantir inicialização correta dos containers
+\item Manter singleton dos containers durante execução
+\end{DoxyItemize}
+
+IMPORTANTE\+: Os dados são perdidos quando o programa é encerrado. Não há persistência em banco de dados ou arquivo. 
+
+\label{doc-func-members}
+\Hypertarget{class_central_containers_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_central_containers_a06ca84e7a6ab3e1c3da43c35e9a983ee}\index{CentralContainers@{CentralContainers}!getContainerGerentes@{getContainerGerentes}}
+\index{getContainerGerentes@{getContainerGerentes}!CentralContainers@{CentralContainers}}
+\doxysubsubsection{\texorpdfstring{getContainerGerentes()}{getContainerGerentes()}}
+{\footnotesize\ttfamily \label{class_central_containers_a06ca84e7a6ab3e1c3da43c35e9a983ee} 
+\mbox{\hyperlink{class_container_gerente}{Container\+Gerente}} \& Central\+Containers\+::get\+Container\+Gerentes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtém referência para o container de gerentes. 
+
+Implementação inline do método \doxylink{class_central_containers_a06ca84e7a6ab3e1c3da43c35e9a983ee}{get\+Container\+Gerentes()}.
+
+\begin{DoxyReturn}{Returns}
+Referência para \doxylink{class_container_gerente}{Container\+Gerente}
+\end{DoxyReturn}
+Usado pelos serviços de gerente (cadastro, autenticação, atualização, remoção)
+
+\begin{DoxyReturn}{Returns}
+Referência para o container de gerentes 
+\end{DoxyReturn}
+\Hypertarget{class_central_containers_af6cb68207659a986d38ef23792fa4793}\index{CentralContainers@{CentralContainers}!getContainerHospedes@{getContainerHospedes}}
+\index{getContainerHospedes@{getContainerHospedes}!CentralContainers@{CentralContainers}}
+\doxysubsubsection{\texorpdfstring{getContainerHospedes()}{getContainerHospedes()}}
+{\footnotesize\ttfamily \label{class_central_containers_af6cb68207659a986d38ef23792fa4793} 
+\mbox{\hyperlink{class_container_hospede}{Container\+Hospede}} \& Central\+Containers\+::get\+Container\+Hospedes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtém referência para o container de hóspedes. 
+
+Implementação inline do método \doxylink{class_central_containers_af6cb68207659a986d38ef23792fa4793}{get\+Container\+Hospedes()}.
+
+\begin{DoxyReturn}{Returns}
+Referência para \doxylink{class_container_hospede}{Container\+Hospede}
+\end{DoxyReturn}
+Usado pelos serviços de hóspede (cadastro, listagem, atualização, remoção)
+
+\begin{DoxyReturn}{Returns}
+Referência para o container de hóspedes 
+\end{DoxyReturn}
+\Hypertarget{class_central_containers_a4c951ee46c25fc3387681e5b88fd8c33}\index{CentralContainers@{CentralContainers}!getContainerHoteis@{getContainerHoteis}}
+\index{getContainerHoteis@{getContainerHoteis}!CentralContainers@{CentralContainers}}
+\doxysubsubsection{\texorpdfstring{getContainerHoteis()}{getContainerHoteis()}}
+{\footnotesize\ttfamily \label{class_central_containers_a4c951ee46c25fc3387681e5b88fd8c33} 
+\mbox{\hyperlink{class_container_hotel}{Container\+Hotel}} \& Central\+Containers\+::get\+Container\+Hoteis (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtém referência para o container de hotéis. 
+
+Implementação inline do método \doxylink{class_central_containers_a4c951ee46c25fc3387681e5b88fd8c33}{get\+Container\+Hoteis()}.
+
+\begin{DoxyReturn}{Returns}
+Referência para \doxylink{class_container_hotel}{Container\+Hotel}
+\end{DoxyReturn}
+Usado pelos serviços de hotel (cadastro, listagem, atualização, remoção)
+
+\begin{DoxyReturn}{Returns}
+Referência para o container de hotéis 
+\end{DoxyReturn}
+\Hypertarget{class_central_containers_ab21274cceca5ee2a49d00f4267bb7465}\index{CentralContainers@{CentralContainers}!getContainerQuartos@{getContainerQuartos}}
+\index{getContainerQuartos@{getContainerQuartos}!CentralContainers@{CentralContainers}}
+\doxysubsubsection{\texorpdfstring{getContainerQuartos()}{getContainerQuartos()}}
+{\footnotesize\ttfamily \label{class_central_containers_ab21274cceca5ee2a49d00f4267bb7465} 
+\mbox{\hyperlink{class_container_quarto}{Container\+Quarto}} \& Central\+Containers\+::get\+Container\+Quartos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtém referência para o container de quartos. 
+
+Implementação inline do método \doxylink{class_central_containers_ab21274cceca5ee2a49d00f4267bb7465}{get\+Container\+Quartos()}.
+
+\begin{DoxyReturn}{Returns}
+Referência para \doxylink{class_container_quarto}{Container\+Quarto}
+\end{DoxyReturn}
+Usado pelos serviços de quarto (cadastro, listagem, atualização, remoção)
+
+\begin{DoxyReturn}{Returns}
+Referência para o container de quartos 
+\end{DoxyReturn}
+\Hypertarget{class_central_containers_a99ab33a07b1a82475aa2339326642b64}\index{CentralContainers@{CentralContainers}!getContainerReservas@{getContainerReservas}}
+\index{getContainerReservas@{getContainerReservas}!CentralContainers@{CentralContainers}}
+\doxysubsubsection{\texorpdfstring{getContainerReservas()}{getContainerReservas()}}
+{\footnotesize\ttfamily \label{class_central_containers_a99ab33a07b1a82475aa2339326642b64} 
+\mbox{\hyperlink{class_container_reserva}{Container\+Reserva}} \& Central\+Containers\+::get\+Container\+Reservas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtém referência para o container de reservas. 
+
+Implementação inline do método \doxylink{class_central_containers_a99ab33a07b1a82475aa2339326642b64}{get\+Container\+Reservas()}.
+
+\begin{DoxyReturn}{Returns}
+Referência para \doxylink{class_container_reserva}{Container\+Reserva}
+\end{DoxyReturn}
+Usado pelos serviços de reserva (cadastro, listagem, atualização, remoção)
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ContainerReserva\&\ container\ =\ \mbox{\hyperlink{class_central_containers_a99ab33a07b1a82475aa2339326642b64}{CentralContainers::getContainerReservas}}();}
+\DoxyCodeLine{Reserva*\ r\ =\ container.\mbox{\hyperlink{class_container_reserva_ab9a58acecc5a9c69795c2eb3a3b7064e}{pesquisar}}(\textcolor{stringliteral}{"{}ABC1234567"{}});}
+
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Referência para o container de reservas 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_central_containers_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_central_containers_adf83dcf8a7b5828a715a47c63afd13a7}\index{CentralContainers@{CentralContainers}!containerGerentes@{containerGerentes}}
+\index{containerGerentes@{containerGerentes}!CentralContainers@{CentralContainers}}
+\doxysubsubsection{\texorpdfstring{containerGerentes}{containerGerentes}}
+{\footnotesize\ttfamily \label{class_central_containers_adf83dcf8a7b5828a715a47c63afd13a7} 
+\mbox{\hyperlink{class_container_gerente}{Container\+Gerente}} Central\+Containers\+::container\+Gerentes\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Container de gerentes (singleton). 
+
+Armazena todos os gerentes cadastrados no sistema, indexados por email. \Hypertarget{class_central_containers_a5767fc1a64bf8a134fe950f8845b9fab}\index{CentralContainers@{CentralContainers}!containerHospedes@{containerHospedes}}
+\index{containerHospedes@{containerHospedes}!CentralContainers@{CentralContainers}}
+\doxysubsubsection{\texorpdfstring{containerHospedes}{containerHospedes}}
+{\footnotesize\ttfamily \label{class_central_containers_a5767fc1a64bf8a134fe950f8845b9fab} 
+\mbox{\hyperlink{class_container_hospede}{Container\+Hospede}} Central\+Containers\+::container\+Hospedes\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Container de hóspedes (singleton). 
+
+Armazena todos os hóspedes cadastrados no sistema, indexados por email. \Hypertarget{class_central_containers_aa1b2bb82d61fc80e2fdab9212bd25847}\index{CentralContainers@{CentralContainers}!containerHoteis@{containerHoteis}}
+\index{containerHoteis@{containerHoteis}!CentralContainers@{CentralContainers}}
+\doxysubsubsection{\texorpdfstring{containerHoteis}{containerHoteis}}
+{\footnotesize\ttfamily \label{class_central_containers_aa1b2bb82d61fc80e2fdab9212bd25847} 
+\mbox{\hyperlink{class_container_hotel}{Container\+Hotel}} Central\+Containers\+::container\+Hoteis\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Container de hotéis (singleton). 
+
+Armazena todos os hotéis do sistema, organizados por gerente proprietário. \Hypertarget{class_central_containers_afba6ba31ad088fb91cfe5e3f3fc4d7e2}\index{CentralContainers@{CentralContainers}!containerQuartos@{containerQuartos}}
+\index{containerQuartos@{containerQuartos}!CentralContainers@{CentralContainers}}
+\doxysubsubsection{\texorpdfstring{containerQuartos}{containerQuartos}}
+{\footnotesize\ttfamily \label{class_central_containers_afba6ba31ad088fb91cfe5e3f3fc4d7e2} 
+\mbox{\hyperlink{class_container_quarto}{Container\+Quarto}} Central\+Containers\+::container\+Quartos\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Container de quartos (singleton). 
+
+Armazena todos os quartos do sistema, organizados por hotel. \Hypertarget{class_central_containers_afb2fd640b3d8b29853d50ab5b1997f6f}\index{CentralContainers@{CentralContainers}!containerReservas@{containerReservas}}
+\index{containerReservas@{containerReservas}!CentralContainers@{CentralContainers}}
+\doxysubsubsection{\texorpdfstring{containerReservas}{containerReservas}}
+{\footnotesize\ttfamily \label{class_central_containers_afb2fd640b3d8b29853d50ab5b1997f6f} 
+\mbox{\hyperlink{class_container_reserva}{Container\+Reserva}} Central\+Containers\+::container\+Reservas\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Container de reservas (singleton). 
+
+Armazena todas as reservas do sistema organizadas por quarto e hóspede. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/servicos/\mbox{\hyperlink{central_containers_8hpp}{central\+Containers.\+hpp}}\item 
+src/servicos/\mbox{\hyperlink{central_containers_8cpp}{central\+Containers.\+cpp}}\end{DoxyCompactItemize}

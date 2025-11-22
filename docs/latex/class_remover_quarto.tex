@@ -1,0 +1,101 @@
+\doxysection{Remover\+Quarto Class Reference}
+\hypertarget{class_remover_quarto}{}\label{class_remover_quarto}\index{RemoverQuarto@{RemoverQuarto}}
+
+
+Remove quartos do sistema com remoção em cascata.  
+
+
+
+
+{\ttfamily \#include $<$remover\+Quarto.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_remover_quarto_a6fc01fb1802238e2b035974d5d911370}{remover\+\_\+quarto}} (\mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*}quarto)
+\begin{DoxyCompactList}\small\item\em Remove quarto e todas as suas reservas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Remove quartos do sistema com remoção em cascata. 
+
+{\bfseries{Remoção em Cascata\+:}}
+\begin{DoxyItemize}
+\item Remove QUARTO
+\item Remove todas as RESERVAS do quarto
+\end{DoxyItemize}
+
+{\bfseries{Regra de Negócio\+:}}
+\begin{DoxyItemize}
+\item \doxylink{class_quarto}{Quarto} com reservas ativas pode ser removido
+\item Todas as reservas são canceladas automaticamente
+\item \doxylink{class_hotel}{Hotel} permanece no sistema (apenas perde o quarto)
+\end{DoxyItemize}
+
+{\bfseries{Impacto\+:}}
+\begin{DoxyItemize}
+\item Remove capacidade de hospedagem do hotel
+\item Cancela reservas futuras e ativas do quarto
+\item Ação irreversível (sem recuperação no MVP) 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_remover_quarto_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_remover_quarto_a6fc01fb1802238e2b035974d5d911370}\index{RemoverQuarto@{RemoverQuarto}!remover\_quarto@{remover\_quarto}}
+\index{remover\_quarto@{remover\_quarto}!RemoverQuarto@{RemoverQuarto}}
+\doxysubsubsection{\texorpdfstring{remover\_quarto()}{remover\_quarto()}}
+{\footnotesize\ttfamily \label{class_remover_quarto_a6fc01fb1802238e2b035974d5d911370} 
+bool Remover\+Quarto\+::remover\+\_\+quarto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*}}]{quarto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove quarto e todas as suas reservas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quarto} & Ponteiro para o quarto a ser removido \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removido com sucesso, false caso contrário
+\end{DoxyReturn}
+{\bfseries{Processo de Remoção\+:}}
+\begin{DoxyEnumerate}
+\item Lista todas as reservas do quarto
+\item Remove cada reserva do container
+\item Remove quarto do container
+\end{DoxyEnumerate}
+
+{\bfseries{Efeito Cascata\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Quarto\ (1)}
+\DoxyCodeLine{\ \ └─\ Reservas\ (N)\ [removidas]}
+
+\end{DoxyCode}
+
+
+{\bfseries{Exemplo de uso\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Quarto*\ q\ =\ container.pesquisar(101);}
+\DoxyCodeLine{vector<Reserva*>\ reservas\ =\ \mbox{\hyperlink{class_listar_reserva_a3661faf3e466aa86772fb05f003c0f37}{ListarReserva::listar\_reservas\_por\_quarto}}(q);}
+\DoxyCodeLine{}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Quarto\ 101\ tem\ "{}}\ <<\ reservas.size()\ <<\ \textcolor{stringliteral}{"{}\ reserva(s)."{}}\ <<\ endl;}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Deseja\ remover\ este\ quarto?\ (sim/nao):\ "{}};}
+\DoxyCodeLine{\textcolor{keywordtype}{string}\ resposta;}
+\DoxyCodeLine{cin\ >>\ resposta;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(resposta\ ==\ \textcolor{stringliteral}{"{}sim"{}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_remover_quarto_a6fc01fb1802238e2b035974d5d911370}{RemoverQuarto::remover\_quarto}}(q))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Quarto\ e\ suas\ reservas\ foram\ removidos!"{}}\ <<\ endl;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}O\ hotel\ permanece\ cadastrado."{}}\ <<\ endl;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/servicos/remover/\mbox{\hyperlink{remover_quarto_8hpp}{remover\+Quarto.\+hpp}}\item 
+src/servicos/remover/\mbox{\hyperlink{remover_quarto_8cpp}{remover\+Quarto.\+cpp}}\end{DoxyCompactItemize}

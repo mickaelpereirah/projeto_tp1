@@ -1,0 +1,250 @@
+\doxysection{Validar\+Reserva Class Reference}
+\hypertarget{class_validar_reserva}{}\label{class_validar_reserva}\index{ValidarReserva@{ValidarReserva}}
+
+
+Valida regras de negócio para reservas e calcula valores.  
+
+
+
+
+{\ttfamily \#include $<$validar\+Reserva.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_validar_reserva_a469270d7195886ff5b631f80bfc25584}{verificar\+Disponibilidade}} (int numero\+\_\+quarto, \mbox{\hyperlink{class_data}{Data}} chegada, \mbox{\hyperlink{class_data}{Data}} partida, string codigo\+\_\+reserva\+\_\+atual="{}"{})
+\begin{DoxyCompactList}\small\item\em Verifica se há conflito de datas para um quarto. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_validar_reserva_a787acd41b41f3ba7a1761177bb6cb4fe}{calcular\+Valor\+Total}} (\mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*}quarto, \mbox{\hyperlink{class_data}{Data}} chegada, \mbox{\hyperlink{class_data}{Data}} partida)
+\begin{DoxyCompactList}\small\item\em Calcula o valor total da reserva baseado na diária do quarto. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_validar_reserva_a2527bfa180c78a95e05d671592bad056}{calcular\+Numero\+Dias}} (\mbox{\hyperlink{class_data}{Data}} chegada, \mbox{\hyperlink{class_data}{Data}} partida)
+\begin{DoxyCompactList}\small\item\em Calcula o número de dias entre duas datas. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_validar_reserva_af0eb79bfa300ed27d6b9d5575279b409}{comparar\+Datas}} (\mbox{\hyperlink{class_data}{Data}} data1, \mbox{\hyperlink{class_data}{Data}} data2)
+\begin{DoxyCompactList}\small\item\em Compara duas datas (ordem cronológica). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_validar_reserva_a9b1b5f6cdfbd7e61eff7ba5db6bb336b}{tem\+Conflito\+Data}} (\mbox{\hyperlink{class_data}{Data}} chegada1, \mbox{\hyperlink{class_data}{Data}} partida1, \mbox{\hyperlink{class_data}{Data}} chegada2, \mbox{\hyperlink{class_data}{Data}} partida2)
+\begin{DoxyCompactList}\small\item\em Verifica se duas reservas têm conflito de datas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Valida regras de negócio para reservas e calcula valores. 
+
+{\bfseries{Responsabilidades\+:}}
+\begin{DoxyItemize}
+\item Verificar disponibilidade de quartos
+\item Detectar conflitos de datas
+\item Calcular valores totais
+\item Validar períodos de reserva
+\end{DoxyItemize}
+
+{\bfseries{Regras de Negócio\+:}}
+\begin{DoxyItemize}
+\item \doxylink{class_quarto}{Quarto} não pode ter reservas sobrepostas
+\item \doxylink{class_data}{Data} de chegada deve ser anterior à data de partida
+\item Valor = (número de dias) × (diária do quarto)
+\item Mínimo de 1 dia de reserva 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_validar_reserva_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_validar_reserva_a2527bfa180c78a95e05d671592bad056}\index{ValidarReserva@{ValidarReserva}!calcularNumeroDias@{calcularNumeroDias}}
+\index{calcularNumeroDias@{calcularNumeroDias}!ValidarReserva@{ValidarReserva}}
+\doxysubsubsection{\texorpdfstring{calcularNumeroDias()}{calcularNumeroDias()}}
+{\footnotesize\ttfamily \label{class_validar_reserva_a2527bfa180c78a95e05d671592bad056} 
+int Validar\+Reserva\+::calcular\+Numero\+Dias (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_data}{Data}}}]{chegada}{, }\item[{\mbox{\hyperlink{class_data}{Data}}}]{partida}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calcula o número de dias entre duas datas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chegada} & \doxylink{class_data}{Data} de chegada (data inicial) \\
+\hline
+{\em partida} & \doxylink{class_data}{Data} de partida (data final) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Número de dias (partida -\/ chegada)
+\end{DoxyReturn}
+{\bfseries{Implementação\+:}}
+\begin{DoxyItemize}
+\item Converte datas para dias julianos ou timestamp
+\item Calcula diferença absoluta
+\item Retorna número inteiro de dias
+\end{DoxyItemize}
+
+{\bfseries{Exemplo de uso\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Data\ chegada(10,\ 1,\ 2025);}
+\DoxyCodeLine{Data\ partida(13,\ 1,\ 2025);}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ dias\ =\ \mbox{\hyperlink{class_validar_reserva_a2527bfa180c78a95e05d671592bad056}{ValidarReserva::calcularNumeroDias}}(chegada,\ partida);}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Período:\ "{}}\ <<\ dias\ <<\ \textcolor{stringliteral}{"{}\ dia(s)"{}}\ <<\ endl;\ \textcolor{comment}{//\ 3\ dias}}
+
+\end{DoxyCode}
+ \Hypertarget{class_validar_reserva_a787acd41b41f3ba7a1761177bb6cb4fe}\index{ValidarReserva@{ValidarReserva}!calcularValorTotal@{calcularValorTotal}}
+\index{calcularValorTotal@{calcularValorTotal}!ValidarReserva@{ValidarReserva}}
+\doxysubsubsection{\texorpdfstring{calcularValorTotal()}{calcularValorTotal()}}
+{\footnotesize\ttfamily \label{class_validar_reserva_a787acd41b41f3ba7a1761177bb6cb4fe} 
+double Validar\+Reserva\+::calcular\+Valor\+Total (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*}}]{quarto}{, }\item[{\mbox{\hyperlink{class_data}{Data}}}]{chegada}{, }\item[{\mbox{\hyperlink{class_data}{Data}}}]{partida}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calcula o valor total da reserva baseado na diária do quarto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quarto} & Ponteiro para o quarto \\
+\hline
+{\em chegada} & \doxylink{class_data}{Data} de chegada \\
+\hline
+{\em partida} & \doxylink{class_data}{Data} de partida \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double Valor total (número de dias × valor da diária)
+\end{DoxyReturn}
+{\bfseries{Fórmula\+:}} Valor Total = calcular\+Numero\+Dias(chegada, partida) × quarto-\/\texorpdfstring{$>$}{>}get\+Diaria()
+
+{\bfseries{Exemplo de uso\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Quarto*\ q\ =\ container.pesquisar(101);\ \textcolor{comment}{//\ diária\ =\ R\$\ 150,00}}
+\DoxyCodeLine{Data\ chegada(10,\ 1,\ 2025);}
+\DoxyCodeLine{Data\ partida(13,\ 1,\ 2025);\ \textcolor{comment}{//\ 3\ dias}}
+\DoxyCodeLine{\textcolor{keywordtype}{double}\ valor\ =\ \mbox{\hyperlink{class_validar_reserva_a787acd41b41f3ba7a1761177bb6cb4fe}{ValidarReserva::calcularValorTotal}}(q,\ chegada,\ partida);}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Valor\ total:\ R\$\ "{}}\ <<\ valor\ <<\ endl;\ \textcolor{comment}{//\ R\$\ 450,00}}
+
+\end{DoxyCode}
+ \Hypertarget{class_validar_reserva_af0eb79bfa300ed27d6b9d5575279b409}\index{ValidarReserva@{ValidarReserva}!compararDatas@{compararDatas}}
+\index{compararDatas@{compararDatas}!ValidarReserva@{ValidarReserva}}
+\doxysubsubsection{\texorpdfstring{compararDatas()}{compararDatas()}}
+{\footnotesize\ttfamily \label{class_validar_reserva_af0eb79bfa300ed27d6b9d5575279b409} 
+int Validar\+Reserva\+::comparar\+Datas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_data}{Data}}}]{data1}{, }\item[{\mbox{\hyperlink{class_data}{Data}}}]{data2}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compara duas datas (ordem cronológica). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data1} & Primeira data \\
+\hline
+{\em data2} & Segunda data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/1 se data1 \texorpdfstring{$<$}{<} data2, 0 se iguais, 1 se data1 \texorpdfstring{$>$}{>} data2
+\end{DoxyReturn}
+{\bfseries{Uso\+:}}
+\begin{DoxyItemize}
+\item Validar ordem de datas (chegada antes de partida)
+\item Ordenar reservas cronologicamente
+\item Verificar períodos válidos
+\end{DoxyItemize}
+
+{\bfseries{Exemplo de uso\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Data\ d1(10,\ 1,\ 2025);}
+\DoxyCodeLine{Data\ d2(15,\ 1,\ 2025);}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ resultado\ =\ \mbox{\hyperlink{class_validar_reserva_af0eb79bfa300ed27d6b9d5575279b409}{ValidarReserva::compararDatas}}(d1,\ d2);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(resultado\ ==\ -\/1)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}d1\ é\ anterior\ a\ d2"{}}\ <<\ endl;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_validar_reserva_a9b1b5f6cdfbd7e61eff7ba5db6bb336b}\index{ValidarReserva@{ValidarReserva}!temConflitoData@{temConflitoData}}
+\index{temConflitoData@{temConflitoData}!ValidarReserva@{ValidarReserva}}
+\doxysubsubsection{\texorpdfstring{temConflitoData()}{temConflitoData()}}
+{\footnotesize\ttfamily \label{class_validar_reserva_a9b1b5f6cdfbd7e61eff7ba5db6bb336b} 
+bool Validar\+Reserva\+::tem\+Conflito\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_data}{Data}}}]{chegada1}{, }\item[{\mbox{\hyperlink{class_data}{Data}}}]{partida1}{, }\item[{\mbox{\hyperlink{class_data}{Data}}}]{chegada2}{, }\item[{\mbox{\hyperlink{class_data}{Data}}}]{partida2}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Verifica se duas reservas têm conflito de datas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chegada1} & \doxylink{class_data}{Data} de chegada da reserva 1 \\
+\hline
+{\em partida1} & \doxylink{class_data}{Data} de partida da reserva 1 \\
+\hline
+{\em chegada2} & \doxylink{class_data}{Data} de chegada da reserva 2 \\
+\hline
+{\em partida2} & \doxylink{class_data}{Data} de partida da reserva 2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se houver conflito, false caso contrário
+\end{DoxyReturn}
+{\bfseries{Lógica de Conflito\+:}} Duas reservas conflitam se\+:
+\begin{DoxyItemize}
+\item (chegada2 \texorpdfstring{$>$}{>}= chegada1 \&\& chegada2 \texorpdfstring{$<$}{<} partida1) OU
+\item (partida2 \texorpdfstring{$>$}{>} chegada1 \&\& partida2 \texorpdfstring{$<$}{<}= partida1) OU
+\item (chegada2 \texorpdfstring{$<$}{<}= chegada1 \&\& partida2 \texorpdfstring{$>$}{>}= partida1)
+\end{DoxyItemize}
+
+{\bfseries{Casos Cobertos\+:}}
+\begin{DoxyEnumerate}
+\item Sobreposição no início
+\item Sobreposição no fim
+\item Sobreposição total (engloba completamente)
+\item Checkout/checkin no mesmo dia = SEM CONFLITO 
+\end{DoxyEnumerate}\Hypertarget{class_validar_reserva_a469270d7195886ff5b631f80bfc25584}\index{ValidarReserva@{ValidarReserva}!verificarDisponibilidade@{verificarDisponibilidade}}
+\index{verificarDisponibilidade@{verificarDisponibilidade}!ValidarReserva@{ValidarReserva}}
+\doxysubsubsection{\texorpdfstring{verificarDisponibilidade()}{verificarDisponibilidade()}}
+{\footnotesize\ttfamily \label{class_validar_reserva_a469270d7195886ff5b631f80bfc25584} 
+bool Validar\+Reserva\+::verificar\+Disponibilidade (\begin{DoxyParamCaption}\item[{int}]{numero\+\_\+quarto}{, }\item[{\mbox{\hyperlink{class_data}{Data}}}]{chegada}{, }\item[{\mbox{\hyperlink{class_data}{Data}}}]{partida}{, }\item[{string}]{codigo\+\_\+reserva\+\_\+atual}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Verifica se há conflito de datas para um quarto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numero\+\_\+quarto} & Número do quarto a ser verificado \\
+\hline
+{\em chegada} & \doxylink{class_data}{Data} de chegada da nova reserva \\
+\hline
+{\em partida} & \doxylink{class_data}{Data} de partida da nova reserva \\
+\hline
+{\em codigo\+\_\+reserva\+\_\+atual} & Código da reserva sendo editada (ignora na verificação) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se NÃO houver conflito (quarto disponível), false se houver conflito
+\end{DoxyReturn}
+{\bfseries{Lógica de Conflito\+:}} Duas reservas conflitam se houver sobreposição de datas\+:
+\begin{DoxyItemize}
+\item Nova reserva inicia durante reserva existente
+\item Nova reserva termina durante reserva existente
+\item Nova reserva engloba completamente reserva existente
+\end{DoxyItemize}
+
+{\bfseries{Exemplo de Conflito\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Reserva\ Existente:\ 10/01\ até\ 15/01}
+\DoxyCodeLine{Nova\ Reserva:\ \ \ \ \ \ 12/01\ até\ 17/01\ \ →\ CONFLITO}
+\DoxyCodeLine{Nova\ Reserva:\ \ \ \ \ \ 08/01\ até\ 12/01\ \ →\ CONFLITO}
+\DoxyCodeLine{Nova\ Reserva:\ \ \ \ \ \ 09/01\ até\ 16/01\ \ →\ CONFLITO}
+\DoxyCodeLine{Nova\ Reserva:\ \ \ \ \ \ 16/01\ até\ 20/01\ \ →\ SEM\ CONFLITO\ (checkout/checkin\ mesmo\ dia)}
+
+\end{DoxyCode}
+
+
+{\bfseries{Exemplo de uso\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(\mbox{\hyperlink{class_validar_reserva_a469270d7195886ff5b631f80bfc25584}{ValidarReserva::verificarDisponibilidade}}(101,\ Data(10,1,2025),\ Data(15,1,2025)))\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Quarto\ disponível\ para\ reserva!"{}}\ <<\ endl;}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Quarto\ indisponível\ neste\ período!"{}}\ <<\ endl;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/servicos/validar/\mbox{\hyperlink{validar_reserva_8hpp}{validar\+Reserva.\+hpp}}\item 
+src/servicos/validar/\mbox{\hyperlink{validar_reserva_8cpp}{validar\+Reserva.\+cpp}}\end{DoxyCompactItemize}

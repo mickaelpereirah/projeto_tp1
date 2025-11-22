@@ -1,0 +1,214 @@
+\doxysection{Cadastro Class Reference}
+\hypertarget{class_cadastro}{}\label{class_cadastro}\index{Cadastro@{Cadastro}}
+
+
+Classe base com métodos auxiliares para entrada de dados dos domínios.  
+
+
+
+
+{\ttfamily \#include $<$cadastro.\+hpp$>$}
+
+Inheritance diagram for Cadastro\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_cadastro}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_capacidade}{Capacidade}} \mbox{\hyperlink{class_cadastro_ae0f1aef4dffd9a941d4ac2a45ff109ef}{criar\+\_\+capacidade}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_capacidade}{Capacidade} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cartao}{Cartao}} \mbox{\hyperlink{class_cadastro_a63b6d24ecf2fb514a573823ea04f45dd}{criar\+\_\+cartao}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_cartao}{Cartao} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_codigo}{Codigo}} \mbox{\hyperlink{class_cadastro_aa7442d6ad39328e9d8f121dfb908c520}{criar\+\_\+codigo}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_codigo}{Codigo} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dinheiro}{Dinheiro}} \mbox{\hyperlink{class_cadastro_a49bc1b72c5727099f0707c06f01084a6}{criar\+\_\+dinheiro}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_dinheiro}{Dinheiro} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_email}{Email}} \mbox{\hyperlink{class_cadastro_ac4a85667841ee8f52519fd282d4aeefb}{criar\+\_\+email}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_email}{Email} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_endereco}{Endereco}} \mbox{\hyperlink{class_cadastro_abbf9f1d8c67242008b67b9c5834a0e41}{criar\+\_\+endereco}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_endereco}{Endereco} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_nome}{Nome}} \mbox{\hyperlink{class_cadastro_a6dda8f5f9bf2e0ad8d079feea26a09c9}{criar\+\_\+nome}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_nome}{Nome} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_numero}{Numero}} \mbox{\hyperlink{class_cadastro_aafe87d4725b418647670f016aa7465d0}{criar\+\_\+numero}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_numero}{Numero} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ramal}{Ramal}} \mbox{\hyperlink{class_cadastro_a5f499af2625ce49d4f37758f06daf12f}{criar\+\_\+ramal}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_ramal}{Ramal} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_senha}{Senha}} \mbox{\hyperlink{class_cadastro_ac2446156d85f11ac21412a2fc93799cd}{criar\+\_\+senha}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_senha}{Senha} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_telefone}{Telefone}} \mbox{\hyperlink{class_cadastro_a160f64602001e1b479bd58c87651ca0d}{criar\+\_\+telefone}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_telefone}{Telefone} válido. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe base com métodos auxiliares para entrada de dados dos domínios. 
+
+Esta classe fornece métodos para solicitar e validar entrada de dados do usuário via terminal para todos os domínios do sistema. Cada método solicita o dado, valida e retorna um objeto do domínio correspondente já validado.
+
+É utilizada como classe base por outras classes de serviço que necessitam coletar dados do usuário (cadastro, atualização, etc.).
+
+{\bfseries{CARACTERÍ\+STICAS\+:}}
+\begin{DoxyItemize}
+\item Solicita dados via terminal (cin/cout)
+\item Valida entrada usando regras dos domínios
+\item Repete solicitação até entrada válida
+\item Exibe mensagens de erro amigáveis
+\item Retorna objetos já validados
+\end{DoxyItemize}
+
+{\bfseries{PADRÃO DE USO\+:}} Todas as classes que herdam de \doxylink{class_cadastro}{Cadastro} podem usar estes métodos para coletar dados do usuário de forma consistente e validada. 
+
+\label{doc-func-members}
+\Hypertarget{class_cadastro_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_cadastro_ae0f1aef4dffd9a941d4ac2a45ff109ef}\index{Cadastro@{Cadastro}!criar\_capacidade@{criar\_capacidade}}
+\index{criar\_capacidade@{criar\_capacidade}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{criar\_capacidade()}{criar\_capacidade()}}
+{\footnotesize\ttfamily \label{class_cadastro_ae0f1aef4dffd9a941d4ac2a45ff109ef} 
+\mbox{\hyperlink{class_capacidade}{Capacidade}} Cadastro\+::criar\+\_\+capacidade (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Solicita e cria um objeto \doxylink{class_capacidade}{Capacidade} válido. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_capacidade}{Capacidade} Objeto validado (1, 2, 3 ou 4)
+\end{DoxyReturn}
+Solicita ao usuário digitar um valor de capacidade. Repete até receber valor válido (1, 2, 3 ou 4). \Hypertarget{class_cadastro_a63b6d24ecf2fb514a573823ea04f45dd}\index{Cadastro@{Cadastro}!criar\_cartao@{criar\_cartao}}
+\index{criar\_cartao@{criar\_cartao}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{criar\_cartao()}{criar\_cartao()}}
+{\footnotesize\ttfamily \label{class_cadastro_a63b6d24ecf2fb514a573823ea04f45dd} 
+\mbox{\hyperlink{class_cartao}{Cartao}} Cadastro\+::criar\+\_\+cartao (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Solicita e cria um objeto \doxylink{class_cartao}{Cartao} válido. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_cartao}{Cartao} Objeto validado (16 dígitos + Luhn)
+\end{DoxyReturn}
+Solicita ao usuário digitar número de cartão. Valida formato (16 dígitos) e algoritmo de Luhn. Repete até receber cartão válido. \Hypertarget{class_cadastro_aa7442d6ad39328e9d8f121dfb908c520}\index{Cadastro@{Cadastro}!criar\_codigo@{criar\_codigo}}
+\index{criar\_codigo@{criar\_codigo}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{criar\_codigo()}{criar\_codigo()}}
+{\footnotesize\ttfamily \label{class_cadastro_aa7442d6ad39328e9d8f121dfb908c520} 
+\mbox{\hyperlink{class_codigo}{Codigo}} Cadastro\+::criar\+\_\+codigo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Solicita e cria um objeto \doxylink{class_codigo}{Codigo} válido. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_codigo}{Codigo} Objeto validado (10 caracteres alfanuméricos)
+\end{DoxyReturn}
+Solicita ao usuário digitar código. Valida 10 caracteres alfanuméricos (a-\/z, 0-\/9). Repete até receber código válido. \Hypertarget{class_cadastro_a49bc1b72c5727099f0707c06f01084a6}\index{Cadastro@{Cadastro}!criar\_dinheiro@{criar\_dinheiro}}
+\index{criar\_dinheiro@{criar\_dinheiro}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{criar\_dinheiro()}{criar\_dinheiro()}}
+{\footnotesize\ttfamily \label{class_cadastro_a49bc1b72c5727099f0707c06f01084a6} 
+\mbox{\hyperlink{class_dinheiro}{Dinheiro}} Cadastro\+::criar\+\_\+dinheiro (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Solicita e cria um objeto \doxylink{class_dinheiro}{Dinheiro} válido. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_dinheiro}{Dinheiro} Objeto validado (0.\+01 a 1.\+000.\+000,00)
+\end{DoxyReturn}
+Solicita ao usuário digitar valor monetário. Valida intervalo (0.\+01 a 1.\+000.\+000,00). Repete até receber valor válido. \Hypertarget{class_cadastro_ac4a85667841ee8f52519fd282d4aeefb}\index{Cadastro@{Cadastro}!criar\_email@{criar\_email}}
+\index{criar\_email@{criar\_email}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{criar\_email()}{criar\_email()}}
+{\footnotesize\ttfamily \label{class_cadastro_ac4a85667841ee8f52519fd282d4aeefb} 
+\mbox{\hyperlink{class_email}{Email}} Cadastro\+::criar\+\_\+email (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Solicita e cria um objeto \doxylink{class_email}{Email} válido. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_email}{Email} Objeto validado (formato local@dominio)
+\end{DoxyReturn}
+Solicita ao usuário digitar email. Valida formato (parte local e domínio). Repete até receber email válido. \Hypertarget{class_cadastro_abbf9f1d8c67242008b67b9c5834a0e41}\index{Cadastro@{Cadastro}!criar\_endereco@{criar\_endereco}}
+\index{criar\_endereco@{criar\_endereco}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{criar\_endereco()}{criar\_endereco()}}
+{\footnotesize\ttfamily \label{class_cadastro_abbf9f1d8c67242008b67b9c5834a0e41} 
+\mbox{\hyperlink{class_endereco}{Endereco}} Cadastro\+::criar\+\_\+endereco (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Solicita e cria um objeto \doxylink{class_endereco}{Endereco} válido. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_endereco}{Endereco} Objeto validado (5-\/30 caracteres)
+\end{DoxyReturn}
+Solicita ao usuário digitar endereço. Valida comprimento e caracteres permitidos. Repete até receber endereço válido. \Hypertarget{class_cadastro_a6dda8f5f9bf2e0ad8d079feea26a09c9}\index{Cadastro@{Cadastro}!criar\_nome@{criar\_nome}}
+\index{criar\_nome@{criar\_nome}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{criar\_nome()}{criar\_nome()}}
+{\footnotesize\ttfamily \label{class_cadastro_a6dda8f5f9bf2e0ad8d079feea26a09c9} 
+\mbox{\hyperlink{class_nome}{Nome}} Cadastro\+::criar\+\_\+nome (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Solicita e cria um objeto \doxylink{class_nome}{Nome} válido. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_nome}{Nome} Objeto validado (5-\/20 caracteres, capitalizado)
+\end{DoxyReturn}
+Solicita ao usuário digitar nome. Valida comprimento e capitalização. Repete até receber nome válido. \Hypertarget{class_cadastro_aafe87d4725b418647670f016aa7465d0}\index{Cadastro@{Cadastro}!criar\_numero@{criar\_numero}}
+\index{criar\_numero@{criar\_numero}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{criar\_numero()}{criar\_numero()}}
+{\footnotesize\ttfamily \label{class_cadastro_aafe87d4725b418647670f016aa7465d0} 
+\mbox{\hyperlink{class_numero}{Numero}} Cadastro\+::criar\+\_\+numero (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Solicita e cria um objeto \doxylink{class_numero}{Numero} válido. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_numero}{Numero} Objeto validado (001-\/999)
+\end{DoxyReturn}
+Solicita ao usuário digitar número de quarto. Valida intervalo (1 a 999). Repete até receber número válido. \Hypertarget{class_cadastro_a5f499af2625ce49d4f37758f06daf12f}\index{Cadastro@{Cadastro}!criar\_ramal@{criar\_ramal}}
+\index{criar\_ramal@{criar\_ramal}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{criar\_ramal()}{criar\_ramal()}}
+{\footnotesize\ttfamily \label{class_cadastro_a5f499af2625ce49d4f37758f06daf12f} 
+\mbox{\hyperlink{class_ramal}{Ramal}} Cadastro\+::criar\+\_\+ramal (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Solicita e cria um objeto \doxylink{class_ramal}{Ramal} válido. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_ramal}{Ramal} Objeto validado (00-\/50)
+\end{DoxyReturn}
+Solicita ao usuário digitar ramal. Valida intervalo (0 a 50). Repete até receber ramal válido. \Hypertarget{class_cadastro_ac2446156d85f11ac21412a2fc93799cd}\index{Cadastro@{Cadastro}!criar\_senha@{criar\_senha}}
+\index{criar\_senha@{criar\_senha}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{criar\_senha()}{criar\_senha()}}
+{\footnotesize\ttfamily \label{class_cadastro_ac2446156d85f11ac21412a2fc93799cd} 
+\mbox{\hyperlink{class_senha}{Senha}} Cadastro\+::criar\+\_\+senha (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Solicita e cria um objeto \doxylink{class_senha}{Senha} válido. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_senha}{Senha} Objeto validado (5 caracteres com requisitos)
+\end{DoxyReturn}
+Solicita ao usuário digitar senha. Valida comprimento e requisitos de segurança. Repete até receber senha válida. \Hypertarget{class_cadastro_a160f64602001e1b479bd58c87651ca0d}\index{Cadastro@{Cadastro}!criar\_telefone@{criar\_telefone}}
+\index{criar\_telefone@{criar\_telefone}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{criar\_telefone()}{criar\_telefone()}}
+{\footnotesize\ttfamily \label{class_cadastro_a160f64602001e1b479bd58c87651ca0d} 
+\mbox{\hyperlink{class_telefone}{Telefone}} Cadastro\+::criar\+\_\+telefone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Solicita e cria um objeto \doxylink{class_telefone}{Telefone} válido. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_telefone}{Telefone} Objeto validado (+14 dígitos)
+\end{DoxyReturn}
+Solicita ao usuário digitar telefone internacional. Valida formato (+DDDDDDDDDDDDDD). Repete até receber telefone válido. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/servicos/cadastro/\mbox{\hyperlink{cadastro_8hpp}{cadastro.\+hpp}}\item 
+src/servicos/cadastro/\mbox{\hyperlink{cadastro_8cpp}{cadastro.\+cpp}}\end{DoxyCompactItemize}

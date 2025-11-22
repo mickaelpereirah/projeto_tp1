@@ -1,0 +1,294 @@
+\doxysection{Menu\+Reservas Class Reference}
+\hypertarget{class_menu_reservas}{}\label{class_menu_reservas}\index{MenuReservas@{MenuReservas}}
+
+
+Classe responsável pelo gerenciamento de reservas de um hotel.  
+
+
+
+
+{\ttfamily \#include $<$Menu\+Reservas.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_menu_reservas_aa3a8979212a4cafa8230780f9307e176}{exibir}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Exibe o menu de gerenciamento de reservas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_menu_reservas_a8e8a6344c95abccc7e61068c9f93ffc7}{listar\+Reservas}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Obtém todas as reservas do hotel. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_reservas_a6805bc7bac6abc63562b5c10c2c6edcf}{exibir\+Lista\+Reservas}} (vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$ reservas, \mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Exibe a lista de reservas formatada com contexto. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_reservas_abb3392050229113260798930081aeb84}{listar\+Reservas\+Menu}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Menu para listar todas as reservas. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_reservas_a4a3658c3ad6f686d3bbd1db2ab3a342a}{ver\+Detalhes\+Reserva}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Permite visualizar detalhes completos de uma reserva. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_reservas_afb627de690c0b2628cb0f65ca3cf2b6a}{mostrar\+Detalhes\+Reserva}} (\mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*}reserva, \mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Exibe detalhes completos de uma reserva específica. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_reservas_a2949ca0a72236c44fb956d87f972ca40}{criar\+Reserva}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Cria uma nova reserva. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_reservas_a1ba12050e6b027e655f5bf16b7991948}{editar\+Reserva}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Edita uma reserva existente. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_reservas_af224bd1f4b6db4038f05b2c9bf58659a}{excluir\+Reserva}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Exclui uma reserva. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_menu_reservas_a19427e7a6a4bbf854a25ed963ab6d3d5}{selecionar\+Reserva}} (vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$ reservas)
+\begin{DoxyCompactList}\small\item\em Permite ao usuário selecionar uma reserva. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_menu_reservas_a591b3513a6cd0e01d87d5bb8d41dc875}{obter\+Numero\+Quarto\+Reserva}} (\mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*}reserva, \mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Obtém o número do quarto de uma reserva. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_menu_reservas_a967fe1729ffe3b1297ef5ebb3b39af3c}{obter\+Email\+Hospede\+Reserva}} (\mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*}reserva, \mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Obtém o email do hóspede de uma reserva. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável pelo gerenciamento de reservas de um hotel. 
+
+Esta classe fornece interface completa para operações CRUD de reservas, incluindo validações de disponibilidade, cálculo automático de valores e associação com quartos e hóspedes. Gerencia todo o ciclo de vida de uma reserva desde a criação até a exclusão.
+
+Características principais\+:
+\begin{DoxyItemize}
+\item Validação de conflito de datas entre reservas
+\item Cálculo automático do valor total baseado no período
+\item Recálculo automático quando datas são alteradas
+\item Verificação de existência de quartos e hóspedes
+\item Exibição de informações contextualizadas (quarto, hóspede) 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_menu_reservas_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_menu_reservas_a2949ca0a72236c44fb956d87f972ca40}\index{MenuReservas@{MenuReservas}!criarReserva@{criarReserva}}
+\index{criarReserva@{criarReserva}!MenuReservas@{MenuReservas}}
+\doxysubsubsection{\texorpdfstring{criarReserva()}{criarReserva()}}
+{\footnotesize\ttfamily \label{class_menu_reservas_a2949ca0a72236c44fb956d87f972ca40} 
+void Menu\+Reservas\+::criar\+Reserva (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Cria uma nova reserva. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel\\
+\hline
+\end{DoxyParams}
+Processo de criação\+:
+\begin{DoxyEnumerate}
+\item Verifica se há quartos e hóspedes cadastrados
+\item Exibe quartos disponíveis e hóspedes cadastrados
+\item Solicita\+: número do quarto, email do hóspede, datas
+\item Valida disponibilidade do quarto no período
+\item Calcula valor total automaticamente
+\item Gera código único (10 caracteres alfanuméricos)
+\item Cria e armazena a reserva
+\end{DoxyEnumerate}
+
+IMPORTANTE\+: Não permite conflito de datas no mesmo quarto. \Hypertarget{class_menu_reservas_a1ba12050e6b027e655f5bf16b7991948}\index{MenuReservas@{MenuReservas}!editarReserva@{editarReserva}}
+\index{editarReserva@{editarReserva}!MenuReservas@{MenuReservas}}
+\doxysubsubsection{\texorpdfstring{editarReserva()}{editarReserva()}}
+{\footnotesize\ttfamily \label{class_menu_reservas_a1ba12050e6b027e655f5bf16b7991948} 
+void Menu\+Reservas\+::editar\+Reserva (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Edita uma reserva existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel\\
+\hline
+\end{DoxyParams}
+Permite alterar APENAS as datas de chegada e partida. O código, quarto e hóspede NÃO podem ser alterados.
+
+Ao alterar datas\+:
+\begin{DoxyItemize}
+\item Valida disponibilidade no novo período
+\item Recalcula automaticamente o valor total
+\item Exibe o novo valor calculado 
+\end{DoxyItemize}\Hypertarget{class_menu_reservas_af224bd1f4b6db4038f05b2c9bf58659a}\index{MenuReservas@{MenuReservas}!excluirReserva@{excluirReserva}}
+\index{excluirReserva@{excluirReserva}!MenuReservas@{MenuReservas}}
+\doxysubsubsection{\texorpdfstring{excluirReserva()}{excluirReserva()}}
+{\footnotesize\ttfamily \label{class_menu_reservas_af224bd1f4b6db4038f05b2c9bf58659a} 
+void Menu\+Reservas\+::excluir\+Reserva (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Exclui uma reserva. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel\\
+\hline
+\end{DoxyParams}
+Solicita confirmação antes de excluir. ATENÇÃO\+: Operação irreversível! \Hypertarget{class_menu_reservas_aa3a8979212a4cafa8230780f9307e176}\index{MenuReservas@{MenuReservas}!exibir@{exibir}}
+\index{exibir@{exibir}!MenuReservas@{MenuReservas}}
+\doxysubsubsection{\texorpdfstring{exibir()}{exibir()}}
+{\footnotesize\ttfamily \label{class_menu_reservas_aa3a8979212a4cafa8230780f9307e176} 
+void Menu\+Reservas\+::exibir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exibe o menu de gerenciamento de reservas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel cujas reservas serão gerenciadas\\
+\hline
+\end{DoxyParams}
+Apresenta as seguintes opções\+:
+\begin{DoxyEnumerate}
+\item Listar reservas
+\item Ver detalhes de uma reserva
+\item Criar nova reserva
+\item Editar reserva
+\item Excluir reserva
+\item Voltar
+\end{DoxyEnumerate}
+
+Mostra também o total de reservas cadastradas no hotel. \Hypertarget{class_menu_reservas_a6805bc7bac6abc63562b5c10c2c6edcf}\index{MenuReservas@{MenuReservas}!exibirListaReservas@{exibirListaReservas}}
+\index{exibirListaReservas@{exibirListaReservas}!MenuReservas@{MenuReservas}}
+\doxysubsubsection{\texorpdfstring{exibirListaReservas()}{exibirListaReservas()}}
+{\footnotesize\ttfamily \label{class_menu_reservas_a6805bc7bac6abc63562b5c10c2c6edcf} 
+void Menu\+Reservas\+::exibir\+Lista\+Reservas (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$}]{reservas}{, }\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Exibe a lista de reservas formatada com contexto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reservas} & Vector com as reservas \\
+\hline
+{\em hotel} & Ponteiro para o hotel (para buscar dados contextuais)\\
+\hline
+\end{DoxyParams}
+Para cada reserva mostra\+: código, datas de chegada/partida, valor, número do quarto e email do hóspede. \Hypertarget{class_menu_reservas_a8e8a6344c95abccc7e61068c9f93ffc7}\index{MenuReservas@{MenuReservas}!listarReservas@{listarReservas}}
+\index{listarReservas@{listarReservas}!MenuReservas@{MenuReservas}}
+\doxysubsubsection{\texorpdfstring{listarReservas()}{listarReservas()}}
+{\footnotesize\ttfamily \label{class_menu_reservas_a8e8a6344c95abccc7e61068c9f93ffc7} 
+vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$ Menu\+Reservas\+::listar\+Reservas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Obtém todas as reservas do hotel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector contendo ponteiros para todas as reservas
+\end{DoxyReturn}
+Busca reservas em todos os quartos do hotel através dos containers. \Hypertarget{class_menu_reservas_abb3392050229113260798930081aeb84}\index{MenuReservas@{MenuReservas}!listarReservasMenu@{listarReservasMenu}}
+\index{listarReservasMenu@{listarReservasMenu}!MenuReservas@{MenuReservas}}
+\doxysubsubsection{\texorpdfstring{listarReservasMenu()}{listarReservasMenu()}}
+{\footnotesize\ttfamily \label{class_menu_reservas_abb3392050229113260798930081aeb84} 
+void Menu\+Reservas\+::listar\+Reservas\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Menu para listar todas as reservas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel\\
+\hline
+\end{DoxyParams}
+Exibe quantidade total e lista completa de reservas. \Hypertarget{class_menu_reservas_afb627de690c0b2628cb0f65ca3cf2b6a}\index{MenuReservas@{MenuReservas}!mostrarDetalhesReserva@{mostrarDetalhesReserva}}
+\index{mostrarDetalhesReserva@{mostrarDetalhesReserva}!MenuReservas@{MenuReservas}}
+\doxysubsubsection{\texorpdfstring{mostrarDetalhesReserva()}{mostrarDetalhesReserva()}}
+{\footnotesize\ttfamily \label{class_menu_reservas_afb627de690c0b2628cb0f65ca3cf2b6a} 
+void Menu\+Reservas\+::mostrar\+Detalhes\+Reserva (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*}}]{reserva}{, }\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Exibe detalhes completos de uma reserva específica. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reserva} & Ponteiro para a reserva \\
+\hline
+{\em hotel} & Ponteiro para o hotel\\
+\hline
+\end{DoxyParams}
+Mostra\+: código, datas, valor, dados do quarto (número, capacidade, diária, ramal) e dados do hóspede (nome, email, endereço). \Hypertarget{class_menu_reservas_a967fe1729ffe3b1297ef5ebb3b39af3c}\index{MenuReservas@{MenuReservas}!obterEmailHospedeReserva@{obterEmailHospedeReserva}}
+\index{obterEmailHospedeReserva@{obterEmailHospedeReserva}!MenuReservas@{MenuReservas}}
+\doxysubsubsection{\texorpdfstring{obterEmailHospedeReserva()}{obterEmailHospedeReserva()}}
+{\footnotesize\ttfamily \label{class_menu_reservas_a967fe1729ffe3b1297ef5ebb3b39af3c} 
+string Menu\+Reservas\+::obter\+Email\+Hospede\+Reserva (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*}}]{reserva}{, }\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Obtém o email do hóspede de uma reserva. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reserva} & Ponteiro para a reserva \\
+\hline
+{\em hotel} & Ponteiro para o hotel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_email}{Email} do hóspede ou string vazia se não encontrado
+\end{DoxyReturn}
+Busca em todos os hóspedes do hotel qual possui esta reserva. \Hypertarget{class_menu_reservas_a591b3513a6cd0e01d87d5bb8d41dc875}\index{MenuReservas@{MenuReservas}!obterNumeroQuartoReserva@{obterNumeroQuartoReserva}}
+\index{obterNumeroQuartoReserva@{obterNumeroQuartoReserva}!MenuReservas@{MenuReservas}}
+\doxysubsubsection{\texorpdfstring{obterNumeroQuartoReserva()}{obterNumeroQuartoReserva()}}
+{\footnotesize\ttfamily \label{class_menu_reservas_a591b3513a6cd0e01d87d5bb8d41dc875} 
+int Menu\+Reservas\+::obter\+Numero\+Quarto\+Reserva (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*}}]{reserva}{, }\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Obtém o número do quarto de uma reserva. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reserva} & Ponteiro para a reserva \\
+\hline
+{\em hotel} & Ponteiro para o hotel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Número do quarto ou -\/1 se não encontrado
+\end{DoxyReturn}
+Busca em todos os quartos do hotel qual contém esta reserva. \Hypertarget{class_menu_reservas_a19427e7a6a4bbf854a25ed963ab6d3d5}\index{MenuReservas@{MenuReservas}!selecionarReserva@{selecionarReserva}}
+\index{selecionarReserva@{selecionarReserva}!MenuReservas@{MenuReservas}}
+\doxysubsubsection{\texorpdfstring{selecionarReserva()}{selecionarReserva()}}
+{\footnotesize\ttfamily \label{class_menu_reservas_a19427e7a6a4bbf854a25ed963ab6d3d5} 
+\mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} Menu\+Reservas\+::selecionar\+Reserva (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$}]{reservas}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Permite ao usuário selecionar uma reserva. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reservas} & Vector com as reservas disponíveis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para a reserva selecionada ou nullptr se cancelado 
+\end{DoxyReturn}
+\Hypertarget{class_menu_reservas_a4a3658c3ad6f686d3bbd1db2ab3a342a}\index{MenuReservas@{MenuReservas}!verDetalhesReserva@{verDetalhesReserva}}
+\index{verDetalhesReserva@{verDetalhesReserva}!MenuReservas@{MenuReservas}}
+\doxysubsubsection{\texorpdfstring{verDetalhesReserva()}{verDetalhesReserva()}}
+{\footnotesize\ttfamily \label{class_menu_reservas_a4a3658c3ad6f686d3bbd1db2ab3a342a} 
+void Menu\+Reservas\+::ver\+Detalhes\+Reserva (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Permite visualizar detalhes completos de uma reserva. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel\\
+\hline
+\end{DoxyParams}
+Solicita seleção de uma reserva e exibe todos os detalhes incluindo informações do quarto e do hóspede. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/apresentacao/\mbox{\hyperlink{_menu_reservas_8hpp}{Menu\+Reservas.\+hpp}}\item 
+src/apresentacao/\mbox{\hyperlink{_menu_reservas_8cpp}{Menu\+Reservas.\+cpp}}\end{DoxyCompactItemize}

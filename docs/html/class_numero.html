@@ -92,7 +92,7 @@ $(function(){initNavTree('class_numero.html','','class_numero-members'); });
 </div><!--header-->
 <div class="contents">
 
-<p>Representa um número inteiro válido de 1 a 999.  
+<p>Representa o número de um quarto.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="numero_8hpp_source.html">numero.hpp</a>&gt;</code></p>
@@ -100,32 +100,44 @@ $(function(){initNavTree('class_numero.html','','class_numero-members'); });
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9135951ce367e7651a63d36516c86db4" id="r_a9135951ce367e7651a63d36516c86db4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9135951ce367e7651a63d36516c86db4">setValor</a> (int)</td></tr>
-<tr class="memdesc:a9135951ce367e7651a63d36516c86db4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o número.  <br /></td></tr>
+<tr class="memdesc:a9135951ce367e7651a63d36516c86db4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o número do quarto.  <br /></td></tr>
 <tr class="memitem:aed4ce4360e4b96e346d9fd0c4120f3b9" id="r_aed4ce4360e4b96e346d9fd0c4120f3b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed4ce4360e4b96e346d9fd0c4120f3b9">getValor</a> ()</td></tr>
-<tr class="memdesc:aed4ce4360e4b96e346d9fd0c4120f3b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém o número armazenado.  <br /></td></tr>
+<tr class="memdesc:aed4ce4360e4b96e346d9fd0c4120f3b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém o número do quarto.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ac7510691bee8b061556e0ff2fb970d66" id="r_ac7510691bee8b061556e0ff2fb970d66"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7510691bee8b061556e0ff2fb970d66">validar</a> (int)</td></tr>
-<tr class="memdesc:ac7510691bee8b061556e0ff2fb970d66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida o número conforme regras do domínio.  <br /></td></tr>
+<tr class="memdesc:ac7510691bee8b061556e0ff2fb970d66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida o número do quarto.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:af9e3d35c4628940f3cb8019f639c4063" id="r_af9e3d35c4628940f3cb8019f639c4063"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9e3d35c4628940f3cb8019f639c4063">valor</a></td></tr>
-<tr class="memdesc:af9e3d35c4628940f3cb8019f639c4063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valor numérico armazenado como inteiro.  <br /></td></tr>
+<tr class="memdesc:af9e3d35c4628940f3cb8019f639c4063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número do quarto armazenado (1 a 999).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Representa um número inteiro válido de 1 a 999. </p>
-<p>A classe <a class="el" href="class_numero.html" title="Representa um número inteiro válido de 1 a 999.">Numero</a> é responsável por armazenar e validar números inteiros dentro de um intervalo específico. A validação inclui:</p><ul>
-<li>Intervalo de valores: 1 a 999 (inclusive)</li>
-<li>Apenas valores inteiros são aceitos</li>
-<li>Formatação de saída com 3 dígitos (ex: 001, 083, 999)</li>
+<div class="textblock"><p>Representa o número de um quarto. </p>
+<p>A classe <a class="el" href="class_numero.html" title="Representa o número de um quarto.">Numero</a> armazena e valida números de quartos dentro do intervalo permitido pelo sistema.</p>
+<p><b>FORMATO VÁLIDO:</b></p><ul>
+<li>Valores de 001 a 999</li>
 </ul>
-<p>A classe é útil para representar números que requerem formatação consistente, como códigos, identificadores ou valores numéricos com tamanho fixo.</p>
-<p>Exemplos de valores válidos:</p><ul>
-<li>1 (formatado como 001)</li>
-<li>83 (formatado como 083)</li>
-<li>999 (formatado como 999) </li>
+<p><b>REGRAS DE VALIDAÇÃO:</b></p><ul>
+<li>Valor mínimo: 1 (representado como 001)</li>
+<li>Valor máximo: 999</li>
+<li>Armazenado como inteiro (1 a 999)</li>
+<li>Exibido com 3 dígitos (001, 002, ..., 999)</li>
+</ul>
+<p><b>EXEMPLOS:</b></p><ul>
+<li>✅ Válido: 1 (exibido como 001)</li>
+<li>✅ Válido: 101 (quarto 101)</li>
+<li>✅ Válido: 999 (último quarto permitido)</li>
+<li>❌ Inválido: 0 (abaixo do mínimo)</li>
+<li>❌ Inválido: 1000 (acima do máximo)</li>
+<li>❌ Inválido: -5 (valor negativo)</li>
+</ul>
+<p><b>NOTA DE USO:</b></p><ul>
+<li>Cada quarto deve ter número único no sistema</li>
+<li>Números não utilizados podem ser reutilizados após exclusão</li>
+<li>O número é a chave primária do quarto </li>
 </ul>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="aed4ce4360e4b96e346d9fd0c4120f3b9" name="aed4ce4360e4b96e346d9fd0c4120f3b9"></a>
@@ -151,12 +163,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Obtém o número armazenado. </p>
+<p>Obtém o número do quarto. </p>
 <p>Implementação inline do método getValor.</p>
-<dl class="section return"><dt>Returns</dt><dd>int Número armazenado como inteiro</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Para obter o valor formatado com 3 dígitos, utilize funções de formatação na saída (ex: setw, setfill).</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>int Número armazenado</dd></dl>
-<p>Retorna o valor numérico armazenado internamente. Para formatação com zeros à esquerda, utilize: cout &lt;&lt; setw(3) &lt;&lt; setfill('0') &lt;&lt; numero.getValor() </p>
+<dl class="section return"><dt>Returns</dt><dd>int Número armazenado (1 a 999)</dd>
+<dd>
+int Número do quarto armazenado </dd></dl>
 
 </div>
 </div>
@@ -175,22 +186,31 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Define o número. </p>
+<p>Define o número do quarto. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">valor</td><td>Número inteiro a ser armazenado </td></tr>
+    <tr><td class="paramname">valor</td><td>Número do quarto (1 a 999) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">invalid_argument</td><td>Se o número for inválido (fora do intervalo 1-999)</td></tr>
+    <tr><td class="paramname">invalid_argument</td><td>Se o número estiver fora do intervalo</td></tr>
   </table>
   </dd>
 </dl>
-<p>Realiza a validação antes de armazenar o valor. Números fora do intervalo permitido resultam em exceção com mensagem descritiva do erro.</p>
-<dl class="section note"><dt>Note</dt><dd>O valor é armazenado como inteiro, mas pode ser formatado na saída com 3 dígitos quando necessário. </dd></dl>
-
+<p>Valida o número antes de armazenar. Se o número for inválido, lança exceção e o estado do objeto permanece inalterado.</p>
+<p>Exemplo de uso: </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_numero.html">Numero</a> numQuarto;</div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    numQuarto.<a class="code hl_function" href="#a9135951ce367e7651a63d36516c86db4">setValor</a>(101);</div>
+<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Quarto número: &quot;</span> &lt;&lt; numQuarto.<a class="code hl_function" href="#aed4ce4360e4b96e346d9fd0c4120f3b9">getValor</a>();</div>
+<div class="line">} <span class="keywordflow">catch</span> (invalid_argument&amp; e) {</div>
+<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Número inválido: &quot;</span> &lt;&lt; e.what();</div>
+<div class="line">}</div>
+<div class="ttc" id="aclass_numero_html"><div class="ttname"><a href="class_numero.html">Numero</a></div><div class="ttdoc">Representa o número de um quarto.</div><div class="ttdef"><b>Definition</b> numero.hpp:39</div></div>
+<div class="ttc" id="aclass_numero_html_a9135951ce367e7651a63d36516c86db4"><div class="ttname"><a href="#a9135951ce367e7651a63d36516c86db4">Numero::setValor</a></div><div class="ttdeci">void setValor(int)</div><div class="ttdoc">Define o número do quarto.</div><div class="ttdef"><b>Definition</b> numero.cpp:10</div></div>
+<div class="ttc" id="aclass_numero_html_aed4ce4360e4b96e346d9fd0c4120f3b9"><div class="ttname"><a href="#aed4ce4360e4b96e346d9fd0c4120f3b9">Numero::getValor</a></div><div class="ttdeci">int getValor()</div><div class="ttdoc">Obtém o número do quarto.</div><div class="ttdef"><b>Definition</b> numero.hpp:88</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="ac7510691bee8b061556e0ff2fb970d66" name="ac7510691bee8b061556e0ff2fb970d66"></a>
@@ -216,15 +236,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Valida o número conforme regras do domínio. </p>
+<p>Valida o número do quarto. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">valor</td><td>Número a ser validado </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true se o número for válido, false caso contrário</dd></dl>
-<p>Implementa a validação do número, verificando se está dentro do intervalo permitido (1 a 999 inclusive). Valores fora deste intervalo são considerados inválidos. </p>
+<dl class="section return"><dt>Returns</dt><dd>true se o número estiver entre 1 e 999, false caso contrário</dd></dl>
+<p>Verifica se o valor está no intervalo [1, 999]. </p>
 
 </div>
 </div>
@@ -249,7 +269,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Valor numérico armazenado como inteiro. </p>
+<p>Número do quarto armazenado (1 a 999). </p>
 
 </div>
 </div>

@@ -1,0 +1,86 @@
+\doxysection{Listar\+Quarto Class Reference}
+\hypertarget{class_listar_quarto}{}\label{class_listar_quarto}\index{ListarQuarto@{ListarQuarto}}
+
+
+Lista quartos de um hotel específico.  
+
+
+
+
+{\ttfamily \#include $<$listar\+Quarto.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static vector$<$ \mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_listar_quarto_a4b27933ffab8886f0d15d1d5e8293650}{listar\+\_\+quartos}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Lista todos os quartos de um hotel específico. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lista quartos de um hotel específico. 
+
+{\bfseries{Escopo de Listagem\+:}}
+\begin{DoxyItemize}
+\item Lista apenas quartos do hotel especificado
+\item Implementa isolamento de dados por hotel
+\item Lista pode incluir quartos em qualquer estado (disponível/ocupado/manutenção)
+\end{DoxyItemize}
+
+{\bfseries{Regra de Negócio\+:}}
+\begin{DoxyItemize}
+\item Quartos pertencem a um único hotel
+\item Lista completa independente do estado do quarto
+\item \doxylink{class_gerente}{Gerente} visualiza todos os quartos do seu hotel 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_listar_quarto_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_listar_quarto_a4b27933ffab8886f0d15d1d5e8293650}\index{ListarQuarto@{ListarQuarto}!listar\_quartos@{listar\_quartos}}
+\index{listar\_quartos@{listar\_quartos}!ListarQuarto@{ListarQuarto}}
+\doxysubsubsection{\texorpdfstring{listar\_quartos()}{listar\_quartos()}}
+{\footnotesize\ttfamily \label{class_listar_quarto_a4b27933ffab8886f0d15d1d5e8293650} 
+vector$<$ \mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*} $>$ Listar\+Quarto\+::listar\+\_\+quartos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lista todos os quartos de um hotel específico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Quarto\texorpdfstring{$\ast$}{*}$>$ Vetor com quartos do hotel
+\end{DoxyReturn}
+{\bfseries{Comportamento\+:}}
+\begin{DoxyEnumerate}
+\item Busca no container de quartos
+\item Filtra quartos onde quarto.\+hotel\+\_\+codigo == hotel.\+codigo
+\item Retorna lista completa de quartos do hotel
+\item Lista vazia se hotel não tem quartos cadastrados
+\end{DoxyEnumerate}
+
+{\bfseries{Estados Incluídos\+:}}
+\begin{DoxyItemize}
+\item Disponível (pronto para reserva)
+\item Ocupado (com reserva ativa)
+\item Manutenção (temporariamente indisponível)
+\end{DoxyItemize}
+
+{\bfseries{Exemplo de uso\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vector<Quarto*>\ quartos\ =\ \mbox{\hyperlink{class_listar_quarto_a4b27933ffab8886f0d15d1d5e8293650}{ListarQuarto::listar\_quartos}}(meuHotel);}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Total\ de\ quartos:\ "{}}\ <<\ quartos.size()\ <<\ endl;}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ q\ :\ quartos)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Quarto\ "{}}\ <<\ q-\/>getNumero()\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}}\ <<\ q-\/>getEstado()\ <<\ endl;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/servicos/listar/\mbox{\hyperlink{listar_quarto_8hpp}{listar\+Quarto.\+hpp}}\item 
+src/servicos/listar/\mbox{\hyperlink{listar_quarto_8cpp}{listar\+Quarto.\+cpp}}\end{DoxyCompactItemize}

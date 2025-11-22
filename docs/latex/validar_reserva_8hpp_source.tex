@@ -1,0 +1,34 @@
+\doxysection{validar\+Reserva.\+hpp}
+\hypertarget{validar_reserva_8hpp_source}{}\label{validar_reserva_8hpp_source}\index{include/servicos/validar/validarReserva.hpp@{include/servicos/validar/validarReserva.hpp}}
+\mbox{\hyperlink{validar_reserva_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ VALIDAR\_RESERVA\_HPP\_INCLUDED}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ VALIDAR\_RESERVA\_HPP\_INCLUDED}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{reserva_8hpp}{reserva.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{quarto_8hpp}{quarto.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{central_containers_8hpp}{centralContainers.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_validar_reserva}{ValidarReserva}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_validar_reserva_a469270d7195886ff5b631f80bfc25584}{verificarDisponibilidade}}(\textcolor{keywordtype}{int}\ numero\_quarto,\ \mbox{\hyperlink{class_data}{Data}}\ chegada,\ \mbox{\hyperlink{class_data}{Data}}\ partida,\ \textcolor{keywordtype}{string}\ codigo\_reserva\_atual\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_validar_reserva_a787acd41b41f3ba7a1761177bb6cb4fe}{calcularValorTotal}}(\mbox{\hyperlink{class_quarto}{Quarto}}*\ quarto,\ \mbox{\hyperlink{class_data}{Data}}\ chegada,\ \mbox{\hyperlink{class_data}{Data}}\ partida);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_validar_reserva_a2527bfa180c78a95e05d671592bad056}{calcularNumeroDias}}(\mbox{\hyperlink{class_data}{Data}}\ chegada,\ \mbox{\hyperlink{class_data}{Data}}\ partida);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_validar_reserva_af0eb79bfa300ed27d6b9d5575279b409}{compararDatas}}(\mbox{\hyperlink{class_data}{Data}}\ data1,\ \mbox{\hyperlink{class_data}{Data}}\ data2);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_validar_reserva_a9b1b5f6cdfbd7e61eff7ba5db6bb336b}{temConflitoData}}(\mbox{\hyperlink{class_data}{Data}}\ chegada1,\ \mbox{\hyperlink{class_data}{Data}}\ partida1,\ \mbox{\hyperlink{class_data}{Data}}\ chegada2,\ \mbox{\hyperlink{class_data}{Data}}\ partida2);}
+\DoxyCodeLine{00156\ \};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VALIDAR\_RESERVA\_HPP\_INCLUDED}}
+
+\end{DoxyCode}

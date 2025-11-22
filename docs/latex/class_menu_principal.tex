@@ -1,0 +1,77 @@
+\doxysection{Menu\+Principal Class Reference}
+\hypertarget{class_menu_principal}{}\label{class_menu_principal}\index{MenuPrincipal@{MenuPrincipal}}
+
+
+Classe responsável pelo menu inicial do sistema.  
+
+
+
+
+{\ttfamily \#include $<$Menu\+Principal.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_menu_principal_aafdfc6f584c095a2e933bb72f8d04228}{exibir}} ()
+\begin{DoxyCompactList}\small\item\em Exibe o menu principal e processa as opções do usuário. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_menu_principal_a2e5d9d7c6ff59d20dc0dfc230aff4b6f}{criar\+Conta}} ()
+\begin{DoxyCompactList}\small\item\em Processa a criação de uma nova conta de gerente. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_menu_principal_ab28c03e2945303a7f8083e137e1c105f}{fazer\+Login}} ()
+\begin{DoxyCompactList}\small\item\em Processa o login de um gerente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável pelo menu inicial do sistema. 
+
+Gerencia a tela inicial com opções de criar conta, fazer login e sair. Após login bem-\/sucedido, direciona para o menu do gerente. 
+
+\label{doc-func-members}
+\Hypertarget{class_menu_principal_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_menu_principal_a2e5d9d7c6ff59d20dc0dfc230aff4b6f}\index{MenuPrincipal@{MenuPrincipal}!criarConta@{criarConta}}
+\index{criarConta@{criarConta}!MenuPrincipal@{MenuPrincipal}}
+\doxysubsubsection{\texorpdfstring{criarConta()}{criarConta()}}
+{\footnotesize\ttfamily \label{class_menu_principal_a2e5d9d7c6ff59d20dc0dfc230aff4b6f} 
+void Menu\+Principal\+::criar\+Conta (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Processa a criação de uma nova conta de gerente. 
+
+\Hypertarget{class_menu_principal_aafdfc6f584c095a2e933bb72f8d04228}\index{MenuPrincipal@{MenuPrincipal}!exibir@{exibir}}
+\index{exibir@{exibir}!MenuPrincipal@{MenuPrincipal}}
+\doxysubsubsection{\texorpdfstring{exibir()}{exibir()}}
+{\footnotesize\ttfamily \label{class_menu_principal_aafdfc6f584c095a2e933bb72f8d04228} 
+void Menu\+Principal\+::exibir (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exibe o menu principal e processa as opções do usuário. 
+
+Menu principal com as opções\+:
+\begin{DoxyEnumerate}
+\item Criar conta (cadastrar novo gerente)
+\item Login (autenticar gerente existente)
+\item Sair (encerrar o sistema) 
+\end{DoxyEnumerate}\Hypertarget{class_menu_principal_ab28c03e2945303a7f8083e137e1c105f}\index{MenuPrincipal@{MenuPrincipal}!fazerLogin@{fazerLogin}}
+\index{fazerLogin@{fazerLogin}!MenuPrincipal@{MenuPrincipal}}
+\doxysubsubsection{\texorpdfstring{fazerLogin()}{fazerLogin()}}
+{\footnotesize\ttfamily \label{class_menu_principal_ab28c03e2945303a7f8083e137e1c105f} 
+\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*} Menu\+Principal\+::fazer\+Login (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Processa o login de um gerente. 
+
+\begin{DoxyReturn}{Returns}
+Ponteiro para o \doxylink{class_gerente}{Gerente} autenticado, ou nullptr se falhar 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/apresentacao/\mbox{\hyperlink{_menu_principal_8hpp}{Menu\+Principal.\+hpp}}\item 
+src/apresentacao/\mbox{\hyperlink{_menu_principal_8cpp}{Menu\+Principal.\+cpp}}\end{DoxyCompactItemize}

@@ -2,7 +2,7 @@
 \hypertarget{class_endereco}{}\label{class_endereco}\index{Endereco@{Endereco}}
 
 
-Representa um endereço textual válido de 5 a 30 caracteres.  
+Representa um endereço textual válido.  
 
 
 
@@ -20,30 +20,70 @@ string \mbox{\hyperlink{class_endereco_a372a9924dab060072b51d36f2a00c6a0}{get\+V
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{class_endereco_ae398e2c7dcee6e0db45ec4b49028ccb7}{validar}} (string)
-\begin{DoxyCompactList}\small\item\em Valida o endereço textual conforme regras do domínio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Valida o endereço textual. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{class_endereco_ac7aeac828fc38963d1b8b639c97244db}{texto}}
-\begin{DoxyCompactList}\small\item\em Texto do endereço armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Texto do endereço armazenado (5-\/30 caracteres). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Representa um endereço textual válido de 5 a 30 caracteres. 
+Representa um endereço textual válido. 
 
-A classe \doxylink{class_endereco}{Endereco} é responsável por armazenar e validar endereços textuais conforme regras específicas de formatação. A validação inclui\+:
+A classe \doxylink{class_endereco}{Endereco} armazena e valida endereços textuais com regras específicas de formatação e sequenciamento de caracteres.
+
+{\bfseries{FORMATO VÁ\+LIDO\+:}}
 \begin{DoxyItemize}
-\item Comprimento entre 5 e 30 caracteres
-\item Caracteres permitidos\+: letras (a-\/z, A-\/Z), dígitos (0-\/9), vírgula, ponto e espaço
-\item Restrições de sequência de caracteres
-\item Restrições para primeiro e último caractere
+\item Texto com 5 a 30 caracteres
 \end{DoxyItemize}
 
-Exemplos de endereços válidos\+:
+{\bfseries{CARACTERES PERMITIDOS\+:}}
 \begin{DoxyItemize}
-\item Rua das Flores, 123
-\item Av. Principal, 1000
-\item Praça da Sé, 25 
+\item Letra (a-\/z ou A-\/Z)
+\item Dígito (0-\/9)
+\item Vírgula (,)
+\item Ponto (.)
+\item Espaço em branco ( )
+\end{DoxyItemize}
+
+{\bfseries{REGRAS DE SEQUÊ\+NCIA\+:}}
+\begin{DoxyItemize}
+\item Vírgula NÃO pode ser seguida por vírgula ou ponto
+\item Ponto NÃO pode ser seguido por vírgula ou ponto
+\item Espaço em branco é seguido por letra ou dígito
+\item Primeiro caractere NÃO pode ser vírgula, ponto ou espaço em branco
+\item Último caractere NÃO pode ser vírgula, ponto ou espaço em branco
+\end{DoxyItemize}
+
+{\bfseries{EXEMPLOS\+:}}
+\begin{DoxyItemize}
+\item ✅ Válido\+: "{}\+Rua das Flores, 123"{}
+\item ✅ Válido\+: "{}\+Av. Principal 1000"{}
+\item ✅ Válido\+: "{}\+Praca da Se, 25"{}
+\item ✅ Válido\+: "{}\+Centro, Bloco A"{}
+\item ✅ Válido\+: "{}\+Quadra 10, Lote 5"{}
+\item ❌ Inválido\+: "{}\+Rua"{} (apenas 3 caracteres, mínimo é 5)
+\item ❌ Inválido\+: "{}\+Este endereco tem mais de trinta caracteres"{} (mais de 30)
+\item ❌ Inválido\+: "{},\+Rua das Flores"{} (começa com vírgula)
+\item ❌ Inválido\+: "{}\+Rua das Flores,"{} (termina com vírgula)
+\item ❌ Inválido\+: "{}\+Rua das Flores,, 123"{} (vírgula seguida de vírgula)
+\item ❌ Inválido\+: "{}\+Rua. Principal,. 123"{} (ponto seguido de vírgula)
+\item ❌ Inválido\+: "{}\+Rua  das Flores"{} (espaço seguido de espaço -\/ não está claro na spec)
+\item ❌ Inválido\+: "{} Rua das Flores"{} (começa com espaço)
+\item ❌ Inválido\+: "{}\+Rua das Flores "{} (termina com espaço)
+\item ❌ Inválido\+: "{}\+Rua \#10"{} (caractere especial \# não permitido)
+\end{DoxyItemize}
+
+{\bfseries{VALIDAÇÕ\+ES ESPECÍ\+FICAS\+:}}
+\begin{DoxyItemize}
+\item Comprimento entre 5 e 30 caracteres (inclusive)
+\item Apenas caracteres permitidos (a-\/z, A-\/Z, 0-\/9, vírgula, ponto, espaço)
+\item Vírgula → pode vir\+: letra, dígito, espaço (NÃO\+: vírgula, ponto)
+\item Ponto → pode vir\+: letra, dígito, espaço (NÃO\+: vírgula, ponto)
+\item Espaço → DEVE vir\+: letra ou dígito (NÃO\+: vírgula, ponto, espaço)
+\item Primeiro caractere\+: letra ou dígito
+\item Último caractere\+: letra ou dígito 
 \end{DoxyItemize}
 
 \label{doc-func-members}
@@ -62,7 +102,7 @@ Obtém o endereço armazenado.
 Implementação inline do método get\+Valor.
 
 \begin{DoxyReturn}{Returns}
-string Endereço no formato válido
+string Endereço no formato válido (5-\/30 caracteres)
 
 string Endereço armazenado 
 \end{DoxyReturn}
@@ -78,7 +118,7 @@ Define o endereço textual.
 
 
 \begin{DoxyParams}{Parameters}
-{\em texto} & Endereço em formato string \\
+{\em texto} & Endereço em formato string (5-\/30 caracteres) \\
 \hline
 \end{DoxyParams}
 
@@ -86,7 +126,20 @@ Define o endereço textual.
 {\em invalid\+\_\+argument} & Se o endereço for inválido\\
 \hline
 \end{DoxyExceptions}
-Realiza a validação completa antes de armazenar o valor. Endereços que não atendem às regras de validação resultam em exceção com mensagem descritiva do erro. \Hypertarget{class_endereco_ae398e2c7dcee6e0db45ec4b49028ccb7}\index{Endereco@{Endereco}!validar@{validar}}
+Realiza a validação completa antes de armazenar.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Endereco\ endHospede;}
+\DoxyCodeLine{\textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ endHospede.\mbox{\hyperlink{class_endereco_a189ec1b65353c9e32c3a127c8ed7b996}{setValor}}(\textcolor{stringliteral}{"{}Rua\ das\ Flores,\ 123"{}});}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Endereço\ válido:\ "{}}\ <<\ endHospede.\mbox{\hyperlink{class_endereco_a372a9924dab060072b51d36f2a00c6a0}{getValor}}();}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{catch}\ (invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Endereço\ inválido:\ "{}}\ <<\ e.what();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_endereco_ae398e2c7dcee6e0db45ec4b49028ccb7}\index{Endereco@{Endereco}!validar@{validar}}
 \index{validar@{validar}!Endereco@{Endereco}}
 \doxysubsubsection{\texorpdfstring{validar()}{validar()}}
 {\footnotesize\ttfamily \label{class_endereco_ae398e2c7dcee6e0db45ec4b49028ccb7} 
@@ -94,7 +147,7 @@ bool Endereco\+::validar (\begin{DoxyParamCaption}\item[{string}]{texto}{}\end{D
 
 
 
-Valida o endereço textual conforme regras do domínio. 
+Valida o endereço textual. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -104,15 +157,19 @@ Valida o endereço textual conforme regras do domínio.
 \begin{DoxyReturn}{Returns}
 true se o endereço for válido, false caso contrário
 \end{DoxyReturn}
-Implementa a validação completa do endereço, incluindo\+:
+Executa as seguintes validações\+:
+\begin{DoxyEnumerate}
+\item Verifica comprimento (5 a 30 caracteres)
+\item Valida caracteres permitidos (a-\/z, A-\/Z, 0-\/9, vírgula, ponto, espaço)
+\item Verifica primeiro caractere (não pode ser vírgula, ponto ou espaço)
+\item Verifica último caractere (não pode ser vírgula, ponto ou espaço)
+\item Valida sequências\+:
 \begin{DoxyItemize}
-\item Verificação de comprimento (5-\/30 caracteres)
-\item Validação de caracteres permitidos
-\item Restrições de sequência\+: vírgula não pode ser seguida por vírgula ou ponto
-\item Restrições de sequência\+: ponto não pode ser seguido por vírgula ou ponto
-\item Espaço em branco deve ser seguido por letra ou dígito
-\item Primeiro e último caractere não podem ser vírgula, ponto ou espaço 
+\item Vírgula não seguida de vírgula ou ponto
+\item Ponto não seguido de vírgula ou ponto
+\item Espaço seguido de letra ou dígito 
 \end{DoxyItemize}
+\end{DoxyEnumerate}
 
 \label{doc-variable-members}
 \Hypertarget{class_endereco_doc-variable-members}
@@ -125,7 +182,7 @@ string Endereco\+::texto\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Texto do endereço armazenado. 
+Texto do endereço armazenado (5-\/30 caracteres). 
 
 
 

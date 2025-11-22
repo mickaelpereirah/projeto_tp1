@@ -1,0 +1,280 @@
+\doxysection{Container\+Quarto Class Reference}
+\hypertarget{class_container_quarto}{}\label{class_container_quarto}\index{ContainerQuarto@{ContainerQuarto}}
+
+
+Container para armazenar e gerenciar quartos do sistema.  
+
+
+
+
+{\ttfamily \#include $<$container\+Quartos.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_container_quarto_a1e8a66a2e5eded1e1c8bc06abc7e8473}{incluir}} (\mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*}, string codigo\+\_\+hotel)
+\begin{DoxyCompactList}\small\item\em Inclui um novo quarto no container associado a um hotel. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_container_quarto_a4ca261b593eca355b1a20065cc01d912}{remover}} (int numero)
+\begin{DoxyCompactList}\small\item\em Remove um quarto específico do container. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_container_quarto_a89dabe6e62a21c53a46ce09913888251}{remover\+Todos\+Por\+Hotel}} (string codigo\+\_\+hotel)
+\begin{DoxyCompactList}\small\item\em Remove TODOS os quartos de um hotel específico. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_container_quarto_a8cd4863b4c48755045aa9b6796d5d53e}{pesquisar}} (string codigo\+\_\+hotel)
+\begin{DoxyCompactList}\small\item\em Busca todos os quartos de um hotel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_container_quarto_a0c16e2d578206a12def13953ea7dcfc2}{pesquisar\+Por\+Numero}} (int numero)
+\begin{DoxyCompactList}\small\item\em Busca um quarto específico por número. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_container_quarto_a96446fae64a76aa687ab837aff898189}{atualizar}} (\mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Atualiza os dados de um quarto existente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unordered\+\_\+map$<$ string, vector$<$ \mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{class_container_quarto_aae203d8895e6946877c9e40c1bc4be43}{container}}
+\begin{DoxyCompactList}\small\item\em Mapa hash para armazenar quartos agrupados por hotel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container para armazenar e gerenciar quartos do sistema. 
+
+Esta classe implementa um container para armazenamento em memória de objetos do tipo \doxylink{class_quarto}{Quarto}. Utiliza uma estrutura de unordered\+\_\+map onde a chave é o código do hotel e o valor é um vector de quartos, permitindo que cada hotel possua múltiplos quartos (relacionamento 1\+:N).
+
+Características principais\+:
+\begin{DoxyItemize}
+\item Um hotel pode ter vários quartos
+\item Cada quarto possui número único no sistema (001-\/999)
+\item Busca por hotel retorna todos os seus quartos
+\item Busca por número retorna quarto específico
+\item Permite remoção de quarto individual ou de todos os quartos de um hotel
+\end{DoxyItemize}
+
+Estrutura de dados\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{unordered\_map<string,\ vector<Quarto*>>}
+\DoxyCodeLine{\ \ \ \ Chave:\ código\ \textcolor{keywordflow}{do}\ hotel}
+\DoxyCodeLine{\ \ \ \ Valor:\ vector\ com\ todos\ os\ quartos\ deste\ hotel}
+
+\end{DoxyCode}
+
+
+Regras de negócio\+:
+\begin{DoxyItemize}
+\item Número do quarto\+: 001 a 999
+\item \doxylink{class_capacidade}{Capacidade}\+: 1, 2, 3 ou 4 pessoas
+\item Diária\+: 0.\+01 a 1.\+000.\+000,00
+\item \doxylink{class_ramal}{Ramal}\+: 00 a 50 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_container_quarto_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_container_quarto_a96446fae64a76aa687ab837aff898189}\index{ContainerQuarto@{ContainerQuarto}!atualizar@{atualizar}}
+\index{atualizar@{atualizar}!ContainerQuarto@{ContainerQuarto}}
+\doxysubsubsection{\texorpdfstring{atualizar()}{atualizar()}}
+{\footnotesize\ttfamily \label{class_container_quarto_a96446fae64a76aa687ab837aff898189} 
+bool Container\+Quarto\+::atualizar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*}}]{quarto\+\_\+atualizado}{}\end{DoxyParamCaption})}
+
+
+
+Atualiza os dados de um quarto existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quarto} & Ponteiro para o quarto com dados atualizados \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se atualizado com sucesso, false se não encontrado
+\end{DoxyReturn}
+Busca o quarto pelo número e substitui o ponteiro no vector. O número do quarto NÃO pode ser alterado (é a chave primária).
+
+Pode atualizar\+: capacidade, diária e ramal.
+
+IMPORTANTE\+: O ponteiro antigo não é liberado. Se necessário, faça delete antes de atualizar para evitar memory leak.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Quarto*\ q\ =\ \mbox{\hyperlink{class_container_quarto_aae203d8895e6946877c9e40c1bc4be43}{container}}.pesquisarPorNumero(101);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(q\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\ \ \ \ Capacidade\ novaCapacidade;}
+\DoxyCodeLine{\ \ \ \ novaCapacidade.\mbox{\hyperlink{class_capacidade_a8da632e9051370ca5f172911a839197a}{setValor}}(4);}
+\DoxyCodeLine{\ \ \ \ q-\/>\mbox{\hyperlink{class_quarto_aa192e47c3f1e6384fb025db27aff82b8}{setCapacidade}}(novaCapacidade);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_container_quarto_aae203d8895e6946877c9e40c1bc4be43}{container}}.atualizar(q);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_quarto_a1e8a66a2e5eded1e1c8bc06abc7e8473}\index{ContainerQuarto@{ContainerQuarto}!incluir@{incluir}}
+\index{incluir@{incluir}!ContainerQuarto@{ContainerQuarto}}
+\doxysubsubsection{\texorpdfstring{incluir()}{incluir()}}
+{\footnotesize\ttfamily \label{class_container_quarto_a1e8a66a2e5eded1e1c8bc06abc7e8473} 
+bool Container\+Quarto\+::incluir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*}}]{quarto}{, }\item[{string}]{codigo\+\_\+hotel}{}\end{DoxyParamCaption})}
+
+
+
+Inclui um novo quarto no container associado a um hotel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em quarto} & Ponteiro para o quarto a ser incluído \\
+\hline
+{\em codigo\+\_\+hotel} & Código do hotel ao qual o quarto pertence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se incluído com sucesso, false se o número já existe
+\end{DoxyReturn}
+O número do quarto deve ser único no sistema. Se já existir um quarto com o mesmo número (mesmo em outro hotel), a operação falha.
+
+Validações realizadas\+:
+\begin{DoxyItemize}
+\item Número do quarto único (001-\/999)
+\item \doxylink{class_capacidade}{Capacidade} válida (1, 2, 3 ou 4)
+\item Diária válida (0.\+01 a 1.\+000.\+000,00)
+\item \doxylink{class_ramal}{Ramal} válido (00 a 50)
+\end{DoxyItemize}
+
+Se o hotel ainda não possui quartos, cria uma nova entrada no map.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Quarto*\ q\ =\ \textcolor{keyword}{new}\ Quarto();}
+\DoxyCodeLine{q-\/>\mbox{\hyperlink{class_quarto_af9154549817ef36125bf3b3dfb8adeba}{setNumero}}(numero);}
+\DoxyCodeLine{q-\/>\mbox{\hyperlink{class_quarto_aa192e47c3f1e6384fb025db27aff82b8}{setCapacidade}}(capacidade);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(\mbox{\hyperlink{class_container_quarto_aae203d8895e6946877c9e40c1bc4be43}{container}}.incluir(q,\ \textcolor{stringliteral}{"{}HTL0001"{}}))\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Quarto\ incluído\ com\ sucesso"{}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_quarto_a8cd4863b4c48755045aa9b6796d5d53e}\index{ContainerQuarto@{ContainerQuarto}!pesquisar@{pesquisar}}
+\index{pesquisar@{pesquisar}!ContainerQuarto@{ContainerQuarto}}
+\doxysubsubsection{\texorpdfstring{pesquisar()}{pesquisar()}}
+{\footnotesize\ttfamily \label{class_container_quarto_a8cd4863b4c48755045aa9b6796d5d53e} 
+vector$<$ \mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*} $>$ Container\+Quarto\+::pesquisar (\begin{DoxyParamCaption}\item[{string}]{codigo\+\_\+hotel}{}\end{DoxyParamCaption})}
+
+
+
+Busca todos os quartos de um hotel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em codigo\+\_\+hotel} & Código do hotel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector com ponteiros para todos os quartos do hotel
+\end{DoxyReturn}
+Se o hotel não possui quartos, retorna vector vazio. Complexidade\+: O(1) para acessar o vector do hotel
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vector<Quarto*>\ quartos\ =\ \mbox{\hyperlink{class_container_quarto_aae203d8895e6946877c9e40c1bc4be43}{container}}.pesquisar(\textcolor{stringliteral}{"{}HTL0001"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(quartos.empty())\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Hotel\ não\ possui\ quartos\ cadastrados"{}};}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Total\ de\ quartos:\ "{}}\ <<\ quartos.size();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(Quarto*\ q\ :\ quartos)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Quarto\ "{}}\ <<\ q-\/>getNumero().getValor();}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_quarto_a0c16e2d578206a12def13953ea7dcfc2}\index{ContainerQuarto@{ContainerQuarto}!pesquisarPorNumero@{pesquisarPorNumero}}
+\index{pesquisarPorNumero@{pesquisarPorNumero}!ContainerQuarto@{ContainerQuarto}}
+\doxysubsubsection{\texorpdfstring{pesquisarPorNumero()}{pesquisarPorNumero()}}
+{\footnotesize\ttfamily \label{class_container_quarto_a0c16e2d578206a12def13953ea7dcfc2} 
+\mbox{\hyperlink{class_quarto}{Quarto}} \texorpdfstring{$\ast$}{*} Container\+Quarto\+::pesquisar\+Por\+Numero (\begin{DoxyParamCaption}\item[{int}]{numero}{}\end{DoxyParamCaption})}
+
+
+
+Busca um quarto específico por número. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numero} & Número do quarto a ser buscado (001-\/999) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o quarto encontrado ou nullptr se não existir
+\end{DoxyReturn}
+Busca em todos os vetores de todos os hotéis até encontrar o quarto com o número especificado. Complexidade\+: O(n\texorpdfstring{$\ast$}{*}m) onde n = número de hotéis e m = média de quartos por hotel
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Quarto*\ q\ =\ \mbox{\hyperlink{class_container_quarto_aae203d8895e6946877c9e40c1bc4be43}{container}}.pesquisarPorNumero(101);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(q\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Quarto\ "{}}\ <<\ q-\/>\mbox{\hyperlink{class_quarto_a787720be6e92478270399d5e37099c68}{getNumero}}().\mbox{\hyperlink{class_numero_aed4ce4360e4b96e346d9fd0c4120f3b9}{getValor}}();}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\ -\/\ Diária:\ R\$\ "{}}\ <<\ q-\/>\mbox{\hyperlink{class_quarto_ab9e00005ade541ec761470be5d45bd7d}{getDinheiro}}().\mbox{\hyperlink{class_dinheiro_ad9fceec690a0d1f4930ce2822788c8d0}{getValor}}();}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Quarto\ não\ encontrado"{}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_quarto_a4ca261b593eca355b1a20065cc01d912}\index{ContainerQuarto@{ContainerQuarto}!remover@{remover}}
+\index{remover@{remover}!ContainerQuarto@{ContainerQuarto}}
+\doxysubsubsection{\texorpdfstring{remover()}{remover()}}
+{\footnotesize\ttfamily \label{class_container_quarto_a4ca261b593eca355b1a20065cc01d912} 
+bool Container\+Quarto\+::remover (\begin{DoxyParamCaption}\item[{int}]{numero}{}\end{DoxyParamCaption})}
+
+
+
+Remove um quarto específico do container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numero} & Número do quarto a ser removido (001-\/999) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removido com sucesso, false se não encontrado
+\end{DoxyReturn}
+Busca o quarto em todos os vetores de hotéis pelo número e remove. Se era o único quarto do hotel, remove a entrada do hotel do map.
+
+ATENÇÃO\+: Esta operação não verifica se há reservas associadas ao quarto. O chamador deve garantir integridade referencial antes de remover.
+
+IMPORTANTE\+: Não libera a memória do objeto \doxylink{class_quarto}{Quarto}. O chamador deve fazer delete do ponteiro se necessário. \Hypertarget{class_container_quarto_a89dabe6e62a21c53a46ce09913888251}\index{ContainerQuarto@{ContainerQuarto}!removerTodosPorHotel@{removerTodosPorHotel}}
+\index{removerTodosPorHotel@{removerTodosPorHotel}!ContainerQuarto@{ContainerQuarto}}
+\doxysubsubsection{\texorpdfstring{removerTodosPorHotel()}{removerTodosPorHotel()}}
+{\footnotesize\ttfamily \label{class_container_quarto_a89dabe6e62a21c53a46ce09913888251} 
+bool Container\+Quarto\+::remover\+Todos\+Por\+Hotel (\begin{DoxyParamCaption}\item[{string}]{codigo\+\_\+hotel}{}\end{DoxyParamCaption})}
+
+
+
+Remove TODOS os quartos de um hotel específico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em codigo\+\_\+hotel} & Código do hotel cujos quartos serão removidos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removido com sucesso, false se hotel não encontrado
+\end{DoxyReturn}
+Útil quando um hotel é excluído do sistema -\/ remove todos os seus quartos de uma vez para manter integridade referencial.
+
+ATENÇÃO\+: Deve verificar se há reservas nos quartos antes de remover.
+
+IMPORTANTE\+: Não libera a memória dos objetos \doxylink{class_quarto}{Quarto}. O chamador deve iterar pelos quartos e fazer delete de cada um se necessário. 
+
+\label{doc-variable-members}
+\Hypertarget{class_container_quarto_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_container_quarto_aae203d8895e6946877c9e40c1bc4be43}\index{ContainerQuarto@{ContainerQuarto}!container@{container}}
+\index{container@{container}!ContainerQuarto@{ContainerQuarto}}
+\doxysubsubsection{\texorpdfstring{container}{container}}
+{\footnotesize\ttfamily \label{class_container_quarto_aae203d8895e6946877c9e40c1bc4be43} 
+unordered\+\_\+map$<$string, vector$<$\mbox{\hyperlink{class_quarto}{Quarto}}\texorpdfstring{$\ast$}{*}$>$ $>$ Container\+Quarto\+::container\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapa hash para armazenar quartos agrupados por hotel. 
+
+Chave\+: Código do hotel (string) Valor\+: Vector de ponteiros para quartos deste hotel
+
+Esta estrutura permite\+:
+\begin{DoxyItemize}
+\item Buscar todos os quartos de um hotel em O(1)
+\item Adicionar novos quartos a um hotel existente
+\item Remover todos os quartos de um hotel de uma vez 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/containers/\mbox{\hyperlink{container_quartos_8hpp}{container\+Quartos.\+hpp}}\item 
+src/containers/\mbox{\hyperlink{container_quartos_8cpp}{container\+Quartos.\+cpp}}\end{DoxyCompactItemize}

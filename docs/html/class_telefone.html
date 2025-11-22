@@ -92,7 +92,7 @@ $(function(){initNavTree('class_telefone.html','','class_telefone-members'); });
 </div><!--header-->
 <div class="contents">
 
-<p>Representa um número de telefone internacional válido.  
+<p>Representa um número de telefone internacional.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="telefone_8hpp_source.html">telefone.hpp</a>&gt;</code></p>
@@ -107,26 +107,70 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a32743a4965d46d33d72cdcdd2c1f1180" id="r_a32743a4965d46d33d72cdcdd2c1f1180"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32743a4965d46d33d72cdcdd2c1f1180">validar</a> (string)</td></tr>
-<tr class="memdesc:a32743a4965d46d33d72cdcdd2c1f1180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida o número de telefone conforme formato internacional.  <br /></td></tr>
+<tr class="memdesc:a32743a4965d46d33d72cdcdd2c1f1180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida o número de telefone.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a8e0b7b0e590d390a7efe99aa0d808ede" id="r_a8e0b7b0e590d390a7efe99aa0d808ede"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e0b7b0e590d390a7efe99aa0d808ede">texto</a></td></tr>
-<tr class="memdesc:a8e0b7b0e590d390a7efe99aa0d808ede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número de telefone armazenado como string.  <br /></td></tr>
+<tr class="memitem:aaa01f89956847eb15f384377ec4d1239" id="r_aaa01f89956847eb15f384377ec4d1239"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa01f89956847eb15f384377ec4d1239">numero</a></td></tr>
+<tr class="memdesc:aaa01f89956847eb15f384377ec4d1239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número de telefone armazenado (+DDDDDDDDDDDDDD).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Representa um número de telefone internacional válido. </p>
-<p>A classe <a class="el" href="class_telefone.html" title="Representa um número de telefone internacional válido.">Telefone</a> é responsável por armazenar e validar números de telefone no formato internacional padrão. A validação inclui:</p><ul>
-<li>Comprimento fixo de 14 caracteres total</li>
-<li>Formato: '+' seguido de 13 dígitos</li>
-<li>Primeiro caractere deve ser '+'</li>
-<li>Os 13 caracteres restantes devem ser apenas dígitos (0-9)</li>
-<li>Compatível com números internacionais reais</li>
+<div class="textblock"><p>Representa um número de telefone internacional. </p>
+<p>A classe <a class="el" href="class_telefone.html" title="Representa um número de telefone internacional.">Telefone</a> armazena e valida números telefônicos no formato internacional, começando com símbolo de adição (+) seguido por dígitos.</p>
+<p><b>FORMATO VÁLIDO:</b></p><ul>
+<li>+DDDDDDDDDDDDDD</li>
+<li>D é dígito (0-9)</li>
 </ul>
-<p>Exemplos de números válidos:</p><ul>
-<li>+5561999999999 (Brasil: +55 61 99999-9999)</li>
-<li>+5511999999999 (Brasil: +55 11 99999-9999)</li>
-<li>+1234567890123 (Exemplo internacional) </li>
+<p><b>REGRAS DE VALIDAÇÃO:</b></p><ul>
+<li>Deve começar com o símbolo + (mais)</li>
+<li>Seguido por exatamente 14 dígitos (0-9)</li>
+<li>Não são permitidos:<ul>
+<li>Espaços em branco</li>
+<li>Parênteses</li>
+<li>Hífens ou outros separadores</li>
+<li>Letras ou caracteres especiais (exceto o + inicial)</li>
+</ul>
+</li>
+<li>Total: 15 caracteres (1 símbolo + e 14 dígitos)</li>
+</ul>
+<p><b>ESTRUTURA TÍPICA:</b></p><ul>
+<li>Código do país: 1-3 dígitos (ex: +55 para Brasil)</li>
+<li>Código de área: 2 dígitos (ex: 61 para Brasília)</li>
+<li>Número: restante dos dígitos</li>
+</ul>
+<p><b>EXEMPLOS:</b></p><ul>
+<li>✅ Válido: "+55619876543210" (Brasil, Brasília)</li>
+<li>✅ Válido: "+12025551234000" (EUA)</li>
+<li>✅ Válido: "+44207946000000" (Reino Unido)</li>
+<li>✅ Válido: "+00000000000000" (número de teste)</li>
+<li>❌ Inválido: "55619876543210" (falta o símbolo +)</li>
+<li>❌ Inválido: "+5561987654321" (apenas 13 dígitos, precisa de 14)</li>
+<li>❌ Inválido: "+556198765432100" (15 dígitos, precisa de 14)</li>
+<li>❌ Inválido: "+55 61 98765 4321" (contém espaços)</li>
+<li>❌ Inválido: "+55-61-98765-4321" (contém hífens)</li>
+<li>❌ Inválido: "+55(61)987654321" (contém parênteses)</li>
+<li>❌ Inválido: "55-61-98765-4321" (falta + e tem hífens)</li>
+<li>❌ Inválido: "+5561987654321a" (contém letra)</li>
+</ul>
+<p><b>EXEMPLOS POR PAÍS:</b> </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">País  </th><th class="markdownTableHeadNone">Código  </th><th class="markdownTableHeadNone">Exemplo Completo  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Brasil  </td><td class="markdownTableBodyNone">+55  </td><td class="markdownTableBodyNone">+55619876543210  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">EUA  </td><td class="markdownTableBodyNone">+1  </td><td class="markdownTableBodyNone">+12025551234000  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Reino Unido  </td><td class="markdownTableBodyNone">+44  </td><td class="markdownTableBodyNone">+44207946000000  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Argentina  </td><td class="markdownTableBodyNone">+54  </td><td class="markdownTableBodyNone">+54119876543210  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Portugal  </td><td class="markdownTableBodyNone">+351  </td><td class="markdownTableBodyNone">+35121234567800  </td></tr>
+</table>
+<p><b>NOTA TÉCNICA:</b></p><ul>
+<li>O formato é simplificado para fins educacionais</li>
+<li>Em sistemas reais, validação de telefone é mais complexa</li>
+<li>Não verifica se o código do país ou formato específico são válidos</li>
+<li>Apenas garante: + seguido de 14 dígitos </li>
 </ul>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="aea95f28a8b57a433ec07c8be27af05a0" name="aea95f28a8b57a433ec07c8be27af05a0"></a>
@@ -154,10 +198,9 @@ Private Attributes</h2></td></tr>
 
 <p>Obtém o número de telefone armazenado. </p>
 <p>Implementação inline do método getValor.</p>
-<dl class="section return"><dt>Returns</dt><dd>string Número de telefone no formato internacional</dd></dl>
-<p>Retorna o número no formato padrão internacional pronto para uso em sistemas de telefonia ou exibição.</p>
-<dl class="section return"><dt>Returns</dt><dd>string Número de telefone armazenado</dd></dl>
-<p>Retorna o número de telefone armazenado internamente no formato internacional padrão. </p>
+<dl class="section return"><dt>Returns</dt><dd>string Número de telefone no formato +DDDDDDDDDDDDDD</dd>
+<dd>
+string Número de telefone armazenado </dd></dl>
 
 </div>
 </div>
@@ -179,19 +222,28 @@ Private Attributes</h2></td></tr>
 <p>Define o número de telefone. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">texto</td><td>Número de telefone em formato string </td></tr>
+    <tr><td class="paramname">numero</td><td>Número em formato string (+DDDDDDDDDDDDDD) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">invalid_argument</td><td>Se o telefone for inválido</td></tr>
+    <tr><td class="paramname">invalid_argument</td><td>Se o número for inválido</td></tr>
   </table>
   </dd>
 </dl>
-<p>Realiza a validação completa antes de armazenar o valor. Números de telefone que não atendem ao formato internacional padrão resultam em exceção com mensagem descritiva do erro.</p>
-<dl class="section note"><dt>Note</dt><dd>O formato aceito é estritamente internacional: '+' seguido de 13 dígitos, sem espaços, hífens ou parênteses. </dd></dl>
-
+<p>Realiza a validação completa antes de armazenar. O número deve estar no formato internacional completo.</p>
+<p>Exemplo de uso: </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_telefone.html">Telefone</a> telHotel;</div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    telHotel.<a class="code hl_function" href="#acda75eb982b4e867380983fb4661bd46">setValor</a>(<span class="stringliteral">&quot;+55619876543210&quot;</span>);</div>
+<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Telefone válido: &quot;</span> &lt;&lt; telHotel.<a class="code hl_function" href="#aea95f28a8b57a433ec07c8be27af05a0">getValor</a>();</div>
+<div class="line">} <span class="keywordflow">catch</span> (invalid_argument&amp; e) {</div>
+<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Telefone inválido: &quot;</span> &lt;&lt; e.what();</div>
+<div class="line">}</div>
+<div class="ttc" id="aclass_telefone_html"><div class="ttname"><a href="class_telefone.html">Telefone</a></div><div class="ttdoc">Representa um número de telefone internacional.</div><div class="ttdef"><b>Definition</b> telefone.hpp:69</div></div>
+<div class="ttc" id="aclass_telefone_html_acda75eb982b4e867380983fb4661bd46"><div class="ttname"><a href="#acda75eb982b4e867380983fb4661bd46">Telefone::setValor</a></div><div class="ttdeci">void setValor(string)</div><div class="ttdoc">Define o número de telefone.</div><div class="ttdef"><b>Definition</b> telefone.cpp:30</div></div>
+<div class="ttc" id="aclass_telefone_html_aea95f28a8b57a433ec07c8be27af05a0"><div class="ttname"><a href="#aea95f28a8b57a433ec07c8be27af05a0">Telefone::getValor</a></div><div class="ttdeci">string getValor()</div><div class="ttdoc">Obtém o número de telefone armazenado.</div><div class="ttdef"><b>Definition</b> telefone.hpp:122</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="a32743a4965d46d33d72cdcdd2c1f1180" name="a32743a4965d46d33d72cdcdd2c1f1180"></a>
@@ -217,26 +269,26 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Valida o número de telefone conforme formato internacional. </p>
+<p>Valida o número de telefone. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">texto</td><td>Número de telefone a ser validado </td></tr>
+    <tr><td class="paramname">numero</td><td>Número a ser validado </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true se o telefone for válido, false caso contrário</dd></dl>
-<p>Implementa a validação completa do telefone, incluindo:</p><ul>
-<li>Verificação de comprimento total (14 caracteres)</li>
-<li>Primeiro caractere deve ser '+'</li>
-<li>Os 13 caracteres restantes devem ser dígitos (0-9)</li>
-<li>Validação de formato internacional padrão </li>
-</ul>
+<dl class="section return"><dt>Returns</dt><dd>true se o número for válido, false caso contrário</dd></dl>
+<p>Executa as seguintes validações:</p><ol type="1">
+<li>Verifica se tem exatamente 15 caracteres (+ e 14 dígitos)</li>
+<li>Verifica se o primeiro caractere é '+'</li>
+<li>Verifica se os 14 caracteres seguintes são todos dígitos (0-9)</li>
+<li>Garante que não há espaços, parênteses ou outros caracteres </li>
+</ol>
 
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="a8e0b7b0e590d390a7efe99aa0d808ede" name="a8e0b7b0e590d390a7efe99aa0d808ede"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e0b7b0e590d390a7efe99aa0d808ede">&#9670;&#160;</a></span>texto</h2>
+<a id="aaa01f89956847eb15f384377ec4d1239" name="aaa01f89956847eb15f384377ec4d1239"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa01f89956847eb15f384377ec4d1239">&#9670;&#160;</a></span>numero</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,7 +297,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string Telefone::texto</td>
+          <td class="memname">string Telefone::numero</td>
         </tr>
       </table>
   </td>
@@ -255,7 +307,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Número de telefone armazenado como string. </p>
+<p>Número de telefone armazenado (+DDDDDDDDDDDDDD). </p>
 
 </div>
 </div>

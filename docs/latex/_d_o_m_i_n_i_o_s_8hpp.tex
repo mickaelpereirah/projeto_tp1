@@ -1,14 +1,86 @@
 \doxysection{include/dominios/\+DOMINIOS.hpp File Reference}
 \hypertarget{_d_o_m_i_n_i_o_s_8hpp}{}\label{_d_o_m_i_n_i_o_s_8hpp}\index{include/dominios/DOMINIOS.hpp@{include/dominios/DOMINIOS.hpp}}
-{\ttfamily \#include "{}cartao.\+hpp"{}}\newline
+
+
+Arquivo de inclusão central para todos os domínios do sistema.  
+
+
 {\ttfamily \#include "{}capacidade.\+hpp"{}}\newline
+{\ttfamily \#include "{}cartao.\+hpp"{}}\newline
 {\ttfamily \#include "{}codigo.\+hpp"{}}\newline
 {\ttfamily \#include "{}data.\+hpp"{}}\newline
 {\ttfamily \#include "{}dinheiro.\+hpp"{}}\newline
+{\ttfamily \#include "{}email.\+hpp"{}}\newline
 {\ttfamily \#include "{}endereco.\+hpp"{}}\newline
 {\ttfamily \#include "{}nome.\+hpp"{}}\newline
 {\ttfamily \#include "{}numero.\+hpp"{}}\newline
 {\ttfamily \#include "{}ramal.\+hpp"{}}\newline
 {\ttfamily \#include "{}senha.\+hpp"{}}\newline
 {\ttfamily \#include "{}telefone.\+hpp"{}}\newline
-{\ttfamily \#include "{}email.\+hpp"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+Arquivo de inclusão central para todos os domínios do sistema. 
+
+Este arquivo header agrupa todos os domínios do sistema em um único ponto de inclusão, facilitando o uso dos domínios em outros módulos. Basta incluir este arquivo para ter acesso a todos os domínios disponíveis.
+
+{\bfseries{DOMÍ\+NIOS INCLUÍ\+DOS\+:}}
+
+
+\begin{DoxyTable}{3}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Domínio  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Formato Válido  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Uso  \\
+\doxylink{class_capacidade}{Capacidade}  &1, 2, 3 ou 4  &\doxylink{class_capacidade}{Capacidade} de pessoas  \\
+\doxylink{class_cartao}{Cartao}  &16 dígitos + Luhn  &Cartão de crédito  \\
+\doxylink{class_codigo}{Codigo}  &10 caracteres alfanuméricos  &Identificador único  \\
+\doxylink{class_data}{Data}  &DD-\/\+MMM-\/\+AAAA (2000-\/2999)  &Datas de reserva  \\
+\doxylink{class_dinheiro}{Dinheiro}  &0,01 a 1.\+000.\+000,00  &Valores monetários  \\
+\doxylink{class_email}{Email}  &parte-\/local@dominio  &\doxylink{class_email}{Email} de usuários  \\
+\doxylink{class_endereco}{Endereco}  &5-\/30 caracteres  &Endereço textual  \\
+\doxylink{class_nome}{Nome}  &5-\/20 caracteres, capitalizado  &\doxylink{class_nome}{Nome} pessoal  \\
+\doxylink{class_numero}{Numero}  &001 a 999  &Número de quarto  \\
+\doxylink{class_ramal}{Ramal}  &00 a 50  &\doxylink{class_ramal}{Ramal} telefônico  \\
+\doxylink{class_senha}{Senha}  &5 caracteres com requisitos  &\doxylink{class_senha}{Senha} de acesso  \\
+\doxylink{class_telefone}{Telefone}  &+DDDDDDDDDDDDDD  &\doxylink{class_telefone}{Telefone} internacional  \\
+\end{DoxyTable}
+
+
+{\bfseries{PRINCÍ\+PIOS DOS DOMÍ\+NIOS\+:}}
+
+Todos os domínios seguem os mesmos princípios de design\+:
+\begin{DoxyEnumerate}
+\item {\bfseries{Encapsulamento}}\+: Atributo privado, acesso via métodos públicos
+\item {\bfseries{Validação rigorosa}}\+: set\+Valor() valida antes de armazenar
+\item {\bfseries{Exceções}}\+: Lançam invalid\+\_\+argument se valor inválido
+\item {\bfseries{Imutabilidade controlada}}\+: Valor só muda via set\+Valor()
+\item {\bfseries{Inline getters}}\+: Métodos get\+Valor() implementados inline para performance
+\end{DoxyEnumerate}
+
+{\bfseries{EXEMPLO DE USO\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_d_o_m_i_n_i_o_s_8hpp}{DOMINIOS.hpp}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Criar\ e\ validar\ um\ email}}
+\DoxyCodeLine{\mbox{\hyperlink{class_email}{Email}}\ emailGerente;}
+\DoxyCodeLine{\textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ emailGerente.\mbox{\hyperlink{class_email_a1ae8e06dc7ed37d74c9223c4e5ade734}{setValor}}(\textcolor{stringliteral}{"{}gerente@hotel.com"{}});}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{catch}\ (invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Email\ inválido:\ "{}}\ <<\ e.what();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Criar\ e\ validar\ uma\ data}}
+\DoxyCodeLine{\mbox{\hyperlink{class_data}{Data}}\ dataReserva;}
+\DoxyCodeLine{\textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ dataReserva.\mbox{\hyperlink{class_data_aee3a6598533a28a3f446c5f8ecb63c0f}{setValor}}(\textcolor{stringliteral}{"{}15-\/JAN-\/2024"{}});}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{catch}\ (invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Data\ inválida:\ "{}}\ <<\ e.what();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+{\bfseries{NOTA DE IMPLEMENTAÇÃO\+:}}
+\begin{DoxyItemize}
+\item Nas implementações dos códigos de validação não é considerada acentuação nem letra ç
+\item Todos os domínios usam apenas caracteres ASCII básicos
+\item Validações seguem rigorosamente a especificação do sistema 
+\end{DoxyItemize}

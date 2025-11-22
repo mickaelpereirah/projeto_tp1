@@ -1,0 +1,140 @@
+\doxysection{Listar\+Hospede Class Reference}
+\hypertarget{class_listar_hospede}{}\label{class_listar_hospede}\index{ListarHospede@{ListarHospede}}
+
+
+Lista hóspedes cadastrados no sistema.  
+
+
+
+
+{\ttfamily \#include $<$listar\+Hospede.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static vector$<$ \mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_listar_hospede_aa18436fb0263def6c7c6788eca1be5c7}{listar\+\_\+todos\+\_\+hospedes}} ()
+\begin{DoxyCompactList}\small\item\em Lista TODOS os hóspedes cadastrados no sistema. \end{DoxyCompactList}\item 
+static vector$<$ \mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_listar_hospede_abaa5c76c7a0839875b64ecdeac2b463f}{listar\+\_\+hospedes\+\_\+por\+\_\+hotel}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Lista hóspedes que TEM RESERVAS em hotel específico. \end{DoxyCompactList}\item 
+static vector$<$ \mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_listar_hospede_a456eeebbde15712c784da7e3da453dba}{listar\+\_\+hospedes}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Método padrão de listagem -\/ retorna TODOS os hóspedes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lista hóspedes cadastrados no sistema. 
+
+{\bfseries{Duas Abordagens de Listagem\+:}}
+
+{\bfseries{Solução 1 -\/ Global (listar\+\_\+todos\+\_\+hospedes)\+:}}
+\begin{DoxyItemize}
+\item Lista TODOS os hóspedes do sistema
+\item Independente de hotel ou reserva
+\item Útil para visão administrativa geral
+\end{DoxyItemize}
+
+{\bfseries{Solução 2 -\/ Por \doxylink{class_hotel}{Hotel} (listar\+\_\+hospedes\+\_\+por\+\_\+hotel)\+:}}
+\begin{DoxyItemize}
+\item Lista apenas hóspedes COM RESERVAS em hotel específico
+\item Filtra por quartos do hotel
+\item Útil para gestão específica do hotel
+\end{DoxyItemize}
+
+{\bfseries{Método Padrão (listar\+\_\+hospedes)\+:}}
+\begin{DoxyItemize}
+\item Atualmente usa Solução 1 (todos os hóspedes)
+\item Pode ser alterado para usar Solução 2 se necessário 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_listar_hospede_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_listar_hospede_a456eeebbde15712c784da7e3da453dba}\index{ListarHospede@{ListarHospede}!listar\_hospedes@{listar\_hospedes}}
+\index{listar\_hospedes@{listar\_hospedes}!ListarHospede@{ListarHospede}}
+\doxysubsubsection{\texorpdfstring{listar\_hospedes()}{listar\_hospedes()}}
+{\footnotesize\ttfamily \label{class_listar_hospede_a456eeebbde15712c784da7e3da453dba} 
+vector$<$ \mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} $>$ Listar\+Hospede\+::listar\+\_\+hospedes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Método padrão de listagem -\/ retorna TODOS os hóspedes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para hotel (parâmetro mantido para compatibilidade) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Hospede\texorpdfstring{$\ast$}{*}$>$ Vetor com todos os hóspedes do sistema
+\end{DoxyReturn}
+{\bfseries{Comportamento Atual\+:}}
+\begin{DoxyItemize}
+\item Ignora parâmetro hotel
+\item Chama \doxylink{class_listar_hospede_aa18436fb0263def6c7c6788eca1be5c7}{listar\+\_\+todos\+\_\+hospedes()}
+\item Retorna lista global
+\end{DoxyItemize}
+
+{\bfseries{Nota\+:}} Pode ser alterado para chamar \doxylink{class_listar_hospede_abaa5c76c7a0839875b64ecdeac2b463f}{listar\+\_\+hospedes\+\_\+por\+\_\+hotel()} se houver necessidade de filtrar por hotel. \Hypertarget{class_listar_hospede_abaa5c76c7a0839875b64ecdeac2b463f}\index{ListarHospede@{ListarHospede}!listar\_hospedes\_por\_hotel@{listar\_hospedes\_por\_hotel}}
+\index{listar\_hospedes\_por\_hotel@{listar\_hospedes\_por\_hotel}!ListarHospede@{ListarHospede}}
+\doxysubsubsection{\texorpdfstring{listar\_hospedes\_por\_hotel()}{listar\_hospedes\_por\_hotel()}}
+{\footnotesize\ttfamily \label{class_listar_hospede_abaa5c76c7a0839875b64ecdeac2b463f} 
+vector$<$ \mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} $>$ Listar\+Hospede\+::listar\+\_\+hospedes\+\_\+por\+\_\+hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lista hóspedes que TEM RESERVAS em hotel específico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Hospede\texorpdfstring{$\ast$}{*}$>$ Vetor com hóspedes do hotel
+\end{DoxyReturn}
+{\bfseries{Comportamento\+:}}
+\begin{DoxyEnumerate}
+\item Obtém quartos do hotel
+\item Para cada quarto, obtém reservas
+\item Para cada reserva, obtém hóspede
+\item Remove duplicatas (set)
+\item Retorna lista de hóspedes únicos
+\end{DoxyEnumerate}
+
+{\bfseries{Exemplo de uso\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vector<Hospede*>\ hospedes\ =\ \mbox{\hyperlink{class_listar_hospede_abaa5c76c7a0839875b64ecdeac2b463f}{ListarHospede::listar\_hospedes\_por\_hotel}}(meuHotel);}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Hóspedes\ com\ reservas\ neste\ hotel:\ "{}}\ <<\ hospedes.size()\ <<\ endl;}
+
+\end{DoxyCode}
+ \Hypertarget{class_listar_hospede_aa18436fb0263def6c7c6788eca1be5c7}\index{ListarHospede@{ListarHospede}!listar\_todos\_hospedes@{listar\_todos\_hospedes}}
+\index{listar\_todos\_hospedes@{listar\_todos\_hospedes}!ListarHospede@{ListarHospede}}
+\doxysubsubsection{\texorpdfstring{listar\_todos\_hospedes()}{listar\_todos\_hospedes()}}
+{\footnotesize\ttfamily \label{class_listar_hospede_aa18436fb0263def6c7c6788eca1be5c7} 
+vector$<$ \mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} $>$ Listar\+Hospede\+::listar\+\_\+todos\+\_\+hospedes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lista TODOS os hóspedes cadastrados no sistema. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+Hospede\texorpdfstring{$\ast$}{*}$>$ Vetor com todos os hóspedes
+\end{DoxyReturn}
+{\bfseries{Comportamento\+:}}
+\begin{DoxyItemize}
+\item Percorre container de hóspedes
+\item Retorna lista completa sem filtros
+\item Independe de hotel ou reserva
+\end{DoxyItemize}
+
+{\bfseries{Exemplo de uso\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vector<Hospede*>\ todos\ =\ \mbox{\hyperlink{class_listar_hospede_aa18436fb0263def6c7c6788eca1be5c7}{ListarHospede::listar\_todos\_hospedes}}();}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Total\ de\ hóspedes:\ "{}}\ <<\ todos.size()\ <<\ endl;}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/servicos/listar/\mbox{\hyperlink{listar_hospede_8hpp}{listar\+Hospede.\+hpp}}\item 
+src/servicos/listar/\mbox{\hyperlink{listar_hospede_8cpp}{listar\+Hospede.\+cpp}}\end{DoxyCompactItemize}

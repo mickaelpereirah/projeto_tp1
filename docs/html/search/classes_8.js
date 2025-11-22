@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ramal_0',['Ramal',['../class_ramal.html',1,'']]],
-  ['reserva_1',['Reserva',['../class_reserva.html',1,'']]]
+  ['nome_0',['Nome',['../class_nome.html',1,'']]],
+  ['numero_1',['Numero',['../class_numero.html',1,'']]]
 ];

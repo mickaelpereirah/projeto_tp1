@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['partida_0',['partida',['../class_reserva.html#a62980245c7447a5dcae5d367de72fc1a',1,'Reserva']]],
-  ['pessoa_1',['Pessoa',['../class_pessoa.html',1,'']]],
-  ['pessoa_2ehpp_2',['pessoa.hpp',['../pessoa_8hpp.html',1,'']]]
+  ['hospede_0',['Hospede',['../class_hospede.html',1,'']]],
+  ['hospede_2ehpp_1',['hospede.hpp',['../hospede_8hpp.html',1,'']]],
+  ['hotel_2',['Hotel',['../class_hotel.html',1,'']]],
+  ['hotel_2ehpp_3',['hotel.hpp',['../hotel_8hpp.html',1,'']]]
 ];

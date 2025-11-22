@@ -1,0 +1,49 @@
+\doxysection{Menu\+Reservas.\+hpp}
+\hypertarget{_menu_reservas_8hpp_source}{}\label{_menu_reservas_8hpp_source}\index{include/apresentacao/MenuReservas.hpp@{include/apresentacao/MenuReservas.hpp}}
+\mbox{\hyperlink{_menu_reservas_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ MENU\_RESERVAS\_HPP\_INCLUDED}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ MENU\_RESERVAS\_HPP\_INCLUDED}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hotel_8hpp}{hotel.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{reserva_8hpp}{reserva.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{quarto_8hpp}{quarto.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hospede_8hpp}{hospede.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_menu_reservas}{MenuReservas}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_reservas_aa3a8979212a4cafa8230780f9307e176}{exibir}}(\mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{static}\ vector<Reserva*>\ \mbox{\hyperlink{class_menu_reservas_a8e8a6344c95abccc7e61068c9f93ffc7}{listarReservas}}(\mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_reservas_a6805bc7bac6abc63562b5c10c2c6edcf}{exibirListaReservas}}(vector<Reserva*>\ reservas,\ \mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00071\ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_reservas_abb3392050229113260798930081aeb84}{listarReservasMenu}}(\mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00079\ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_reservas_a4a3658c3ad6f686d3bbd1db2ab3a342a}{verDetalhesReserva}}(\mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00088\ \ \ \ \ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_reservas_afb627de690c0b2628cb0f65ca3cf2b6a}{mostrarDetalhesReserva}}(\mbox{\hyperlink{class_reserva}{Reserva}}*\ reserva,\ \mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00098\ \ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_reservas_a2949ca0a72236c44fb956d87f972ca40}{criarReserva}}(\mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00115\ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_reservas_a1ba12050e6b027e655f5bf16b7991948}{editarReserva}}(\mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00129\ \ \ \ \ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_reservas_af224bd1f4b6db4038f05b2c9bf58659a}{excluirReserva}}(\mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00138\ \ \ \ \ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_reserva}{Reserva}}*\ \mbox{\hyperlink{class_menu_reservas_a19427e7a6a4bbf854a25ed963ab6d3d5}{selecionarReserva}}(vector<Reserva*>\ reservas);}
+\DoxyCodeLine{00145\ \ \ \ \ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_menu_reservas_a591b3513a6cd0e01d87d5bb8d41dc875}{obterNumeroQuartoReserva}}(\mbox{\hyperlink{class_reserva}{Reserva}}*\ reserva,\ \mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00155\ \ \ \ \ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_menu_reservas_a967fe1729ffe3b1297ef5ebb3b39af3c}{obterEmailHospedeReserva}}(\mbox{\hyperlink{class_reserva}{Reserva}}*\ reserva,\ \mbox{\hyperlink{class_hotel}{Hotel}}*\ hotel);}
+\DoxyCodeLine{00165\ \};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

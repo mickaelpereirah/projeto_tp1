@@ -15,7 +15,7 @@ Representa um número de cartão de crédito válido.
 void \mbox{\hyperlink{class_cartao_acb2256da2b23424f6d96bb526229bbbc}{set\+Valor}} (string)
 \begin{DoxyCompactList}\small\item\em Define o número do cartão. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_cartao_ae5611d53bdaf0558df7492e6e2fcc596}{get\+Valor}} ()
-\begin{DoxyCompactList}\small\item\em Obtém o númmero do cartão armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Obtém o número do cartão armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,24 +25,47 @@ bool \mbox{\hyperlink{class_cartao_a7e1238c29960d1d37ded505fddffbafa}{validar}} 
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{class_cartao_a82589009105f70ef819cd7cf9776667c}{digitos}}
-\begin{DoxyCompactList}\small\item\em Número do cartão armazenado como string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Número do cartão armazenado como string (16 dígitos). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Representa um número de cartão de crédito válido. 
 
-A classe \doxylink{class_cartao}{Cartao} implementa a validação de números de cartão de crédito utilizando o algoritmo de Luhn. A validaçãoo inclui\+:
+A classe \doxylink{class_cartao}{Cartao} armazena e valida números de cartão de crédito utilizando o algoritmo de Luhn para garantir a integridade do dígito verificador.
+
+{\bfseries{FORMATO VÁ\+LIDO\+:}}
 \begin{DoxyItemize}
-\item Verificação do tamanho (16 dígitos)
-\item Verificação de que todos os caracteres são dígitos
-\item Aplicação do algoritmo de Luhn para validar o número
+\item Exatamente 16 dígitos (0-\/9)
+\item Presença de dígito verificador calculado segundo o algoritmo de Luhn
 \end{DoxyItemize}
 
-Exemplos de números válidos para teste\+:
+{\bfseries{REGRAS DE VALIDAÇÃO\+:}}
+\begin{DoxyEnumerate}
+\item O número deve conter exatamente 16 caracteres
+\item Todos os caracteres devem ser dígitos numéricos (0-\/9)
+\item O dígito verificador deve ser válido segundo o algoritmo de Luhn
+\end{DoxyEnumerate}
+
+{\bfseries{ALGORITMO DE LUHN\+:}}
+\begin{DoxyEnumerate}
+\item Da direita para esquerda, duplique cada segundo dígito
+\item Se o resultado for maior que 9, subtraia 9
+\item Some todos os dígitos (duplicados e não duplicados)
+\item Se a soma for múltiplo de 10, o cartão é válido
+\end{DoxyEnumerate}
+
+{\bfseries{EXEMPLOS\+:}}
 \begin{DoxyItemize}
-\item 4556737586899855
-\item 4111111111111111 
+\item ✅ Válido\+: 4556737586899855 (cartão Visa de teste)
+\item ✅ Válido\+: 4111111111111111 (número de teste válido)
+\item ✅ Válido\+: 5555555555554444 (Mastercard de teste)
+\item ❌ Inválido\+: 1234567890123456 (falha no algoritmo de Luhn)
+\item ❌ Inválido\+: 411111111111111 (apenas 15 dígitos)
+\item ❌ Inválido\+: 4111-\/1111-\/1111-\/1111 (contém hífens)
+\item ❌ Inválido\+: 4111 1111 1111 1111 (contém espaços)
 \end{DoxyItemize}
+
+O método \doxylink{class_cartao_acb2256da2b23424f6d96bb526229bbbc}{set\+Valor()} realiza a validação completa e lança exceção se inválido. 
 
 \label{doc-func-members}
 \Hypertarget{class_cartao_doc-func-members}
@@ -55,12 +78,12 @@ string Cartao\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})
 
 
 
-Obtém o númmero do cartão armazenado. 
+Obtém o número do cartão armazenado. 
 
 Implementação inline do método \doxylink{class_cartao_ae5611d53bdaf0558df7492e6e2fcc596}{get\+Valor()}.
 
 \begin{DoxyReturn}{Returns}
-string Número do cartão
+string Número do cartão (16 dígitos)
 
 string Número do cartão armazenado 
 \end{DoxyReturn}
@@ -76,15 +99,28 @@ Define o número do cartão.
 
 
 \begin{DoxyParams}{Parameters}
-{\em digitos} & Número do cartão em formato string \\
+{\em digitos} & Número do cartão em formato string (16 dígitos) \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em invalid\+\_\+argument} & se o número for inválido\\
+{\em invalid\+\_\+argument} & Se o número for inválido\\
 \hline
 \end{DoxyExceptions}
-Realiza a validação completa antes de armazenar o valor. Números inválidos lançam uma exceção. \Hypertarget{class_cartao_a7e1238c29960d1d37ded505fddffbafa}\index{Cartao@{Cartao}!validar@{validar}}
+Realiza a validação completa antes de armazenar o valor. Se o número não passar em qualquer validação (tamanho, formato ou Luhn), lança exceção e o estado do objeto permanece inalterado.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Cartao\ cartao;}
+\DoxyCodeLine{\textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ cartao.\mbox{\hyperlink{class_cartao_acb2256da2b23424f6d96bb526229bbbc}{setValor}}(\textcolor{stringliteral}{"{}4556737586899855"{}});}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Cartão\ válido:\ "{}}\ <<\ cartao.\mbox{\hyperlink{class_cartao_ae5611d53bdaf0558df7492e6e2fcc596}{getValor}}();}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{catch}\ (invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Cartão\ inválido:\ "{}}\ <<\ e.what();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_cartao_a7e1238c29960d1d37ded505fddffbafa}\index{Cartao@{Cartao}!validar@{validar}}
 \index{validar@{validar}!Cartao@{Cartao}}
 \doxysubsubsection{\texorpdfstring{validar()}{validar()}}
 {\footnotesize\ttfamily \label{class_cartao_a7e1238c29960d1d37ded505fddffbafa} 
@@ -102,12 +138,17 @@ Valida o número do cartão.
 \begin{DoxyReturn}{Returns}
 true se o número for válido, false caso contrário
 \end{DoxyReturn}
-A validação inclui\+:
-\begin{DoxyItemize}
-\item Verificação de tamnanho (16 dígitos)
-\item Verifcação de que todos são dígitos
-\item Aplicação do algoritmo de Luhn 
-\end{DoxyItemize}
+Executa as seguintes validações\+:
+\begin{DoxyEnumerate}
+\item Verifica se tem exatamente 16 caracteres
+\item Verifica se todos os caracteres são dígitos (0-\/9)
+\item Aplica o algoritmo de Luhn para validar o dígito verificador
+\end{DoxyEnumerate}
+
+\begin{DoxySeeAlso}{See also}
+\href{https://en.wikipedia.org/wiki/Luhn_algorithm}{\texttt{https\+://en.\+wikipedia.\+org/wiki/\+Luhn\+\_\+algorithm}} 
+\end{DoxySeeAlso}
+
 
 \label{doc-variable-members}
 \Hypertarget{class_cartao_doc-variable-members}
@@ -120,7 +161,7 @@ string Cartao\+::digitos\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Número do cartão armazenado como string. 
+Número do cartão armazenado como string (16 dígitos). 
 
 
 

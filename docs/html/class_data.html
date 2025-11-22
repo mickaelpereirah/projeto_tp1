@@ -101,8 +101,8 @@ $(function(){initNavTree('class_data.html','','class_data-members'); });
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aee3a6598533a28a3f446c5f8ecb63c0f" id="r_aee3a6598533a28a3f446c5f8ecb63c0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee3a6598533a28a3f446c5f8ecb63c0f">setValor</a> (string)</td></tr>
 <tr class="memdesc:aee3a6598533a28a3f446c5f8ecb63c0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a data.  <br /></td></tr>
-<tr class="memitem:a8dd738e6c3e7ef96784b4e6b6c0cec61" id="r_a8dd738e6c3e7ef96784b4e6b6c0cec61"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dd738e6c3e7ef96784b4e6b6c0cec61">getValor</a> ()</td></tr>
-<tr class="memdesc:a8dd738e6c3e7ef96784b4e6b6c0cec61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém a data armazenada.  <br /></td></tr>
+<tr class="memitem:a2d040be2799c23a0a3f745613a70bb43" id="r_a2d040be2799c23a0a3f745613a70bb43"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d040be2799c23a0a3f745613a70bb43">getValor</a> () const</td></tr>
+<tr class="memdesc:a2d040be2799c23a0a3f745613a70bb43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém a data armazenada.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -112,20 +112,83 @@ Private Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ae3e630247f60efbc69086933fefa933a" id="r_ae3e630247f60efbc69086933fefa933a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3e630247f60efbc69086933fefa933a">data</a></td></tr>
-<tr class="memdesc:ae3e630247f60efbc69086933fefa933a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> armazenada em formato string.  <br /></td></tr>
+<tr class="memdesc:ae3e630247f60efbc69086933fefa933a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> armazenada em formato string (DD-MMM-AAAA).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Representa uma data válida no sistema. </p>
-<p>A classe <a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> é responsável por armazenar e validar datas conformes as regras do domínio. A validação inclui:</p><ul>
-<li>Formato específico (ex: DD/MM/AAAA, DD-MM-AAAA)</li>
-<li>Verificação de dias válidos para cada mês</li>
-<li>Consideração de anos bissextos</li>
-<li>Validação de datas futuras/passadas conforme regras de negócio</li>
+<p>A classe <a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> armazena e valida datas no formato dia-mês-ano, com validação completa de dias válidos por mês, incluindo tratamento de anos bissextos.</p>
+<p><b>FORMATO VÁLIDO:</b></p><ul>
+<li>dia-mês-ano</li>
+<li>Dia é número de 1 a 31</li>
+<li>Mês é JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV ou DEZ</li>
+<li>Ano é número de 2000 a 2999</li>
+<li><a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> deve ser válida considerando os anos bissextos</li>
 </ul>
-<p>A implementação garante que apenas datas válidas podem sejam armazenadas. </p>
+<p><b>REGRAS DE VALIDAÇÃO:</b></p><ol type="1">
+<li><b>Formato</b>: DD-MMM-AAAA onde:<ul>
+<li>DD = dia (01 a 31)</li>
+<li>MMM = mês por extenso em maiúsculas (JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ)</li>
+<li>AAAA = ano (2000 a 2999)</li>
+</ul>
+</li>
+<li><b>Dia</b>: Deve ser válido para o mês:<ul>
+<li>Meses com 31 dias: JAN, MAR, MAI, JUL, AGO, OUT, DEZ</li>
+<li>Meses com 30 dias: ABR, JUN, SET, NOV</li>
+<li>FEV: 28 dias (anos normais) ou 29 dias (anos bissextos)</li>
+</ul>
+</li>
+<li><b>Ano Bissexto</b>: Um ano é bissexto se:<ul>
+<li>É divisível por 4 E não é divisível por 100, OU</li>
+<li>É divisível por 400</li>
+<li>Exemplos: 2000 (bissexto), 2004 (bissexto), 2100 (não bissexto)</li>
+</ul>
+</li>
+</ol>
+<p><b>EXEMPLOS:</b></p><ul>
+<li>✅ Válido: "15-JAN-2024" (15 de janeiro de 2024)</li>
+<li>✅ Válido: "29-FEV-2024" (2024 é bissexto)</li>
+<li>✅ Válido: "31-DEZ-2999" (último dia do intervalo)</li>
+<li>✅ Válido: "01-JAN-2000" (primeiro dia do intervalo)</li>
+<li>❌ Inválido: "29-FEV-2023" (2023 não é bissexto)</li>
+<li>❌ Inválido: "31-ABR-2024" (abril tem apenas 30 dias)</li>
+<li>❌ Inválido: "32-JAN-2024" (dia inválido)</li>
+<li>❌ Inválido: "15-13-2024" (mês deve ser por extenso)</li>
+<li>❌ Inválido: "15-jan-2024" (mês deve estar em maiúsculas)</li>
+<li>❌ Inválido: "15/JAN/2024" (separador deve ser hífen)</li>
+<li>❌ Inválido: "15-JAN-1999" (ano antes de 2000)</li>
+<li>❌ Inválido: "15-JAN-3000" (ano depois de 2999)</li>
+</ul>
+<p><b>TABELA DE DIAS POR MÊS:</b> </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Mês  </th><th class="markdownTableHeadNone">Dias (normal)  </th><th class="markdownTableHeadNone">Dias (bissexto)  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">JAN  </td><td class="markdownTableBodyNone">31  </td><td class="markdownTableBodyNone">31  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FEV  </td><td class="markdownTableBodyNone">28  </td><td class="markdownTableBodyNone">29  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">MAR  </td><td class="markdownTableBodyNone">31  </td><td class="markdownTableBodyNone">31  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ABR  </td><td class="markdownTableBodyNone">30  </td><td class="markdownTableBodyNone">30  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">MAI  </td><td class="markdownTableBodyNone">31  </td><td class="markdownTableBodyNone">31  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">JUN  </td><td class="markdownTableBodyNone">30  </td><td class="markdownTableBodyNone">30  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">JUL  </td><td class="markdownTableBodyNone">31  </td><td class="markdownTableBodyNone">31  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">AGO  </td><td class="markdownTableBodyNone">31  </td><td class="markdownTableBodyNone">31  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">SET  </td><td class="markdownTableBodyNone">30  </td><td class="markdownTableBodyNone">30  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">OUT  </td><td class="markdownTableBodyNone">31  </td><td class="markdownTableBodyNone">31  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">NOV  </td><td class="markdownTableBodyNone">30  </td><td class="markdownTableBodyNone">30  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">DEZ  </td><td class="markdownTableBodyNone">31  </td><td class="markdownTableBodyNone">31  </td></tr>
+</table>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a8dd738e6c3e7ef96784b4e6b6c0cec61" name="a8dd738e6c3e7ef96784b4e6b6c0cec61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8dd738e6c3e7ef96784b4e6b6c0cec61">&#9670;&#160;</a></span>getValor()</h2>
+<a id="a2d040be2799c23a0a3f745613a70bb43" name="a2d040be2799c23a0a3f745613a70bb43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d040be2799c23a0a3f745613a70bb43">&#9670;&#160;</a></span>getValor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,7 +200,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">string Data::getValor </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -148,8 +211,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Obtém a data armazenada. </p>
-<p>Implementação inline do método <a class="el" href="#a8dd738e6c3e7ef96784b4e6b6c0cec61" title="Obtém a data armazenada.">getValor()</a>.</p>
-<dl class="section return"><dt>Returns</dt><dd>string <a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> armazenada em formato string</dd>
+<p>Implementação inline do método <a class="el" href="#a2d040be2799c23a0a3f745613a70bb43" title="Obtém a data armazenada.">getValor()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>string <a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> armazenada em formato DD-MMM-AAAA</dd>
 <dd>
 string <a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> armazenada </dd></dl>
 
@@ -173,7 +236,7 @@ string <a class="el" href="class_data.html" title="Representa uma data válida n
 <p>Define a data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td><a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> em formato string </td></tr>
+    <tr><td class="paramname">data</td><td><a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> em formato string (DD-MMM-AAAA) </td></tr>
   </table>
   </dd>
 </dl>
@@ -183,8 +246,18 @@ string <a class="el" href="class_data.html" title="Representa uma data válida n
   </table>
   </dd>
 </dl>
-<p>Realiza a validação completa antes de armazenar o valor. Datas que não atendem às regras de validação resultam em exceção com mensagem descritiva. </p>
-
+<p>Realiza a validação completa antes de armazenar o valor. Datas que não atendem às regras de validação resultam em exceção.</p>
+<p>Exemplo de uso: </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_data.html">Data</a> dataReserva;</div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    dataReserva.<a class="code hl_function" href="#aee3a6598533a28a3f446c5f8ecb63c0f">setValor</a>(<span class="stringliteral">&quot;15-JAN-2024&quot;</span>);</div>
+<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Data válida: &quot;</span> &lt;&lt; dataReserva.<a class="code hl_function" href="#a2d040be2799c23a0a3f745613a70bb43">getValor</a>();</div>
+<div class="line">} <span class="keywordflow">catch</span> (invalid_argument&amp; e) {</div>
+<div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Data inválida: &quot;</span> &lt;&lt; e.what();</div>
+<div class="line">}</div>
+<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdoc">Representa uma data válida no sistema.</div><div class="ttdef"><b>Definition</b> data.hpp:74</div></div>
+<div class="ttc" id="aclass_data_html_a2d040be2799c23a0a3f745613a70bb43"><div class="ttname"><a href="#a2d040be2799c23a0a3f745613a70bb43">Data::getValor</a></div><div class="ttdeci">string getValor() const</div><div class="ttdoc">Obtém a data armazenada.</div><div class="ttdef"><b>Definition</b> data.hpp:135</div></div>
+<div class="ttc" id="aclass_data_html_aee3a6598533a28a3f446c5f8ecb63c0f"><div class="ttname"><a href="#aee3a6598533a28a3f446c5f8ecb63c0f">Data::setValor</a></div><div class="ttdeci">void setValor(string)</div><div class="ttdoc">Define a data.</div><div class="ttdef"><b>Definition</b> data.cpp:82</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="a490773498b1ce1437a969feeb868e276" name="a490773498b1ce1437a969feeb868e276"></a>
@@ -218,11 +291,19 @@ string <a class="el" href="class_data.html" title="Representa uma data válida n
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true se a data for válida, false caso contrário</dd></dl>
-<p>Implementa a validação completa da data, incluindo:</p><ul>
-<li>Verificação de formato</li>
-<li>Validação de dia, mês e ano</li>
-<li>Consideração de anos bissextos</li>
-<li>Limites temporais conforme regras de negócio </li>
+<p>Implementa a validação completa da data:</p><ol type="1">
+<li>Verifica formato DD-MMM-AAAA</li>
+<li>Valida dia (1 a 31)</li>
+<li>Valida mês (JAN a DEZ em maiúsculas)</li>
+<li>Valida ano (2000 a 2999)</li>
+<li>Verifica se dia é válido para o mês</li>
+<li>Considera anos bissextos para fevereiro</li>
+</ol>
+<p><b>Algoritmo de ano bissexto:</b></p><ul>
+<li>Se divisível por 400 → bissexto</li>
+<li>Se divisível por 100 → não bissexto</li>
+<li>Se divisível por 4 → bissexto</li>
+<li>Caso contrário → não bissexto </li>
 </ul>
 
 </div>
@@ -248,7 +329,7 @@ string <a class="el" href="class_data.html" title="Representa uma data válida n
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> armazenada em formato string. </p>
+<p><a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> armazenada em formato string (DD-MMM-AAAA). </p>
 
 </div>
 </div>

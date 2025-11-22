@@ -1,0 +1,99 @@
+\doxysection{Remover\+Hospede Class Reference}
+\hypertarget{class_remover_hospede}{}\label{class_remover_hospede}\index{RemoverHospede@{RemoverHospede}}
+
+
+Remove hóspedes do sistema com validação de reservas.  
+
+
+
+
+{\ttfamily \#include $<$remover\+Hospede.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_remover_hospede_a1ab3e261e7d3623dc27dfb2430747ca8}{remover\+\_\+hospede}} (\mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*}hospede)
+\begin{DoxyCompactList}\small\item\em Remove hóspede e todas as suas reservas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Remove hóspedes do sistema com validação de reservas. 
+
+{\bfseries{Remoção em Cascata\+:}}
+\begin{DoxyItemize}
+\item Remove HÓ\+SPEDE
+\item Remove todas as RESERVAS do hóspede
+\end{DoxyItemize}
+
+{\bfseries{Regra de Negócio\+:}}
+\begin{DoxyItemize}
+\item Hóspede com reservas ativas pode ser removido
+\item Reservas são canceladas automaticamente
+\item Quartos ficam disponíveis após remoção
+\end{DoxyItemize}
+
+{\bfseries{Impacto\+:}}
+\begin{DoxyItemize}
+\item Remove histórico de reservas do hóspede
+\item Libera quartos ocupados por suas reservas
+\item Ação irreversível (sem recuperação no MVP) 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_remover_hospede_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_remover_hospede_a1ab3e261e7d3623dc27dfb2430747ca8}\index{RemoverHospede@{RemoverHospede}!remover\_hospede@{remover\_hospede}}
+\index{remover\_hospede@{remover\_hospede}!RemoverHospede@{RemoverHospede}}
+\doxysubsubsection{\texorpdfstring{remover\_hospede()}{remover\_hospede()}}
+{\footnotesize\ttfamily \label{class_remover_hospede_a1ab3e261e7d3623dc27dfb2430747ca8} 
+bool Remover\+Hospede\+::remover\+\_\+hospede (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*}}]{hospede}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove hóspede e todas as suas reservas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hospede} & Ponteiro para o hóspede a ser removido \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removido com sucesso, false caso contrário
+\end{DoxyReturn}
+{\bfseries{Processo de Remoção\+:}}
+\begin{DoxyEnumerate}
+\item Lista todas as reservas do hóspede
+\item Remove cada reserva do container
+\item Remove hóspede do container
+\end{DoxyEnumerate}
+
+{\bfseries{Efeito Cascata\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Hóspede\ (1)}
+\DoxyCodeLine{\ \ └─\ Reservas\ (N)\ [removidas]}
+\DoxyCodeLine{\ \ \ \ \ \ \ └─\ Quartos\ (liberados)}
+
+\end{DoxyCode}
+
+
+{\bfseries{Exemplo de uso\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Hospede*\ h\ =\ container.pesquisar(\textcolor{stringliteral}{"{}maria@email.com"{}});}
+\DoxyCodeLine{vector<Reserva*>\ reservas\ =\ \mbox{\hyperlink{class_listar_reserva_a1210e1548026d13bd6c5fafef6c67a0a}{ListarReserva::listar\_reservas\_por\_hospede}}(h);}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Este\ hóspede\ tem\ "{}}\ <<\ reservas.size()\ <<\ \textcolor{stringliteral}{"{}\ reserva(s)."{}}\ <<\ endl;}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Deseja\ remover\ mesmo\ assim?\ (sim/nao):\ "{}};}
+\DoxyCodeLine{\textcolor{keywordtype}{string}\ resposta;}
+\DoxyCodeLine{cin\ >>\ resposta;}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(resposta\ ==\ \textcolor{stringliteral}{"{}sim"{}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_remover_hospede_a1ab3e261e7d3623dc27dfb2430747ca8}{RemoverHospede::remover\_hospede}}(h))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Hóspede\ e\ reservas\ removidos!"{}}\ <<\ endl;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/servicos/remover/\mbox{\hyperlink{remover_hospede_8hpp}{remover\+Hospede.\+hpp}}\item 
+src/servicos/remover/\mbox{\hyperlink{remover_hospede_8cpp}{remover\+Hospede.\+cpp}}\end{DoxyCompactItemize}

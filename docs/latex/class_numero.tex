@@ -2,7 +2,7 @@
 \hypertarget{class_numero}{}\label{class_numero}\index{Numero@{Numero}}
 
 
-Representa um número inteiro válido de 1 a 999.  
+Representa o número de um quarto.  
 
 
 
@@ -13,38 +13,54 @@ Representa um número inteiro válido de 1 a 999.
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_numero_a9135951ce367e7651a63d36516c86db4}{set\+Valor}} (int)
-\begin{DoxyCompactList}\small\item\em Define o número. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Define o número do quarto. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_numero_aed4ce4360e4b96e346d9fd0c4120f3b9}{get\+Valor}} ()
-\begin{DoxyCompactList}\small\item\em Obtém o número armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Obtém o número do quarto. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{class_numero_ac7510691bee8b061556e0ff2fb970d66}{validar}} (int)
-\begin{DoxyCompactList}\small\item\em Valida o número conforme regras do domínio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Valida o número do quarto. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{class_numero_af9e3d35c4628940f3cb8019f639c4063}{valor}}
-\begin{DoxyCompactList}\small\item\em Valor numérico armazenado como inteiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Número do quarto armazenado (1 a 999). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Representa um número inteiro válido de 1 a 999. 
+Representa o número de um quarto. 
 
-A classe \doxylink{class_numero}{Numero} é responsável por armazenar e validar números inteiros dentro de um intervalo específico. A validação inclui\+:
+A classe \doxylink{class_numero}{Numero} armazena e valida números de quartos dentro do intervalo permitido pelo sistema.
+
+{\bfseries{FORMATO VÁ\+LIDO\+:}}
 \begin{DoxyItemize}
-\item Intervalo de valores\+: 1 a 999 (inclusive)
-\item Apenas valores inteiros são aceitos
-\item Formatação de saída com 3 dígitos (ex\+: 001, 083, 999)
+\item Valores de 001 a 999
 \end{DoxyItemize}
 
-A classe é útil para representar números que requerem formatação consistente, como códigos, identificadores ou valores numéricos com tamanho fixo.
-
-Exemplos de valores válidos\+:
+{\bfseries{REGRAS DE VALIDAÇÃO\+:}}
 \begin{DoxyItemize}
-\item 1 (formatado como 001)
-\item 83 (formatado como 083)
-\item 999 (formatado como 999) 
+\item Valor mínimo\+: 1 (representado como 001)
+\item Valor máximo\+: 999
+\item Armazenado como inteiro (1 a 999)
+\item Exibido com 3 dígitos (001, 002, ..., 999)
+\end{DoxyItemize}
+
+{\bfseries{EXEMPLOS\+:}}
+\begin{DoxyItemize}
+\item ✅ Válido\+: 1 (exibido como 001)
+\item ✅ Válido\+: 101 (quarto 101)
+\item ✅ Válido\+: 999 (último quarto permitido)
+\item ❌ Inválido\+: 0 (abaixo do mínimo)
+\item ❌ Inválido\+: 1000 (acima do máximo)
+\item ❌ Inválido\+: -\/5 (valor negativo)
+\end{DoxyItemize}
+
+{\bfseries{NOTA DE USO\+:}}
+\begin{DoxyItemize}
+\item Cada quarto deve ter número único no sistema
+\item Números não utilizados podem ser reutilizados após exclusão
+\item O número é a chave primária do quarto 
 \end{DoxyItemize}
 
 \label{doc-func-members}
@@ -58,20 +74,16 @@ int Numero\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hs
 
 
 
-Obtém o número armazenado. 
+Obtém o número do quarto. 
 
 Implementação inline do método get\+Valor.
 
 \begin{DoxyReturn}{Returns}
-int Número armazenado como inteiro
+int Número armazenado (1 a 999)
+
+int Número do quarto armazenado 
 \end{DoxyReturn}
-\begin{DoxyNote}{Note}
-Para obter o valor formatado com 3 dígitos, utilize funções de formatação na saída (ex\+: setw, setfill).
-\end{DoxyNote}
-\begin{DoxyReturn}{Returns}
-int Número armazenado
-\end{DoxyReturn}
-Retorna o valor numérico armazenado internamente. Para formatação com zeros à esquerda, utilize\+: cout \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} setw(3) \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} setfill(\textquotesingle{}0\textquotesingle{}) \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} numero.\+get\+Valor() \Hypertarget{class_numero_a9135951ce367e7651a63d36516c86db4}\index{Numero@{Numero}!setValor@{setValor}}
+\Hypertarget{class_numero_a9135951ce367e7651a63d36516c86db4}\index{Numero@{Numero}!setValor@{setValor}}
 \index{setValor@{setValor}!Numero@{Numero}}
 \doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
 {\footnotesize\ttfamily \label{class_numero_a9135951ce367e7651a63d36516c86db4} 
@@ -79,24 +91,32 @@ void Numero\+::set\+Valor (\begin{DoxyParamCaption}\item[{int}]{valor}{}\end{Dox
 
 
 
-Define o número. 
+Define o número do quarto. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em valor} & Número inteiro a ser armazenado \\
+{\em valor} & Número do quarto (1 a 999) \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em invalid\+\_\+argument} & Se o número for inválido (fora do intervalo 1-\/999)\\
+{\em invalid\+\_\+argument} & Se o número estiver fora do intervalo\\
 \hline
 \end{DoxyExceptions}
-Realiza a validação antes de armazenar o valor. Números fora do intervalo permitido resultam em exceção com mensagem descritiva do erro.
+Valida o número antes de armazenar. Se o número for inválido, lança exceção e o estado do objeto permanece inalterado.
 
-\begin{DoxyNote}{Note}
-O valor é armazenado como inteiro, mas pode ser formatado na saída com 3 dígitos quando necessário. 
-\end{DoxyNote}
-\Hypertarget{class_numero_ac7510691bee8b061556e0ff2fb970d66}\index{Numero@{Numero}!validar@{validar}}
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Numero\ numQuarto;}
+\DoxyCodeLine{\textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ numQuarto.\mbox{\hyperlink{class_numero_a9135951ce367e7651a63d36516c86db4}{setValor}}(101);}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Quarto\ número:\ "{}}\ <<\ numQuarto.\mbox{\hyperlink{class_numero_aed4ce4360e4b96e346d9fd0c4120f3b9}{getValor}}();}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{catch}\ (invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Número\ inválido:\ "{}}\ <<\ e.what();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_numero_ac7510691bee8b061556e0ff2fb970d66}\index{Numero@{Numero}!validar@{validar}}
 \index{validar@{validar}!Numero@{Numero}}
 \doxysubsubsection{\texorpdfstring{validar()}{validar()}}
 {\footnotesize\ttfamily \label{class_numero_ac7510691bee8b061556e0ff2fb970d66} 
@@ -104,7 +124,7 @@ bool Numero\+::validar (\begin{DoxyParamCaption}\item[{int}]{valor}{}\end{DoxyPa
 
 
 
-Valida o número conforme regras do domínio. 
+Valida o número do quarto. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -112,9 +132,9 @@ Valida o número conforme regras do domínio.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true se o número for válido, false caso contrário
+true se o número estiver entre 1 e 999, false caso contrário
 \end{DoxyReturn}
-Implementa a validação do número, verificando se está dentro do intervalo permitido (1 a 999 inclusive). Valores fora deste intervalo são considerados inválidos. 
+Verifica se o valor está no intervalo \mbox{[}1, 999\mbox{]}. 
 
 \label{doc-variable-members}
 \Hypertarget{class_numero_doc-variable-members}
@@ -127,7 +147,7 @@ int Numero\+::valor\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Valor numérico armazenado como inteiro. 
+Número do quarto armazenado (1 a 999). 
 
 
 

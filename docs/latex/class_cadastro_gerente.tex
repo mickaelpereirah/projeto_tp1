@@ -1,0 +1,149 @@
+\doxysection{Cadastro\+Gerente Class Reference}
+\hypertarget{class_cadastro_gerente}{}\label{class_cadastro_gerente}\index{CadastroGerente@{CadastroGerente}}
+
+
+Serviço responsável pelo cadastro de gerentes no sistema.  
+
+
+
+
+{\ttfamily \#include $<$cadastro\+Gerente.\+hpp$>$}
+
+Inheritance diagram for Cadastro\+Gerente\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_cadastro_gerente}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_cadastro_gerente_af6f6a6c8148b8d2a38ed338cbc16dbe0}{criar\+\_\+gerente}} ()
+\begin{DoxyCompactList}\small\item\em Cria um novo objeto \doxylink{class_gerente}{Gerente} com dados coletados do usuário. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_cadastro_gerente_aef75552bc4426a7ffd51e8dd0d97cd68}{novo\+\_\+gerente}} ()
+\begin{DoxyCompactList}\small\item\em Cadastra um novo gerente no sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_cadastro}{Cadastro}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_capacidade}{Capacidade}} \mbox{\hyperlink{class_cadastro_ae0f1aef4dffd9a941d4ac2a45ff109ef}{criar\+\_\+capacidade}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_capacidade}{Capacidade} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cartao}{Cartao}} \mbox{\hyperlink{class_cadastro_a63b6d24ecf2fb514a573823ea04f45dd}{criar\+\_\+cartao}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_cartao}{Cartao} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_codigo}{Codigo}} \mbox{\hyperlink{class_cadastro_aa7442d6ad39328e9d8f121dfb908c520}{criar\+\_\+codigo}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_codigo}{Codigo} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dinheiro}{Dinheiro}} \mbox{\hyperlink{class_cadastro_a49bc1b72c5727099f0707c06f01084a6}{criar\+\_\+dinheiro}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_dinheiro}{Dinheiro} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_email}{Email}} \mbox{\hyperlink{class_cadastro_ac4a85667841ee8f52519fd282d4aeefb}{criar\+\_\+email}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_email}{Email} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_endereco}{Endereco}} \mbox{\hyperlink{class_cadastro_abbf9f1d8c67242008b67b9c5834a0e41}{criar\+\_\+endereco}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_endereco}{Endereco} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_nome}{Nome}} \mbox{\hyperlink{class_cadastro_a6dda8f5f9bf2e0ad8d079feea26a09c9}{criar\+\_\+nome}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_nome}{Nome} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_numero}{Numero}} \mbox{\hyperlink{class_cadastro_aafe87d4725b418647670f016aa7465d0}{criar\+\_\+numero}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_numero}{Numero} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ramal}{Ramal}} \mbox{\hyperlink{class_cadastro_a5f499af2625ce49d4f37758f06daf12f}{criar\+\_\+ramal}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_ramal}{Ramal} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_senha}{Senha}} \mbox{\hyperlink{class_cadastro_ac2446156d85f11ac21412a2fc93799cd}{criar\+\_\+senha}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_senha}{Senha} válido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_telefone}{Telefone}} \mbox{\hyperlink{class_cadastro_a160f64602001e1b479bd58c87651ca0d}{criar\+\_\+telefone}} ()
+\begin{DoxyCompactList}\small\item\em Solicita e cria um objeto \doxylink{class_telefone}{Telefone} válido. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serviço responsável pelo cadastro de gerentes no sistema. 
+
+Esta classe gerencia o processo completo de cadastro de um novo gerente, incluindo coleta de dados, validação e armazenamento no container.
+
+{\bfseries{DADOS COLETADOS\+:}}
+\begin{DoxyItemize}
+\item \doxylink{class_nome}{Nome} (5-\/20 caracteres, capitalizado)
+\item \doxylink{class_email}{Email} (único no sistema, usado como chave)
+\item \doxylink{class_ramal}{Ramal} (00-\/50)
+\item \doxylink{class_senha}{Senha} (5 caracteres com requisitos de segurança)
+\end{DoxyItemize}
+
+{\bfseries{VALIDAÇÕ\+ES\+:}}
+\begin{DoxyItemize}
+\item \doxylink{class_email}{Email} não pode estar duplicado no sistema
+\item Todos os domínios são validados individualmente
+\item Dados são validados antes de criar o objeto \doxylink{class_gerente}{Gerente}
+\end{DoxyItemize}
+
+{\bfseries{FLUXO DE CADASTRO\+:}}
+\begin{DoxyEnumerate}
+\item Solicita dados via métodos herdados de \doxylink{class_cadastro}{Cadastro}
+\item Cria objeto \doxylink{class_gerente}{Gerente} com dados validados
+\item Verifica se email já existe no container
+\item Inclui no \doxylink{class_container_gerente}{Container\+Gerente} via \doxylink{class_central_containers}{Central\+Containers}
+\item Retorna sucesso ou falha 
+\end{DoxyEnumerate}
+
+\label{doc-func-members}
+\Hypertarget{class_cadastro_gerente_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_cadastro_gerente_af6f6a6c8148b8d2a38ed338cbc16dbe0}\index{CadastroGerente@{CadastroGerente}!criar\_gerente@{criar\_gerente}}
+\index{criar\_gerente@{criar\_gerente}!CadastroGerente@{CadastroGerente}}
+\doxysubsubsection{\texorpdfstring{criar\_gerente()}{criar\_gerente()}}
+{\footnotesize\ttfamily \label{class_cadastro_gerente_af6f6a6c8148b8d2a38ed338cbc16dbe0} 
+\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*} Cadastro\+Gerente\+::criar\+\_\+gerente (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cria um novo objeto \doxylink{class_gerente}{Gerente} com dados coletados do usuário. 
+
+\begin{DoxyReturn}{Returns}
+Gerente\texorpdfstring{$\ast$}{*} Ponteiro para o gerente criado
+\end{DoxyReturn}
+Solicita todos os dados necessários via terminal\+:
+\begin{DoxyItemize}
+\item \doxylink{class_nome}{Nome} (usando \doxylink{class_cadastro_a6dda8f5f9bf2e0ad8d079feea26a09c9}{criar\+\_\+nome()})
+\item \doxylink{class_email}{Email} (usando \doxylink{class_cadastro_ac4a85667841ee8f52519fd282d4aeefb}{criar\+\_\+email()})
+\item \doxylink{class_ramal}{Ramal} (usando \doxylink{class_cadastro_a5f499af2625ce49d4f37758f06daf12f}{criar\+\_\+ramal()})
+\item \doxylink{class_senha}{Senha} (usando \doxylink{class_cadastro_ac2446156d85f11ac21412a2fc93799cd}{criar\+\_\+senha()})
+\end{DoxyItemize}
+
+Cria e retorna um ponteiro para o objeto \doxylink{class_gerente}{Gerente}. NÃO inclui no container -\/ isso é feito por \doxylink{class_cadastro_gerente_aef75552bc4426a7ffd51e8dd0d97cd68}{novo\+\_\+gerente()}.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CadastroGerente\ cadastro;}
+\DoxyCodeLine{Gerente*\ g\ =\ cadastro.\mbox{\hyperlink{class_cadastro_gerente_af6f6a6c8148b8d2a38ed338cbc16dbe0}{criar\_gerente}}();}
+
+\end{DoxyCode}
+ \Hypertarget{class_cadastro_gerente_aef75552bc4426a7ffd51e8dd0d97cd68}\index{CadastroGerente@{CadastroGerente}!novo\_gerente@{novo\_gerente}}
+\index{novo\_gerente@{novo\_gerente}!CadastroGerente@{CadastroGerente}}
+\doxysubsubsection{\texorpdfstring{novo\_gerente()}{novo\_gerente()}}
+{\footnotesize\ttfamily \label{class_cadastro_gerente_aef75552bc4426a7ffd51e8dd0d97cd68} 
+bool Cadastro\+Gerente\+::novo\+\_\+gerente (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cadastra um novo gerente no sistema. 
+
+\begin{DoxyReturn}{Returns}
+true se cadastrado com sucesso, false se email já existe
+\end{DoxyReturn}
+Fluxo completo\+:
+\begin{DoxyEnumerate}
+\item Chama \doxylink{class_cadastro_gerente_af6f6a6c8148b8d2a38ed338cbc16dbe0}{criar\+\_\+gerente()} para coletar dados
+\item Valida se email já existe (pesquisa no container)
+\item Se email único, inclui no \doxylink{class_container_gerente}{Container\+Gerente}
+\item Retorna resultado da operação
+\end{DoxyEnumerate}
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CadastroGerente\ cadastro;}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(cadastro.\mbox{\hyperlink{class_cadastro_gerente_aef75552bc4426a7ffd51e8dd0d97cd68}{novo\_gerente}}())\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Gerente\ cadastrado\ com\ sucesso!"{}};}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Email\ já\ existe\ no\ sistema."{}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/servicos/cadastro/\mbox{\hyperlink{cadastro_gerente_8hpp}{cadastro\+Gerente.\+hpp}}\item 
+src/servicos/cadastro/\mbox{\hyperlink{cadastro_gerente_8cpp}{cadastro\+Gerente.\+cpp}}\end{DoxyCompactItemize}

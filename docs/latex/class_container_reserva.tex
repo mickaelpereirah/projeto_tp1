@@ -1,0 +1,417 @@
+\doxysection{Container\+Reserva Class Reference}
+\hypertarget{class_container_reserva}{}\label{class_container_reserva}\index{ContainerReserva@{ContainerReserva}}
+
+
+Container para armazenar e gerenciar reservas do sistema.  
+
+
+
+
+{\ttfamily \#include $<$container\+Reservas.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_container_reserva_a649e4de1b21adb11210f7c7fdb008cdd}{incluir}} (\mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*}, int numero\+\_\+quarto, string email\+\_\+hospede)
+\begin{DoxyCompactList}\small\item\em Inclui uma nova reserva no container. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_container_reserva_a4bd6e4f8f627cc886bc16ed68e4c9e2a}{remover}} (string codigo)
+\begin{DoxyCompactList}\small\item\em Remove uma reserva específica do container. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_container_reserva_ab9a58acecc5a9c69795c2eb3a3b7064e}{pesquisar}} (string codigo)
+\begin{DoxyCompactList}\small\item\em Busca uma reserva específica por código. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_container_reserva_a15b117829fc8aa04ebd5d7ce73d20ca2}{pesquisar}} (int numero\+\_\+quarto, string email\+\_\+hospede)
+\begin{DoxyCompactList}\small\item\em Busca reservas de um hóspede em um quarto específico. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_container_reserva_a048aeb37610099ee08819609efe0942b}{pesquisar\+Por\+Quarto}} (int numero\+\_\+quarto)
+\begin{DoxyCompactList}\small\item\em Busca todas as reservas de um quarto. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_container_reserva_a8a90d73f1e74fabe530dfd9f68c467e2}{pesquisar\+Por\+Hospede}} (string email)
+\begin{DoxyCompactList}\small\item\em Busca todas as reservas de um hóspede. \end{DoxyCompactList}\item 
+vector$<$ string $>$ \mbox{\hyperlink{class_container_reserva_a96fe193e83314bc1d764f50516e75d22}{pesquisar\+Emails\+Hospedes\+Por\+Quarto}} (int numero\+\_\+quarto)
+\begin{DoxyCompactList}\small\item\em Obtém lista de emails de hóspedes que têm reservas em um quarto. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_container_reserva_a27d41534d70826965afcc73bf1ad245d}{remover\+Todas\+Por\+Quarto}} (int numero\+\_\+quarto)
+\begin{DoxyCompactList}\small\item\em Remove todas as reservas de um quarto. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_container_reserva_a79557bbab5c8992ec7788c71545463c5}{remover\+Todas\+Por\+Hospede}} (string email)
+\begin{DoxyCompactList}\small\item\em Remove todas as reservas de um hóspede. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_container_reserva_ae94b3f81f06adef853ef718c743f58f7}{atualizar}} (\mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Atualiza os dados de uma reserva existente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unordered\+\_\+map$<$ int, unordered\+\_\+map$<$ string, vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$ $>$ $>$ \mbox{\hyperlink{class_container_reserva_adf6c44707a861f6b73648a947b495a9f}{container}}
+\begin{DoxyCompactList}\small\item\em Estrutura hierárquica para armazenar reservas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container para armazenar e gerenciar reservas do sistema. 
+
+Esta classe implementa um container complexo para armazenamento em memória de objetos do tipo \doxylink{class_reserva}{Reserva}. Utiliza uma estrutura hierárquica de mapas aninhados para permitir buscas eficientes por diferentes critérios.
+
+Estrutura de dados\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{unordered\_map<int,\ unordered\_map<string,\ vector<Reserva*>>>}
+\DoxyCodeLine{\ \ \ \ Chave\ externa:\ número\ \textcolor{keywordflow}{do}\ quarto\ (\textcolor{keywordtype}{int})}
+\DoxyCodeLine{\ \ \ \ Chave\ interna:\ email\ \textcolor{keywordflow}{do}\ hóspede\ (\textcolor{keywordtype}{string})}
+\DoxyCodeLine{\ \ \ \ Valor:\ vector\ de\ reservas\ (Reserva*)}
+
+\end{DoxyCode}
+
+
+Esta estrutura permite\+:
+\begin{DoxyItemize}
+\item Buscar todas as reservas de um quarto específico\+: O(1)
+\item Buscar todas as reservas de um hóspede específico\+: O(n) onde n = número de quartos
+\item Buscar reservas de um hóspede em um quarto\+: O(1)
+\item Buscar reserva por código\+: O(n\texorpdfstring{$\ast$}{*}m) onde n = quartos, m = hóspedes
+\end{DoxyItemize}
+
+Características principais\+:
+\begin{DoxyItemize}
+\item Cada reserva possui código único (10 caracteres alfanuméricos)
+\item Um quarto pode ter múltiplas reservas (em períodos diferentes)
+\item Um hóspede pode ter múltiplas reservas (em quartos/períodos diferentes)
+\item Validação de conflito de datas é feita externamente
+\item Suporta operações de remoção em cascata (por quarto ou por hóspede)
+\end{DoxyItemize}
+
+Regras de negócio\+:
+\begin{DoxyItemize}
+\item Código\+: 10 caracteres alfanuméricos, único no sistema
+\item Datas\+: chegada \texorpdfstring{$<$}{<} partida, formato DD-\/\+MMM-\/\+AAAA
+\item Valor\+: calculado automaticamente baseado no período e diária
+\item Não permite sobreposição de datas no mesmo quarto 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_container_reserva_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_container_reserva_ae94b3f81f06adef853ef718c743f58f7}\index{ContainerReserva@{ContainerReserva}!atualizar@{atualizar}}
+\index{atualizar@{atualizar}!ContainerReserva@{ContainerReserva}}
+\doxysubsubsection{\texorpdfstring{atualizar()}{atualizar()}}
+{\footnotesize\ttfamily \label{class_container_reserva_ae94b3f81f06adef853ef718c743f58f7} 
+bool Container\+Reserva\+::atualizar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*}}]{reserva\+\_\+atualizada}{}\end{DoxyParamCaption})}
+
+
+
+Atualiza os dados de uma reserva existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reserva} & Ponteiro para a reserva com dados atualizados \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se atualizada com sucesso, false se não encontrada
+\end{DoxyReturn}
+Busca a reserva pelo código e substitui o ponteiro. O código da reserva NÃO pode ser alterado (chave primária).
+
+Pode atualizar\+: datas de chegada/partida e valor total.
+
+IMPORTANTE\+: Ao alterar datas, deve-\/se\+:
+\begin{DoxyEnumerate}
+\item Validar nova disponibilidade com \doxylink{class_validar_reserva}{Validar\+Reserva}
+\item Recalcular valor total automaticamente
+\item Atualizar no container
+\end{DoxyEnumerate}
+
+O ponteiro antigo não é liberado automaticamente.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Reserva*\ r\ =\ \mbox{\hyperlink{class_container_reserva_adf6c44707a861f6b73648a947b495a9f}{container}}.pesquisar(\textcolor{stringliteral}{"{}ABC1234567"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(r\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Alterar\ datas}}
+\DoxyCodeLine{\ \ \ \ r-\/>\mbox{\hyperlink{class_reserva_afd143f0e70e25f850a07d471f5297ca2}{setChegada}}(novaDataChegada);}
+\DoxyCodeLine{\ \ \ \ r-\/>\mbox{\hyperlink{class_reserva_aa838e8188954be73eb4aeb35893c2457}{setPartida}}(novaDataPartida);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Recalcular\ valor}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ novoValor\ =\ \mbox{\hyperlink{class_validar_reserva_a787acd41b41f3ba7a1761177bb6cb4fe}{ValidarReserva::calcularValorTotal}}(quarto,\ novaChegada,\ novaPartida);}
+\DoxyCodeLine{\ \ \ \ Dinheiro\ d;}
+\DoxyCodeLine{\ \ \ \ d.\mbox{\hyperlink{class_dinheiro_a45655ca3dfe7bdee726d74f8350626c5}{setValor}}(novoValor);}
+\DoxyCodeLine{\ \ \ \ r-\/>\mbox{\hyperlink{class_reserva_aefc3971390598f835b9d91292f595c3f}{setDinheiro}}(d);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_container_reserva_adf6c44707a861f6b73648a947b495a9f}{container}}.atualizar(r);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_reserva_a649e4de1b21adb11210f7c7fdb008cdd}\index{ContainerReserva@{ContainerReserva}!incluir@{incluir}}
+\index{incluir@{incluir}!ContainerReserva@{ContainerReserva}}
+\doxysubsubsection{\texorpdfstring{incluir()}{incluir()}}
+{\footnotesize\ttfamily \label{class_container_reserva_a649e4de1b21adb11210f7c7fdb008cdd} 
+bool Container\+Reserva\+::incluir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*}}]{reserva}{, }\item[{int}]{numero\+\_\+quarto}{, }\item[{string}]{email\+\_\+hospede}{}\end{DoxyParamCaption})}
+
+
+
+Inclui uma nova reserva no container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reserva} & Ponteiro para a reserva a ser incluída \\
+\hline
+{\em numero\+\_\+quarto} & Número do quarto da reserva \\
+\hline
+{\em email\+\_\+hospede} & \doxylink{class_email}{Email} do hóspede que fez a reserva \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se incluída com sucesso, false se o código já existe
+\end{DoxyReturn}
+O código da reserva deve ser único no sistema. Se já existir uma reserva com o mesmo código, a operação falha.
+
+IMPORTANTE\+: Esta função NÃO valida conflito de datas. O chamador deve usar \doxylink{class_validar_reserva_a469270d7195886ff5b631f80bfc25584}{Validar\+Reserva\+::verificar\+Disponibilidade()} antes de incluir.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Reserva*\ r\ =\ \textcolor{keyword}{new}\ Reserva();}
+\DoxyCodeLine{r-\/>\mbox{\hyperlink{class_reserva_a3eff3dd3b188af925e7aee2a878e3c07}{setCodigo}}(codigo);}
+\DoxyCodeLine{r-\/>\mbox{\hyperlink{class_reserva_afd143f0e70e25f850a07d471f5297ca2}{setChegada}}(dataChegada);}
+\DoxyCodeLine{r-\/>\mbox{\hyperlink{class_reserva_aa838e8188954be73eb4aeb35893c2457}{setPartida}}(dataPartida);}
+\DoxyCodeLine{r-\/>\mbox{\hyperlink{class_reserva_aefc3971390598f835b9d91292f595c3f}{setDinheiro}}(valorTotal);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Validar\ disponibilidade\ primeiro}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(\mbox{\hyperlink{class_validar_reserva_a469270d7195886ff5b631f80bfc25584}{ValidarReserva::verificarDisponibilidade}}(101,\ dataChegada,\ dataPartida,\ \textcolor{stringliteral}{"{}"{}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_container_reserva_adf6c44707a861f6b73648a947b495a9f}{container}}.incluir(r,\ 101,\ \textcolor{stringliteral}{"{}hospede@email.com"{}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Reserva\ criada\ com\ sucesso"{}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_reserva_a15b117829fc8aa04ebd5d7ce73d20ca2}\index{ContainerReserva@{ContainerReserva}!pesquisar@{pesquisar}}
+\index{pesquisar@{pesquisar}!ContainerReserva@{ContainerReserva}}
+\doxysubsubsection{\texorpdfstring{pesquisar()}{pesquisar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_container_reserva_a15b117829fc8aa04ebd5d7ce73d20ca2} 
+vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$ Container\+Reserva\+::pesquisar (\begin{DoxyParamCaption}\item[{int}]{numero\+\_\+quarto}{, }\item[{string}]{email\+\_\+hospede}{}\end{DoxyParamCaption})}
+
+
+
+Busca reservas de um hóspede em um quarto específico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numero\+\_\+quarto} & Número do quarto \\
+\hline
+{\em email\+\_\+hospede} & \doxylink{class_email}{Email} do hóspede \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector com as reservas encontradas
+\end{DoxyReturn}
+Útil para verificar histórico de um hóspede em um quarto. Complexidade\+: O(1) \Hypertarget{class_container_reserva_ab9a58acecc5a9c69795c2eb3a3b7064e}\index{ContainerReserva@{ContainerReserva}!pesquisar@{pesquisar}}
+\index{pesquisar@{pesquisar}!ContainerReserva@{ContainerReserva}}
+\doxysubsubsection{\texorpdfstring{pesquisar()}{pesquisar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_container_reserva_ab9a58acecc5a9c69795c2eb3a3b7064e} 
+\mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} Container\+Reserva\+::pesquisar (\begin{DoxyParamCaption}\item[{string}]{codigo}{}\end{DoxyParamCaption})}
+
+
+
+Busca uma reserva específica por código. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em codigo} & Código da reserva (10 caracteres alfanuméricos) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para a reserva encontrada ou nullptr se não existir
+\end{DoxyReturn}
+Busca em toda a estrutura hierárquica até encontrar a reserva. Complexidade\+: O(n\texorpdfstring{$\ast$}{*}m\texorpdfstring{$\ast$}{*}k) onde n = quartos, m = hóspedes, k = reservas
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Reserva*\ r\ =\ \mbox{\hyperlink{class_container_reserva_adf6c44707a861f6b73648a947b495a9f}{container}}.pesquisar(\textcolor{stringliteral}{"{}ABC1234567"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(r\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Código:\ "{}}\ <<\ r-\/>\mbox{\hyperlink{class_reserva_a1204609ea4b0d944c28405368976887f}{getCodigo}}().\mbox{\hyperlink{class_codigo_aa78a03ad29c1cb6a3e953db2137d6278}{getValor}}()\ <<\ endl;}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Chegada:\ "{}}\ <<\ r-\/>\mbox{\hyperlink{class_reserva_ad40a81b07cbd0364eda9d27bf5ca1875}{getChegada}}().\mbox{\hyperlink{class_data_a2d040be2799c23a0a3f745613a70bb43}{getValor}}()\ <<\ endl;}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Valor:\ R\$\ "{}}\ <<\ r-\/>\mbox{\hyperlink{class_reserva_aaad530ec61f62e7692d6e42a9158a0e0}{getDinheiro}}().\mbox{\hyperlink{class_dinheiro_ad9fceec690a0d1f4930ce2822788c8d0}{getValor}}()\ <<\ endl;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_reserva_a96fe193e83314bc1d764f50516e75d22}\index{ContainerReserva@{ContainerReserva}!pesquisarEmailsHospedesPorQuarto@{pesquisarEmailsHospedesPorQuarto}}
+\index{pesquisarEmailsHospedesPorQuarto@{pesquisarEmailsHospedesPorQuarto}!ContainerReserva@{ContainerReserva}}
+\doxysubsubsection{\texorpdfstring{pesquisarEmailsHospedesPorQuarto()}{pesquisarEmailsHospedesPorQuarto()}}
+{\footnotesize\ttfamily \label{class_container_reserva_a96fe193e83314bc1d764f50516e75d22} 
+vector$<$ string $>$ Container\+Reserva\+::pesquisar\+Emails\+Hospedes\+Por\+Quarto (\begin{DoxyParamCaption}\item[{int}]{numero\+\_\+quarto}{}\end{DoxyParamCaption})}
+
+
+
+Obtém lista de emails de hóspedes que têm reservas em um quarto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numero\+\_\+quarto} & Número do quarto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector com emails dos hóspedes
+\end{DoxyReturn}
+Útil para listar quais hóspedes já utilizaram um quarto específico. \Hypertarget{class_container_reserva_a8a90d73f1e74fabe530dfd9f68c467e2}\index{ContainerReserva@{ContainerReserva}!pesquisarPorHospede@{pesquisarPorHospede}}
+\index{pesquisarPorHospede@{pesquisarPorHospede}!ContainerReserva@{ContainerReserva}}
+\doxysubsubsection{\texorpdfstring{pesquisarPorHospede()}{pesquisarPorHospede()}}
+{\footnotesize\ttfamily \label{class_container_reserva_a8a90d73f1e74fabe530dfd9f68c467e2} 
+vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$ Container\+Reserva\+::pesquisar\+Por\+Hospede (\begin{DoxyParamCaption}\item[{string}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Busca todas as reservas de um hóspede. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & \doxylink{class_email}{Email} do hóspede \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector com todas as reservas do hóspede
+\end{DoxyReturn}
+Retorna reservas do hóspede em todos os quartos. Útil para\+:
+\begin{DoxyItemize}
+\item Histórico de reservas do hóspede
+\item Verificar reservas ativas antes de excluir hóspede
+\item Estatísticas por hóspede
+\end{DoxyItemize}
+
+Complexidade\+: O(n\texorpdfstring{$\ast$}{*}k) onde n = quartos, k = reservas por quarto \Hypertarget{class_container_reserva_a048aeb37610099ee08819609efe0942b}\index{ContainerReserva@{ContainerReserva}!pesquisarPorQuarto@{pesquisarPorQuarto}}
+\index{pesquisarPorQuarto@{pesquisarPorQuarto}!ContainerReserva@{ContainerReserva}}
+\doxysubsubsection{\texorpdfstring{pesquisarPorQuarto()}{pesquisarPorQuarto()}}
+{\footnotesize\ttfamily \label{class_container_reserva_a048aeb37610099ee08819609efe0942b} 
+vector$<$ \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} $>$ Container\+Reserva\+::pesquisar\+Por\+Quarto (\begin{DoxyParamCaption}\item[{int}]{numero\+\_\+quarto}{}\end{DoxyParamCaption})}
+
+
+
+Busca todas as reservas de um quarto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numero\+\_\+quarto} & Número do quarto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector com todas as reservas do quarto
+\end{DoxyReturn}
+Retorna reservas de todos os hóspedes que fizeram reservas neste quarto. Útil para\+:
+\begin{DoxyItemize}
+\item Validar disponibilidade do quarto
+\item Listar ocupação do quarto
+\item Verificar conflitos de data
+\end{DoxyItemize}
+
+Complexidade\+: O(m) onde m = número de hóspedes que reservaram o quarto \Hypertarget{class_container_reserva_a4bd6e4f8f627cc886bc16ed68e4c9e2a}\index{ContainerReserva@{ContainerReserva}!remover@{remover}}
+\index{remover@{remover}!ContainerReserva@{ContainerReserva}}
+\doxysubsubsection{\texorpdfstring{remover()}{remover()}}
+{\footnotesize\ttfamily \label{class_container_reserva_a4bd6e4f8f627cc886bc16ed68e4c9e2a} 
+bool Container\+Reserva\+::remover (\begin{DoxyParamCaption}\item[{string}]{codigo}{}\end{DoxyParamCaption})}
+
+
+
+Remove uma reserva específica do container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em codigo} & Código da reserva a ser removida \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removida com sucesso, false se não encontrada
+\end{DoxyReturn}
+Busca a reserva em toda a estrutura pelo código e remove.
+
+IMPORTANTE\+: Não libera a memória do objeto \doxylink{class_reserva}{Reserva}. O chamador deve fazer delete do ponteiro se necessário.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Reserva*\ r\ =\ \mbox{\hyperlink{class_container_reserva_adf6c44707a861f6b73648a947b495a9f}{container}}.pesquisar(\textcolor{stringliteral}{"{}ABC1234567"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(r\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_container_reserva_adf6c44707a861f6b73648a947b495a9f}{container}}.remover(\textcolor{stringliteral}{"{}ABC1234567"{}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ r;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Reserva\ removida\ com\ sucesso"{}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_reserva_a79557bbab5c8992ec7788c71545463c5}\index{ContainerReserva@{ContainerReserva}!removerTodasPorHospede@{removerTodasPorHospede}}
+\index{removerTodasPorHospede@{removerTodasPorHospede}!ContainerReserva@{ContainerReserva}}
+\doxysubsubsection{\texorpdfstring{removerTodasPorHospede()}{removerTodasPorHospede()}}
+{\footnotesize\ttfamily \label{class_container_reserva_a79557bbab5c8992ec7788c71545463c5} 
+bool Container\+Reserva\+::remover\+Todas\+Por\+Hospede (\begin{DoxyParamCaption}\item[{string}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Remove todas as reservas de um hóspede. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & \doxylink{class_email}{Email} do hóspede \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removidas com sucesso, false se hóspede não encontrado
+\end{DoxyReturn}
+Remove todas as reservas do hóspede em todos os quartos. Utilizado quando um hóspede é excluído do sistema para manter integridade referencial.
+
+IMPORTANTE\+: Não libera a memória dos objetos. O chamador deve iterar pelas reservas e fazer delete de cada uma. \Hypertarget{class_container_reserva_a27d41534d70826965afcc73bf1ad245d}\index{ContainerReserva@{ContainerReserva}!removerTodasPorQuarto@{removerTodasPorQuarto}}
+\index{removerTodasPorQuarto@{removerTodasPorQuarto}!ContainerReserva@{ContainerReserva}}
+\doxysubsubsection{\texorpdfstring{removerTodasPorQuarto()}{removerTodasPorQuarto()}}
+{\footnotesize\ttfamily \label{class_container_reserva_a27d41534d70826965afcc73bf1ad245d} 
+bool Container\+Reserva\+::remover\+Todas\+Por\+Quarto (\begin{DoxyParamCaption}\item[{int}]{numero\+\_\+quarto}{}\end{DoxyParamCaption})}
+
+
+
+Remove todas as reservas de um quarto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numero\+\_\+quarto} & Número do quarto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removidas com sucesso, false se quarto não encontrado
+\end{DoxyReturn}
+Remove todas as reservas de todos os hóspedes neste quarto. Utilizado quando um quarto é excluído do sistema para manter integridade referencial.
+
+IMPORTANTE\+: Não libera a memória dos objetos. O chamador deve iterar pelas reservas e fazer delete de cada uma.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Antes\ de\ remover\ o\ quarto}}
+\DoxyCodeLine{vector<Reserva*>\ reservas\ =\ \mbox{\hyperlink{class_container_reserva_adf6c44707a861f6b73648a947b495a9f}{container}}.pesquisarPorQuarto(101);}
+\DoxyCodeLine{\mbox{\hyperlink{class_container_reserva_adf6c44707a861f6b73648a947b495a9f}{container}}.removerTodasPorQuarto(101);}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(Reserva*\ r\ :\ reservas)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{delete}\ r;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{class_container_reserva_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_container_reserva_adf6c44707a861f6b73648a947b495a9f}\index{ContainerReserva@{ContainerReserva}!container@{container}}
+\index{container@{container}!ContainerReserva@{ContainerReserva}}
+\doxysubsubsection{\texorpdfstring{container}{container}}
+{\footnotesize\ttfamily \label{class_container_reserva_adf6c44707a861f6b73648a947b495a9f} 
+unordered\+\_\+map$<$int, unordered\+\_\+map$<$string, vector$<$\mbox{\hyperlink{class_reserva}{Reserva}}\texorpdfstring{$\ast$}{*}$>$ $>$ $>$ Container\+Reserva\+::container\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Estrutura hierárquica para armazenar reservas. 
+
+Nível 1 (mapa externo)\+:
+\begin{DoxyItemize}
+\item Chave\+: número do quarto (int)
+\item Valor\+: mapa de hóspedes deste quarto
+\end{DoxyItemize}
+
+Nível 2 (mapa interno)\+:
+\begin{DoxyItemize}
+\item Chave\+: email do hóspede (string)
+\item Valor\+: vector de reservas deste hóspede neste quarto
+\end{DoxyItemize}
+
+Esta estrutura facilita\+:
+\begin{DoxyItemize}
+\item Buscar todas as reservas de um quarto
+\item Buscar todas as reservas de um hóspede em um quarto específico
+\item Remover todas as reservas de um quarto (quando o quarto é excluído)
+\item Remover todas as reservas de um hóspede (quando o hóspede é excluído) 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/containers/\mbox{\hyperlink{container_reservas_8hpp}{container\+Reservas.\+hpp}}\item 
+src/containers/\mbox{\hyperlink{container_reservas_8cpp}{container\+Reservas.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,37 @@
+\doxysection{include/entidades/\+ENTIDADES.hpp File Reference}
+\hypertarget{_e_n_t_i_d_a_d_e_s_8hpp}{}\label{_e_n_t_i_d_a_d_e_s_8hpp}\index{include/entidades/ENTIDADES.hpp@{include/entidades/ENTIDADES.hpp}}
+
+
+Arquivo de inclusao central para todas as entidades do sistema.  
+
+
+{\ttfamily \#include "{}pessoa.\+hpp"{}}\newline
+{\ttfamily \#include "{}gerente.\+hpp"{}}\newline
+{\ttfamily \#include "{}hospede.\+hpp"{}}\newline
+{\ttfamily \#include "{}hotel.\+hpp"{}}\newline
+{\ttfamily \#include "{}quarto.\+hpp"{}}\newline
+{\ttfamily \#include "{}reserva.\+hpp"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+Arquivo de inclusao central para todas as entidades do sistema. 
+
+Este arquivo header agrupa todas as entidades do sistema em um unico ponto de inclusao, facilitando o uso das entidades em outros modulos.
+
+ENTIDADES INCLUIDAS\+:
+\begin{DoxyItemize}
+\item \doxylink{class_pessoa}{Pessoa} (classe base)
+\item \doxylink{class_gerente}{Gerente} (herda de \doxylink{class_pessoa}{Pessoa})
+\item \doxylink{class_hospede}{Hospede} (herda de \doxylink{class_pessoa}{Pessoa})
+\item \doxylink{class_hotel}{Hotel}
+\item \doxylink{class_quarto}{Quarto}
+\item \doxylink{class_reserva}{Reserva}
+\end{DoxyItemize}
+
+RELACIONAMENTOS\+:
+\begin{DoxyItemize}
+\item \doxylink{class_gerente}{Gerente} (1) -\/\texorpdfstring{$>$}{>} \doxylink{class_hotel}{Hotel} (0..\texorpdfstring{$\ast$}{*})
+\item \doxylink{class_hotel}{Hotel} (1) -\/\texorpdfstring{$>$}{>} \doxylink{class_quarto}{Quarto} (1..\texorpdfstring{$\ast$}{*})
+\item \doxylink{class_hospede}{Hospede} (1) -\/\texorpdfstring{$>$}{>} \doxylink{class_reserva}{Reserva} (0..\texorpdfstring{$\ast$}{*})
+\item \doxylink{class_quarto}{Quarto} (1) -\/\texorpdfstring{$>$}{>} \doxylink{class_reserva}{Reserva} (0..\texorpdfstring{$\ast$}{*}) 
+\end{DoxyItemize}

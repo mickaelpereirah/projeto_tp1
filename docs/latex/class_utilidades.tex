@@ -1,0 +1,212 @@
+\doxysection{Utilidades Class Reference}
+\hypertarget{class_utilidades}{}\label{class_utilidades}\index{Utilidades@{Utilidades}}
+
+
+Classe com funções auxiliares para a interface de usuário.  
+
+
+
+
+{\ttfamily \#include $<$Utilidades.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_utilidades_acbf76970fd3394b0de0db8c9aa5be529}{limpar\+Tela}} ()
+\begin{DoxyCompactList}\small\item\em Limpa a tela do terminal. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_utilidades_ad3727a38e8ba940bfe1acdfcb9a3e178}{pausar}} (string mensagem="{}Pressione ENTER para continuar..."{})
+\begin{DoxyCompactList}\small\item\em Pausa a execução e aguarda o usuário pressionar ENTER. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_utilidades_a1eceba56d6ca65b1bd4b43ffc910057f}{mostrar\+Cabecalho}} (string titulo, int largura=60)
+\begin{DoxyCompactList}\small\item\em Exibe um cabeçalho formatado. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_utilidades_ad5d1fb878557e114be89aae7773a2a06}{mostrar\+Mensagem}} (string mensagem, bool erro=false)
+\begin{DoxyCompactList}\small\item\em Exibe uma mensagem formatada. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_utilidades_aa71528136fceb184140a09982e6bc191}{mostrar\+Sucesso}} (string mensagem)
+\begin{DoxyCompactList}\small\item\em Exibe uma mensagem de sucesso. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_utilidades_a00297c201e327636e51a1d736cd30ae7}{mostrar\+Erro}} (string mensagem)
+\begin{DoxyCompactList}\small\item\em Exibe uma mensagem de erro. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_utilidades_a574f717ecdd51ff85c3cd629c0f5c7d3}{ler\+Opcao}} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Lê uma opção numérica do usuário dentro de um intervalo. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_utilidades_a8c9f74fcd1e95decb88c5133d0faf162}{ler\+String}} (string prompt)
+\begin{DoxyCompactList}\small\item\em Lê uma string do usuário. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_utilidades_af58e00abf8fab71abbc119f218d8826a}{confirmar}} (string pergunta)
+\begin{DoxyCompactList}\small\item\em Solicita confirmação do usuário (S/N). \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_utilidades_af68855f35604c87103d917fdd1e35860}{mostrar\+Linha}} (char caractere=\textquotesingle{}=\textquotesingle{}, int largura=60)
+\begin{DoxyCompactList}\small\item\em Exibe uma linha separadora. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe com funções auxiliares para a interface de usuário. 
+
+Fornece métodos estáticos para facilitar a interação com o usuário através do terminal, incluindo limpeza de tela, pausas e formatação. 
+
+\label{doc-func-members}
+\Hypertarget{class_utilidades_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_utilidades_af58e00abf8fab71abbc119f218d8826a}\index{Utilidades@{Utilidades}!confirmar@{confirmar}}
+\index{confirmar@{confirmar}!Utilidades@{Utilidades}}
+\doxysubsubsection{\texorpdfstring{confirmar()}{confirmar()}}
+{\footnotesize\ttfamily \label{class_utilidades_af58e00abf8fab71abbc119f218d8826a} 
+bool Utilidades\+::confirmar (\begin{DoxyParamCaption}\item[{string}]{pergunta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Solicita confirmação do usuário (S/N). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pergunta} & Pergunta a ser feita \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se confirmado (S), false caso contrário (N) 
+\end{DoxyReturn}
+\Hypertarget{class_utilidades_a574f717ecdd51ff85c3cd629c0f5c7d3}\index{Utilidades@{Utilidades}!lerOpcao@{lerOpcao}}
+\index{lerOpcao@{lerOpcao}!Utilidades@{Utilidades}}
+\doxysubsubsection{\texorpdfstring{lerOpcao()}{lerOpcao()}}
+{\footnotesize\ttfamily \label{class_utilidades_a574f717ecdd51ff85c3cd629c0f5c7d3} 
+int Utilidades\+::ler\+Opcao (\begin{DoxyParamCaption}\item[{int}]{min}{, }\item[{int}]{max}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lê uma opção numérica do usuário dentro de um intervalo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & Valor mínimo aceito \\
+\hline
+{\em max} & Valor máximo aceito \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Opção válida escolhida pelo usuário 
+\end{DoxyReturn}
+\Hypertarget{class_utilidades_a8c9f74fcd1e95decb88c5133d0faf162}\index{Utilidades@{Utilidades}!lerString@{lerString}}
+\index{lerString@{lerString}!Utilidades@{Utilidades}}
+\doxysubsubsection{\texorpdfstring{lerString()}{lerString()}}
+{\footnotesize\ttfamily \label{class_utilidades_a8c9f74fcd1e95decb88c5133d0faf162} 
+string Utilidades\+::ler\+String (\begin{DoxyParamCaption}\item[{string}]{prompt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lê uma string do usuário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prompt} & Texto a ser exibido antes da entrada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String digitada pelo usuário 
+\end{DoxyReturn}
+\Hypertarget{class_utilidades_acbf76970fd3394b0de0db8c9aa5be529}\index{Utilidades@{Utilidades}!limparTela@{limparTela}}
+\index{limparTela@{limparTela}!Utilidades@{Utilidades}}
+\doxysubsubsection{\texorpdfstring{limparTela()}{limparTela()}}
+{\footnotesize\ttfamily \label{class_utilidades_acbf76970fd3394b0de0db8c9aa5be529} 
+void Utilidades\+::limpar\+Tela (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Limpa a tela do terminal. 
+
+\Hypertarget{class_utilidades_a1eceba56d6ca65b1bd4b43ffc910057f}\index{Utilidades@{Utilidades}!mostrarCabecalho@{mostrarCabecalho}}
+\index{mostrarCabecalho@{mostrarCabecalho}!Utilidades@{Utilidades}}
+\doxysubsubsection{\texorpdfstring{mostrarCabecalho()}{mostrarCabecalho()}}
+{\footnotesize\ttfamily \label{class_utilidades_a1eceba56d6ca65b1bd4b43ffc910057f} 
+void Utilidades\+::mostrar\+Cabecalho (\begin{DoxyParamCaption}\item[{string}]{titulo}{, }\item[{int}]{largura}{ = {\ttfamily 60}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exibe um cabeçalho formatado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em titulo} & Título a ser exibido no cabeçalho \\
+\hline
+{\em largura} & Largura total do cabeçalho (padrão\+: 60) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_utilidades_a00297c201e327636e51a1d736cd30ae7}\index{Utilidades@{Utilidades}!mostrarErro@{mostrarErro}}
+\index{mostrarErro@{mostrarErro}!Utilidades@{Utilidades}}
+\doxysubsubsection{\texorpdfstring{mostrarErro()}{mostrarErro()}}
+{\footnotesize\ttfamily \label{class_utilidades_a00297c201e327636e51a1d736cd30ae7} 
+void Utilidades\+::mostrar\+Erro (\begin{DoxyParamCaption}\item[{string}]{mensagem}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exibe uma mensagem de erro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mensagem} & Mensagem de erro \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_utilidades_af68855f35604c87103d917fdd1e35860}\index{Utilidades@{Utilidades}!mostrarLinha@{mostrarLinha}}
+\index{mostrarLinha@{mostrarLinha}!Utilidades@{Utilidades}}
+\doxysubsubsection{\texorpdfstring{mostrarLinha()}{mostrarLinha()}}
+{\footnotesize\ttfamily \label{class_utilidades_af68855f35604c87103d917fdd1e35860} 
+void Utilidades\+::mostrar\+Linha (\begin{DoxyParamCaption}\item[{char}]{caractere}{ = {\ttfamily \textquotesingle{}=\textquotesingle{}}, }\item[{int}]{largura}{ = {\ttfamily 60}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exibe uma linha separadora. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em caractere} & Caractere usado para desenhar a linha (padrão\+: \textquotesingle{}=\textquotesingle{}) \\
+\hline
+{\em largura} & Largura da linha (padrão\+: 60) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_utilidades_ad5d1fb878557e114be89aae7773a2a06}\index{Utilidades@{Utilidades}!mostrarMensagem@{mostrarMensagem}}
+\index{mostrarMensagem@{mostrarMensagem}!Utilidades@{Utilidades}}
+\doxysubsubsection{\texorpdfstring{mostrarMensagem()}{mostrarMensagem()}}
+{\footnotesize\ttfamily \label{class_utilidades_ad5d1fb878557e114be89aae7773a2a06} 
+void Utilidades\+::mostrar\+Mensagem (\begin{DoxyParamCaption}\item[{string}]{mensagem}{, }\item[{bool}]{erro}{ = {\ttfamily false}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exibe uma mensagem formatada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mensagem} & Mensagem a ser exibida \\
+\hline
+{\em erro} & Se true, exibe como erro (padrão\+: false) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_utilidades_aa71528136fceb184140a09982e6bc191}\index{Utilidades@{Utilidades}!mostrarSucesso@{mostrarSucesso}}
+\index{mostrarSucesso@{mostrarSucesso}!Utilidades@{Utilidades}}
+\doxysubsubsection{\texorpdfstring{mostrarSucesso()}{mostrarSucesso()}}
+{\footnotesize\ttfamily \label{class_utilidades_aa71528136fceb184140a09982e6bc191} 
+void Utilidades\+::mostrar\+Sucesso (\begin{DoxyParamCaption}\item[{string}]{mensagem}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exibe uma mensagem de sucesso. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mensagem} & Mensagem de sucesso \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_utilidades_ad3727a38e8ba940bfe1acdfcb9a3e178}\index{Utilidades@{Utilidades}!pausar@{pausar}}
+\index{pausar@{pausar}!Utilidades@{Utilidades}}
+\doxysubsubsection{\texorpdfstring{pausar()}{pausar()}}
+{\footnotesize\ttfamily \label{class_utilidades_ad3727a38e8ba940bfe1acdfcb9a3e178} 
+void Utilidades\+::pausar (\begin{DoxyParamCaption}\item[{string}]{mensagem}{ = {\ttfamily "{}Pressione~ENTER~para~continuar..."{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Pausa a execução e aguarda o usuário pressionar ENTER. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mensagem} & Mensagem a ser exibida antes da pausa (padrão\+: "{}\+Pressione ENTER para continuar..."{}) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/apresentacao/\mbox{\hyperlink{_utilidades_8hpp}{Utilidades.\+hpp}}\item 
+src/apresentacao/\mbox{\hyperlink{_utilidades_8cpp}{Utilidades.\+cpp}}\end{DoxyCompactItemize}

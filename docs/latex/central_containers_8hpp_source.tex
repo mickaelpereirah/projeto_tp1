@@ -1,0 +1,66 @@
+\doxysection{central\+Containers.\+hpp}
+\hypertarget{central_containers_8hpp_source}{}\label{central_containers_8hpp_source}\index{include/servicos/centralContainers.hpp@{include/servicos/centralContainers.hpp}}
+\mbox{\hyperlink{central_containers_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ CENTRAL\_CONTAINERS\_HPP\_INCLUDED}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CENTRAL\_CONTAINERS\_HPP\_INCLUDED}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_o_n_t_a_i_n_e_r_s_8hpp}{CONTAINERS.hpp}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_central_containers}{CentralContainers}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_container_reserva}{ContainerReserva}}\ \mbox{\hyperlink{class_central_containers_afb2fd640b3d8b29853d50ab5b1997f6f}{containerReservas}};}
+\DoxyCodeLine{00046\ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_container_hospede}{ContainerHospede}}\ \mbox{\hyperlink{class_central_containers_a5767fc1a64bf8a134fe950f8845b9fab}{containerHospedes}};}
+\DoxyCodeLine{00053\ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_container_hotel}{ContainerHotel}}\ \mbox{\hyperlink{class_central_containers_aa1b2bb82d61fc80e2fdab9212bd25847}{containerHoteis}};}
+\DoxyCodeLine{00060\ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_container_gerente}{ContainerGerente}}\ \mbox{\hyperlink{class_central_containers_adf83dcf8a7b5828a715a47c63afd13a7}{containerGerentes}};}
+\DoxyCodeLine{00067\ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_container_quarto}{ContainerQuarto}}\ \mbox{\hyperlink{class_central_containers_afba6ba31ad088fb91cfe5e3f3fc4d7e2}{containerQuartos}};}
+\DoxyCodeLine{00074\ \ \ \ \ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_container_reserva}{ContainerReserva}}\ \&\mbox{\hyperlink{class_central_containers_a99ab33a07b1a82475aa2339326642b64}{getContainerReservas}}();}
+\DoxyCodeLine{00089\ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_container_hospede}{ContainerHospede}}\ \&\mbox{\hyperlink{class_central_containers_af6cb68207659a986d38ef23792fa4793}{getContainerHospedes}}();}
+\DoxyCodeLine{00097\ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_container_hotel}{ContainerHotel}}\ \&\mbox{\hyperlink{class_central_containers_a4c951ee46c25fc3387681e5b88fd8c33}{getContainerHoteis}}();}
+\DoxyCodeLine{00105\ \ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_container_gerente}{ContainerGerente}}\ \&\mbox{\hyperlink{class_central_containers_a06ca84e7a6ab3e1c3da43c35e9a983ee}{getContainerGerentes}}();}
+\DoxyCodeLine{00113\ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_container_quarto}{ContainerQuarto}}\ \&\mbox{\hyperlink{class_central_containers_ab21274cceca5ee2a49d00f4267bb7465}{getContainerQuartos}}();}
+\DoxyCodeLine{00121\ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_container_reserva}{ContainerReserva}}\ \&\mbox{\hyperlink{class_central_containers_a99ab33a07b1a82475aa2339326642b64}{CentralContainers::getContainerReservas}}()}
+\DoxyCodeLine{00128\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_central_containers_afb2fd640b3d8b29853d50ab5b1997f6f}{containerReservas}};}
+\DoxyCodeLine{00130\ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00136\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_container_hospede}{ContainerHospede}}\ \&\mbox{\hyperlink{class_central_containers_af6cb68207659a986d38ef23792fa4793}{CentralContainers::getContainerHospedes}}()}
+\DoxyCodeLine{00137\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_central_containers_a5767fc1a64bf8a134fe950f8845b9fab}{containerHospedes}};}
+\DoxyCodeLine{00139\ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00145\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_container_hotel}{ContainerHotel}}\ \&\mbox{\hyperlink{class_central_containers_a4c951ee46c25fc3387681e5b88fd8c33}{CentralContainers::getContainerHoteis}}()}
+\DoxyCodeLine{00146\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_central_containers_aa1b2bb82d61fc80e2fdab9212bd25847}{containerHoteis}};}
+\DoxyCodeLine{00148\ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00154\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_container_gerente}{ContainerGerente}}\ \&\mbox{\hyperlink{class_central_containers_a06ca84e7a6ab3e1c3da43c35e9a983ee}{CentralContainers::getContainerGerentes}}()}
+\DoxyCodeLine{00155\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_central_containers_adf83dcf8a7b5828a715a47c63afd13a7}{containerGerentes}};}
+\DoxyCodeLine{00157\ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00163\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_container_quarto}{ContainerQuarto}}\ \&\mbox{\hyperlink{class_central_containers_ab21274cceca5ee2a49d00f4267bb7465}{CentralContainers::getContainerQuartos}}()}
+\DoxyCodeLine{00164\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_central_containers_afba6ba31ad088fb91cfe5e3f3fc4d7e2}{containerQuartos}};}
+\DoxyCodeLine{00166\ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

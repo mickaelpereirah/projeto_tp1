@@ -1,0 +1,105 @@
+\doxysection{Remover\+Gerente Class Reference}
+\hypertarget{class_remover_gerente}{}\label{class_remover_gerente}\index{RemoverGerente@{RemoverGerente}}
+
+
+Remove gerentes do sistema com remoção em cascata.  
+
+
+
+
+{\ttfamily \#include $<$remover\+Gerente.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_remover_gerente_aeef75f1e470343ca2a2898d69265c752}{remover\+\_\+gerente}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Remove gerente e todos os dados associados em cascata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Remove gerentes do sistema com remoção em cascata. 
+
+{\bfseries{IMPORTANTE -\/ Remoção em Cascata\+:}}
+\begin{DoxyItemize}
+\item Remove GERENTE
+\item Remove todos os HOTÉ\+IS do gerente
+\item Remove todos os QUARTOS dos hotéis
+\item Remove todas as RESERVAS dos quartos
+\end{DoxyItemize}
+
+{\bfseries{Impacto\+:}}
+\begin{DoxyItemize}
+\item Remoção permanente (não há recuperação no MVP)
+\item Afeta toda hierarquia de dados
+\item Hóspedes NÃO são removidos (apenas suas reservas)
+\end{DoxyItemize}
+
+{\bfseries{Segurança\+:}}
+\begin{DoxyItemize}
+\item Ação irreversível
+\item Requer confirmação na camada de apresentação
+\item \doxylink{class_gerente}{Gerente} só pode remover a si próprio (após login) 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_remover_gerente_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_remover_gerente_aeef75f1e470343ca2a2898d69265c752}\index{RemoverGerente@{RemoverGerente}!remover\_gerente@{remover\_gerente}}
+\index{remover\_gerente@{remover\_gerente}!RemoverGerente@{RemoverGerente}}
+\doxysubsubsection{\texorpdfstring{remover\_gerente()}{remover\_gerente()}}
+{\footnotesize\ttfamily \label{class_remover_gerente_aeef75f1e470343ca2a2898d69265c752} 
+bool Remover\+Gerente\+::remover\+\_\+gerente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove gerente e todos os dados associados em cascata. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente a ser removido \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removido com sucesso, false caso contrário
+\end{DoxyReturn}
+{\bfseries{Processo de Remoção\+:}}
+\begin{DoxyEnumerate}
+\item Lista todos os hotéis do gerente
+\item Para cada hotel, chama \doxylink{class_remover_hotel_afc880e7bd4acbe8078652602172dfc0e}{Remover\+Hotel\+::remover\+\_\+hotel()}
+\begin{DoxyItemize}
+\item Remove quartos do hotel
+\item Remove reservas dos quartos
+\end{DoxyItemize}
+\item Remove gerente do container
+\end{DoxyEnumerate}
+
+{\bfseries{Efeito Cascata\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Gerente\ (1)\ }
+\DoxyCodeLine{\ \ └─\ Hotéis\ (N)\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ └─\ Quartos\ (N)\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ └─\ Reservas\ (N)\ [removidas]}
+
+\end{DoxyCode}
+
+
+{\bfseries{Exemplo de uso\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Gerente*\ g\ =\ \mbox{\hyperlink{class_autenticar_gerente_a1f285c68a01be08c6ba44a460817d909}{AutenticarGerente::login}}(\textcolor{stringliteral}{"{}joao@hotel.com"{}},\ \textcolor{stringliteral}{"{}senha"{}});}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Deseja\ realmente\ excluir\ sua\ conta?\ (sim/nao):\ "{}};}
+\DoxyCodeLine{\textcolor{keywordtype}{string}\ resposta;}
+\DoxyCodeLine{cin\ >>\ resposta;}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(resposta\ ==\ \textcolor{stringliteral}{"{}sim"{}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_remover_gerente_aeef75f1e470343ca2a2898d69265c752}{RemoverGerente::remover\_gerente}}(g))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Conta\ removida\ com\ sucesso!"{}}\ <<\ endl;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Logout\ automático}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/servicos/remover/\mbox{\hyperlink{remover_gerente_8hpp}{remover\+Gerente.\+hpp}}\item 
+src/servicos/remover/\mbox{\hyperlink{remover_gerente_8cpp}{remover\+Gerente.\+cpp}}\end{DoxyCompactItemize}

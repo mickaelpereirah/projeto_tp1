@@ -25,22 +25,49 @@ bool \mbox{\hyperlink{class_codigo_ac5f23076fb06cb67121050014b861fa8}{validar}} 
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{class_codigo_a1489ca5ff70fdbdfe2467b6370402cbc}{caracteres}}
-\begin{DoxyCompactList}\small\item\em Sequência de caracteres do código armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sequência de caracteres do código armazenado (10 caracteres). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Representa um código identificador válido. 
 
-A classe \doxylink{class_codigo}{Codigo} é responsável por armazenar e validar códigos utilizados no sistema para identificação de entidades.
+A classe \doxylink{class_codigo}{Codigo} armazena e valida códigos alfanuméricos utilizados para identificar entidades no sistema (hotéis, reservas, etc.).
 
-As regras de validação típicas podem incluir\+:
+{\bfseries{FORMATO VÁ\+LIDO\+:}}
 \begin{DoxyItemize}
-\item Formato específico (ex\+: AAA000)
-\item Tamanho fixo ou variável
-\item Caracteres permitidos (letras, números)
+\item Exatamente 10 caracteres
+\item Cada caracter é letra (a-\/z) ou dígito (0-\/9)
 \end{DoxyItemize}
 
-A implementação específica das regras de validação é definida no método \doxylink{class_codigo_ac5f23076fb06cb67121050014b861fa8}{validar()} privado. 
+{\bfseries{REGRAS DE VALIDAÇÃO\+:}}
+\begin{DoxyEnumerate}
+\item O código deve conter exatamente 10 caracteres
+\item Cada caractere deve ser\+:
+\begin{DoxyItemize}
+\item Letra minúscula (a-\/z) OU
+\item Dígito (0-\/9)
+\end{DoxyItemize}
+\item Não são permitidos\+:
+\begin{DoxyItemize}
+\item Letras maiúsculas (devem ser convertidas antes)
+\item Caracteres especiais (-\/, \+\_\+, @, etc.)
+\item Espaços em branco
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+{\bfseries{EXEMPLOS\+:}}
+\begin{DoxyItemize}
+\item ✅ Válido\+: "{}htl0001abc"{} (10 caracteres alfanuméricos)
+\item ✅ Válido\+: "{}abc1234567"{} (mix de letras e números)
+\item ✅ Válido\+: "{}0123456789"{} (apenas números)
+\item ✅ Válido\+: "{}abcdefghij"{} (apenas letras)
+\item ❌ Inválido\+: "{}\+HTL0001\+ABC"{} (contém letras maiúsculas)
+\item ❌ Inválido\+: "{}abc123"{} (apenas 6 caracteres)
+\item ❌ Inválido\+: "{}abc-\/123-\/456"{} (contém hífen)
+\item ❌ Inválido\+: "{}abc 123 456"{} (contém espaços)
+\end{DoxyItemize}
+
+{\bfseries{NOTA DE IMPLEMENTAÇÃO\+:}} O sistema pode internamente converter letras maiúsculas para minúsculas ou exigir que o usuário forneça já em minúsculas. 
 
 \label{doc-func-members}
 \Hypertarget{class_codigo_doc-func-members}
@@ -58,6 +85,8 @@ Obtém o código armazenado.
 Implementação inline do método \doxylink{class_codigo_aa78a03ad29c1cb6a3e953db2137d6278}{get\+Valor()}.
 
 \begin{DoxyReturn}{Returns}
+string Código armazenado (10 caracteres)
+
 string Código armazenado 
 \end{DoxyReturn}
 \Hypertarget{class_codigo_afdc4d9c6e42358cd0d48001d4c671584}\index{Codigo@{Codigo}!setValor@{setValor}}
@@ -72,15 +101,28 @@ Define o código.
 
 
 \begin{DoxyParams}{Parameters}
-{\em caracteres} & Código em formato string \\
+{\em caracteres} & Código em formato string (10 caracteres alfanuméricos) \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em invalid\+\_\+argument} & se o código for inválido\\
+{\em invalid\+\_\+argument} & Se o código for inválido\\
 \hline
 \end{DoxyExceptions}
-Realiza a validação completa antes de armazenar o valor. Códigos que não atendem às regras de validação resultam em exceção. \Hypertarget{class_codigo_ac5f23076fb06cb67121050014b861fa8}\index{Codigo@{Codigo}!validar@{validar}}
+Realiza a validação completa antes de armazenar o valor. Códigos que não atendem às regras de validação resultam em exceção.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Codigo\ cod;}
+\DoxyCodeLine{\textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ cod.\mbox{\hyperlink{class_codigo_afdc4d9c6e42358cd0d48001d4c671584}{setValor}}(\textcolor{stringliteral}{"{}htl0001abc"{}});}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Código\ válido:\ "{}}\ <<\ cod.\mbox{\hyperlink{class_codigo_aa78a03ad29c1cb6a3e953db2137d6278}{getValor}}();}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{catch}\ (invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Código\ inválido:\ "{}}\ <<\ e.what();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_codigo_ac5f23076fb06cb67121050014b861fa8}\index{Codigo@{Codigo}!validar@{validar}}
 \index{validar@{validar}!Codigo@{Codigo}}
 \doxysubsubsection{\texorpdfstring{validar()}{validar()}}
 {\footnotesize\ttfamily \label{class_codigo_ac5f23076fb06cb67121050014b861fa8} 
@@ -98,7 +140,13 @@ Valida o código conforme as regras do domínio.
 \begin{DoxyReturn}{Returns}
 true se o código for válido, false caso contrário
 \end{DoxyReturn}
-Implementa as regras de validação específicas para códigos no sistema, como formato, tamanho e caracteres permitidos. 
+Implementa as regras de validação\+:
+\begin{DoxyItemize}
+\item Verifica se tem exatamente 10 caracteres
+\item Verifica se cada caractere é letra (a-\/z) ou dígito (0-\/9)
+\end{DoxyItemize}
+
+Utiliza isalnum() para verificar se é alfanumérico. 
 
 \label{doc-variable-members}
 \Hypertarget{class_codigo_doc-variable-members}
@@ -111,7 +159,7 @@ string Codigo\+::caracteres\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Sequência de caracteres do código armazenado. 
+Sequência de caracteres do código armazenado (10 caracteres). 
 
 
 

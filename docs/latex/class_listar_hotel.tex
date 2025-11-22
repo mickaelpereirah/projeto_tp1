@@ -1,0 +1,77 @@
+\doxysection{Listar\+Hotel Class Reference}
+\hypertarget{class_listar_hotel}{}\label{class_listar_hotel}\index{ListarHotel@{ListarHotel}}
+
+
+Lista hotéis cadastrados de um gerente específico.  
+
+
+
+
+{\ttfamily \#include $<$listar\+Hotel.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static vector$<$ \mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_listar_hotel_a6bcbaacb105c7edd9ea32b50b4dc0501}{listar\+\_\+hoteis}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Lista todos os hotéis de um gerente específico. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lista hotéis cadastrados de um gerente específico. 
+
+{\bfseries{Escopo de Listagem\+:}}
+\begin{DoxyItemize}
+\item Lista apenas hotéis do gerente logado
+\item \doxylink{class_gerente}{Gerente} só visualiza seus próprios hotéis
+\item Implementa isolamento de dados por gerente
+\end{DoxyItemize}
+
+{\bfseries{Regra de Negócio\+:}}
+\begin{DoxyItemize}
+\item Cada gerente gerencia seus hotéis
+\item Não há acesso cross-\/gerente
+\item Lista pode estar vazia se gerente não tem hotéis 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_listar_hotel_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_listar_hotel_a6bcbaacb105c7edd9ea32b50b4dc0501}\index{ListarHotel@{ListarHotel}!listar\_hoteis@{listar\_hoteis}}
+\index{listar\_hoteis@{listar\_hoteis}!ListarHotel@{ListarHotel}}
+\doxysubsubsection{\texorpdfstring{listar\_hoteis()}{listar\_hoteis()}}
+{\footnotesize\ttfamily \label{class_listar_hotel_a6bcbaacb105c7edd9ea32b50b4dc0501} 
+vector$<$ \mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*} $>$ Listar\+Hotel\+::listar\+\_\+hoteis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lista todos os hotéis de um gerente específico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente autenticado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Hotel\texorpdfstring{$\ast$}{*}$>$ Vetor com hotéis do gerente
+\end{DoxyReturn}
+{\bfseries{Comportamento\+:}}
+\begin{DoxyEnumerate}
+\item Busca no container de hotéis
+\item Filtra hotéis onde gerente.\+email == hotel.\+gerente
+\item Retorna lista filtrada
+\item Lista vazia se gerente não tem hotéis
+\end{DoxyEnumerate}
+
+{\bfseries{Exemplo de uso\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Gerente*\ g\ =\ \mbox{\hyperlink{class_autenticar_gerente_a1f285c68a01be08c6ba44a460817d909}{AutenticarGerente::login}}(\textcolor{stringliteral}{"{}joao@hotel.com"{}},\ \textcolor{stringliteral}{"{}senha"{}});}
+\DoxyCodeLine{vector<Hotel*>\ meus\_hoteis\ =\ \mbox{\hyperlink{class_listar_hotel_a6bcbaacb105c7edd9ea32b50b4dc0501}{ListarHotel::listar\_hoteis}}(g);}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Você\ gerencia\ "{}}\ <<\ meus\_hoteis.size()\ <<\ \textcolor{stringliteral}{"{}\ hotel(is)"{}}\ <<\ endl;}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/servicos/listar/\mbox{\hyperlink{listar_hotel_8hpp}{listar\+Hotel.\+hpp}}\item 
+src/servicos/listar/\mbox{\hyperlink{listar_hotel_8cpp}{listar\+Hotel.\+cpp}}\end{DoxyCompactItemize}

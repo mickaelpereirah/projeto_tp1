@@ -2,7 +2,7 @@
 \hypertarget{class_nome}{}\label{class_nome}\index{Nome@{Nome}}
 
 
-Representa um nome pessoal válido de 5 a 20 caracteres.  
+Representa um nome pessoal válido.  
 
 
 
@@ -20,32 +20,74 @@ string \mbox{\hyperlink{class_nome_a8afd62560d48fd2102e8136b97be709c}{get\+Valor
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{class_nome_ac7288ba646f6b5245eb1f2d47604ca34}{validar}} (string)
-\begin{DoxyCompactList}\small\item\em Valida o nome pessoal conforme regras do domínio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Valida o nome pessoal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{class_nome_a7c7a7c0513e4997120619e15bed88b7d}{texto}}
-\begin{DoxyCompactList}\small\item\em Texto do nome armazenado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Texto do nome armazenado (5-\/20 caracteres). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Representa um nome pessoal válido de 5 a 20 caracteres. 
+Representa um nome pessoal válido. 
 
-A classe \doxylink{class_nome}{Nome} é responsável por armazenar e validar nomes pessoais conforme regras específicas de formatação. A validação inclui\+:
+A classe \doxylink{class_nome}{Nome} armazena e valida nomes pessoais seguindo regras específicas de formatação e capitalização.
+
+{\bfseries{FORMATO VÁ\+LIDO\+:}}
 \begin{DoxyItemize}
-\item Comprimento entre 5 e 20 caracteres
-\item Caracteres permitidos\+: apenas letras (a-\/z, A-\/Z) e espaços em branco
-\item Primeira letra de cada termo deve ser maiúscula (A-\/Z)
-\item Espaço em branco deve ser seguido por letra
-\item Último caractere não pode ser espaço em branco
+\item Texto com 5 a 20 caracteres
 \end{DoxyItemize}
 
-Exemplos de nomes válidos\+:
+{\bfseries{CARACTERES PERMITIDOS\+:}}
 \begin{DoxyItemize}
-\item Joao Silva
-\item Maria Santos
-\item Carlos Alberto
-\item Ana Claudia 
+\item Letra (a-\/z ou A-\/Z)
+\item Espaço em branco ( )
+\end{DoxyItemize}
+
+{\bfseries{REGRAS DE FORMATAÇÃO\+:}}
+\begin{DoxyItemize}
+\item Cada caracter pode ser letra (a-\/z ou A-\/Z) ou espaço em branco
+\item Primeiro caracter de cada termo é letra maiúscula (A-\/Z)
+\item Espaço em branco é seguido por letra
+\item Último caracter não pode ser espaço em branco
+\end{DoxyItemize}
+
+{\bfseries{DEFINIÇÃO DE TERMO\+:}}
+\begin{DoxyItemize}
+\item Termo\+: sequência de letras separada por espaço
+\item Exemplo\+: "{}\+Joao Silva"{} tem 2 termos\+: "{}\+Joao"{} e "{}\+Silva"{}
+\item Cada termo deve começar com letra maiúscula
+\end{DoxyItemize}
+
+{\bfseries{EXEMPLOS\+:}}
+\begin{DoxyItemize}
+\item ✅ Válido\+: "{}\+Joao Silva"{} (5 caracteres, 2 termos capitalizados)
+\item ✅ Válido\+: "{}\+Maria Santos"{} (12 caracteres)
+\item ✅ Válido\+: "{}\+Carlos Alberto Souza"{} (20 caracteres, 3 termos)
+\item ✅ Válido\+: "{}\+Ana C"{} (5 caracteres, inicial permitida)
+\item ✅ Válido\+: "{}\+Pedro De Almeida"{} ("{}\+De"{} capitalizado)
+\item ❌ Inválido\+: "{}\+João"{} (apenas 4 caracteres, mínimo é 5)
+\item ❌ Inválido\+: "{}\+Nome Muito Grande Demais"{} (mais de 20 caracteres)
+\item ❌ Inválido\+: "{}joao silva"{} (não começa com maiúscula)
+\item ❌ Inválido\+: "{}\+Joao silva"{} (segundo termo não começa com maiúscula)
+\item ❌ Inválido\+: "{}\+JOAO SILVA"{} (todas maiúsculas, não segue padrão)
+\item ❌ Inválido\+: "{}\+Joao Silva "{} (termina com espaço)
+\item ❌ Inválido\+: "{} Joao Silva"{} (começa com espaço)
+\item ❌ Inválido\+: "{}\+Joao  Silva"{} (espaços consecutivos)
+\item ❌ Inválido\+: "{}\+Joao123"{} (contém dígito)
+\item ❌ Inválido\+: "{}\+Joao-\/\+Silva"{} (contém hífen)
+\item ❌ Inválido\+: "{}\+João Silva"{} (contém acentuação)
+\end{DoxyItemize}
+
+{\bfseries{VALIDAÇÕ\+ES ESPECÍ\+FICAS\+:}}
+\begin{DoxyItemize}
+\item Comprimento entre 5 e 20 caracteres (inclusive)
+\item Apenas letras (a-\/z, A-\/Z) e espaços permitidos
+\item Primeiro caractere de cada termo\+: maiúscula (A-\/Z)
+\item Após o primeiro caractere de cada termo\+: minúsculas (a-\/z)
+\item Espaço sempre seguido por letra maiúscula (início de novo termo)
+\item Não pode começar ou terminar com espaço
+\item Não permite espaços consecutivos 
 \end{DoxyItemize}
 
 \label{doc-func-members}
@@ -64,7 +106,7 @@ Obtém o nome armazenado.
 Implementação inline do método get\+Valor.
 
 \begin{DoxyReturn}{Returns}
-string \doxylink{class_nome}{Nome} no formato válido
+string \doxylink{class_nome}{Nome} no formato válido (5-\/20 caracteres)
 
 string \doxylink{class_nome}{Nome} armazenado 
 \end{DoxyReturn}
@@ -80,7 +122,7 @@ Define o nome pessoal.
 
 
 \begin{DoxyParams}{Parameters}
-{\em texto} & \doxylink{class_nome}{Nome} em formato string \\
+{\em texto} & \doxylink{class_nome}{Nome} em formato string (5-\/20 caracteres) \\
 \hline
 \end{DoxyParams}
 
@@ -88,7 +130,20 @@ Define o nome pessoal.
 {\em invalid\+\_\+argument} & Se o nome for inválido\\
 \hline
 \end{DoxyExceptions}
-Realiza a validação completa antes de armazenar o valor. Nomes que não atendem às regras de validação resultam em exceção com mensagem descritiva do erro. \Hypertarget{class_nome_ac7288ba646f6b5245eb1f2d47604ca34}\index{Nome@{Nome}!validar@{validar}}
+Realiza a validação completa antes de armazenar.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Nome\ nomeGerente;}
+\DoxyCodeLine{\textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ nomeGerente.\mbox{\hyperlink{class_nome_aaad6a1ad8718cce8dde090a435c3cd81}{setValor}}(\textcolor{stringliteral}{"{}Carlos\ Silva"{}});}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Nome\ válido:\ "{}}\ <<\ nomeGerente.\mbox{\hyperlink{class_nome_a8afd62560d48fd2102e8136b97be709c}{getValor}}();}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{catch}\ (invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Nome\ inválido:\ "{}}\ <<\ e.what();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_nome_ac7288ba646f6b5245eb1f2d47604ca34}\index{Nome@{Nome}!validar@{validar}}
 \index{validar@{validar}!Nome@{Nome}}
 \doxysubsubsection{\texorpdfstring{validar()}{validar()}}
 {\footnotesize\ttfamily \label{class_nome_ac7288ba646f6b5245eb1f2d47604ca34} 
@@ -96,7 +151,7 @@ bool Nome\+::validar (\begin{DoxyParamCaption}\item[{string}]{texto}{}\end{DoxyP
 
 
 
-Valida o nome pessoal conforme regras do domínio. 
+Valida o nome pessoal. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -106,15 +161,16 @@ Valida o nome pessoal conforme regras do domínio.
 \begin{DoxyReturn}{Returns}
 true se o nome for válido, false caso contrário
 \end{DoxyReturn}
-Implementa a validação completa do nome, incluindo\+:
-\begin{DoxyItemize}
-\item Verificação de comprimento (5-\/20 caracteres)
-\item Validação de caracteres permitidos (apenas letras e espaços)
-\item Primeira letra de cada termo deve ser maiúscula
-\item Espaço em branco deve ser seguido por letra
-\item Último caractere não pode ser espaço
-\item Não permite espaços consecutivos 
-\end{DoxyItemize}
+Executa as seguintes validações\+:
+\begin{DoxyEnumerate}
+\item Verifica comprimento (5 a 20 caracteres)
+\item Valida caracteres permitidos (apenas letras e espaços)
+\item Verifica que primeiro caractere de cada termo é maiúscula
+\item Verifica que demais caracteres do termo são minúsculas
+\item Garante que espaço é sempre seguido por letra (início de termo)
+\item Verifica que não começa nem termina com espaço
+\item Garante que não há espaços consecutivos 
+\end{DoxyEnumerate}
 
 \label{doc-variable-members}
 \Hypertarget{class_nome_doc-variable-members}
@@ -127,7 +183,7 @@ string Nome\+::texto\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Texto do nome armazenado. 
+Texto do nome armazenado (5-\/20 caracteres). 
 
 
 

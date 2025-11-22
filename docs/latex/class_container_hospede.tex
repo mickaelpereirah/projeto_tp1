@@ -1,0 +1,265 @@
+\doxysection{Container\+Hospede Class Reference}
+\hypertarget{class_container_hospede}{}\label{class_container_hospede}\index{ContainerHospede@{ContainerHospede}}
+
+
+Container para armazenar e gerenciar hóspedes do sistema.  
+
+
+
+
+{\ttfamily \#include $<$container\+Hospedes.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_container_hospede_a0fb5311f192347d9c485a5cc84215b88}{incluir}} (\mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Inclui um novo hóspede no container. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_container_hospede_a7746a130a786fcc25b6acfb96f43275f}{remover}} (string)
+\begin{DoxyCompactList}\small\item\em Remove um hóspede do container. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_container_hospede_a58515f3e1c51651c7bf3a0a0fa5919fb}{pesquisar}} (string)
+\begin{DoxyCompactList}\small\item\em Busca um hóspede por email. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_container_hospede_a69f9782104ab72a4c8fe75384715876f}{atualizar}} (\mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Atualiza os dados de um hóspede existente. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_container_hospede_adec45f69b78a65787e50c043a2fb3cff}{listar\+Todos}} ()
+\begin{DoxyCompactList}\small\item\em Lista todos os hóspedes cadastrados no sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unordered\+\_\+map$<$ string, \mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_container_hospede_a0f1c497cd680f5e50de6590d1b8f0420}{container}}
+\begin{DoxyCompactList}\small\item\em Mapa hash para armazenar hóspedes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container para armazenar e gerenciar hóspedes do sistema. 
+
+Esta classe implementa um container para armazenamento em memória de objetos do tipo \doxylink{class_hospede}{Hospede}. Utiliza um unordered\+\_\+map com o email do hóspede como chave, garantindo acesso rápido O(1) e unicidade de emails no sistema.
+
+O container é responsável por\+:
+\begin{DoxyItemize}
+\item Armazenar hóspedes de forma única (um email = um hóspede)
+\item Permitir busca eficiente por email
+\item Gerenciar inclusão, remoção e atualização de hóspedes
+\item Manter a integridade dos dados (não permite emails duplicados)
+\item Listar todos os hóspedes cadastrados no sistema
+\end{DoxyItemize}
+
+Diferente dos containers de \doxylink{class_hotel}{Hotel} e \doxylink{class_quarto}{Quarto}, os hóspedes não são vinculados diretamente a um hotel específico no container. A associação com hotéis é feita através das reservas.
+
+Regras de negócio\+:
+\begin{DoxyItemize}
+\item \doxylink{class_email}{Email}\+: formato válido, único no sistema (chave primária)
+\item \doxylink{class_nome}{Nome}\+: 5-\/20 caracteres, primeira letra maiúscula
+\item Endereço\+: 5-\/30 caracteres
+\item Cartão\+: 16 dígitos com validação de Luhn
+\end{DoxyItemize}
+
+IMPORTANTE\+: O container NÃO é responsável por liberar a memória dos objetos. A responsabilidade de delete dos ponteiros é de quem criou os objetos. 
+
+\label{doc-func-members}
+\Hypertarget{class_container_hospede_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_container_hospede_a69f9782104ab72a4c8fe75384715876f}\index{ContainerHospede@{ContainerHospede}!atualizar@{atualizar}}
+\index{atualizar@{atualizar}!ContainerHospede@{ContainerHospede}}
+\doxysubsubsection{\texorpdfstring{atualizar()}{atualizar()}}
+{\footnotesize\ttfamily \label{class_container_hospede_a69f9782104ab72a4c8fe75384715876f} 
+bool Container\+Hospede\+::atualizar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*}}]{hospede\+\_\+atualizado}{}\end{DoxyParamCaption})}
+
+
+
+Atualiza os dados de um hóspede existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hospede} & Ponteiro para o hóspede com dados atualizados \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se atualizado com sucesso, false se não encontrado
+\end{DoxyReturn}
+Busca o hóspede pelo email e substitui o ponteiro no container. O email NÃO pode ser alterado (é a chave primária).
+
+Pode atualizar\+: nome, endereço e cartão.
+
+IMPORTANTE\+: O ponteiro antigo não é liberado. Se necessário, faça delete antes de atualizar para evitar memory leak.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Hospede*\ h\ =\ \mbox{\hyperlink{class_container_hospede_a0f1c497cd680f5e50de6590d1b8f0420}{container}}.pesquisar(\textcolor{stringliteral}{"{}hospede@email.com"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(h\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\ \ \ \ Nome\ novoNome;}
+\DoxyCodeLine{\ \ \ \ novoNome.\mbox{\hyperlink{class_nome_aaad6a1ad8718cce8dde090a435c3cd81}{setValor}}(\textcolor{stringliteral}{"{}Novo\ Nome"{}});}
+\DoxyCodeLine{\ \ \ \ h-\/>\mbox{\hyperlink{class_pessoa_a5923891b2acbdbff839cb0425960af1d}{setNome}}(novoNome);}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_container_hospede_a0f1c497cd680f5e50de6590d1b8f0420}{container}}.atualizar(h))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Hóspede\ atualizado\ com\ sucesso"{}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_hospede_a0fb5311f192347d9c485a5cc84215b88}\index{ContainerHospede@{ContainerHospede}!incluir@{incluir}}
+\index{incluir@{incluir}!ContainerHospede@{ContainerHospede}}
+\doxysubsubsection{\texorpdfstring{incluir()}{incluir()}}
+{\footnotesize\ttfamily \label{class_container_hospede_a0fb5311f192347d9c485a5cc84215b88} 
+bool Container\+Hospede\+::incluir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*}}]{hospede}{}\end{DoxyParamCaption})}
+
+
+
+Inclui um novo hóspede no container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hospede} & Ponteiro para o hóspede a ser incluído \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se incluído com sucesso, false se o email já existe
+\end{DoxyReturn}
+O email do hóspede é usado como chave. Se já existir um hóspede com o mesmo email, a operação falha e retorna false.
+
+Validações que devem ser feitas ANTES de incluir\+:
+\begin{DoxyItemize}
+\item \doxylink{class_email}{Email} em formato válido
+\item \doxylink{class_nome}{Nome}\+: 5-\/20 caracteres, primeira letra maiúscula
+\item Endereço\+: 5-\/30 caracteres
+\item Cartão\+: 16 dígitos com algoritmo de Luhn válido
+\end{DoxyItemize}
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Hospede*\ h\ =\ \textcolor{keyword}{new}\ Hospede();}
+\DoxyCodeLine{h-\/>\mbox{\hyperlink{class_pessoa_ac2b331ad7043c54c1da09e1affaf0af6}{setEmail}}(email);}
+\DoxyCodeLine{h-\/>\mbox{\hyperlink{class_pessoa_a5923891b2acbdbff839cb0425960af1d}{setNome}}(nome);}
+\DoxyCodeLine{h-\/>\mbox{\hyperlink{class_hospede_a654e897afb0538d35a82e1be6ced019c}{setEndereco}}(endereco);}
+\DoxyCodeLine{h-\/>\mbox{\hyperlink{class_hospede_a3c3484fa37a998be35e952100ce50cd2}{setCartao}}(cartao);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(\mbox{\hyperlink{class_container_hospede_a0f1c497cd680f5e50de6590d1b8f0420}{container}}.incluir(h))\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Hóspede\ cadastrado\ com\ sucesso"{}};}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Email\ já\ cadastrado\ no\ sistema"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{delete}\ h;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_hospede_adec45f69b78a65787e50c043a2fb3cff}\index{ContainerHospede@{ContainerHospede}!listarTodos@{listarTodos}}
+\index{listarTodos@{listarTodos}!ContainerHospede@{ContainerHospede}}
+\doxysubsubsection{\texorpdfstring{listarTodos()}{listarTodos()}}
+{\footnotesize\ttfamily \label{class_container_hospede_adec45f69b78a65787e50c043a2fb3cff} 
+vector$<$ \mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} $>$ Container\+Hospede\+::listar\+Todos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Lista todos os hóspedes cadastrados no sistema. 
+
+\begin{DoxyReturn}{Returns}
+Vector com ponteiros para todos os hóspedes
+\end{DoxyReturn}
+Útil para\+:
+\begin{DoxyItemize}
+\item Exibir relatórios gerais do sistema
+\item Estatísticas de hóspedes cadastrados
+\item Busca de hóspedes sem filtro de hotel
+\end{DoxyItemize}
+
+Se não houver hóspedes cadastrados, retorna vector vazio.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vector<Hospede*>\ todosHospedes\ =\ \mbox{\hyperlink{class_container_hospede_a0f1c497cd680f5e50de6590d1b8f0420}{container}}.listarTodos();}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Total\ de\ hóspedes\ no\ sistema:\ "{}}\ <<\ todosHospedes.size()\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(Hospede*\ h\ :\ todosHospedes)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ h-\/>getNome().getValor()\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}}\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ <<\ h-\/>getEmail().getValor()\ <<\ endl;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_hospede_a58515f3e1c51651c7bf3a0a0fa5919fb}\index{ContainerHospede@{ContainerHospede}!pesquisar@{pesquisar}}
+\index{pesquisar@{pesquisar}!ContainerHospede@{ContainerHospede}}
+\doxysubsubsection{\texorpdfstring{pesquisar()}{pesquisar()}}
+{\footnotesize\ttfamily \label{class_container_hospede_a58515f3e1c51651c7bf3a0a0fa5919fb} 
+\mbox{\hyperlink{class_hospede}{Hospede}} \texorpdfstring{$\ast$}{*} Container\+Hospede\+::pesquisar (\begin{DoxyParamCaption}\item[{string}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Busca um hóspede por email. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & \doxylink{class_email}{Email} do hóspede a ser buscado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o hóspede encontrado ou nullptr se não existir
+\end{DoxyReturn}
+Complexidade\+: O(1) em média devido ao uso de unordered\+\_\+map
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Hospede*\ h\ =\ \mbox{\hyperlink{class_container_hospede_a0f1c497cd680f5e50de6590d1b8f0420}{container}}.pesquisar(\textcolor{stringliteral}{"{}hospede@email.com"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(h\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Hóspede:\ "{}}\ <<\ h-\/>\mbox{\hyperlink{class_pessoa_a79d0d4923e0a0fdccddac4bfb2679087}{getNome}}().\mbox{\hyperlink{class_nome_a8afd62560d48fd2102e8136b97be709c}{getValor}}()\ <<\ endl;}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Endereço:\ "{}}\ <<\ h-\/>\mbox{\hyperlink{class_hospede_a415726d2cfbb5f10cdf307194b2a3d26}{getEndereco}}().\mbox{\hyperlink{class_endereco_a372a9924dab060072b51d36f2a00c6a0}{getValor}}()\ <<\ endl;}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Cartão:\ "{}}\ <<\ h-\/>\mbox{\hyperlink{class_hospede_a2d93cd4f6651fc9c5fcdcca90c19d8be}{getCartao}}().\mbox{\hyperlink{class_cartao_ae5611d53bdaf0558df7492e6e2fcc596}{getValor}}()\ <<\ endl;}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Hóspede\ não\ encontrado"{}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_container_hospede_a7746a130a786fcc25b6acfb96f43275f}\index{ContainerHospede@{ContainerHospede}!remover@{remover}}
+\index{remover@{remover}!ContainerHospede@{ContainerHospede}}
+\doxysubsubsection{\texorpdfstring{remover()}{remover()}}
+{\footnotesize\ttfamily \label{class_container_hospede_a7746a130a786fcc25b6acfb96f43275f} 
+bool Container\+Hospede\+::remover (\begin{DoxyParamCaption}\item[{string}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Remove um hóspede do container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & \doxylink{class_email}{Email} do hóspede a ser removido \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removido com sucesso, false se não encontrado
+\end{DoxyReturn}
+ATENÇÃO\+: Esta operação não verifica se o hóspede possui reservas ativas. O chamador deve garantir integridade referencial antes de remover, verificando se há reservas associadas ao hóspede.
+
+IMPORTANTE\+: Este método apenas remove a referência do container. NÃO libera a memória do objeto. Quem chamou deve fazer delete do ponteiro se necessário.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Hospede*\ h\ =\ \mbox{\hyperlink{class_container_hospede_a0f1c497cd680f5e50de6590d1b8f0420}{container}}.pesquisar(\textcolor{stringliteral}{"{}hospede@email.com"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(h\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Verificar\ se\ possui\ reservas\ antes\ de\ remover}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(!possuiReservasAtivas(h))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_container_hospede_a0f1c497cd680f5e50de6590d1b8f0420}{container}}.remover(\textcolor{stringliteral}{"{}hospede@email.com"{}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ h;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Hóspede\ removido\ com\ sucesso"{}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\label{doc-variable-members}
+\Hypertarget{class_container_hospede_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_container_hospede_a0f1c497cd680f5e50de6590d1b8f0420}\index{ContainerHospede@{ContainerHospede}!container@{container}}
+\index{container@{container}!ContainerHospede@{ContainerHospede}}
+\doxysubsubsection{\texorpdfstring{container}{container}}
+{\footnotesize\ttfamily \label{class_container_hospede_a0f1c497cd680f5e50de6590d1b8f0420} 
+unordered\+\_\+map$<$string, \mbox{\hyperlink{class_hospede}{Hospede}}\texorpdfstring{$\ast$}{*}$>$ Container\+Hospede\+::container\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapa hash para armazenar hóspedes. 
+
+Chave\+: \doxylink{class_email}{Email} do hóspede (string) Valor\+: Ponteiro para o objeto \doxylink{class_hospede}{Hospede}
+
+Utiliza unordered\+\_\+map para garantir O(1) nas operações de busca, inserção e remoção. O email é usado como chave por ser único e imutável após o cadastro. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/containers/\mbox{\hyperlink{container_hospedes_8hpp}{container\+Hospedes.\+hpp}}\item 
+src/containers/\mbox{\hyperlink{container_hospedes_8cpp}{container\+Hospedes.\+cpp}}\end{DoxyCompactItemize}

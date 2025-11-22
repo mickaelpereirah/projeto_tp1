@@ -1,0 +1,137 @@
+\doxysection{Menu\+Gerente Class Reference}
+\hypertarget{class_menu_gerente}{}\label{class_menu_gerente}\index{MenuGerente@{MenuGerente}}
+
+
+Classe responsável pelo menu principal do gerente após autenticação.  
+
+
+
+
+{\ttfamily \#include $<$Menu\+Gerente.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_menu_gerente_a4825b64f5992610164df03b03ce56c92}{exibir}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Exibe o menu principal do gerente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_menu_gerente_a65b7d2429c3a407a1a1e6445cde31c22}{exibir\+Cabecalho}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Exibe o cabeçalho do menu com informações do gerente. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_gerente_afb14883f5d1a5011ce4dbb3bcb54eed1}{gerenciar\+Quartos}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Direciona para o submenu de gerenciamento de quartos. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_gerente_a5c79d0eb8b74a786f4bb97d38147ee7e}{gerenciar\+Reservas}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Direciona para o submenu de gerenciamento de reservas. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_gerente_a3321c043d3efa1dbb9432f7bf01e499d}{gerenciar\+Hospedes}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Direciona para o submenu de gerenciamento de hóspedes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável pelo menu principal do gerente após autenticação. 
+
+Esta classe gerencia a interface principal disponível após o login bem-\/sucedido do gerente. Oferece acesso aos principais módulos do sistema\+:
+\begin{DoxyItemize}
+\item Gerenciamento de conta (visualizar, editar e excluir)
+\item Gerenciamento de hotéis (criar, listar, editar, excluir)
+\item Gerenciamento de quartos
+\item Gerenciamento de reservas
+\item Gerenciamento de hóspedes
+\end{DoxyItemize}
+
+O menu é contextualizado com as informações do gerente autenticado. 
+
+\label{doc-func-members}
+\Hypertarget{class_menu_gerente_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_menu_gerente_a4825b64f5992610164df03b03ce56c92}\index{MenuGerente@{MenuGerente}!exibir@{exibir}}
+\index{exibir@{exibir}!MenuGerente@{MenuGerente}}
+\doxysubsubsection{\texorpdfstring{exibir()}{exibir()}}
+{\footnotesize\ttfamily \label{class_menu_gerente_a4825b64f5992610164df03b03ce56c92} 
+void Menu\+Gerente\+::exibir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exibe o menu principal do gerente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente autenticado\\
+\hline
+\end{DoxyParams}
+Apresenta as seguintes opções\+:
+\begin{DoxyEnumerate}
+\item Gerenciar conta
+\item Gerenciar hotéis
+\item Gerenciar quartos
+\item Gerenciar reservas
+\item Gerenciar hóspedes
+\item Sair (logout)
+\end{DoxyEnumerate}
+
+O menu permanece em loop até que o usuário escolha sair. \Hypertarget{class_menu_gerente_a65b7d2429c3a407a1a1e6445cde31c22}\index{MenuGerente@{MenuGerente}!exibirCabecalho@{exibirCabecalho}}
+\index{exibirCabecalho@{exibirCabecalho}!MenuGerente@{MenuGerente}}
+\doxysubsubsection{\texorpdfstring{exibirCabecalho()}{exibirCabecalho()}}
+{\footnotesize\ttfamily \label{class_menu_gerente_a65b7d2429c3a407a1a1e6445cde31c22} 
+void Menu\+Gerente\+::exibir\+Cabecalho (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Exibe o cabeçalho do menu com informações do gerente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente autenticado\\
+\hline
+\end{DoxyParams}
+Mostra o nome do gerente e título "{}\+MENU PRINCIPAL DO GERENTE"{} \Hypertarget{class_menu_gerente_a3321c043d3efa1dbb9432f7bf01e499d}\index{MenuGerente@{MenuGerente}!gerenciarHospedes@{gerenciarHospedes}}
+\index{gerenciarHospedes@{gerenciarHospedes}!MenuGerente@{MenuGerente}}
+\doxysubsubsection{\texorpdfstring{gerenciarHospedes()}{gerenciarHospedes()}}
+{\footnotesize\ttfamily \label{class_menu_gerente_a3321c043d3efa1dbb9432f7bf01e499d} 
+void Menu\+Gerente\+::gerenciar\+Hospedes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Direciona para o submenu de gerenciamento de hóspedes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente autenticado\\
+\hline
+\end{DoxyParams}
+Permite criar, listar, editar e excluir hóspedes. \Hypertarget{class_menu_gerente_afb14883f5d1a5011ce4dbb3bcb54eed1}\index{MenuGerente@{MenuGerente}!gerenciarQuartos@{gerenciarQuartos}}
+\index{gerenciarQuartos@{gerenciarQuartos}!MenuGerente@{MenuGerente}}
+\doxysubsubsection{\texorpdfstring{gerenciarQuartos()}{gerenciarQuartos()}}
+{\footnotesize\ttfamily \label{class_menu_gerente_afb14883f5d1a5011ce4dbb3bcb54eed1} 
+void Menu\+Gerente\+::gerenciar\+Quartos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Direciona para o submenu de gerenciamento de quartos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente autenticado\\
+\hline
+\end{DoxyParams}
+Permite criar, listar, editar e excluir quartos dos hotéis. \Hypertarget{class_menu_gerente_a5c79d0eb8b74a786f4bb97d38147ee7e}\index{MenuGerente@{MenuGerente}!gerenciarReservas@{gerenciarReservas}}
+\index{gerenciarReservas@{gerenciarReservas}!MenuGerente@{MenuGerente}}
+\doxysubsubsection{\texorpdfstring{gerenciarReservas()}{gerenciarReservas()}}
+{\footnotesize\ttfamily \label{class_menu_gerente_a5c79d0eb8b74a786f4bb97d38147ee7e} 
+void Menu\+Gerente\+::gerenciar\+Reservas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Direciona para o submenu de gerenciamento de reservas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente autenticado\\
+\hline
+\end{DoxyParams}
+Permite criar, visualizar, editar e excluir reservas. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/apresentacao/\mbox{\hyperlink{_menu_gerente_8hpp}{Menu\+Gerente.\+hpp}}\item 
+src/apresentacao/\mbox{\hyperlink{_menu_gerente_8cpp}{Menu\+Gerente.\+cpp}}\end{DoxyCompactItemize}

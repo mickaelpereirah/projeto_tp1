@@ -1,0 +1,113 @@
+\doxysection{Remover\+Hotel Class Reference}
+\hypertarget{class_remover_hotel}{}\label{class_remover_hotel}\index{RemoverHotel@{RemoverHotel}}
+
+
+Remove hotéis do sistema com remoção em cascata.  
+
+
+
+
+{\ttfamily \#include $<$remover\+Hotel.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_remover_hotel_afc880e7bd4acbe8078652602172dfc0e}{remover\+\_\+hotel}} (\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}hotel)
+\begin{DoxyCompactList}\small\item\em Remove hotel e todos os dados associados em cascata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Remove hotéis do sistema com remoção em cascata. 
+
+{\bfseries{Remoção em Cascata\+:}}
+\begin{DoxyItemize}
+\item Remove HOTEL
+\item Remove todos os QUARTOS do hotel
+\item Remove todas as RESERVAS dos quartos
+\end{DoxyItemize}
+
+{\bfseries{Regra de Negócio\+:}}
+\begin{DoxyItemize}
+\item \doxylink{class_hotel}{Hotel} com quartos e reservas pode ser removido
+\item Todas as reservas são canceladas
+\item Hóspedes NÃO são removidos (apenas suas reservas deste hotel)
+\end{DoxyItemize}
+
+{\bfseries{Impacto\+:}}
+\begin{DoxyItemize}
+\item Remove estrutura completa do hotel
+\item Cancela todas as reservas ativas
+\item Ação irreversível (sem recuperação no MVP) 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_remover_hotel_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_remover_hotel_afc880e7bd4acbe8078652602172dfc0e}\index{RemoverHotel@{RemoverHotel}!remover\_hotel@{remover\_hotel}}
+\index{remover\_hotel@{remover\_hotel}!RemoverHotel@{RemoverHotel}}
+\doxysubsubsection{\texorpdfstring{remover\_hotel()}{remover\_hotel()}}
+{\footnotesize\ttfamily \label{class_remover_hotel_afc880e7bd4acbe8078652602172dfc0e} 
+bool Remover\+Hotel\+::remover\+\_\+hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hotel}{Hotel}} \texorpdfstring{$\ast$}{*}}]{hotel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove hotel e todos os dados associados em cascata. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hotel} & Ponteiro para o hotel a ser removido \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removido com sucesso, false caso contrário
+\end{DoxyReturn}
+{\bfseries{Processo de Remoção\+:}}
+\begin{DoxyEnumerate}
+\item Lista todos os quartos do hotel
+\item Para cada quarto\+:
+\begin{DoxyItemize}
+\item Lista reservas do quarto
+\item Remove cada reserva
+\item Remove quarto
+\end{DoxyItemize}
+\item Remove hotel do container
+\end{DoxyEnumerate}
+
+{\bfseries{Efeito Cascata\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Hotel\ (1)}
+\DoxyCodeLine{\ \ └─\ Quartos\ (N)\ [removidos]}
+\DoxyCodeLine{\ \ \ \ \ \ \ └─\ Reservas\ (N)\ [removidas]}
+
+\end{DoxyCode}
+
+
+{\bfseries{Exemplo de uso\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Hotel*\ h\ =\ container.pesquisar(\textcolor{stringliteral}{"{}H0001"{}});}
+\DoxyCodeLine{vector<Quarto*>\ quartos\ =\ \mbox{\hyperlink{class_listar_quarto_a4b27933ffab8886f0d15d1d5e8293650}{ListarQuarto::listar\_quartos}}(h);}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Este\ hotel\ tem\ "{}}\ <<\ quartos.size()\ <<\ \textcolor{stringliteral}{"{}\ quarto(s)."{}}\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Conta\ total\ de\ reservas}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ total\_reservas\ =\ 0;}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ q\ :\ quartos)\ \{}
+\DoxyCodeLine{\ \ \ \ total\_reservas\ +=\ \mbox{\hyperlink{class_listar_reserva_a3661faf3e466aa86772fb05f003c0f37}{ListarReserva::listar\_reservas\_por\_quarto}}(q).size();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Total\ de\ reservas:\ "{}}\ <<\ total\_reservas\ <<\ endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Deseja\ remover\ este\ hotel?\ (sim/nao):\ "{}};}
+\DoxyCodeLine{\textcolor{keywordtype}{string}\ resposta;}
+\DoxyCodeLine{cin\ >>\ resposta;}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(resposta\ ==\ \textcolor{stringliteral}{"{}sim"{}})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_remover_hotel_afc880e7bd4acbe8078652602172dfc0e}{RemoverHotel::remover\_hotel}}(h))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Hotel,\ quartos\ e\ reservas\ removidos!"{}}\ <<\ endl;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/servicos/remover/\mbox{\hyperlink{remover_hotel_8hpp}{remover\+Hotel.\+hpp}}\item 
+src/servicos/remover/\mbox{\hyperlink{remover_hotel_8cpp}{remover\+Hotel.\+cpp}}\end{DoxyCompactItemize}

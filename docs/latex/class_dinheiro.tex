@@ -2,7 +2,7 @@
 \hypertarget{class_dinheiro}{}\label{class_dinheiro}\index{Dinheiro@{Dinheiro}}
 
 
-Representa um valor monetário válido entre R\$ 1,00 e R\$ 1.\+000.\+000,00.  
+Representa um valor monetário válido no sistema.  
 
 
 
@@ -15,7 +15,7 @@ Representa um valor monetário válido entre R\$ 1,00 e R\$ 1.\+000.\+000,00.
 void \mbox{\hyperlink{class_dinheiro_a45655ca3dfe7bdee726d74f8350626c5}{set\+Valor}} (double)
 \begin{DoxyCompactList}\small\item\em Define o valor monetário. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_dinheiro_ad9fceec690a0d1f4930ce2822788c8d0}{get\+Valor}} ()
-\begin{DoxyCompactList}\small\item\em Obtém o valor monetário formatado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Obtém o valor monetário. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,20 +25,53 @@ bool \mbox{\hyperlink{class_dinheiro_a3ee40e305a5352b3714e531da94576c2}{validar}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{class_dinheiro_a2f5f189571248ef2f4182182e3bc26da}{valor}}
-\begin{DoxyCompactList}\small\item\em Valor armazenado em centavos para precisão. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Valor monetário armazenado em centavos (inteiro). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Representa um valor monetário válido entre R\$ 1,00 e R\$ 1.\+000.\+000,00. 
+Representa um valor monetário válido no sistema. 
 
-A classe \doxylink{class_dinheiro}{Dinheiro} armazena valores monetários com precisão de centavos, utilizando internamente representação em centavos (inteiro) para evitar problemas de precisão com ponto flutuante.
+A classe \doxylink{class_dinheiro}{Dinheiro} armazena valores monetários como inteiros para evitar erros de arredondamento típicos de ponto flutuante. O valor é armazenado em centavos (menor unidade monetária).
 
-Características principais\+:
+{\bfseries{FORMATO VÁ\+LIDO\+:}}
 \begin{DoxyItemize}
-\item Intervalo\+: R\$ 1,00 a R\$ 1.\+000.\+000,00
-\item Precisão\+: 2 casas decimais (centavos)
-\item Armazenamento interno\+: valor em centavos (inteiro)
-\item Formato de entrada/saída\+: ponto como separador decimal (ex\+: 150.\+75) 
+\item Valor de 0,01 a 1.\+000.\+000,00
+\item Armazenamento deve ser em inteiro para evitar erro de arredondamento
+\end{DoxyItemize}
+
+{\bfseries{REGRAS DE VALIDAÇÃO\+:}}
+\begin{DoxyEnumerate}
+\item Valor mínimo\+: 0,01 (1 centavo = 1 unidade inteira)
+\item Valor máximo\+: 1.\+000.\+000,00 (100.\+000.\+000 centavos)
+\item Armazenamento interno\+: valor em centavos como inteiro
+\begin{DoxyItemize}
+\item Exemplo\+: R\$ 10,50 → armazenado como 1050
+\item Exemplo\+: R\$ 100,00 → armazenado como 10000
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+{\bfseries{EXEMPLOS\+:}}
+\begin{DoxyItemize}
+\item ✅ Válido\+: 0,01 (1 centavo)
+\item ✅ Válido\+: 10,50 (R\$ 10,50)
+\item ✅ Válido\+: 1000,00 (R\$ 1.\+000,00)
+\item ✅ Válido\+: 1000000,00 (R\$ 1.\+000.\+000,00 -\/ valor máximo)
+\item ❌ Inválido\+: 0,00 (abaixo do mínimo)
+\item ❌ Inválido\+: -\/10,00 (valor negativo)
+\item ❌ Inválido\+: 1000000,01 (acima do máximo)
+\end{DoxyItemize}
+
+{\bfseries{NOTA TÉ\+CNICA\+:}} O armazenamento em inteiro evita problemas como\+:
+\begin{DoxyItemize}
+\item 0.\+1 + 0.\+2 != 0.\+3 (erro de ponto flutuante)
+\item Perda de precisão em operações monetárias
+\item Arredondamentos incorretos
+\end{DoxyItemize}
+
+Para converter\+:
+\begin{DoxyItemize}
+\item double para centavos\+: valor\+\_\+double \texorpdfstring{$\ast$}{*} 100
+\item centavos para double\+: valor\+\_\+centavos / 100.\+0 
 \end{DoxyItemize}
 
 \label{doc-func-members}
@@ -52,19 +85,19 @@ double Dinheiro\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption
 
 
 
-Obtém o valor monetário formatado. 
+Obtém o valor monetário. 
 
-Implementação inline do método get\+Valor.
-
-\begin{DoxyReturn}{Returns}
-double Valor convertido de centavos para reais com 2 casas decimais
-\end{DoxyReturn}
-Converte o valor interno de centavos para reais (divide por 100.\+00) e retorna como double com precisão de 2 casas decimais.
+Implementação inline do método \doxylink{class_dinheiro_ad9fceec690a0d1f4930ce2822788c8d0}{get\+Valor()}.
 
 \begin{DoxyReturn}{Returns}
-double Valor convertido de centavos para reais
+double Valor em reais (formato decimal)
 \end{DoxyReturn}
-Realiza a conversão do valor interno (centavos) para o formato monetário padrão (reais com 2 casas decimais). \Hypertarget{class_dinheiro_a45655ca3dfe7bdee726d74f8350626c5}\index{Dinheiro@{Dinheiro}!setValor@{setValor}}
+Converte o valor armazenado em centavos de volta para reais. Retorna\+: valor\+\_\+centavos / 100.\+0
+
+\begin{DoxyReturn}{Returns}
+double Valor em reais 
+\end{DoxyReturn}
+\Hypertarget{class_dinheiro_a45655ca3dfe7bdee726d74f8350626c5}\index{Dinheiro@{Dinheiro}!setValor@{setValor}}
 \index{setValor@{setValor}!Dinheiro@{Dinheiro}}
 \doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
 {\footnotesize\ttfamily \label{class_dinheiro_a45655ca3dfe7bdee726d74f8350626c5} 
@@ -76,15 +109,28 @@ Define o valor monetário.
 
 
 \begin{DoxyParams}{Parameters}
-{\em valor} & Valor em formato double (ex\+: 150.\+75) \\
+{\em valor} & Valor em formato double (0,01 a 1.\+000.\+000,00) \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em invalid\+\_\+argument} & Se o valor estiver fora do intervalo 1.\+00-\/1000000.\+00\\
+{\em invalid\+\_\+argument} & Se o valor estiver fora do intervalo\\
 \hline
 \end{DoxyExceptions}
-Converte o valor para centavos (multiplica por 100) e valida antes de armazenar. Valores inválidos resultam em exceção com mensagem descritiva. \Hypertarget{class_dinheiro_a3ee40e305a5352b3714e531da94576c2}\index{Dinheiro@{Dinheiro}!validar@{validar}}
+Converte o valor double para centavos (inteiro) e armazena. Se o valor for inválido, lança exceção.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Dinheiro\ diaria;}
+\DoxyCodeLine{\textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ diaria.\mbox{\hyperlink{class_dinheiro_a45655ca3dfe7bdee726d74f8350626c5}{setValor}}(150.50);\ \ \textcolor{comment}{//\ R\$\ 150,50}}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Diária:\ R\$\ "{}}\ <<\ diaria.\mbox{\hyperlink{class_dinheiro_ad9fceec690a0d1f4930ce2822788c8d0}{getValor}}();}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{catch}\ (invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Valor\ inválido:\ "{}}\ <<\ e.what();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_dinheiro_a3ee40e305a5352b3714e531da94576c2}\index{Dinheiro@{Dinheiro}!validar@{validar}}
 \index{validar@{validar}!Dinheiro@{Dinheiro}}
 \doxysubsubsection{\texorpdfstring{validar()}{validar()}}
 {\footnotesize\ttfamily \label{class_dinheiro_a3ee40e305a5352b3714e531da94576c2} 
@@ -96,7 +142,7 @@ Valida o valor monetário.
 
 
 \begin{DoxyParams}{Parameters}
-{\em valor} & Valor em double a ser validado \\
+{\em valor} & Valor em formato double (0,01 a 1.\+000.\+000,00) \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -104,8 +150,8 @@ true se o valor for válido, false caso contrário
 \end{DoxyReturn}
 Verifica se o valor está dentro do intervalo permitido\+:
 \begin{DoxyItemize}
-\item Mínimo\+: 1.\+00 (R\$ 1,00)
-\item Máximo\+: 1000000.\+00 (R\$ 1.\+000.\+000,00) 
+\item Mínimo\+: 0,01 (equivalente a 1 centavo)
+\item Máximo\+: 1.\+000.\+000,00 (equivalente a 100.\+000.\+000 centavos) 
 \end{DoxyItemize}
 
 \label{doc-variable-members}
@@ -119,9 +165,9 @@ int Dinheiro\+::valor\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Valor armazenado em centavos para precisão. 
+Valor monetário armazenado em centavos (inteiro). 
 
-
+Armazena o valor em centavos para evitar erros de arredondamento. Exemplo\+: R\$ 10,50 = 1050 centavos 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

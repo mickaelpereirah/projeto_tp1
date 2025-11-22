@@ -12,7 +12,7 @@ void Dinheiro::setValor(double valor)
 {
     if (!validar(valor))
     {
-        throw invalid_argument("Valor invalido");
+        throw std::invalid_argument("Valor invalido");
     }
     this->valor = static_cast<int>(valor * 100);
 }

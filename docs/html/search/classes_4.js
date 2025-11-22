@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['hospede_0',['Hospede',['../class_hospede.html',1,'']]],
-  ['hotel_1',['Hotel',['../class_hotel.html',1,'']]]
+  ['gerente_0',['Gerente',['../class_gerente.html',1,'']]]
 ];

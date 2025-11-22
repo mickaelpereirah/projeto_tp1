@@ -1,0 +1,113 @@
+\doxysection{Menu\+Conta Class Reference}
+\hypertarget{class_menu_conta}{}\label{class_menu_conta}\index{MenuConta@{MenuConta}}
+
+
+Classe responsável pelo gerenciamento da conta do gerente.  
+
+
+
+
+{\ttfamily \#include $<$Menu\+Conta.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_menu_conta_a4e420210e24bb67831da2fd2bceb1fe2}{exibir}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Exibe o menu de gerenciamento de conta. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_menu_conta_af56a960c268cf38e8b7d63bd4d495fc4}{visualizar\+Dados}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Exibe os dados completos do gerente. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_conta_a05ce5cdecab368e36d2446a59e5b5e4d}{editar\+Dados}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Permite editar os dados do gerente. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_menu_conta_ad5dd15b1127b09a332ca9d60c6d3231c}{excluir\+Conta}} (\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}gerente)
+\begin{DoxyCompactList}\small\item\em Exclui a conta do gerente (com confirmação). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável pelo gerenciamento da conta do gerente. 
+
+Permite o gerente visualizar, editar e excluir sua própria conta. 
+
+\label{doc-func-members}
+\Hypertarget{class_menu_conta_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_menu_conta_a05ce5cdecab368e36d2446a59e5b5e4d}\index{MenuConta@{MenuConta}!editarDados@{editarDados}}
+\index{editarDados@{editarDados}!MenuConta@{MenuConta}}
+\doxysubsubsection{\texorpdfstring{editarDados()}{editarDados()}}
+{\footnotesize\ttfamily \label{class_menu_conta_a05ce5cdecab368e36d2446a59e5b5e4d} 
+void Menu\+Conta\+::editar\+Dados (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Permite editar os dados do gerente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_menu_conta_ad5dd15b1127b09a332ca9d60c6d3231c}\index{MenuConta@{MenuConta}!excluirConta@{excluirConta}}
+\index{excluirConta@{excluirConta}!MenuConta@{MenuConta}}
+\doxysubsubsection{\texorpdfstring{excluirConta()}{excluirConta()}}
+{\footnotesize\ttfamily \label{class_menu_conta_ad5dd15b1127b09a332ca9d60c6d3231c} 
+bool Menu\+Conta\+::excluir\+Conta (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Exclui a conta do gerente (com confirmação). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a conta foi excluída, false caso contrário 
+\end{DoxyReturn}
+\Hypertarget{class_menu_conta_a4e420210e24bb67831da2fd2bceb1fe2}\index{MenuConta@{MenuConta}!exibir@{exibir}}
+\index{exibir@{exibir}!MenuConta@{MenuConta}}
+\doxysubsubsection{\texorpdfstring{exibir()}{exibir()}}
+{\footnotesize\ttfamily \label{class_menu_conta_a4e420210e24bb67831da2fd2bceb1fe2} 
+bool Menu\+Conta\+::exibir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exibe o menu de gerenciamento de conta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente autenticado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a conta foi excluída (logout forçado), false caso contrário
+\end{DoxyReturn}
+Opções disponíveis\+:
+\begin{DoxyEnumerate}
+\item Visualizar meus dados
+\item Editar meus dados
+\item Excluir minha conta
+\item Voltar 
+\end{DoxyEnumerate}\Hypertarget{class_menu_conta_af56a960c268cf38e8b7d63bd4d495fc4}\index{MenuConta@{MenuConta}!visualizarDados@{visualizarDados}}
+\index{visualizarDados@{visualizarDados}!MenuConta@{MenuConta}}
+\doxysubsubsection{\texorpdfstring{visualizarDados()}{visualizarDados()}}
+{\footnotesize\ttfamily \label{class_menu_conta_af56a960c268cf38e8b7d63bd4d495fc4} 
+void Menu\+Conta\+::visualizar\+Dados (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gerente}{Gerente}} \texorpdfstring{$\ast$}{*}}]{gerente}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Exibe os dados completos do gerente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gerente} & Ponteiro para o gerente \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/apresentacao/\mbox{\hyperlink{_menu_conta_8hpp}{Menu\+Conta.\+hpp}}\item 
+src/apresentacao/\mbox{\hyperlink{_menu_conta_8cpp}{Menu\+Conta.\+cpp}}\end{DoxyCompactItemize}

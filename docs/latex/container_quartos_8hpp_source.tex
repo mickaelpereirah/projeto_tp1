@@ -1,0 +1,37 @@
+\doxysection{container\+Quartos.\+hpp}
+\hypertarget{container_quartos_8hpp_source}{}\label{container_quartos_8hpp_source}\index{include/containers/containerQuartos.hpp@{include/containers/containerQuartos.hpp}}
+\mbox{\hyperlink{container_quartos_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ CONTAINER\_QUARTOS\_HPP\_INCLUDED}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CONTAINER\_QUARTOS\_HPP\_INCLUDED\ }}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{quarto_8hpp}{quarto.hpp}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_container_quarto}{ContainerQuarto}}\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ unordered\_map<string,\ vector<Quarto*>>\ \mbox{\hyperlink{class_container_quarto_aae203d8895e6946877c9e40c1bc4be43}{container}};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_container_quarto_a1e8a66a2e5eded1e1c8bc06abc7e8473}{incluir}}(\mbox{\hyperlink{class_quarto}{Quarto}}*,\ \textcolor{keywordtype}{string}\ codigo\_hotel);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_container_quarto_a4ca261b593eca355b1a20065cc01d912}{remover}}(\textcolor{keywordtype}{int}\ numero);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_container_quarto_a89dabe6e62a21c53a46ce09913888251}{removerTodosPorHotel}}(\textcolor{keywordtype}{string}\ codigo\_hotel);}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ vector<Quarto*>\ \mbox{\hyperlink{class_container_quarto_a8cd4863b4c48755045aa9b6796d5d53e}{pesquisar}}(\textcolor{keywordtype}{string}\ codigo\_hotel);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_quarto}{Quarto}}*\ \mbox{\hyperlink{class_container_quarto_a0c16e2d578206a12def13953ea7dcfc2}{pesquisarPorNumero}}(\textcolor{keywordtype}{int}\ numero);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_container_quarto_a96446fae64a76aa687ab837aff898189}{atualizar}}(\mbox{\hyperlink{class_quarto}{Quarto}}*);}
+\DoxyCodeLine{00191\ \};}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

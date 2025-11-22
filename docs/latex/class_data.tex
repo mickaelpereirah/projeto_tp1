@@ -14,7 +14,7 @@ Representa uma data válida no sistema.
 \item 
 void \mbox{\hyperlink{class_data_aee3a6598533a28a3f446c5f8ecb63c0f}{set\+Valor}} (string)
 \begin{DoxyCompactList}\small\item\em Define a data. \end{DoxyCompactList}\item 
-string \mbox{\hyperlink{class_data_a8dd738e6c3e7ef96784b4e6b6c0cec61}{get\+Valor}} ()
+string \mbox{\hyperlink{class_data_a2d040be2799c23a0a3f745613a70bb43}{get\+Valor}} () const
 \begin{DoxyCompactList}\small\item\em Obtém a data armazenada. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -25,39 +25,96 @@ bool \mbox{\hyperlink{class_data_a490773498b1ce1437a969feeb868e276}{validar}} (s
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{class_data_ae3e630247f60efbc69086933fefa933a}{data}}
-\begin{DoxyCompactList}\small\item\em \doxylink{class_data}{Data} armazenada em formato string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_data}{Data} armazenada em formato string (DD-\/\+MMM-\/\+AAAA). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Representa uma data válida no sistema. 
 
-A classe \doxylink{class_data}{Data} é responsável por armazenar e validar datas conformes as regras do domínio. A validação inclui\+:
+A classe \doxylink{class_data}{Data} armazena e valida datas no formato dia-\/mês-\/ano, com validação completa de dias válidos por mês, incluindo tratamento de anos bissextos.
+
+{\bfseries{FORMATO VÁ\+LIDO\+:}}
 \begin{DoxyItemize}
-\item Formato específico (ex\+: DD/\+MM/\+AAAA, DD-\/\+MM-\/\+AAAA)
-\item Verificação de dias válidos para cada mês
-\item Consideração de anos bissextos
-\item Validação de datas futuras/passadas conforme regras de negócio
+\item dia-\/mês-\/ano
+\item Dia é número de 1 a 31
+\item Mês é JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV ou DEZ
+\item Ano é número de 2000 a 2999
+\item \doxylink{class_data}{Data} deve ser válida considerando os anos bissextos
 \end{DoxyItemize}
 
-A implementação garante que apenas datas válidas podem sejam armazenadas. 
+{\bfseries{REGRAS DE VALIDAÇÃO\+:}}
+\begin{DoxyEnumerate}
+\item {\bfseries{Formato}}\+: DD-\/\+MMM-\/\+AAAA onde\+:
+\begin{DoxyItemize}
+\item DD = dia (01 a 31)
+\item MMM = mês por extenso em maiúsculas (JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ)
+\item AAAA = ano (2000 a 2999)
+\end{DoxyItemize}
+\item {\bfseries{Dia}}\+: Deve ser válido para o mês\+:
+\begin{DoxyItemize}
+\item Meses com 31 dias\+: JAN, MAR, MAI, JUL, AGO, OUT, DEZ
+\item Meses com 30 dias\+: ABR, JUN, SET, NOV
+\item FEV\+: 28 dias (anos normais) ou 29 dias (anos bissextos)
+\end{DoxyItemize}
+\item {\bfseries{Ano Bissexto}}\+: Um ano é bissexto se\+:
+\begin{DoxyItemize}
+\item É divisível por 4 E não é divisível por 100, OU
+\item É divisível por 400
+\item Exemplos\+: 2000 (bissexto), 2004 (bissexto), 2100 (não bissexto)
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+{\bfseries{EXEMPLOS\+:}}
+\begin{DoxyItemize}
+\item ✅ Válido\+: "{}15-\/\+JAN-\/2024"{} (15 de janeiro de 2024)
+\item ✅ Válido\+: "{}29-\/\+FEV-\/2024"{} (2024 é bissexto)
+\item ✅ Válido\+: "{}31-\/\+DEZ-\/2999"{} (último dia do intervalo)
+\item ✅ Válido\+: "{}01-\/\+JAN-\/2000"{} (primeiro dia do intervalo)
+\item ❌ Inválido\+: "{}29-\/\+FEV-\/2023"{} (2023 não é bissexto)
+\item ❌ Inválido\+: "{}31-\/\+ABR-\/2024"{} (abril tem apenas 30 dias)
+\item ❌ Inválido\+: "{}32-\/\+JAN-\/2024"{} (dia inválido)
+\item ❌ Inválido\+: "{}15-\/13-\/2024"{} (mês deve ser por extenso)
+\item ❌ Inválido\+: "{}15-\/jan-\/2024"{} (mês deve estar em maiúsculas)
+\item ❌ Inválido\+: "{}15/\+JAN/2024"{} (separador deve ser hífen)
+\item ❌ Inválido\+: "{}15-\/\+JAN-\/1999"{} (ano antes de 2000)
+\item ❌ Inválido\+: "{}15-\/\+JAN-\/3000"{} (ano depois de 2999)
+\end{DoxyItemize}
+
+{\bfseries{TABELA DE DIAS POR MÊS\+:}} 
+\begin{DoxyTable}{3}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Mês  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Dias (normal)  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Dias (bissexto)  \\
+JAN  &31  &31  \\
+FEV  &28  &29  \\
+MAR  &31  &31  \\
+ABR  &30  &30  \\
+MAI  &31  &31  \\
+JUN  &30  &30  \\
+JUL  &31  &31  \\
+AGO  &31  &31  \\
+SET  &30  &30  \\
+OUT  &31  &31  \\
+NOV  &30  &30  \\
+DEZ  &31  &31  \\
+\end{DoxyTable}
+
 
 \label{doc-func-members}
 \Hypertarget{class_data_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_data_a8dd738e6c3e7ef96784b4e6b6c0cec61}\index{Data@{Data}!getValor@{getValor}}
+\Hypertarget{class_data_a2d040be2799c23a0a3f745613a70bb43}\index{Data@{Data}!getValor@{getValor}}
 \index{getValor@{getValor}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
-{\footnotesize\ttfamily \label{class_data_a8dd738e6c3e7ef96784b4e6b6c0cec61} 
-string Data\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{class_data_a2d040be2799c23a0a3f745613a70bb43} 
+string Data\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Obtém a data armazenada. 
 
-Implementação inline do método \doxylink{class_data_a8dd738e6c3e7ef96784b4e6b6c0cec61}{get\+Valor()}.
+Implementação inline do método \doxylink{class_data_a2d040be2799c23a0a3f745613a70bb43}{get\+Valor()}.
 
 \begin{DoxyReturn}{Returns}
-string \doxylink{class_data}{Data} armazenada em formato string
+string \doxylink{class_data}{Data} armazenada em formato DD-\/\+MMM-\/\+AAAA
 
 string \doxylink{class_data}{Data} armazenada 
 \end{DoxyReturn}
@@ -73,7 +130,7 @@ Define a data.
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & \doxylink{class_data}{Data} em formato string \\
+{\em data} & \doxylink{class_data}{Data} em formato string (DD-\/\+MMM-\/\+AAAA) \\
 \hline
 \end{DoxyParams}
 
@@ -81,7 +138,20 @@ Define a data.
 {\em invalid\+\_\+argument} & Se a data for inválida\\
 \hline
 \end{DoxyExceptions}
-Realiza a validação completa antes de armazenar o valor. Datas que não atendem às regras de validação resultam em exceção com mensagem descritiva. \Hypertarget{class_data_a490773498b1ce1437a969feeb868e276}\index{Data@{Data}!validar@{validar}}
+Realiza a validação completa antes de armazenar o valor. Datas que não atendem às regras de validação resultam em exceção.
+
+Exemplo de uso\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Data\ dataReserva;}
+\DoxyCodeLine{\textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ dataReserva.\mbox{\hyperlink{class_data_aee3a6598533a28a3f446c5f8ecb63c0f}{setValor}}(\textcolor{stringliteral}{"{}15-\/JAN-\/2024"{}});}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Data\ válida:\ "{}}\ <<\ dataReserva.\mbox{\hyperlink{class_data_a2d040be2799c23a0a3f745613a70bb43}{getValor}}();}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{catch}\ (invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Data\ inválida:\ "{}}\ <<\ e.what();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{class_data_a490773498b1ce1437a969feeb868e276}\index{Data@{Data}!validar@{validar}}
 \index{validar@{validar}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{validar()}{validar()}}
 {\footnotesize\ttfamily \label{class_data_a490773498b1ce1437a969feeb868e276} 
@@ -99,12 +169,22 @@ Valida a data conforme as regras do domínio.
 \begin{DoxyReturn}{Returns}
 true se a data for válida, false caso contrário
 \end{DoxyReturn}
-Implementa a validação completa da data, incluindo\+:
+Implementa a validação completa da data\+:
+\begin{DoxyEnumerate}
+\item Verifica formato DD-\/\+MMM-\/\+AAAA
+\item Valida dia (1 a 31)
+\item Valida mês (JAN a DEZ em maiúsculas)
+\item Valida ano (2000 a 2999)
+\item Verifica se dia é válido para o mês
+\item Considera anos bissextos para fevereiro
+\end{DoxyEnumerate}
+
+{\bfseries{Algoritmo de ano bissexto\+:}}
 \begin{DoxyItemize}
-\item Verificação de formato
-\item Validação de dia, mês e ano
-\item Consideração de anos bissextos
-\item Limites temporais conforme regras de negócio 
+\item Se divisível por 400 → bissexto
+\item Se divisível por 100 → não bissexto
+\item Se divisível por 4 → bissexto
+\item Caso contrário → não bissexto 
 \end{DoxyItemize}
 
 \label{doc-variable-members}
@@ -118,7 +198,7 @@ string Data\+::data\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-\doxylink{class_data}{Data} armazenada em formato string. 
+\doxylink{class_data}{Data} armazenada em formato string (DD-\/\+MMM-\/\+AAAA). 
 
 
 
