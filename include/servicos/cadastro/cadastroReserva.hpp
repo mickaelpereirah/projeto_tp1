@@ -1,3 +1,8 @@
+/**
+ * @file cadastroReserva.hpp
+ * @brief Serviço de cadastro de reservas
+ */
+
 #ifndef CADASTRO_RESERVA_HPP_INCLUDED
 #define CADASTRO_RESERVA_HPP_INCLUDED
 
@@ -8,15 +13,21 @@
 
 using namespace std;
 
+/**
+ * @class CadastroReserva
+ * @brief Cadastra reservas no sistema
+ * @extends Cadastro
+ * 
+ * **Dados:** Código (PK), Data chegada, Data partida, Valor total  
+ * **Validações:** Código único, Partida > Chegada, Sem conflito de datas no quarto
+ */
 class CadastroReserva : public Cadastro
 {
-private:
-    Data criar_data_inicial();
-    Data criar_data_final();
-    bool validar_datas(const Data &inicial, const Data &final);
-
 public:
+    /** @brief Cria objeto Reserva com dados do usuário */
     Reserva *criar_reserva();
+    
+    /** @brief Cadastra reserva no sistema (retorna true se sucesso) */
     bool nova_reserva();
 };
 

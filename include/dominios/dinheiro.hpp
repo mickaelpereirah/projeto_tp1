@@ -6,72 +6,105 @@
 #ifndef DINHEIRO_HPP_INCLUDED
 #define DINHEIRO_HPP_INCLUDED
 
-#include <string>
-
-using namespace std;
-
 /**
  * @class Dinheiro
- * @brief Representa um valor monetário válido entre R$ 1,00 e R$ 1.000.000,00
+ * @brief Representa um valor monetário válido no sistema
  * 
- * A classe Dinheiro armazena valores monetários com precisão de centavos,
- * utilizando internamente representação em centavos (inteiro) para evitar
- * problemas de precisão com ponto flutuante.
+ * A classe Dinheiro armazena valores monetários como inteiros para evitar
+ * erros de arredondamento típicos de ponto flutuante. O valor é armazenado
+ * em centavos (menor unidade monetária).
  * 
- * Características principais:
- * - Intervalo: R$ 1,00 a R$ 1.000.000,00
- * - Precisão: 2 casas decimais (centavos)
- * - Armazenamento interno: valor em centavos (inteiro)
- * - Formato de entrada/saída: ponto como separador decimal (ex: 150.75)
+ * **FORMATO VÁLIDO:**
+ * - Valor de 0,01 a 1.000.000,00
+ * - Armazenamento deve ser em inteiro para evitar erro de arredondamento
+ * 
+ * **REGRAS DE VALIDAÇÃO:**
+ * 1. Valor mínimo: 0,01 (1 centavo = 1 unidade inteira)
+ * 2. Valor máximo: 1.000.000,00 (100.000.000 centavos)
+ * 3. Armazenamento interno: valor em centavos como inteiro
+ *    - Exemplo: R$ 10,50 → armazenado como 1050
+ *    - Exemplo: R$ 100,00 → armazenado como 10000
+ * 
+ * **EXEMPLOS:**
+ * - ✅ Válido: 0,01 (1 centavo)
+ * - ✅ Válido: 10,50 (R$ 10,50)
+ * - ✅ Válido: 1000,00 (R$ 1.000,00)
+ * - ✅ Válido: 1000000,00 (R$ 1.000.000,00 - valor máximo)
+ * - ❌ Inválido: 0,00 (abaixo do mínimo)
+ * - ❌ Inválido: -10,00 (valor negativo)
+ * - ❌ Inválido: 1000000,01 (acima do máximo)
+ * 
+ * **NOTA TÉCNICA:**
+ * O armazenamento em inteiro evita problemas como:
+ * - 0.1 + 0.2 != 0.3 (erro de ponto flutuante)
+ * - Perda de precisão em operações monetárias
+ * - Arredondamentos incorretos
+ * 
+ * Para converter:
+ * - double para centavos: valor_double * 100
+ * - centavos para double: valor_centavos / 100.0
  */
 class Dinheiro
 {
 private:
-    int valor; ///< Valor armazenado em centavos para precisão
+    /**
+     * @brief Valor monetário armazenado em centavos (inteiro)
+     * 
+     * Armazena o valor em centavos para evitar erros de arredondamento.
+     * Exemplo: R$ 10,50 = 1050 centavos
+     */
+    int valor;
 
     /**
      * @brief Valida o valor monetário
-     * @param valor Valor em double a ser validado
+     * @param valor Valor em formato double (0,01 a 1.000.000,00)
      * @return true se o valor for válido, false caso contrário
      * 
      * Verifica se o valor está dentro do intervalo permitido:
-     * - Mínimo: 1.00 (R$ 1,00)
-     * - Máximo: 1000000.00 (R$ 1.000.000,00)
+     * - Mínimo: 0,01 (equivalente a 1 centavo)
+     * - Máximo: 1.000.000,00 (equivalente a 100.000.000 centavos)
      */
     bool validar(double);
 
 public:
     /**
      * @brief Define o valor monetário
-     * @param valor Valor em formato double (ex: 150.75)
-     * @throw invalid_argument Se o valor estiver fora do intervalo 1.00-1000000.00
+     * @param valor Valor em formato double (0,01 a 1.000.000,00)
+     * @throw invalid_argument Se o valor estiver fora do intervalo
      * 
-     * Converte o valor para centavos (multiplica por 100) e valida
-     * antes de armazenar. Valores inválidos resultam em exceção
-     * com mensagem descritiva.
+     * Converte o valor double para centavos (inteiro) e armazena.
+     * Se o valor for inválido, lança exceção.
+     * 
+     * Exemplo de uso:
+     * @code
+     * Dinheiro diaria;
+     * try {
+     *     diaria.setValor(150.50);  // R$ 150,50
+     *     cout << "Diária: R$ " << diaria.getValor();
+     * } catch (invalid_argument& e) {
+     *     cout << "Valor inválido: " << e.what();
+     * }
+     * @endcode
      */
     void setValor(double);
 
     /**
-     * @brief Obtém o valor monetário formatado
-     * @return double Valor convertido de centavos para reais com 2 casas decimais
+     * @brief Obtém o valor monetário
+     * @return double Valor em reais (formato decimal)
      * 
-     * Converte o valor interno de centavos para reais (divide por 100.00)
-     * e retorna como double com precisão de 2 casas decimais.
+     * Converte o valor armazenado em centavos de volta para reais.
+     * Retorna: valor_centavos / 100.0
      */
     double getValor();
 };
 
 /**
- * @brief Implementação inline do método getValor
- * @return double Valor convertido de centavos para reais
- * 
- * Realiza a conversão do valor interno (centavos) para
- * o formato monetário padrão (reais com 2 casas decimais).
+ * @brief Implementação inline do método getValor()
+ * @return double Valor em reais
  */
 inline double Dinheiro::getValor()
 {
-    return valor / 100.00;
+    return valor / 100.0;
 }
 
 #endif // DINHEIRO_HPP_INCLUDED

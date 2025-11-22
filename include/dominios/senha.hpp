@@ -1,6 +1,6 @@
 /**
  * @file senha.hpp
- * @brief Definição da classe Senha para senhas seguras válidas
+ * @brief Definição da classe Senha para senhas de acesso
  */
 
 #ifndef SENHA_HPP_INCLUDED
@@ -12,64 +12,121 @@ using namespace std;
 
 /**
  * @class Senha
- * @brief Representa uma senha segura de exatamente 5 caracteres
+ * @brief Representa uma senha de acesso segura
  * 
- * A classe Senha é responsável por armazenar e validar senhas seguras
- * conforme regras rigorosas de segurança. A validação inclui:
- * - Comprimento fixo de exatamente 5 caracteres
- * - Caracteres permitidos: letras (a-z, A-Z), dígitos (0-9) e caracteres especiais (!"#$%&?)
- * - Pelo menos uma letra minúscula (a-z)
- * - Pelo menos uma letra maiúscula (A-Z)
- * - Pelo menos um dígito (0-9)
- * - Pelo menos um caractere especial (!"#$%&?)
- * - Letra não pode ser seguida por letra
- * - Dígito não pode ser seguido por dígito
+ * A classe Senha armazena e valida senhas seguindo regras rigorosas
+ * de segurança para garantir senhas fortes.
  * 
- * Exemplos de senhas válidas:
- * - A1b#2
- * - p@Q3r
- * - X9!y8
+ * **FORMATO VÁLIDO:**
+ * - Exatamente 5 caracteres
+ * 
+ * **CARACTERES PERMITIDOS:**
+ * - Letra minúscula (a-z)
+ * - Letra maiúscula (A-Z)
+ * - Dígito (0-9)
+ * - Caracter especial: ! " # $ % & ? 
+ * 
+ * **REGRAS DE COMPOSIÇÃO:**
+ * - Letra NÃO pode ser seguida por letra
+ * - Dígito NÃO pode ser seguido por dígito
+ * - Deve existir pelo menos:
+ *   - Uma letra minúscula (a-z)
+ *   - Uma letra maiúscula (A-Z)
+ *   - Um dígito (0-9)
+ *   - Um caracter especial (! " # $ % & ?)
+ * 
+ * **EXEMPLOS:**
+ * - ✅ Válido: "aA1#b" (tem tudo: minúscula, maiúscula, dígito, especial, alternados)
+ * - ✅ Válido: "1aB%2" (dígito, letra, letra, especial, dígito)
+ * - ✅ Válido: "A1b!C" (alterna tipos)
+ * - ✅ Válido: "9#Aa8" (todos os requisitos atendidos)
+ * - ❌ Inválido: "aA1#" (apenas 4 caracteres, precisa de 5)
+ * - ❌ Inválido: "aA1#bc" (6 caracteres, precisa de exatamente 5)
+ * - ❌ Inválido: "aB1#2" (dígito seguido de dígito: "1#2")
+ * - ❌ Inválido: "ab1#2" (letra seguida de letra: "ab")
+ * - ❌ Inválido: "AB1#2" (letra seguida de letra: "AB")
+ * - ❌ Inválido: "1#2$3" (falta letra minúscula)
+ * - ❌ Inválido: "a1#2$" (falta letra maiúscula)
+ * - ❌ Inválido: "aA#$%" (falta dígito)
+ * - ❌ Inválido: "aA123" (falta caracter especial)
+ * - ❌ Inválido: "aA1@2" (@ não é caracter especial permitido)
+ * 
+ * **DETALHES DAS REGRAS:**
+ * 
+ * 1. **Alternância obrigatória:**
+ *    - Após letra (a-z ou A-Z): deve vir dígito ou especial
+ *    - Após dígito (0-9): deve vir letra ou especial
+ *    - Após especial: pode vir qualquer tipo
+ * 
+ * 2. **Requisitos de presença:**
+ *    - Pelo menos 1 de cada categoria é obrigatório
+ *    - Não basta ter apenas 3 das 4 categorias
+ * 
+ * 3. **Caracteres especiais válidos (7 no total):**
+ *    - ! (exclamação)
+ *    - " (aspas duplas)
+ *    - # (cerquilha/hash)
+ *    - $ (cifrão)
+ *    - % (porcentagem)
+ *    - & (e comercial)
+ *    - ? (interrogação)
  */
-class Senha {
+class Senha
+{
 private:
-    string texto; ///< Senha armazenada como string
+    /**
+     * @brief Senha armazenada (5 caracteres)
+     */
+    string senha;
 
     /**
-     * @brief Valida a senha conforme regras rigorosas de segurança
-     * @param texto Senha a ser validada
+     * @brief Valida a senha
+     * @param senha Senha a ser validada
      * @return true se a senha for válida, false caso contrário
      * 
-     * Implementa a validação completa da senha, incluindo:
-     * - Verificação de comprimento exato (5 caracteres)
-     * - Validação de caracteres permitidos
-     * - Verificação de presença de pelo menos: uma minúscula, uma maiúscula, um dígito, um especial
-     * - Restrições de sequência: letra não seguida por letra, dígito não seguido por dígito
-     * - Garantia de complexidade e segurança da senha
+     * Executa as seguintes validações:
+     * 1. Verifica se tem exatamente 5 caracteres
+     * 2. Valida caracteres permitidos (a-z, A-Z, 0-9, ! " # $ % & ?)
+     * 3. Verifica alternância:
+     *    - Letra não seguida de letra
+     *    - Dígito não seguido de dígito
+     * 4. Verifica presença de pelo menos:
+     *    - Uma letra minúscula
+     *    - Uma letra maiúscula
+     *    - Um dígito
+     *    - Um caracter especial
      */
     bool validar(string);
 
 public:
     /**
      * @brief Define a senha
-     * @param texto Senha em formato string
+     * @param senha Senha em formato string (5 caracteres)
      * @throw invalid_argument Se a senha for inválida
      * 
-     * Realiza a validação completa antes de armazenar o valor.
-     * Senhas que não atendem às regras rigorosas de segurança
-     * resultam em exceção com mensagem descritiva do erro.
+     * Realiza a validação completa antes de armazenar.
      * 
-     * @note A senha é armazenada em texto claro. Em sistemas
-     * de produção, considere implementar criptografia adicional.
+     * Exemplo de uso:
+     * @code
+     * Senha senhaGerente;
+     * try {
+     *     senhaGerente.setValor("aA1#b");
+     *     cout << "Senha válida e forte!";
+     * } catch (invalid_argument& e) {
+     *     cout << "Senha inválida: " << e.what();
+     * }
+     * @endcode
      */
     void setValor(string);
 
     /**
      * @brief Obtém a senha armazenada
-     * @return string Senha armazenada
+     * @return string Senha (5 caracteres)
      * 
-     * @note Em sistemas de produção, evite expor senhas
-     * através deste método. Considere implementar métodos
-     * de verificação sem expor o valor completo.
+     * **ATENÇÃO DE SEGURANÇA:**
+     * Em sistemas reais, senhas nunca devem ser retornadas em texto claro.
+     * Este método existe apenas para fins educacionais e de validação.
+     * Em produção, use hashing (bcrypt, argon2, etc.).
      */
     string getValor();
 };
@@ -77,14 +134,10 @@ public:
 /**
  * @brief Implementação inline do método getValor
  * @return string Senha armazenada
- * 
- * Retorna a senha armazenada internamente.
- * 
- * @warning Em ambientes de produção, o retorno de senhas
- * em texto claro deve ser evitado por questões de segurança.
  */
-inline string Senha::getValor() {
-    return texto;
+inline string Senha::getValor()
+{
+    return senha;
 }
 
 #endif // SENHA_HPP_INCLUDED

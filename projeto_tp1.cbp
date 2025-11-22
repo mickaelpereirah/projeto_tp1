@@ -120,7 +120,7 @@
 		<Unit filename="src/servicos/atualizar/atualizarQuarto.cpp" />
 		<Unit filename="src/servicos/atualizar/atualizarReserva.cpp" />
 		
-		<!-- SERVICOS - AUTENTICAR (NOVO) -->
+		<!-- SERVICOS - AUTENTICAR -->
 		<Unit filename="include/servicos/autenticar/autenticarGerente.hpp" />
 		<Unit filename="src/servicos/autenticar/autenticarGerente.cpp" />
 		
@@ -160,22 +160,26 @@
 		<Unit filename="src/servicos/remover/removerQuarto.cpp" />
 		<Unit filename="src/servicos/remover/removerReserva.cpp" />
 		
-		<!-- SERVICOS - VALIDAR (NOVO) -->
+		<!-- SERVICOS - VALIDAR -->
 		<Unit filename="include/servicos/validar/validarReserva.hpp" />
 		<Unit filename="src/servicos/validar/validarReserva.cpp" />
 		
-		<!-- APRESENTACAO (NOVO) -->
+		<!-- APRESENTACAO -->
 		<Unit filename="include/apresentacao/MenuPrincipal.hpp" />
 		<Unit filename="include/apresentacao/MenuGerente.hpp" />
 		<Unit filename="include/apresentacao/MenuConta.hpp" />
 		<Unit filename="include/apresentacao/MenuHoteis.hpp" />
 		<Unit filename="include/apresentacao/MenuQuartos.hpp" />
+		<Unit filename="include/apresentacao/MenuReservas.hpp" />
+		<Unit filename="include/apresentacao/MenuHospedes.hpp" />
 		<Unit filename="include/apresentacao/Utilidades.hpp" />
 		<Unit filename="src/apresentacao/MenuPrincipal.cpp" />
 		<Unit filename="src/apresentacao/MenuGerente.cpp" />
 		<Unit filename="src/apresentacao/MenuConta.cpp" />
 		<Unit filename="src/apresentacao/MenuHoteis.cpp" />
 		<Unit filename="src/apresentacao/MenuQuartos.cpp" />
+		<Unit filename="src/apresentacao/MenuReservas.cpp" />
+		<Unit filename="src/apresentacao/MenuHospedes.cpp" />
 		<Unit filename="src/apresentacao/Utilidades.cpp" />
 		
 		<!-- MAIN -->

@@ -2,6 +2,8 @@
 #include "MenuConta.hpp"
 #include "MenuHoteis.hpp"
 #include "MenuQuartos.hpp"
+#include "MenuReservas.hpp"
+#include "MenuHospedes.hpp"
 #include "Utilidades.hpp"
 #include "listarHotel.hpp"
 #include <iostream>
@@ -54,14 +56,12 @@ void MenuGerente::exibir(Gerente* gerente)
                 gerenciarQuartos(gerente);
                 break;
             case 4:
-                // TODO: Gerenciar Reservas - Seleciona hotel primeiro
-                Utilidades::mostrarMensagem("[Menu Reservas ainda nao implementado]");
-                Utilidades::pausar();
+                // Gerenciar Reservas - Seleciona hotel primeiro
+                gerenciarReservas(gerente);
                 break;
             case 5:
-                // TODO: Gerenciar Hóspedes - Seleciona hotel primeiro
-                Utilidades::mostrarMensagem("[Menu Hospedes ainda nao implementado]");
-                Utilidades::pausar();
+                // Gerenciar Hóspedes - Seleciona hotel primeiro
+                gerenciarHospedes(gerente);
                 break;
             case 6:
                 if (Utilidades::confirmar("Deseja realmente fazer logout?"))
@@ -124,4 +124,94 @@ void MenuGerente::gerenciarQuartos(Gerente* gerente)
     
     // Chama o MenuQuartos para o hotel selecionado
     MenuQuartos::exibir(hotel);
+}
+
+void MenuGerente::gerenciarReservas(Gerente* gerente)
+{
+    // Listar hotéis do gerente
+    vector<Hotel*> hoteis = ListarHotel::listar_hoteis(gerente);
+    
+    if (hoteis.empty())
+    {
+        Utilidades::mostrarErro("Voce nao possui hoteis cadastrados.");
+        Utilidades::mostrarMensagem("Cadastre um hotel primeiro em 'Gerenciar meus hoteis'.");
+        Utilidades::pausar();
+        return;
+    }
+
+    Utilidades::limparTela();
+    Utilidades::mostrarCabecalho("GERENCIAR RESERVAS - SELECIONE O HOTEL");
+    
+    cout << endl;
+    cout << "Selecione o hotel:" << endl;
+    cout << endl;
+    
+    for (size_t i = 0; i < hoteis.size(); i++)
+    {
+        Hotel* h = hoteis[i];
+        cout << "  [" << (i + 1) << "] " << h->getNome().getValor() 
+             << " - " << h->getEndereco().getValor() << endl;
+    }
+    
+    cout << endl;
+    cout << "Digite o numero do hotel (ou 0 para cancelar): ";
+    
+    int opcao = Utilidades::lerOpcao(0, hoteis.size());
+    
+    if (opcao == 0)
+    {
+        Utilidades::mostrarMensagem("Operacao cancelada.");
+        Utilidades::pausar();
+        return;
+    }
+    
+    Hotel* hotel = hoteis[opcao - 1];
+    
+    // Chama o MenuReservas para o hotel selecionado
+    MenuReservas::exibir(hotel);
+}
+
+void MenuGerente::gerenciarHospedes(Gerente* gerente)
+{
+    // Listar hotéis do gerente
+    vector<Hotel*> hoteis = ListarHotel::listar_hoteis(gerente);
+    
+    if (hoteis.empty())
+    {
+        Utilidades::mostrarErro("Voce nao possui hoteis cadastrados.");
+        Utilidades::mostrarMensagem("Cadastre um hotel primeiro em 'Gerenciar meus hoteis'.");
+        Utilidades::pausar();
+        return;
+    }
+
+    Utilidades::limparTela();
+    Utilidades::mostrarCabecalho("GERENCIAR HOSPEDES - SELECIONE O HOTEL");
+    
+    cout << endl;
+    cout << "Selecione o hotel:" << endl;
+    cout << endl;
+    
+    for (size_t i = 0; i < hoteis.size(); i++)
+    {
+        Hotel* h = hoteis[i];
+        cout << "  [" << (i + 1) << "] " << h->getNome().getValor() 
+             << " - " << h->getEndereco().getValor() << endl;
+    }
+    
+    cout << endl;
+    cout << "Digite o numero do hotel (ou 0 para cancelar): ";
+    
+    int opcao = Utilidades::lerOpcao(0, hoteis.size());
+    
+    if (opcao == 0)
+    {
+        Utilidades::mostrarMensagem("Operacao cancelada.");
+        Utilidades::pausar();
+        return;
+    }
+    
+    Hotel* hotel = hoteis[opcao - 1];
+    
+    // Chama o MenuHospedes para o hotel selecionado
+    MenuHospedes::exibir(hotel);
 }

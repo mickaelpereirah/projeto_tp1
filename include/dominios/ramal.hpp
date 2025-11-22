@@ -1,6 +1,6 @@
 /**
  * @file ramal.hpp
- * @brief Definição da classe Ramal para números de ramal telefônico válidos
+ * @brief Definição da classe Ramal para ramais telefônicos
  */
 
 #ifndef RAMAL_HPP_INCLUDED
@@ -8,51 +8,75 @@
 
 /**
  * @class Ramal
- * @brief Representa um número de ramal telefônico válido de 0 a 50
+ * @brief Representa um ramal telefônico de quarto
  * 
- * A classe Ramal é responsável por armazenar e validar números de ramal
- * telefônico dentro de um intervalo específico. A validação inclui:
- * - Intervalo de valores: 0 a 50 (inclusive)
- * - Apenas valores inteiros são aceitos
+ * A classe Ramal armazena e valida números de ramais telefônicos
+ * associados a quartos de hotel.
  * 
- * A classe é útil para sistemas que necessitam gerenciar ramais
- * telefônicos com validação de intervalo e formatação consistente.
+ * **FORMATO VÁLIDO:**
+ * - Valores de 00 a 50
  * 
- * Exemplos de valores válidos:
- * - 0 (formatado como 0)
- * - 5 (formatado como 5)
- * - 50 (formatado como 50)
+ * **REGRAS DE VALIDAÇÃO:**
+ * - Valor mínimo: 0 (representado como 00)
+ * - Valor máximo: 50
+ * - Armazenado como inteiro (0 a 50)
+ * - Exibido com 2 dígitos (00, 01, ..., 50)
+ * 
+ * **EXEMPLOS:**
+ * - ✅ Válido: 0 (ramal 00)
+ * - ✅ Válido: 10 (ramal 10)
+ * - ✅ Válido: 50 (ramal máximo)
+ * - ❌ Inválido: -1 (valor negativo)
+ * - ❌ Inválido: 51 (acima do máximo)
+ * - ❌ Inválido: 100 (muito acima do máximo)
+ * 
+ * **NOTA DE USO:**
+ * - Ramais podem ser repetidos em quartos diferentes
+ * - Ramal 00 pode indicar que não há ramal associado
+ * - Usado para comunicação interna do hotel
  */
-class Ramal {
+class Ramal
+{
 private:
-    int valor; ///< Valor do ramal armazenado como inteiro
+    /**
+     * @brief Número do ramal armazenado (0 a 50)
+     */
+    int valor;
 
     /**
-     * @brief Valida o número do ramal conforme regras do domínio
-     * @param valor Número do ramal a ser validado
-     * @return true se o ramal for válido, false caso contrário
+     * @brief Valida o número do ramal
+     * @param valor Ramal a ser validado
+     * @return true se o ramal estiver entre 0 e 50, false caso contrário
      * 
-     * Implementa a validação do ramal, verificando se está
-     * dentro do intervalo permitido (0 a 50 inclusive).
-     * Valores fora deste intervalo são considerados inválidos.
+     * Verifica se o valor está no intervalo [0, 50].
      */
     bool validar(int);
 
 public:
     /**
      * @brief Define o número do ramal
-     * @param valor Número do ramal inteiro a ser armazenado
-     * @throw invalid_argument Se o ramal for inválido (fora do intervalo 0-50)
+     * @param valor Número do ramal (0 a 50)
+     * @throw invalid_argument Se o ramal estiver fora do intervalo
      * 
-     * Realiza a validação antes de armazenar o valor.
-     * Ramais fora do intervalo permitido resultam em exceção
-     * com mensagem descritiva do erro.
+     * Valida o ramal antes de armazenar. Se o ramal for inválido,
+     * lança exceção e o estado do objeto permanece inalterado.
+     * 
+     * Exemplo de uso:
+     * @code
+     * Ramal ramalQuarto;
+     * try {
+     *     ramalQuarto.setValor(25);
+     *     cout << "Ramal: " << ramalQuarto.getValor();
+     * } catch (invalid_argument& e) {
+     *     cout << "Ramal inválido: " << e.what();
+     * }
+     * @endcode
      */
     void setValor(int);
 
     /**
-     * @brief Obtém o número do ramal armazenado
-     * @return int Ramal armazenado como inteiro
+     * @brief Obtém o número do ramal
+     * @return int Ramal armazenado (0 a 50)
      */
     int getValor();
 };
@@ -60,10 +84,9 @@ public:
 /**
  * @brief Implementação inline do método getValor
  * @return int Número do ramal armazenado
- * 
- * Retorna o valor numérico do ramal armazenado internamente.
  */
-inline int Ramal::getValor() {
+inline int Ramal::getValor()
+{
     return valor;
 }
 

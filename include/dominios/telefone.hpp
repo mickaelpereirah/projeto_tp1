@@ -1,6 +1,6 @@
 /**
  * @file telefone.hpp
- * @brief Definição da classe Telefone para números telefônicos internacionais válidos
+ * @brief Definição da classe Telefone para números telefônicos internacionais
  */
 
 #ifndef TELEFONE_HPP_INCLUDED
@@ -12,59 +12,105 @@ using namespace std;
 
 /**
  * @class Telefone
- * @brief Representa um número de telefone internacional válido
+ * @brief Representa um número de telefone internacional
  * 
- * A classe Telefone é responsável por armazenar e validar números
- * de telefone no formato internacional padrão. A validação inclui:
- * - Comprimento fixo de 14 caracteres total
- * - Formato: '+' seguido de 13 dígitos
- * - Primeiro caractere deve ser '+'
- * - Os 13 caracteres restantes devem ser apenas dígitos (0-9)
- * - Compatível com números internacionais reais
+ * A classe Telefone armazena e valida números telefônicos no formato
+ * internacional, começando com símbolo de adição (+) seguido por dígitos.
  * 
- * Exemplos de números válidos:
- * - +5561999999999 (Brasil: +55 61 99999-9999)
- * - +5511999999999 (Brasil: +55 11 99999-9999)
- * - +1234567890123 (Exemplo internacional)
+ * **FORMATO VÁLIDO:**
+ * - +DDDDDDDDDDDDDD
+ * - D é dígito (0-9)
+ * 
+ * **REGRAS DE VALIDAÇÃO:**
+ * - Deve começar com o símbolo + (mais)
+ * - Seguido por exatamente 14 dígitos (0-9)
+ * - Não são permitidos:
+ *   - Espaços em branco
+ *   - Parênteses
+ *   - Hífens ou outros separadores
+ *   - Letras ou caracteres especiais (exceto o + inicial)
+ * - Total: 15 caracteres (1 símbolo + e 14 dígitos)
+ * 
+ * **ESTRUTURA TÍPICA:**
+ * - Código do país: 1-3 dígitos (ex: +55 para Brasil)
+ * - Código de área: 2 dígitos (ex: 61 para Brasília)
+ * - Número: restante dos dígitos
+ * 
+ * **EXEMPLOS:**
+ * - ✅ Válido: "+55619876543210" (Brasil, Brasília)
+ * - ✅ Válido: "+12025551234000" (EUA)
+ * - ✅ Válido: "+44207946000000" (Reino Unido)
+ * - ✅ Válido: "+00000000000000" (número de teste)
+ * - ❌ Inválido: "55619876543210" (falta o símbolo +)
+ * - ❌ Inválido: "+5561987654321" (apenas 13 dígitos, precisa de 14)
+ * - ❌ Inválido: "+556198765432100" (15 dígitos, precisa de 14)
+ * - ❌ Inválido: "+55 61 98765 4321" (contém espaços)
+ * - ❌ Inválido: "+55-61-98765-4321" (contém hífens)
+ * - ❌ Inválido: "+55(61)987654321" (contém parênteses)
+ * - ❌ Inválido: "55-61-98765-4321" (falta + e tem hífens)
+ * - ❌ Inválido: "+5561987654321a" (contém letra)
+ * 
+ * **EXEMPLOS POR PAÍS:**
+ * | País          | Código | Exemplo Completo     |
+ * |---------------|--------|----------------------|
+ * | Brasil        | +55    | +55619876543210      |
+ * | EUA           | +1     | +12025551234000      |
+ * | Reino Unido   | +44    | +44207946000000      |
+ * | Argentina     | +54    | +54119876543210      |
+ * | Portugal      | +351   | +35121234567800      |
+ * 
+ * **NOTA TÉCNICA:**
+ * - O formato é simplificado para fins educacionais
+ * - Em sistemas reais, validação de telefone é mais complexa
+ * - Não verifica se o código do país ou formato específico são válidos
+ * - Apenas garante: + seguido de 14 dígitos
  */
-class Telefone {
+class Telefone
+{
 private:
-    string texto; ///< Número de telefone armazenado como string
+    /**
+     * @brief Número de telefone armazenado (+DDDDDDDDDDDDDD)
+     */
+    string numero;
 
     /**
-     * @brief Valida o número de telefone conforme formato internacional
-     * @param texto Número de telefone a ser validado
-     * @return true se o telefone for válido, false caso contrário
+     * @brief Valida o número de telefone
+     * @param numero Número a ser validado
+     * @return true se o número for válido, false caso contrário
      * 
-     * Implementa a validação completa do telefone, incluindo:
-     * - Verificação de comprimento total (14 caracteres)
-     * - Primeiro caractere deve ser '+'
-     * - Os 13 caracteres restantes devem ser dígitos (0-9)
-     * - Validação de formato internacional padrão
+     * Executa as seguintes validações:
+     * 1. Verifica se tem exatamente 15 caracteres (+ e 14 dígitos)
+     * 2. Verifica se o primeiro caractere é '+'
+     * 3. Verifica se os 14 caracteres seguintes são todos dígitos (0-9)
+     * 4. Garante que não há espaços, parênteses ou outros caracteres
      */
     bool validar(string);
 
 public:
     /**
      * @brief Define o número de telefone
-     * @param texto Número de telefone em formato string
-     * @throw invalid_argument Se o telefone for inválido
+     * @param numero Número em formato string (+DDDDDDDDDDDDDD)
+     * @throw invalid_argument Se o número for inválido
      * 
-     * Realiza a validação completa antes de armazenar o valor.
-     * Números de telefone que não atendem ao formato internacional
-     * padrão resultam em exceção com mensagem descritiva do erro.
+     * Realiza a validação completa antes de armazenar.
+     * O número deve estar no formato internacional completo.
      * 
-     * @note O formato aceito é estritamente internacional:
-     * '+' seguido de 13 dígitos, sem espaços, hífens ou parênteses.
+     * Exemplo de uso:
+     * @code
+     * Telefone telHotel;
+     * try {
+     *     telHotel.setValor("+55619876543210");
+     *     cout << "Telefone válido: " << telHotel.getValor();
+     * } catch (invalid_argument& e) {
+     *     cout << "Telefone inválido: " << e.what();
+     * }
+     * @endcode
      */
     void setValor(string);
 
     /**
      * @brief Obtém o número de telefone armazenado
-     * @return string Número de telefone no formato internacional
-     * 
-     * Retorna o número no formato padrão internacional pronto
-     * para uso em sistemas de telefonia ou exibição.
+     * @return string Número de telefone no formato +DDDDDDDDDDDDDD
      */
     string getValor();
 };
@@ -72,12 +118,10 @@ public:
 /**
  * @brief Implementação inline do método getValor
  * @return string Número de telefone armazenado
- * 
- * Retorna o número de telefone armazenado internamente
- * no formato internacional padrão.
  */
-inline string Telefone::getValor() {
-    return texto;
+inline string Telefone::getValor()
+{
+    return numero;
 }
 
 #endif // TELEFONE_HPP_INCLUDED

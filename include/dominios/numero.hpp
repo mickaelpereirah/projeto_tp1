@@ -1,6 +1,6 @@
 /**
  * @file numero.hpp
- * @brief Definição da classe Numero para valores numéricos válidos
+ * @brief Definição da classe Numero para números de quartos
  */
 
 #ifndef NUMERO_HPP_INCLUDED
@@ -8,72 +8,85 @@
 
 /**
  * @class Numero
- * @brief Representa um número inteiro válido de 1 a 999
+ * @brief Representa o número de um quarto
  * 
- * A classe Numero é responsável por armazenar e validar números inteiros
- * dentro de um intervalo específico. A validação inclui:
- * - Intervalo de valores: 1 a 999 (inclusive)
- * - Apenas valores inteiros são aceitos
- * - Formatação de saída com 3 dígitos (ex: 001, 083, 999)
+ * A classe Numero armazena e valida números de quartos dentro do
+ * intervalo permitido pelo sistema.
  * 
- * A classe é útil para representar números que requerem formatação
- * consistente, como códigos, identificadores ou valores numéricos
- * com tamanho fixo.
+ * **FORMATO VÁLIDO:**
+ * - Valores de 001 a 999
  * 
- * Exemplos de valores válidos:
- * - 1 (formatado como 001)
- * - 83 (formatado como 083)
- * - 999 (formatado como 999)
+ * **REGRAS DE VALIDAÇÃO:**
+ * - Valor mínimo: 1 (representado como 001)
+ * - Valor máximo: 999
+ * - Armazenado como inteiro (1 a 999)
+ * - Exibido com 3 dígitos (001, 002, ..., 999)
+ * 
+ * **EXEMPLOS:**
+ * - ✅ Válido: 1 (exibido como 001)
+ * - ✅ Válido: 101 (quarto 101)
+ * - ✅ Válido: 999 (último quarto permitido)
+ * - ❌ Inválido: 0 (abaixo do mínimo)
+ * - ❌ Inválido: 1000 (acima do máximo)
+ * - ❌ Inválido: -5 (valor negativo)
+ * 
+ * **NOTA DE USO:**
+ * - Cada quarto deve ter número único no sistema
+ * - Números não utilizados podem ser reutilizados após exclusão
+ * - O número é a chave primária do quarto
  */
-class Numero {
+class Numero
+{
 private:
-    int valor; ///< Valor numérico armazenado como inteiro
+    /**
+     * @brief Número do quarto armazenado (1 a 999)
+     */
+    int valor;
 
     /**
-     * @brief Valida o número conforme regras do domínio
+     * @brief Valida o número do quarto
      * @param valor Número a ser validado
-     * @return true se o número for válido, false caso contrário
+     * @return true se o número estiver entre 1 e 999, false caso contrário
      * 
-     * Implementa a validação do número, verificando se está
-     * dentro do intervalo permitido (1 a 999 inclusive).
-     * Valores fora deste intervalo são considerados inválidos.
+     * Verifica se o valor está no intervalo [1, 999].
      */
     bool validar(int);
 
 public:
     /**
-     * @brief Define o número
-     * @param valor Número inteiro a ser armazenado
-     * @throw invalid_argument Se o número for inválido (fora do intervalo 1-999)
+     * @brief Define o número do quarto
+     * @param valor Número do quarto (1 a 999)
+     * @throw invalid_argument Se o número estiver fora do intervalo
      * 
-     * Realiza a validação antes de armazenar o valor.
-     * Números fora do intervalo permitido resultam em exceção
-     * com mensagem descritiva do erro.
+     * Valida o número antes de armazenar. Se o número for inválido,
+     * lança exceção e o estado do objeto permanece inalterado.
      * 
-     * @note O valor é armazenado como inteiro, mas pode ser
-     * formatado na saída com 3 dígitos quando necessário.
+     * Exemplo de uso:
+     * @code
+     * Numero numQuarto;
+     * try {
+     *     numQuarto.setValor(101);
+     *     cout << "Quarto número: " << numQuarto.getValor();
+     * } catch (invalid_argument& e) {
+     *     cout << "Número inválido: " << e.what();
+     * }
+     * @endcode
      */
     void setValor(int);
 
     /**
-     * @brief Obtém o número armazenado
-     * @return int Número armazenado como inteiro
-     * 
-     * @note Para obter o valor formatado com 3 dígitos,
-     * utilize funções de formatação na saída (ex: setw, setfill).
+     * @brief Obtém o número do quarto
+     * @return int Número armazenado (1 a 999)
      */
     int getValor();
 };
 
 /**
  * @brief Implementação inline do método getValor
- * @return int Número armazenado
- * 
- * Retorna o valor numérico armazenado internamente.
- * Para formatação com zeros à esquerda, utilize:
- * cout << setw(3) << setfill('0') << numero.getValor()
+ * @return int Número do quarto armazenado
  */
-inline int Numero::getValor() {
+inline int Numero::getValor()
+{
     return valor;
 }
 

@@ -40,3 +40,15 @@ bool ContainerHospede::atualizar(Hospede *hospede_atualizado)
 
     return true;
 }
+
+vector<Hospede*> ContainerHospede::listarTodos()
+{
+    vector<Hospede*> resultado;
+    
+    for (auto& par : container)
+    {
+        resultado.push_back(par.second);
+    }
+    
+    return resultado;
+}

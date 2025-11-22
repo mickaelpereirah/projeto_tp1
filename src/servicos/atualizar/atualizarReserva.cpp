@@ -126,33 +126,17 @@ Reserva *AtualizarReserva::modificar_reserva(Reserva *reserva, int numero_quarto
             return reserva;
         }
 
-        // Buscar o quarto para calcular o valor
-        // Precisamos buscar o hotel que contém o quarto para usar ListarQuarto
-        // Por simplicidade, vamos buscar diretamente do container
-        Quarto *quarto = nullptr;
-        // Implementação simplificada: buscar em todos os hotéis
-        for (auto &par_hotel : CentralContainers::getContainerHoteis().pesquisar("")) // TODO: melhorar isso
-        {
-            vector<Quarto *> quartos = ListarQuarto::listar_quartos(par_hotel);
-            for (Quarto *q : quartos)
-            {
-                if (q->getNumero().getValor() == numero_quarto)
-                {
-                    quarto = q;
-                    break;
-                }
-            }
-            if (quarto != nullptr)
-                break;
-        }
+        // Buscar o quarto pelo número usando o container
+        Quarto *quarto = CentralContainers::getContainerQuartos().pesquisarPorNumero(numero_quarto);
 
         if (quarto != nullptr)
         {
-            // Recalcular valor
+            // Recalcular valor usando o serviço ValidarReserva
             double novo_valor = ValidarReserva::calcularValorTotal(quarto, nova_chegada, nova_partida);
             Dinheiro dinheiro;
             dinheiro.setValor(novo_valor);
 
+            // Atualizar a reserva com novos valores
             reserva->setChegada(nova_chegada);
             reserva->setPartida(nova_partida);
             reserva->setDinheiro(dinheiro);
@@ -162,9 +146,10 @@ Reserva *AtualizarReserva::modificar_reserva(Reserva *reserva, int numero_quarto
         }
         else
         {
-            // Se não encontrou o quarto, apenas atualiza as datas sem recalcular
-            reserva->setChegada(nova_chegada);
-            reserva->setPartida(nova_partida);
+            cout << endl;
+            cout << "[ERRO] Nao foi possivel encontrar o quarto para recalcular o valor." << endl;
+            cout << "As datas NAO foram alteradas." << endl;
+            return reserva;
         }
     }
 
