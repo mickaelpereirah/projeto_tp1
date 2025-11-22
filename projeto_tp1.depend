@@ -379,7 +379,7 @@
 	"containerHospedes.hpp"
 	<iostream>
 
-1763763649 source:z:\projeto_tp1\src\containers\containerhoteis.cpp
+1763768877 source:z:\projeto_tp1\src\containers\containerhoteis.cpp
 	"containerHoteis.hpp"
 	<iostream>
 
@@ -399,11 +399,11 @@
 1763662432 z:\projeto_tp1\include\entidades\pessoa.hpp
 	"DOMINIOS.hpp"
 
-1763763649 source:z:\projeto_tp1\src\containers\containerquartos.cpp
+1763768877 source:z:\projeto_tp1\src\containers\containerquartos.cpp
 	"containerQuartos.hpp"
 	<iostream>
 
-1763763667 source:z:\projeto_tp1\src\containers\containerreservas.cpp
+1763768877 source:z:\projeto_tp1\src\containers\containerreservas.cpp
 	"containerReservas.hpp"
 	<iostream>
 
@@ -709,4 +709,106 @@
 
 1763765499 source:z:\projeto_tp1\src\servicos\listar\listarhotel.cpp
 	"listar/listarHotel.hpp"
+
+1763770104 source:z:\projeto_tp1\src\apresentacao\menuprincipal.cpp
+	"MenuPrincipal.hpp"
+	"Utilidades.hpp"
+	"cadastroGerente.hpp"
+	"autenticarGerente.hpp"
+	<iostream>
+
+1763770091 z:\projeto_tp1\include\apresentacao\menuprincipal.hpp
+	"gerente.hpp"
+
+1763770044 z:\projeto_tp1\include\apresentacao\utilidades.hpp
+	<string>
+
+1763770077 z:\projeto_tp1\include\servicos\autenticar\autenticargerente.hpp
+	<string>
+	"gerente.hpp"
+	"centralContainers.hpp"
+
+1763770056 source:z:\projeto_tp1\src\apresentacao\utilidades.cpp
+	"Utilidades.hpp"
+	<iostream>
+	<limits>
+	<cstdlib>
+
+1763770083 source:z:\projeto_tp1\src\servicos\autenticar\autenticargerente.cpp
+	"autenticarGerente.hpp"
+
+1763768877 source:z:\projeto_tp1\src\servicos\listar\listarhospede.cpp
+	"listar/listarHospede.hpp"
+
+1763768877 z:\projeto_tp1\include\servicos\listar\listarhospede.hpp
+	<vector>
+	<set>
+	"DOMINIOS.hpp"
+	"ENTIDADES.hpp"
+	"centralContainers.hpp"
+	"listar/listarQuarto.hpp"
+
+1763768877 z:\projeto_tp1\include\servicos\listar\listarquarto.hpp
+	<vector>
+	"DOMINIOS.hpp"
+	"ENTIDADES.hpp"
+	"centralContainers.hpp"
+
+1763768877 source:z:\projeto_tp1\src\servicos\listar\listarquarto.cpp
+	"listar/listarQuarto.hpp"
+
+1763768877 source:z:\projeto_tp1\src\servicos\listar\listarreserva.cpp
+	"listar/listarReserva.hpp"
+
+1763768877 z:\projeto_tp1\include\servicos\listar\listarreserva.hpp
+	<vector>
+	"DOMINIOS.hpp"
+	"ENTIDADES.hpp"
+	"centralContainers.hpp"
+
+1763768877 source:z:\projeto_tp1\src\servicos\remover\removergerente.cpp
+	"remover/removerGerente.hpp"
+
+1763768877 z:\projeto_tp1\include\servicos\remover\removergerente.hpp
+	"DOMINIOS.hpp"
+	"ENTIDADES.hpp"
+	"centralContainers.hpp"
+	"listar/listarHotel.hpp"
+	"remover/removerHotel.hpp"
+
+1763768877 z:\projeto_tp1\include\servicos\remover\removerhotel.hpp
+	"DOMINIOS.hpp"
+	"ENTIDADES.hpp"
+	"centralContainers.hpp"
+	"listar/listarQuarto.hpp"
+	"listar/listarReserva.hpp"
+
+1763768877 source:z:\projeto_tp1\src\servicos\remover\removerhospede.cpp
+	"remover/removerHospede.hpp"
+
+1763768877 z:\projeto_tp1\include\servicos\remover\removerhospede.hpp
+	"DOMINIOS.hpp"
+	"ENTIDADES.hpp"
+	"centralContainers.hpp"
+	"listar/listarReserva.hpp"
+
+1763768877 source:z:\projeto_tp1\src\servicos\remover\removerhotel.cpp
+	"remover/removerHotel.hpp"
+
+1763768877 source:z:\projeto_tp1\src\servicos\remover\removerquarto.cpp
+	"remover/removerQuarto.hpp"
+
+1763768877 z:\projeto_tp1\include\servicos\remover\removerquarto.hpp
+	"DOMINIOS.hpp"
+	"ENTIDADES.hpp"
+	"centralContainers.hpp"
+	"listar/listarReserva.hpp"
+
+1763768877 source:z:\projeto_tp1\src\servicos\remover\removerreserva.cpp
+	"remover/removerReserva.hpp"
+
+1763768877 z:\projeto_tp1\include\servicos\remover\removerreserva.hpp
+	"DOMINIOS.hpp"
+	"ENTIDADES.hpp"
+	"centralContainers.hpp"
 
