@@ -1,0 +1,131 @@
+\doxysection{IApresentacao Interface Reference}
+\hypertarget{class_i_apresentacao}{}\label{class_i_apresentacao}\index{IApresentacao@{IApresentacao}}
+
+
+Interface de Apresentação Principal (IAP).  
+
+
+
+
+{\ttfamily \#include $<$Arquitetura\+UML.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_i_apresentacao_a1dc14b7069218f0b83f6d81d0c8c05de}{exibir}} ()=0
+\begin{DoxyCompactList}\small\item\em Exibe interface para o usuário. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_apresentacao_a81be0f16761d001f3b45d42b7a9805d6}{capturar\+Entrada}} ()=0
+\begin{DoxyCompactList}\small\item\em Captura entrada de dados do usuário. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_apresentacao_a424ee9b9fb934a7bcdc259cccef2156f}{mostrar\+Resultado}} (bool sucesso, const std\+::string \&mensagem)=0
+\begin{DoxyCompactList}\small\item\em Mostra resultado da operação para o usuário. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_i_apresentacao_aa6a3ca264cfbd6c79e5bce7ec5723112}{\texorpdfstring{$\sim$}{\string~}\+IApresentacao}} ()=default
+\begin{DoxyCompactList}\small\item\em Destrutor virtual para polimorfismo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface de Apresentação Principal (IAP). 
+
+{\bfseries{PROPÓ\+SITO\+:}} Define o contrato comum que deve ser implementado por todos os módulos da camada de apresentação seguindo padrão UML.
+
+{\bfseries{ESTEREÓ\+TIPO UML\+:}} \texorpdfstring{$<$}{<}$<$interface$>$\texorpdfstring{$>$}{>}
+
+{\bfseries{OPERAÇÕ\+ES ABSTRATAS\+:}}
+\begin{DoxyItemize}
+\item +\doxylink{class_i_apresentacao_a1dc14b7069218f0b83f6d81d0c8c05de}{exibir()} \+: bool -\/ Renderiza a interface
+\item +\doxylink{class_i_apresentacao_a81be0f16761d001f3b45d42b7a9805d6}{capturar\+Entrada()} \+: bool -\/ Coleta dados do usuário ~\newline
+
+\item +mostrar\+Resultado(sucesso \+: bool, mensagem \+: string) \+: void -\/ Apresenta feedback
+\end{DoxyItemize}
+
+{\bfseries{RELACIONAMENTOS\+:}}
+\begin{DoxyItemize}
+\item Realizada por\+: CAI, CAA, CAP, CAH, CAQ, CAHO, CAR 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_i_apresentacao_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_apresentacao_aa6a3ca264cfbd6c79e5bce7ec5723112}\index{IApresentacao@{IApresentacao}!````~IApresentacao@{\texorpdfstring{$\sim$}{\string~}IApresentacao}}
+\index{````~IApresentacao@{\texorpdfstring{$\sim$}{\string~}IApresentacao}!IApresentacao@{IApresentacao}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IApresentacao()}{\string~IApresentacao()}}
+{\footnotesize\ttfamily \label{class_i_apresentacao_aa6a3ca264cfbd6c79e5bce7ec5723112} 
+virtual IApresentacao\+::\texorpdfstring{$\sim$}{\string~}\+IApresentacao (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destrutor virtual para polimorfismo. 
+
+\begin{DoxyPostcond}{Postcondition}
+Recursos da interface são liberados 
+\end{DoxyPostcond}
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_apresentacao_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_apresentacao_a81be0f16761d001f3b45d42b7a9805d6}\index{IApresentacao@{IApresentacao}!capturarEntrada@{capturarEntrada}}
+\index{capturarEntrada@{capturarEntrada}!IApresentacao@{IApresentacao}}
+\doxysubsubsection{\texorpdfstring{capturarEntrada()}{capturarEntrada()}}
+{\footnotesize\ttfamily \label{class_i_apresentacao_a81be0f16761d001f3b45d42b7a9805d6} 
+virtual bool IApresentacao\+::capturar\+Entrada (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Captura entrada de dados do usuário. 
+
+\begin{DoxyReturn}{Returns}
+bool Verdadeiro se entrada foi capturada e validada 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Interface deve estar sendo exibida 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Dados válidos são coletados ou erro é reportado 
+\end{DoxyPostcond}
+\Hypertarget{class_i_apresentacao_a1dc14b7069218f0b83f6d81d0c8c05de}\index{IApresentacao@{IApresentacao}!exibir@{exibir}}
+\index{exibir@{exibir}!IApresentacao@{IApresentacao}}
+\doxysubsubsection{\texorpdfstring{exibir()}{exibir()}}
+{\footnotesize\ttfamily \label{class_i_apresentacao_a1dc14b7069218f0b83f6d81d0c8c05de} 
+virtual bool IApresentacao\+::exibir (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Exibe interface para o usuário. 
+
+\begin{DoxyReturn}{Returns}
+bool Verdadeiro se interface foi exibida com sucesso 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Sistema deve estar inicializado 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Interface é apresentada ao usuário 
+\end{DoxyPostcond}
+\Hypertarget{class_i_apresentacao_a424ee9b9fb934a7bcdc259cccef2156f}\index{IApresentacao@{IApresentacao}!mostrarResultado@{mostrarResultado}}
+\index{mostrarResultado@{mostrarResultado}!IApresentacao@{IApresentacao}}
+\doxysubsubsection{\texorpdfstring{mostrarResultado()}{mostrarResultado()}}
+{\footnotesize\ttfamily \label{class_i_apresentacao_a424ee9b9fb934a7bcdc259cccef2156f} 
+virtual void IApresentacao\+::mostrar\+Resultado (\begin{DoxyParamCaption}\item[{bool}]{sucesso}{, }\item[{const std\+::string \&}]{mensagem}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Mostra resultado da operação para o usuário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sucesso} & Indica se operação foi bem-\/sucedida \\
+\hline
+{\em mensagem} & Mensagem descritiva do resultado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+Operação deve ter sido executada 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Resultado é apresentado ao usuário 
+\end{DoxyPostcond}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_arquitetura_u_m_l_8hpp}{Arquitetura\+UML.\+hpp}}\end{DoxyCompactItemize}

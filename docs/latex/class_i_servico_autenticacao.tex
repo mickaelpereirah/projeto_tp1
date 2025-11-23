@@ -1,0 +1,135 @@
+\doxysection{IServico\+Autenticacao Interface Reference}
+\hypertarget{class_i_servico_autenticacao}{}\label{class_i_servico_autenticacao}\index{IServicoAutenticacao@{IServicoAutenticacao}}
+
+
+Interface Serviço Autenticação (ISA).  
+
+
+
+
+{\ttfamily \#include $<$Arquitetura\+UML.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_i_servico_autenticacao_a41d24f248dc46212c6659e5e6e0042b5}{login}} (const std\+::string \&email, const std\+::string \&senha)=0
+\begin{DoxyCompactList}\small\item\em Realiza login do usuário no sistema. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_servico_autenticacao_a1c7638d35b47c972373046bc3dded3aa}{logout}} ()=0
+\begin{DoxyCompactList}\small\item\em Realiza logout do usuário. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_servico_autenticacao_af09a6c380531d019a4701ae79efecd96}{verificar\+Sessao}} ()=0
+\begin{DoxyCompactList}\small\item\em Verifica se sessão está válida. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_i_servico_autenticacao_aa5aa819c01d59d131b6c84ff84473ae9}{\texorpdfstring{$\sim$}{\string~}\+IServico\+Autenticacao}} ()=default
+\begin{DoxyCompactList}\small\item\em Destrutor virtual para polimorfismo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface Serviço Autenticação (ISA). 
+
+{\bfseries{PROPÓ\+SITO\+:}} Define operações padrão para autenticação e gerenciamento de sessões de usuários no sistema seguindo padrão UML.
+
+{\bfseries{ESTEREÓ\+TIPO UML\+:}} \texorpdfstring{$<$}{<}$<$interface$>$\texorpdfstring{$>$}{>}
+
+{\bfseries{OPERAÇÕ\+ES ABSTRATAS\+:}}
+\begin{DoxyItemize}
+\item +login(email \+: string, senha \+: string) \+: bool
+\item +\doxylink{class_i_servico_autenticacao_a1c7638d35b47c972373046bc3dded3aa}{logout()} \+: bool ~\newline
+
+\item +\doxylink{class_i_servico_autenticacao_af09a6c380531d019a4701ae79efecd96}{verificar\+Sessao()} \+: bool
+\end{DoxyItemize}
+
+{\bfseries{RELACIONAMENTOS\+:}}
+\begin{DoxyItemize}
+\item Realizada por\+: CSA (Central de Serviços de Autenticação)
+\item Usada por\+: CAA (Caso de Uso Autenticação Administrador) 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_i_servico_autenticacao_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_servico_autenticacao_aa5aa819c01d59d131b6c84ff84473ae9}\index{IServicoAutenticacao@{IServicoAutenticacao}!````~IServicoAutenticacao@{\texorpdfstring{$\sim$}{\string~}IServicoAutenticacao}}
+\index{````~IServicoAutenticacao@{\texorpdfstring{$\sim$}{\string~}IServicoAutenticacao}!IServicoAutenticacao@{IServicoAutenticacao}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IServicoAutenticacao()}{\string~IServicoAutenticacao()}}
+{\footnotesize\ttfamily \label{class_i_servico_autenticacao_aa5aa819c01d59d131b6c84ff84473ae9} 
+virtual IServico\+Autenticacao\+::\texorpdfstring{$\sim$}{\string~}\+IServico\+Autenticacao (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destrutor virtual para polimorfismo. 
+
+\begin{DoxyPostcond}{Postcondition}
+Recursos da interface são liberados 
+\end{DoxyPostcond}
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_servico_autenticacao_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_servico_autenticacao_a41d24f248dc46212c6659e5e6e0042b5}\index{IServicoAutenticacao@{IServicoAutenticacao}!login@{login}}
+\index{login@{login}!IServicoAutenticacao@{IServicoAutenticacao}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily \label{class_i_servico_autenticacao_a41d24f248dc46212c6659e5e6e0042b5} 
+virtual bool IServico\+Autenticacao\+::login (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{email}{, }\item[{const std\+::string \&}]{senha}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Realiza login do usuário no sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & \doxylink{class_email}{Email} do gerente (identificador único) \\
+\hline
+{\em senha} & \doxylink{class_senha}{Senha} do gerente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Verdadeiro se autenticação bem-\/sucedida 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+\doxylink{class_email}{Email} e senha devem ser válidos 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Sessão é criada se credenciais corretas 
+\end{DoxyPostcond}
+\Hypertarget{class_i_servico_autenticacao_a1c7638d35b47c972373046bc3dded3aa}\index{IServicoAutenticacao@{IServicoAutenticacao}!logout@{logout}}
+\index{logout@{logout}!IServicoAutenticacao@{IServicoAutenticacao}}
+\doxysubsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily \label{class_i_servico_autenticacao_a1c7638d35b47c972373046bc3dded3aa} 
+virtual bool IServico\+Autenticacao\+::logout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Realiza logout do usuário. 
+
+\begin{DoxyReturn}{Returns}
+bool Verdadeiro se logout bem-\/sucedido 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Usuário deve estar logado 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Sessão é encerrada e recursos liberados 
+\end{DoxyPostcond}
+\Hypertarget{class_i_servico_autenticacao_af09a6c380531d019a4701ae79efecd96}\index{IServicoAutenticacao@{IServicoAutenticacao}!verificarSessao@{verificarSessao}}
+\index{verificarSessao@{verificarSessao}!IServicoAutenticacao@{IServicoAutenticacao}}
+\doxysubsubsection{\texorpdfstring{verificarSessao()}{verificarSessao()}}
+{\footnotesize\ttfamily \label{class_i_servico_autenticacao_af09a6c380531d019a4701ae79efecd96} 
+virtual bool IServico\+Autenticacao\+::verificar\+Sessao (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Verifica se sessão está válida. 
+
+\begin{DoxyReturn}{Returns}
+bool Verdadeiro se sessão ativa e válida 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Sistema deve estar inicializado 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Status da sessão é verificado 
+\end{DoxyPostcond}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_arquitetura_u_m_l_8hpp}{Arquitetura\+UML.\+hpp}}\end{DoxyCompactItemize}

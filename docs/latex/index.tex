@@ -1,0 +1,118 @@
+\chapter{Sistema de Gestão de Hotéis -\/ Modelo de Arquitetura em Camadas }
+\hypertarget{index}{}\label{index}\index{Sistema de Gestão de Hotéis -\/ Modelo de Arquitetura em Camadas@{Sistema de Gestão de Hotéis -\/ Modelo de Arquitetura em Camadas}}
+\hypertarget{index_intro_arquitetura}{}\doxysection{\texorpdfstring{Introdução}{Introdução}}\label{index_intro_arquitetura}
+Este projeto implementa um {\bfseries{Sistema de Gestão de Hotéis}} seguindo o padrão arquitetural em {\bfseries{3 camadas}} (Three-\/\+Tier Architecture), garantindo separação clara de responsabilidades e baixo acoplamento entre módulos.\hypertarget{index_diagrama_principal}{}\doxysection{\texorpdfstring{Diagrama da Arquitetura}{Diagrama da Arquitetura}}\label{index_diagrama_principal}
+O diagrama a seguir apresenta a estrutura completa do sistema em camadas\+:
+
+\hypertarget{index_camadas_sistema}{}\doxysection{\texorpdfstring{Descrição das Camadas}{Descrição das Camadas}}\label{index_camadas_sistema}
+\hypertarget{index_camada_apresentacao}{}\doxysubsection{\texorpdfstring{CAMADA DE APRESENTAÇÃO}{CAMADA DE APRESENTAÇÃO}}\label{index_camada_apresentacao}
+{\bfseries{Propósito\+:}} Interface com o usuário e controle de fluxo da aplicação
+
+{\bfseries{Módulos\+:}}
+\begin{DoxyItemize}
+\item {\bfseries{main\+:}} Ponto de entrada da aplicação
+\item {\bfseries{CAI\+:}} Caso de Uso Interface -\/ Controla navegação principal
+\item {\bfseries{CAA\+:}} Caso de Uso Autenticação Administrador
+\item {\bfseries{CAP\+:}} Caso de Uso \doxylink{class_cadastro}{Cadastro} \doxylink{class_gerente}{Gerente}
+\item {\bfseries{CAH\+:}} Caso de Uso \doxylink{class_cadastro}{Cadastro} \doxylink{class_hotel}{Hotel}
+\item {\bfseries{CAQ\+:}} Caso de Uso \doxylink{class_cadastro}{Cadastro} \doxylink{class_quarto}{Quarto} ~\newline
+
+\item {\bfseries{CAHO\+:}} Caso de Uso \doxylink{class_cadastro}{Cadastro} Hóspede
+\item {\bfseries{CAR\+:}} Caso de Uso \doxylink{class_cadastro}{Cadastro} \doxylink{class_reserva}{Reserva}
+\end{DoxyItemize}
+
+{\bfseries{Interface Principal\+:}}
+\begin{DoxyItemize}
+\item {\bfseries{IAP\+:}} Interface de Apresentação Principal -\/ Define contrato comum
+\end{DoxyItemize}\hypertarget{index_camada_servicos}{}\doxysubsection{\texorpdfstring{CAMADA DE SERVIÇ\+OS}{CAMADA DE SERVIÇ\+OS}}\label{index_camada_servicos}
+{\bfseries{Propósito\+:}} Implementação da lógica de negócio e regras do domínio
+
+{\bfseries{Interfaces de Serviços\+:}}
+\begin{DoxyItemize}
+\item {\bfseries{ISA\+:}} Interface Serviço Autenticação
+\item {\bfseries{ISP\+:}} Interface Serviço Persistência \doxylink{class_gerente}{Gerente} ~\newline
+
+\item {\bfseries{ISH\+:}} Interface Serviço Persistência \doxylink{class_hotel}{Hotel}
+\item {\bfseries{ISQ\+:}} Interface Serviço Persistência \doxylink{class_quarto}{Quarto}
+\item {\bfseries{ISHO\+:}} Interface Serviço Persistência Hóspede
+\item {\bfseries{ISR\+:}} Interface Serviço Persistência \doxylink{class_reserva}{Reserva}
+\end{DoxyItemize}
+
+{\bfseries{Centrais de Serviços\+:}}
+\begin{DoxyItemize}
+\item {\bfseries{CSA\+:}} Central de Serviços de Autenticação
+\item {\bfseries{CSP\+:}} Central de Serviços de Persistência \doxylink{class_gerente}{Gerente}
+\item {\bfseries{CSH\+:}} Central de Serviços de Persistência \doxylink{class_hotel}{Hotel} ~\newline
+
+\item {\bfseries{CSQ\+:}} Central de Serviços de Persistência \doxylink{class_quarto}{Quarto}
+\item {\bfseries{CSHO\+:}} Central de Serviços de Persistência Hóspede
+\item {\bfseries{CSR\+:}} Central de Serviços de Persistência \doxylink{class_reserva}{Reserva}
+\end{DoxyItemize}\hypertarget{index_camada_persistencia}{}\doxysubsection{\texorpdfstring{CAMADA DE PERSISTÊ\+NCIA}{CAMADA DE PERSISTÊ\+NCIA}}\label{index_camada_persistencia}
+{\bfseries{Propósito\+:}} Armazenamento e gerenciamento de dados em memória
+
+{\bfseries{Containers Especializados\+:}}
+\begin{DoxyItemize}
+\item {\bfseries{Gerentes\+:}} Armazena dados de gerentes do sistema
+\item {\bfseries{Hotéis\+:}} Gerencia informações dos hotéis cadastrados
+\item {\bfseries{Quartos\+:}} Controla quartos disponíveis em cada hotel
+\item {\bfseries{Hóspedes\+:}} Mantém registro de hóspedes cadastrados ~\newline
+
+\item {\bfseries{Reservas\+:}} Gerencia reservas com controle de conflitos
+\end{DoxyItemize}\hypertarget{index_principios_arquiteturais}{}\doxysection{\texorpdfstring{Princípios Arquiteturais Aplicados}{Princípios Arquiteturais Aplicados}}\label{index_principios_arquiteturais}
+\hypertarget{index_separacao_responsabilidades}{}\doxysubsection{\texorpdfstring{Separação de Responsabilidades}{Separação de Responsabilidades}}\label{index_separacao_responsabilidades}
+Cada camada possui responsabilidades específicas e bem definidas\+:
+\begin{DoxyItemize}
+\item {\bfseries{Apresentação\+:}} Gerencia interface e experiência do usuário
+\item {\bfseries{Serviços\+:}} Implementa regras de negócio e validações ~\newline
+
+\item {\bfseries{Persistência\+:}} Controla armazenamento e recuperação de dados
+\end{DoxyItemize}\hypertarget{index_baixo_acoplamento}{}\doxysubsection{\texorpdfstring{Baixo Acoplamento}{Baixo Acoplamento}}\label{index_baixo_acoplamento}
+As camadas comunicam-\/se através de interfaces abstratas\+:
+\begin{DoxyItemize}
+\item Reduz dependências diretas entre módulos
+\item Facilita testes unitários e uso de mocks
+\item Permite evolução independente das camadas
+\end{DoxyItemize}\hypertarget{index_alta_coesao}{}\doxysubsection{\texorpdfstring{Alta Coesão}{Alta Coesão}}\label{index_alta_coesao}
+Módulos da mesma camada têm propósitos relacionados\+:
+\begin{DoxyItemize}
+\item Funcionalidades agrupadas logicamente
+\item Reutilização de código comum
+\item Manutenção simplificada
+\end{DoxyItemize}\hypertarget{index_fluxo_operacional}{}\doxysection{\texorpdfstring{Fluxo Operacional}{Fluxo Operacional}}\label{index_fluxo_operacional}
+\hypertarget{index_fluxo_dados}{}\doxysubsection{\texorpdfstring{Fluxo de Dados}{Fluxo de Dados}}\label{index_fluxo_dados}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Usuário}} interage com {\bfseries{Camada de Apresentação}}
+\item {\bfseries{Casos de Uso}} delegam para {\bfseries{Interfaces de Serviços}} ~\newline
+
+\item {\bfseries{Centrais de Serviços}} implementam lógica de negócio
+\item {\bfseries{Containers}} persistem dados na {\bfseries{Camada de Persistência}}
+\item {\bfseries{Resultado}} retorna pelas camadas até o usuário
+\end{DoxyEnumerate}\hypertarget{index_relacionamentos_entidades}{}\doxysubsection{\texorpdfstring{Relacionamentos de Entidades}{Relacionamentos de Entidades}}\label{index_relacionamentos_entidades}
+{\bfseries{Multiplicidades do Domínio\+:}}
+\begin{DoxyItemize}
+\item \doxylink{class_gerente}{Gerente} (1) ↔ \doxylink{class_hotel}{Hotel} (0..\texorpdfstring{$\ast$}{*})
+\item \doxylink{class_hotel}{Hotel} (1) ↔ \doxylink{class_quarto}{Quarto} (1..\texorpdfstring{$\ast$}{*}) ~\newline
+
+\item Hóspede (1) ↔ \doxylink{class_reserva}{Reserva} (0..\texorpdfstring{$\ast$}{*})
+\item \doxylink{class_quarto}{Quarto} (1) ↔ \doxylink{class_reserva}{Reserva} (0..\texorpdfstring{$\ast$}{*})
+\end{DoxyItemize}\hypertarget{index_padroes_utilizados}{}\doxysection{\texorpdfstring{Padrões de Projeto}{Padrões de Projeto}}\label{index_padroes_utilizados}
+\hypertarget{index_singleton_pattern}{}\doxysubsection{\texorpdfstring{Singleton}{Singleton}}\label{index_singleton_pattern}
+
+\begin{DoxyItemize}
+\item {\bfseries{Classe\+:}} \doxylink{class_central_containers}{Central\+Containers}
+\item {\bfseries{Propósito\+:}} Acesso único e centralizado aos containers
+\item {\bfseries{Benefício\+:}} Controle unificado do armazenamento de dados
+\end{DoxyItemize}\hypertarget{index_interface_segregation}{}\doxysubsection{\texorpdfstring{Interface Segregation Principle (ISP)}{Interface Segregation Principle (ISP)}}\label{index_interface_segregation}
+
+\begin{DoxyItemize}
+\item {\bfseries{Classes\+:}} IAP, ISA, ISP, ISH, ISQ, ISHO, ISR
+\item {\bfseries{Propósito\+:}} Interfaces específicas e focadas
+\item {\bfseries{Benefício\+:}} Maior flexibilidade e facilidade de teste
+\end{DoxyItemize}\hypertarget{index_dependency_inversion}{}\doxysubsection{\texorpdfstring{Dependency Inversion Principle (DIP)}{Dependency Inversion Principle (DIP)}}\label{index_dependency_inversion}
+
+\begin{DoxyItemize}
+\item {\bfseries{Aplicação\+:}} Camadas superiores dependem de abstrações
+\item {\bfseries{Benefício\+:}} Facilita mudanças e extensões no sistema
+\end{DoxyItemize}\hypertarget{index_conclusao}{}\doxysection{\texorpdfstring{Conclusão}{Conclusão}}\label{index_conclusao}
+A arquitetura em camadas implementada garante um sistema robusto, organizando responsabilidades de forma clara e permitindo evolução controlada. O uso de interfaces abstratas e padrões de projeto consolidados assegura flexibilidade e facilidade de manutenção. 

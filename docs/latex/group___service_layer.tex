@@ -1,0 +1,36 @@
+\doxysection{Camada de Serviços }
+\hypertarget{group___service_layer}{}\label{group___service_layer}\index{Camada de Serviços@{Camada de Serviços}}
+
+
+Módulos que implementam a lógica de negócio.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{class_i_servico_autenticacao}{IServico\+Autenticacao}}
+\begin{DoxyCompactList}\small\item\em Interface Serviço Autenticação (ISA). \end{DoxyCompactList}\item 
+interface \mbox{\hyperlink{class_i_servico_persistencia}{IServico\+Persistencia$<$ T $>$}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Módulos que implementam a lógica de negócio. 
+
+Esta camada contém as regras de negócio, validações e coordenação entre a apresentação e persistência.
+
+{\bfseries{Componentes\+:}}
+\begin{DoxyItemize}
+\item Interfaces de Serviços
+\item Implementações dos Serviços
+\item Lógica de Negócio
+\end{DoxyItemize}
+
+{\bfseries{Responsabilidades\+:}}
+\begin{DoxyItemize}
+\item Implementar regras de negócio
+\item Validar dados de domínio
+\item Coordenar operações CRUD
+\item Gerenciar transações
+\item Aplicar políticas de segurança 
+\end{DoxyItemize}

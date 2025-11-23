@@ -1,0 +1,179 @@
+\doxysection{IServico\+Persistencia\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Interface Template Reference}
+\hypertarget{class_i_servico_persistencia}{}\label{class_i_servico_persistencia}\index{IServicoPersistencia$<$ T $>$@{IServicoPersistencia$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Arquitetura\+UML.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_i_servico_persistencia_a59d873f04b06dcbe2bb017c8c9ca605d}{incluir}} (T \texorpdfstring{$\ast$}{*}entidade)=0
+\begin{DoxyCompactList}\small\item\em Inclui nova entidade no sistema. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_servico_persistencia_a89c4900467d4966b7df27a350d1bf695}{remover}} (const std\+::string \&chave)=0
+\begin{DoxyCompactList}\small\item\em Remove entidade por chave primária. \end{DoxyCompactList}\item 
+virtual T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_i_servico_persistencia_acb4b4cffe74f98a4e6ff51c2b55d8408}{pesquisar}} (const std\+::string \&chave)=0
+\begin{DoxyCompactList}\small\item\em Pesquisa entidade por chave primária. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_servico_persistencia_adeb31c44e92a3b6f37d7b04d4a80a336}{atualizar}} (T \texorpdfstring{$\ast$}{*}entidade)=0
+\begin{DoxyCompactList}\small\item\em Atualiza dados da entidade existente. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_i_servico_persistencia_a483a800ced812dd652e39fef3abe2d27}{\texorpdfstring{$\sim$}{\string~}\+IServico\+Persistencia}} ()=default
+\begin{DoxyCompactList}\small\item\em Destrutor virtual para polimorfismo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+interface IServico\+Persistencia$<$ T $>$}
+Interface genérica para Serviços de Persistência 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Tipo da entidade gerenciada\\
+\hline
+\end{DoxyTemplParams}
+{\bfseries{PROPÓ\+SITO\+:}} Define operações CRUD padrão que devem ser implementadas por todos os serviços de persistência seguindo padrão UML.
+
+{\bfseries{ESTEREÓ\+TIPO UML\+:}} \texorpdfstring{$<$}{<}$<$interface$>$\texorpdfstring{$>$}{>} {\bfseries{PADRÃO GENÉ\+RICO\+:}} Template Method Pattern
+
+{\bfseries{OPERAÇÕ\+ES ABSTRATAS CRUD\+:}}
+\begin{DoxyItemize}
+\item +incluir(entidade \+: T\texorpdfstring{$\ast$}{*}) \+: bool -\/ Create
+\item +pesquisar(chave \+: string) \+: T\texorpdfstring{$\ast$}{*} -\/ Read ~\newline
+
+\item +atualizar(entidade \+: T\texorpdfstring{$\ast$}{*}) \+: bool -\/ Update
+\item +remover(chave \+: string) \+: bool -\/ Delete
+\end{DoxyItemize}
+
+{\bfseries{ESPECIALIZAÇÕ\+ES\+:}}
+\begin{DoxyItemize}
+\item ISP\+: \doxylink{class_i_servico_persistencia}{IServico\+Persistencia$<$\+Gerente$>$}
+\item ISH\+: \doxylink{class_i_servico_persistencia}{IServico\+Persistencia$<$\+Hotel$>$}
+\item ISQ\+: \doxylink{class_i_servico_persistencia}{IServico\+Persistencia$<$\+Quarto$>$}
+\item ISHO\+: \doxylink{class_i_servico_persistencia}{IServico\+Persistencia$<$\+Hospede$>$}
+\item ISR\+: \doxylink{class_i_servico_persistencia}{IServico\+Persistencia$<$\+Reserva$>$} 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_i_servico_persistencia_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_servico_persistencia_a483a800ced812dd652e39fef3abe2d27}\index{IServicoPersistencia$<$ T $>$@{IServicoPersistencia$<$ T $>$}!````~IServicoPersistencia@{\texorpdfstring{$\sim$}{\string~}IServicoPersistencia}}
+\index{````~IServicoPersistencia@{\texorpdfstring{$\sim$}{\string~}IServicoPersistencia}!IServicoPersistencia$<$ T $>$@{IServicoPersistencia$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IServicoPersistencia()}{\string~IServicoPersistencia()}}
+{\footnotesize\ttfamily \label{class_i_servico_persistencia_a483a800ced812dd652e39fef3abe2d27} 
+template$<$typename T$>$ \\
+virtual \mbox{\hyperlink{class_i_servico_persistencia}{IServico\+Persistencia}}$<$ T $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_i_servico_persistencia}{IServico\+Persistencia}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destrutor virtual para polimorfismo. 
+
+\begin{DoxyPostcond}{Postcondition}
+Recursos da interface são liberados 
+\end{DoxyPostcond}
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_servico_persistencia_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_servico_persistencia_adeb31c44e92a3b6f37d7b04d4a80a336}\index{IServicoPersistencia$<$ T $>$@{IServicoPersistencia$<$ T $>$}!atualizar@{atualizar}}
+\index{atualizar@{atualizar}!IServicoPersistencia$<$ T $>$@{IServicoPersistencia$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{atualizar()}{atualizar()}}
+{\footnotesize\ttfamily \label{class_i_servico_persistencia_adeb31c44e92a3b6f37d7b04d4a80a336} 
+template$<$typename T$>$ \\
+virtual bool \mbox{\hyperlink{class_i_servico_persistencia}{IServico\+Persistencia}}$<$ T $>$\+::atualizar (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{entidade}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Atualiza dados da entidade existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entidade} & Ponteiro para entidade com novos dados \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Verdadeiro se atualização bem-\/sucedida ~\newline
+ 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Entidade deve existir no sistema 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Dados da entidade são atualizados 
+\end{DoxyPostcond}
+\Hypertarget{class_i_servico_persistencia_a59d873f04b06dcbe2bb017c8c9ca605d}\index{IServicoPersistencia$<$ T $>$@{IServicoPersistencia$<$ T $>$}!incluir@{incluir}}
+\index{incluir@{incluir}!IServicoPersistencia$<$ T $>$@{IServicoPersistencia$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{incluir()}{incluir()}}
+{\footnotesize\ttfamily \label{class_i_servico_persistencia_a59d873f04b06dcbe2bb017c8c9ca605d} 
+template$<$typename T$>$ \\
+virtual bool \mbox{\hyperlink{class_i_servico_persistencia}{IServico\+Persistencia}}$<$ T $>$\+::incluir (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{entidade}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Inclui nova entidade no sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entidade} & Ponteiro para entidade a ser incluída \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Verdadeiro se inclusão bem-\/sucedida 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Entidade deve ser válida e não existir 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Entidade é persistida no container 
+\end{DoxyPostcond}
+\Hypertarget{class_i_servico_persistencia_acb4b4cffe74f98a4e6ff51c2b55d8408}\index{IServicoPersistencia$<$ T $>$@{IServicoPersistencia$<$ T $>$}!pesquisar@{pesquisar}}
+\index{pesquisar@{pesquisar}!IServicoPersistencia$<$ T $>$@{IServicoPersistencia$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pesquisar()}{pesquisar()}}
+{\footnotesize\ttfamily \label{class_i_servico_persistencia_acb4b4cffe74f98a4e6ff51c2b55d8408} 
+template$<$typename T$>$ \\
+virtual T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_i_servico_persistencia}{IServico\+Persistencia}}$<$ T $>$\+::pesquisar (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{chave}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pesquisa entidade por chave primária. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chave} & Chave primária da entidade \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\texorpdfstring{$\ast$}{*} Ponteiro para entidade ou nullptr se não encontrada 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Chave deve ser válida 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Entidade é localizada ou nullptr retornado 
+\end{DoxyPostcond}
+\Hypertarget{class_i_servico_persistencia_a89c4900467d4966b7df27a350d1bf695}\index{IServicoPersistencia$<$ T $>$@{IServicoPersistencia$<$ T $>$}!remover@{remover}}
+\index{remover@{remover}!IServicoPersistencia$<$ T $>$@{IServicoPersistencia$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{remover()}{remover()}}
+{\footnotesize\ttfamily \label{class_i_servico_persistencia_a89c4900467d4966b7df27a350d1bf695} 
+template$<$typename T$>$ \\
+virtual bool \mbox{\hyperlink{class_i_servico_persistencia}{IServico\+Persistencia}}$<$ T $>$\+::remover (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{chave}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Remove entidade por chave primária. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chave} & Chave primária da entidade \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Verdadeiro se remoção bem-\/sucedida 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Chave deve existir no sistema 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Entidade é removida do container 
+\end{DoxyPostcond}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_arquitetura_u_m_l_8hpp}{Arquitetura\+UML.\+hpp}}\end{DoxyCompactItemize}

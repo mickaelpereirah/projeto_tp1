@@ -1,0 +1,85 @@
+\doxysection{Arquitetura\+UML.\+hpp}
+\hypertarget{_arquitetura_u_m_l_8hpp_source}{}\label{_arquitetura_u_m_l_8hpp_source}\index{include/ArquiteturaUML.hpp@{include/ArquiteturaUML.hpp}}
+\mbox{\hyperlink{_arquitetura_u_m_l_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#ifndef\ ARQUITETURA\_UML\_HPP\_INCLUDED}}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#define\ ARQUITETURA\_UML\_HPP\_INCLUDED}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00283\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_apresentacao}{IApresentacao}}}
+\DoxyCodeLine{00284\ \{}
+\DoxyCodeLine{00285\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_apresentacao_a1dc14b7069218f0b83f6d81d0c8c05de}{exibir}}()\ =\ 0;}
+\DoxyCodeLine{00293\ \ \ \ \ }
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_apresentacao_a81be0f16761d001f3b45d42b7a9805d6}{capturarEntrada}}()\ =\ 0;}
+\DoxyCodeLine{00301\ \ \ \ \ }
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_apresentacao_a424ee9b9fb934a7bcdc259cccef2156f}{mostrarResultado}}(\textcolor{keywordtype}{bool}\ sucesso,\ \textcolor{keyword}{const}\ std::string\&\ mensagem)\ =\ 0;}
+\DoxyCodeLine{00310\ \ \ \ \ }
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_apresentacao_aa6a3ca264cfbd6c79e5bce7ec5723112}{\string~IApresentacao}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00316\ \};}
+\DoxyCodeLine{00317\ \ \textcolor{comment}{//\ Fim\ do\ grupo\ PresentationLayer}}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00361\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_servico_autenticacao}{IServicoAutenticacao}}\ \ }
+\DoxyCodeLine{00362\ \{}
+\DoxyCodeLine{00363\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00372\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_servico_autenticacao_a41d24f248dc46212c6659e5e6e0042b5}{login}}(\textcolor{keyword}{const}\ std::string\&\ email,\ \textcolor{keyword}{const}\ std::string\&\ senha)\ =\ 0;}
+\DoxyCodeLine{00373\ \ \ \ \ }
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_servico_autenticacao_a1c7638d35b47c972373046bc3dded3aa}{logout}}()\ =\ 0;}
+\DoxyCodeLine{00381\ \ \ \ \ }
+\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_servico_autenticacao_af09a6c380531d019a4701ae79efecd96}{verificarSessao}}()\ =\ 0;}
+\DoxyCodeLine{00389\ \ \ \ \ }
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_servico_autenticacao_aa5aa819c01d59d131b6c84ff84473ae9}{\string~IServicoAutenticacao}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00395\ \};}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00422\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00423\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_servico_persistencia}{IServicoPersistencia}}}
+\DoxyCodeLine{00424\ \{}
+\DoxyCodeLine{00425\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00433\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_servico_persistencia_a59d873f04b06dcbe2bb017c8c9ca605d}{incluir}}(T*\ entidade)\ =\ 0;}
+\DoxyCodeLine{00434\ \ \ \ \ }
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_servico_persistencia_a89c4900467d4966b7df27a350d1bf695}{remover}}(\textcolor{keyword}{const}\ std::string\&\ chave)\ =\ 0;}
+\DoxyCodeLine{00443\ \ \ \ \ }
+\DoxyCodeLine{00451\ \ \ \ \ \textcolor{keyword}{virtual}\ T*\ \mbox{\hyperlink{class_i_servico_persistencia_acb4b4cffe74f98a4e6ff51c2b55d8408}{pesquisar}}(\textcolor{keyword}{const}\ std::string\&\ chave)\ =\ 0;}
+\DoxyCodeLine{00452\ \ \ \ \ }
+\DoxyCodeLine{00460\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_servico_persistencia_adeb31c44e92a3b6f37d7b04d4a80a336}{atualizar}}(T*\ entidade)\ =\ 0;}
+\DoxyCodeLine{00461\ \ \ \ \ }
+\DoxyCodeLine{00466\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_servico_persistencia_a483a800ced812dd652e39fef3abe2d27}{\string~IServicoPersistencia}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00467\ \};}
+\DoxyCodeLine{00468\ \ \textcolor{comment}{//\ Fim\ do\ grupo\ ServiceLayer}}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00512\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_central_containers}{CentralContainers}}}
+\DoxyCodeLine{00513\ \{}
+\DoxyCodeLine{00514\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00516\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_container_gerente}{ContainerGerente}}\ \mbox{\hyperlink{class_central_containers_adf83dcf8a7b5828a715a47c63afd13a7}{containerGerentes}};}
+\DoxyCodeLine{00517\ \ \ \ \ }
+\DoxyCodeLine{00519\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_container_hotel}{ContainerHotel}}\ \mbox{\hyperlink{class_central_containers_aa1b2bb82d61fc80e2fdab9212bd25847}{containerHoteis}};}
+\DoxyCodeLine{00520\ \ \ \ \ }
+\DoxyCodeLine{00522\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_container_quarto}{ContainerQuarto}}\ \mbox{\hyperlink{class_central_containers_afba6ba31ad088fb91cfe5e3f3fc4d7e2}{containerQuartos}};}
+\DoxyCodeLine{00523\ \ \ \ \ }
+\DoxyCodeLine{00525\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_container_hospede}{ContainerHospede}}\ \mbox{\hyperlink{class_central_containers_a5767fc1a64bf8a134fe950f8845b9fab}{containerHospedes}};}
+\DoxyCodeLine{00526\ \ \ \ \ }
+\DoxyCodeLine{00528\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_container_reserva}{ContainerReserva}}\ \mbox{\hyperlink{class_central_containers_afb2fd640b3d8b29853d50ab5b1997f6f}{containerReservas}};}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00532\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_container_gerente}{ContainerGerente}}\&\ \mbox{\hyperlink{class_central_containers_a06ca84e7a6ab3e1c3da43c35e9a983ee}{getContainerGerentes}}();}
+\DoxyCodeLine{00533\ \ \ \ \ }
+\DoxyCodeLine{00535\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_container_hotel}{ContainerHotel}}\&\ \mbox{\hyperlink{class_central_containers_a4c951ee46c25fc3387681e5b88fd8c33}{getContainerHoteis}}();}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ }
+\DoxyCodeLine{00538\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_container_quarto}{ContainerQuarto}}\&\ \mbox{\hyperlink{class_central_containers_ab21274cceca5ee2a49d00f4267bb7465}{getContainerQuartos}}();}
+\DoxyCodeLine{00539\ \ \ \ \ }
+\DoxyCodeLine{00541\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_container_hospede}{ContainerHospede}}\&\ \mbox{\hyperlink{class_central_containers_af6cb68207659a986d38ef23792fa4793}{getContainerHospedes}}();}
+\DoxyCodeLine{00542\ \ \ \ \ }
+\DoxyCodeLine{00544\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_container_reserva}{ContainerReserva}}\&\ \mbox{\hyperlink{class_central_containers_a99ab33a07b1a82475aa2339326642b64}{getContainerReservas}}();}
+\DoxyCodeLine{00545\ \};}
+\DoxyCodeLine{00546\ \ \textcolor{comment}{//\ Fim\ do\ grupo\ PersistenceLayer}}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00607\ }
+\DoxyCodeLine{00608\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ARQUITETURA\_UML\_HPP\_INCLUDED}}
+
+\end{DoxyCode}

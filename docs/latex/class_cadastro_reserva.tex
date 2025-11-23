@@ -18,6 +18,12 @@ Inheritance diagram for Cadastro\+Reserva\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_cadastro_reserva_a8bb21b6f977c62a27b5ffa2cf902b158}{criar\+\_\+data\+\_\+inicial}} ()
+\begin{DoxyCompactList}\small\item\em Cria data inicial da reserva com validação. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_cadastro_reserva_a44956e21accb62e8fc2040f0381e46f0}{criar\+\_\+data\+\_\+final}} ()
+\begin{DoxyCompactList}\small\item\em Cria data final da reserva com validação. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_cadastro_reserva_a5eaae4b9089c3986c6bb4846dca643ce}{validar\+\_\+datas}} (const \mbox{\hyperlink{class_data}{Data}} \&inicial, const \mbox{\hyperlink{class_data}{Data}} \&final)
+\begin{DoxyCompactList}\small\item\em Valida se data final é posterior à data inicial. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_reserva}{Reserva}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_cadastro_reserva_a03fb2cafe1e88367955ca4f3b549bde1}{criar\+\_\+reserva}} ()
 \begin{DoxyCompactList}\small\item\em Cria objeto \doxylink{class_reserva}{Reserva} com dados do usuário. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_cadastro_reserva_a1143af847ea2661309345b81ca67ec64}{nova\+\_\+reserva}} ()
@@ -52,12 +58,31 @@ bool \mbox{\hyperlink{class_cadastro_reserva_a1143af847ea2661309345b81ca67ec64}{
 \doxysubsection{Detailed Description}
 Cadastra reservas no sistema. 
 
-{\bfseries{Dados\+:}} Código (PK), \doxylink{class_data}{Data} chegada, \doxylink{class_data}{Data} partida, Valor total ~\newline
- {\bfseries{Validações\+:}} Código único, Partida \texorpdfstring{$>$}{>} Chegada, Sem conflito de datas no quarto 
+{\bfseries{Dados\+:}} Código (PK), \doxylink{class_data}{Data} chegada, \doxylink{class_data}{Data} partida, Valor total {\bfseries{Validações\+:}} Código único, Partida \texorpdfstring{$>$}{>} Chegada, Sem conflito de datas no quarto 
 
 \label{doc-func-members}
 \Hypertarget{class_cadastro_reserva_doc-func-members}
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_cadastro_reserva_a44956e21accb62e8fc2040f0381e46f0}\index{CadastroReserva@{CadastroReserva}!criar\_data\_final@{criar\_data\_final}}
+\index{criar\_data\_final@{criar\_data\_final}!CadastroReserva@{CadastroReserva}}
+\doxysubsubsection{\texorpdfstring{criar\_data\_final()}{criar\_data\_final()}}
+{\footnotesize\ttfamily \label{class_cadastro_reserva_a44956e21accb62e8fc2040f0381e46f0} 
+\mbox{\hyperlink{class_data}{Data}} Cadastro\+Reserva\+::criar\+\_\+data\+\_\+final (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cria data final da reserva com validação. 
+
+\Hypertarget{class_cadastro_reserva_a8bb21b6f977c62a27b5ffa2cf902b158}\index{CadastroReserva@{CadastroReserva}!criar\_data\_inicial@{criar\_data\_inicial}}
+\index{criar\_data\_inicial@{criar\_data\_inicial}!CadastroReserva@{CadastroReserva}}
+\doxysubsubsection{\texorpdfstring{criar\_data\_inicial()}{criar\_data\_inicial()}}
+{\footnotesize\ttfamily \label{class_cadastro_reserva_a8bb21b6f977c62a27b5ffa2cf902b158} 
+\mbox{\hyperlink{class_data}{Data}} Cadastro\+Reserva\+::criar\+\_\+data\+\_\+inicial (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cria data inicial da reserva com validação. 
+
 \Hypertarget{class_cadastro_reserva_a03fb2cafe1e88367955ca4f3b549bde1}\index{CadastroReserva@{CadastroReserva}!criar\_reserva@{criar\_reserva}}
 \index{criar\_reserva@{criar\_reserva}!CadastroReserva@{CadastroReserva}}
 \doxysubsubsection{\texorpdfstring{criar\_reserva()}{criar\_reserva()}}
@@ -77,6 +102,16 @@ bool Cadastro\+Reserva\+::nova\+\_\+reserva (\begin{DoxyParamCaption}{}{}\end{Do
 
 
 Cadastra reserva no sistema (retorna true se sucesso). 
+
+\Hypertarget{class_cadastro_reserva_a5eaae4b9089c3986c6bb4846dca643ce}\index{CadastroReserva@{CadastroReserva}!validar\_datas@{validar\_datas}}
+\index{validar\_datas@{validar\_datas}!CadastroReserva@{CadastroReserva}}
+\doxysubsubsection{\texorpdfstring{validar\_datas()}{validar\_datas()}}
+{\footnotesize\ttfamily \label{class_cadastro_reserva_a5eaae4b9089c3986c6bb4846dca643ce} 
+bool Cadastro\+Reserva\+::validar\+\_\+datas (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_data}{Data}} \&}]{inicial}{, }\item[{const \mbox{\hyperlink{class_data}{Data}} \&}]{final}{}\end{DoxyParamCaption})}
+
+
+
+Valida se data final é posterior à data inicial. 
 
 
 

@@ -109,6 +109,12 @@ Inheritance diagram for CadastroReserva:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a8bb21b6f977c62a27b5ffa2cf902b158" id="r_a8bb21b6f977c62a27b5ffa2cf902b158"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html">Data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bb21b6f977c62a27b5ffa2cf902b158">criar_data_inicial</a> ()</td></tr>
+<tr class="memdesc:a8bb21b6f977c62a27b5ffa2cf902b158"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria data inicial da reserva com validação.  <br /></td></tr>
+<tr class="memitem:a44956e21accb62e8fc2040f0381e46f0" id="r_a44956e21accb62e8fc2040f0381e46f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html">Data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44956e21accb62e8fc2040f0381e46f0">criar_data_final</a> ()</td></tr>
+<tr class="memdesc:a44956e21accb62e8fc2040f0381e46f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria data final da reserva com validação.  <br /></td></tr>
+<tr class="memitem:a5eaae4b9089c3986c6bb4846dca643ce" id="r_a5eaae4b9089c3986c6bb4846dca643ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5eaae4b9089c3986c6bb4846dca643ce">validar_datas</a> (const <a class="el" href="class_data.html">Data</a> &amp;inicial, const <a class="el" href="class_data.html">Data</a> &amp;final)</td></tr>
+<tr class="memdesc:a5eaae4b9089c3986c6bb4846dca643ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida se data final é posterior à data inicial.  <br /></td></tr>
 <tr class="memitem:a03fb2cafe1e88367955ca4f3b549bde1" id="r_a03fb2cafe1e88367955ca4f3b549bde1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_reserva.html">Reserva</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03fb2cafe1e88367955ca4f3b549bde1">criar_reserva</a> ()</td></tr>
 <tr class="memdesc:a03fb2cafe1e88367955ca4f3b549bde1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria objeto <a class="el" href="class_reserva.html" title="Classe que representa uma reserva no sistema de gestão de hotéis.">Reserva</a> com dados do usuário.  <br /></td></tr>
 <tr class="memitem:a1143af847ea2661309345b81ca67ec64" id="r_a1143af847ea2661309345b81ca67ec64"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1143af847ea2661309345b81ca67ec64">nova_reserva</a> ()</td></tr>
@@ -139,9 +145,46 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Cadastra reservas no sistema. </p>
-<p><b>Dados:</b> Código (PK), <a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> chegada, <a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> partida, Valor total <br  />
- <b>Validações:</b> Código único, Partida &gt; Chegada, Sem conflito de datas no quarto </p>
+<p><b>Dados:</b> Código (PK), <a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> chegada, <a class="el" href="class_data.html" title="Representa uma data válida no sistema.">Data</a> partida, Valor total <b>Validações:</b> Código único, Partida &gt; Chegada, Sem conflito de datas no quarto </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a44956e21accb62e8fc2040f0381e46f0" name="a44956e21accb62e8fc2040f0381e46f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44956e21accb62e8fc2040f0381e46f0">&#9670;&#160;</a></span>criar_data_final()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_data.html">Data</a> CadastroReserva::criar_data_final </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria data final da reserva com validação. </p>
+
+</div>
+</div>
+<a id="a8bb21b6f977c62a27b5ffa2cf902b158" name="a8bb21b6f977c62a27b5ffa2cf902b158"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bb21b6f977c62a27b5ffa2cf902b158">&#9670;&#160;</a></span>criar_data_inicial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_data.html">Data</a> CadastroReserva::criar_data_inicial </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria data inicial da reserva com validação. </p>
+
+</div>
+</div>
 <a id="a03fb2cafe1e88367955ca4f3b549bde1" name="a03fb2cafe1e88367955ca4f3b549bde1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a03fb2cafe1e88367955ca4f3b549bde1">&#9670;&#160;</a></span>criar_reserva()</h2>
 
@@ -177,6 +220,29 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Cadastra reserva no sistema (retorna true se sucesso). </p>
+
+</div>
+</div>
+<a id="a5eaae4b9089c3986c6bb4846dca643ce" name="a5eaae4b9089c3986c6bb4846dca643ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eaae4b9089c3986c6bb4846dca643ce">&#9670;&#160;</a></span>validar_datas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CadastroReserva::validar_datas </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_data.html">Data</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>inicial</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_data.html">Data</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>final</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Valida se data final é posterior à data inicial. </p>
 
 </div>
 </div>

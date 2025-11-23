@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "My Project", "index.html", [
+    [ "Sistema de Gestão de Hotéis - Modelo de Arquitetura em Camadas", "index.html", "index" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -47,9 +48,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_c_o_n_t_a_i_n_e_r_s_8hpp.html",
-"class_listar_quarto.html#a4b27933ffab8886f0d15d1d5e8293650",
-"hierarchy.html"
+"_arquitetura_8hpp.html",
+"class_listar_hospede.html#aa18436fb0263def6c7c6788eca1be5c7",
+"functions_vars.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

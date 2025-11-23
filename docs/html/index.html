@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Main Page</title>
+<title>My Project: Sistema de Gestão de Hotéis - Modelo de Arquitetura em Camadas</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -87,10 +87,142 @@ $(function(){initNavTree('index.html','',''); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">My Project Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Sistema de Gestão de Hotéis - Modelo de Arquitetura em Camadas </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><h1 class="doxsection"><a class="anchor" id="intro_arquitetura"></a>
+Introdução</h1>
+<p>Este projeto implementa um <b>Sistema de Gestão de Hotéis</b> seguindo o padrão arquitetural em <b>3 camadas</b> (Three-Tier Architecture), garantindo separação clara de responsabilidades e baixo acoplamento entre módulos.</p>
+<h1 class="doxsection"><a class="anchor" id="diagrama_principal"></a>
+Diagrama da Arquitetura</h1>
+<p>O diagrama a seguir apresenta a estrutura completa do sistema em camadas:</p>
+<div class="image">
+<img src="diagrama_projetoTp1.jpeg" alt="" width="800px"/>
+<div class="caption">
+Arquitetura em Camadas - Sistema de Gestão Hoteleira</div></div>
+<h1 class="doxsection"><a class="anchor" id="camadas_sistema"></a>
+Descrição das Camadas</h1>
+<h2 class="doxsection"><a class="anchor" id="camada_apresentacao"></a>
+CAMADA DE APRESENTAÇÃO</h2>
+<p><b>Propósito:</b> Interface com o usuário e controle de fluxo da aplicação</p>
+<p><b>Módulos:</b></p><ul>
+<li><b>main:</b> Ponto de entrada da aplicação</li>
+<li><b>CAI:</b> Caso de Uso Interface - Controla navegação principal</li>
+<li><b>CAA:</b> Caso de Uso Autenticação Administrador</li>
+<li><b>CAP:</b> Caso de Uso <a class="el" href="class_cadastro.html" title="Classe base com métodos auxiliares para entrada de dados dos domínios.">Cadastro</a> <a class="el" href="class_gerente.html" title="Classe que representa um gerente no sistema de gestão de hotéis.">Gerente</a></li>
+<li><b>CAH:</b> Caso de Uso <a class="el" href="class_cadastro.html" title="Classe base com métodos auxiliares para entrada de dados dos domínios.">Cadastro</a> <a class="el" href="class_hotel.html" title="Classe que representa um hotel no sistema de gestão.">Hotel</a></li>
+<li><b>CAQ:</b> Caso de Uso <a class="el" href="class_cadastro.html" title="Classe base com métodos auxiliares para entrada de dados dos domínios.">Cadastro</a> <a class="el" href="class_quarto.html" title="Classe que representa um quarto de hotel no sistema de gestão.">Quarto</a> <br  />
+</li>
+<li><b>CAHO:</b> Caso de Uso <a class="el" href="class_cadastro.html" title="Classe base com métodos auxiliares para entrada de dados dos domínios.">Cadastro</a> Hóspede</li>
+<li><b>CAR:</b> Caso de Uso <a class="el" href="class_cadastro.html" title="Classe base com métodos auxiliares para entrada de dados dos domínios.">Cadastro</a> <a class="el" href="class_reserva.html" title="Classe que representa uma reserva no sistema de gestão de hotéis.">Reserva</a></li>
+</ul>
+<p><b>Interface Principal:</b></p><ul>
+<li><b>IAP:</b> Interface de Apresentação Principal - Define contrato comum</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="camada_servicos"></a>
+CAMADA DE SERVIÇOS</h2>
+<p><b>Propósito:</b> Implementação da lógica de negócio e regras do domínio</p>
+<p><b>Interfaces de Serviços:</b></p><ul>
+<li><b>ISA:</b> Interface Serviço Autenticação</li>
+<li><b>ISP:</b> Interface Serviço Persistência <a class="el" href="class_gerente.html" title="Classe que representa um gerente no sistema de gestão de hotéis.">Gerente</a> <br  />
+</li>
+<li><b>ISH:</b> Interface Serviço Persistência <a class="el" href="class_hotel.html" title="Classe que representa um hotel no sistema de gestão.">Hotel</a></li>
+<li><b>ISQ:</b> Interface Serviço Persistência <a class="el" href="class_quarto.html" title="Classe que representa um quarto de hotel no sistema de gestão.">Quarto</a></li>
+<li><b>ISHO:</b> Interface Serviço Persistência Hóspede</li>
+<li><b>ISR:</b> Interface Serviço Persistência <a class="el" href="class_reserva.html" title="Classe que representa uma reserva no sistema de gestão de hotéis.">Reserva</a></li>
+</ul>
+<p><b>Centrais de Serviços:</b></p><ul>
+<li><b>CSA:</b> Central de Serviços de Autenticação</li>
+<li><b>CSP:</b> Central de Serviços de Persistência <a class="el" href="class_gerente.html" title="Classe que representa um gerente no sistema de gestão de hotéis.">Gerente</a></li>
+<li><b>CSH:</b> Central de Serviços de Persistência <a class="el" href="class_hotel.html" title="Classe que representa um hotel no sistema de gestão.">Hotel</a> <br  />
+</li>
+<li><b>CSQ:</b> Central de Serviços de Persistência <a class="el" href="class_quarto.html" title="Classe que representa um quarto de hotel no sistema de gestão.">Quarto</a></li>
+<li><b>CSHO:</b> Central de Serviços de Persistência Hóspede</li>
+<li><b>CSR:</b> Central de Serviços de Persistência <a class="el" href="class_reserva.html" title="Classe que representa uma reserva no sistema de gestão de hotéis.">Reserva</a></li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="camada_persistencia"></a>
+CAMADA DE PERSISTÊNCIA</h2>
+<p><b>Propósito:</b> Armazenamento e gerenciamento de dados em memória</p>
+<p><b>Containers Especializados:</b></p><ul>
+<li><b>Gerentes:</b> Armazena dados de gerentes do sistema</li>
+<li><b>Hotéis:</b> Gerencia informações dos hotéis cadastrados</li>
+<li><b>Quartos:</b> Controla quartos disponíveis em cada hotel</li>
+<li><b>Hóspedes:</b> Mantém registro de hóspedes cadastrados <br  />
+</li>
+<li><b>Reservas:</b> Gerencia reservas com controle de conflitos</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="principios_arquiteturais"></a>
+Princípios Arquiteturais Aplicados</h1>
+<h2 class="doxsection"><a class="anchor" id="separacao_responsabilidades"></a>
+Separação de Responsabilidades</h2>
+<p>Cada camada possui responsabilidades específicas e bem definidas:</p><ul>
+<li><b>Apresentação:</b> Gerencia interface e experiência do usuário</li>
+<li><b>Serviços:</b> Implementa regras de negócio e validações <br  />
+</li>
+<li><b>Persistência:</b> Controla armazenamento e recuperação de dados</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="baixo_acoplamento"></a>
+Baixo Acoplamento</h2>
+<p>As camadas comunicam-se através de interfaces abstratas:</p><ul>
+<li>Reduz dependências diretas entre módulos</li>
+<li>Facilita testes unitários e uso de mocks</li>
+<li>Permite evolução independente das camadas</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="alta_coesao"></a>
+Alta Coesão</h2>
+<p>Módulos da mesma camada têm propósitos relacionados:</p><ul>
+<li>Funcionalidades agrupadas logicamente</li>
+<li>Reutilização de código comum</li>
+<li>Manutenção simplificada</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="fluxo_operacional"></a>
+Fluxo Operacional</h1>
+<h2 class="doxsection"><a class="anchor" id="fluxo_dados"></a>
+Fluxo de Dados</h2>
+<ol type="1">
+<li><b>Usuário</b> interage com <b>Camada de Apresentação</b></li>
+<li><b>Casos de Uso</b> delegam para <b>Interfaces de Serviços</b> <br  />
+</li>
+<li><b>Centrais de Serviços</b> implementam lógica de negócio</li>
+<li><b>Containers</b> persistem dados na <b>Camada de Persistência</b></li>
+<li><b>Resultado</b> retorna pelas camadas até o usuário</li>
+</ol>
+<h2 class="doxsection"><a class="anchor" id="relacionamentos_entidades"></a>
+Relacionamentos de Entidades</h2>
+<p><b>Multiplicidades do Domínio:</b></p><ul>
+<li><a class="el" href="class_gerente.html" title="Classe que representa um gerente no sistema de gestão de hotéis.">Gerente</a> (1) ↔ <a class="el" href="class_hotel.html" title="Classe que representa um hotel no sistema de gestão.">Hotel</a> (0..*)</li>
+<li><a class="el" href="class_hotel.html" title="Classe que representa um hotel no sistema de gestão.">Hotel</a> (1) ↔ <a class="el" href="class_quarto.html" title="Classe que representa um quarto de hotel no sistema de gestão.">Quarto</a> (1..*) <br  />
+</li>
+<li>Hóspede (1) ↔ <a class="el" href="class_reserva.html" title="Classe que representa uma reserva no sistema de gestão de hotéis.">Reserva</a> (0..*)</li>
+<li><a class="el" href="class_quarto.html" title="Classe que representa um quarto de hotel no sistema de gestão.">Quarto</a> (1) ↔ <a class="el" href="class_reserva.html" title="Classe que representa uma reserva no sistema de gestão de hotéis.">Reserva</a> (0..*)</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="padroes_utilizados"></a>
+Padrões de Projeto</h1>
+<h2 class="doxsection"><a class="anchor" id="singleton_pattern"></a>
+Singleton</h2>
+<ul>
+<li><b>Classe:</b> <a class="el" href="class_central_containers.html" title="Classe central para gerenciar todos os containers do sistema.">CentralContainers</a></li>
+<li><b>Propósito:</b> Acesso único e centralizado aos containers</li>
+<li><b>Benefício:</b> Controle unificado do armazenamento de dados</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="interface_segregation"></a>
+Interface Segregation Principle (ISP)</h2>
+<ul>
+<li><b>Classes:</b> IAP, ISA, ISP, ISH, ISQ, ISHO, ISR</li>
+<li><b>Propósito:</b> Interfaces específicas e focadas</li>
+<li><b>Benefício:</b> Maior flexibilidade e facilidade de teste</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="dependency_inversion"></a>
+Dependency Inversion Principle (DIP)</h2>
+<ul>
+<li><b>Aplicação:</b> Camadas superiores dependem de abstrações</li>
+<li><b>Benefício:</b> Facilita mudanças e extensões no sistema</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="conclusao"></a>
+Conclusão</h1>
+<p>A arquitetura em camadas implementada garante um sistema robusto, organizando responsabilidades de forma clara e permitindo evolução controlada. O uso de interfaces abstratas e padrões de projeto consolidados assegura flexibilidade e facilidade de manutenção. </p>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->

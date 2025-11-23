@@ -1,0 +1,58 @@
+\chapter{Detalhes da Arquitetura }
+\hypertarget{architecture_details}{}\label{architecture_details}\index{Detalhes da Arquitetura@{Detalhes da Arquitetura}}
+\hypertarget{architecture_details_principles}{}\doxysection{\texorpdfstring{Princípios Arquiteturais}{Princípios Arquiteturais}}\label{architecture_details_principles}
+\hypertarget{architecture_details_separation}{}\doxysubsection{\texorpdfstring{Separação de Responsabilidades}{Separação de Responsabilidades}}\label{architecture_details_separation}
+Cada camada tem responsabilidades bem definidas\+:
+\begin{DoxyItemize}
+\item {\bfseries{Apresentação\+:}} Interface e experiência do usuário
+\item {\bfseries{Serviços\+:}} Lógica de negócio e regras do domínio ~\newline
+
+\item {\bfseries{Persistência\+:}} Armazenamento e recuperação de dados
+\end{DoxyItemize}\hypertarget{architecture_details_coupling}{}\doxysubsection{\texorpdfstring{Baixo Acoplamento}{Baixo Acoplamento}}\label{architecture_details_coupling}
+As camadas se comunicam através de interfaces abstratas\+:
+\begin{DoxyItemize}
+\item Reduz dependências diretas entre módulos
+\item Facilita testes unitários e mocks
+\item Permite evolução independente das camadas
+\end{DoxyItemize}\hypertarget{architecture_details_cohesion}{}\doxysubsection{\texorpdfstring{Alta Coesão}{Alta Coesão}}\label{architecture_details_cohesion}
+Módulos da mesma camada têm propósitos relacionados\+:
+\begin{DoxyItemize}
+\item Funcionalidades agrupadas logicamente
+\item Reutilização de código comum
+\item Manutenção simplificada
+\end{DoxyItemize}\hypertarget{architecture_details_patterns}{}\doxysection{\texorpdfstring{Padrões Utilizados}{Padrões Utilizados}}\label{architecture_details_patterns}
+\hypertarget{architecture_details_singleton_pattern}{}\doxysubsection{\texorpdfstring{Singleton}{Singleton}}\label{architecture_details_singleton_pattern}
+
+\begin{DoxyItemize}
+\item {\bfseries{Classe\+:}} \doxylink{class_central_containers}{Central\+Containers}
+\item {\bfseries{Propósito\+:}} Acesso único aos containers
+\item {\bfseries{Benefício\+:}} Controle centralizado de dados
+\end{DoxyItemize}\hypertarget{architecture_details_interface_pattern}{}\doxysubsection{\texorpdfstring{Interface Segregation}{Interface Segregation}}\label{architecture_details_interface_pattern}
+~\newline
+
+\begin{DoxyItemize}
+\item {\bfseries{Classes\+:}} \doxylink{class_i_apresentacao}{IApresentacao}, \doxylink{class_i_servico_autenticacao}{IServico\+Autenticacao}, \doxylink{class_i_servico_persistencia}{IServico\+Persistencia}
+\item {\bfseries{Propósito\+:}} Contratos específicos e focados
+\item {\bfseries{Benefício\+:}} Flexibilidade e testabilidade
+\end{DoxyItemize}\hypertarget{architecture_details_template_pattern}{}\doxysubsection{\texorpdfstring{Template Method}{Template Method}}\label{architecture_details_template_pattern}
+
+\begin{DoxyItemize}
+\item {\bfseries{Classe\+:}} \doxylink{class_i_servico_persistencia}{IServico\+Persistencia$<$\+T$>$}
+\item {\bfseries{Propósito\+:}} Operações CRUD genéricas
+\item {\bfseries{Benefício\+:}} Reutilização de código
+\end{DoxyItemize}\hypertarget{architecture_details_relationships}{}\doxysection{\texorpdfstring{Relacionamentos e Multiplicidades}{Relacionamentos e Multiplicidades}}\label{architecture_details_relationships}
+\hypertarget{architecture_details_entity_relationships}{}\doxysubsection{\texorpdfstring{Entidades de Negócio}{Entidades de Negócio}}\label{architecture_details_entity_relationships}
+
+\begin{DoxyItemize}
+\item {\bfseries{\doxylink{class_gerente}{Gerente} (1) ←→ \doxylink{class_hotel}{Hotel} (0..\textbackslash{}\texorpdfstring{$\ast$}{*})\+:}} Um gerente pode ter vários hotéis
+\item {\bfseries{\doxylink{class_hotel}{Hotel} (1) ←→ \doxylink{class_quarto}{Quarto} (1..\textbackslash{}\texorpdfstring{$\ast$}{*})\+:}} Cada hotel deve ter pelo menos um quarto ~\newline
+
+\item {\bfseries{Hóspede (1) ←→ \doxylink{class_reserva}{Reserva} (0..\textbackslash{}\texorpdfstring{$\ast$}{*})\+:}} Um hóspede pode ter várias reservas
+\item {\bfseries{\doxylink{class_quarto}{Quarto} (1) ←→ \doxylink{class_reserva}{Reserva} (0..\textbackslash{}\texorpdfstring{$\ast$}{*})\+:}} Um quarto pode ter várias reservas
+\end{DoxyItemize}\hypertarget{architecture_details_layer_relationships}{}\doxysubsection{\texorpdfstring{Camadas Arquiteturais}{Camadas Arquiteturais}}\label{architecture_details_layer_relationships}
+
+\begin{DoxyItemize}
+\item {\bfseries{Apresentação → Serviços\+:}} Comunicação via interfaces
+\item {\bfseries{Serviços → Persistência\+:}} Acesso através de \doxylink{class_central_containers}{Central\+Containers}
+\item {\bfseries{Persistência ↔ Entidades\+:}} Armazenamento de objetos de domínio 
+\end{DoxyItemize}
